@@ -1,13 +1,14 @@
+<html>
 <head>
 	<style>
 		body {
-		  column-count: 4;
-		  column-gap: 1em;
+			column-count: 4;
+			column-gap: 1em;
 		}
 		.section {
-		  display: inline-block;
-		  margin: 0 0 1em;
-   		  width: 100%;
+			display: inline-block;
+			margin: 0 0 1em;
+			width: 100%;
 		}
 		h3 {
 			margin: 0;
@@ -31,15 +32,16 @@
 	</style>
 </head>
 <body>
-  {% for section, links in sections.items() %}
-  <div class="section">
-    <h3>{{ section }}</h3>
-    {% for name, properties in links.items() %}
-      <li>
-        <a href="{{ properties.url }}">{{ name }}</a>
-        <p>{{ properties.desc}}</p>
-      </li>
-    {% endfor %}
-  </div>
-  {% endfor %}
+	{% for section, links in sections.items() %}
+	<div class="section">
+	<h3>{{ section }}</h3>
+	{% for name, properties in links.items() %}
+		<li>
+		<a href="{{ properties.url }}">{{ name }}</a>
+		<p>{{ properties.desc}}</p>
+		</li>
+	{% endfor %}
+	</div>
+	{% endfor %}
 </body>
+</html>
