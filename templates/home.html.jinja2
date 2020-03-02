@@ -35,12 +35,14 @@
 	{% for section, links in sections.items() %}
 	<div class="section">
 	<h3>{{ section }}</h3>
+	<ul>
 	{% for name, properties in links.items() %}
 		<li>
 		<a href="{{ properties.url }}">{{ name }}</a>
 		<p>{{ properties.desc}}</p>
 		</li>
 	{% endfor %}
+	</ul>
 	</div>
 	{% endfor %}
 </body>

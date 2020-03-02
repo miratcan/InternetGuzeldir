@@ -1,8 +1,24 @@
 {
   "Editörler": {
     "VimGolf": {
-      "url": "http://www.vimgolf.com",
+      "url": "http://www.vimgolf.com/",
       "desc": "Vim'de yeteneklerinizi geliştirmek için çeşitli bulmacalar"
+    },
+    "Vim Adventures": {
+      "url": "https://vim-adventures.com/",
+      "desc": "Vim öğrernmek için geliştirilmiş bir oyun"
+    }
+  },
+  "Çalışma Düzeni": {
+    "Tomato Timer": {
+      "url": "https://tomato-tomer.com/",
+      "desc": "Pomodoro düzeninde çalışanlar için zaman tutucu"
+    }
+  },
+  "Grafik & Tasarım": {
+    "SVG Artista": {
+      "url": "https://svgartista.net",
+      "desc": "SVG çizimlerini animasyonlara dönüştüren araç"
     }
   }
 }
