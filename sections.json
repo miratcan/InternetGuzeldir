@@ -40,5 +40,11 @@
       "url": "https://kodilan.com/",
       "desc": "Türkiye içi yazılımcı ve iş bulma sitesi"
     }
+  },
+  "Metin Yazımı": {
+    "ZenPen": {
+      "url": "https://zenpen.io/",
+      "desc": "Minimalistik, dikkat dağıtmayan online metin editörü."
+    }
   }
 }
