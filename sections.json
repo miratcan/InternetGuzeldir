@@ -19,6 +19,20 @@
     "SVG Artista": {
       "url": "https://svgartista.net",
       "desc": "SVG çizimlerini animasyonlara dönüştüren araç"
+    },
+    "HTML5 Up": {
+      "url": "https://html5up.net/",
+      "desc": "Bedava responsive HTML5+CSS3 web site taslakları"
+    },
+    "Templated": {
+      "url": "https://templated.co/",
+      "desc": "867 adet bedava HTML5+CSS3 web site taslakları"
+    }
+  },
+  "Yazılım Geliştime": {
+    "Tech on The Net C tutorial": {
+      "url": "https://www.techonthenet.com/c_language/index.php",
+      "desc": "C dili öğrenmek için güzel tutorial"
     }
   }
 }
