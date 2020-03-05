@@ -46,5 +46,11 @@
       "url": "https://zenpen.io/",
       "desc": "Minimalistik, dikkat dağıtmayan online metin editörü."
     }
+  },
+  "Statik Site Oluşturucu": {
+    "Nikola": {
+      "url": "https://getnikola.com/",
+      "desc": "Python ile yazılmış ücretsiz ve açık kaynak statik site oluşturma programı."
+    }
   }
 }
