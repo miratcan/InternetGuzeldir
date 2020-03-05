@@ -2,41 +2,41 @@
   "Editörler": {
     "VimGolf": {
       "url": "http://www.vimgolf.com/",
-      "desc": "Vim'de yeteneklerinizi geliştirmek için çeşitli bulmacalar"
+      "desc": "Vim'de yeteneklerinizi geliştirmek için çeşitli bulmacalar."
     },
     "Vim Adventures": {
       "url": "https://vim-adventures.com/",
-      "desc": "Vim öğrernmek için geliştirilmiş bir oyun"
+      "desc": "Vim öğrernmek için geliştirilmiş bir oyun."
     }
   },
   "Çalışma Düzeni": {
     "Tomato Timer": {
       "url": "https://tomato-timer.com/",
-      "desc": "Pomodoro düzeninde çalışanlar için zaman tutucu"
+      "desc": "Pomodoro düzeninde çalışanlar için zaman tutucu."
     }
   },
   "Grafik & Tasarım": {
     "SVG Artista": {
       "url": "https://svgartista.net",
-      "desc": "SVG çizimlerini animasyonlara dönüştüren araç"
+      "desc": "SVG çizimlerini animasyonlara dönüştüren araç."
     },
     "HTML5 Up": {
       "url": "https://html5up.net/",
-      "desc": "Bedava responsive HTML5+CSS3 web site taslakları"
+      "desc": "Bedava responsive HTML5+CSS3 web site taslakları."
     },
     "Templated": {
       "url": "https://templated.co/",
-      "desc": "867 adet bedava HTML5+CSS3 web site taslakları"
+      "desc": "867 adet bedava HTML5+CSS3 web site taslakları."
     }
   },
   "Yazılım Geliştime": {
     "Tech on The Net C tutorial": {
       "url": "https://www.techonthenet.com/c_language/index.php",
-      "desc": "C dili öğrenmek için güzel tutorial"
+      "desc": "C dili öğrenmek için güzel tutorial."
     },
     "The Missing Semester of Your CS Education": {
       "url": "https://missing.csail.mit.edu/",
-      "desc": "Her developerın alet çantasında olması gereken araçların derli toplu anlatıldığı MIT dersleri"
+      "desc": "Her developerın alet çantasında olması gereken araçların derli toplu anlatıldığı MIT dersleri."
     }
   },
   "Oyun Geliştime": {
@@ -48,7 +48,7 @@
   "İş & İşçi Bulma": {
     "Kod, ilan": {
       "url": "https://kodilan.com/",
-      "desc": "Türkiye içi yazılımcı ve iş bulma sitesi"
+      "desc": "Türkiye içi yazılımcı ve iş bulma sitesi."
     }
   },
   "Metin Yazımı": {
@@ -57,7 +57,7 @@
       "desc": "Minimalistik, dikkat dağıtmayan online metin editörü."
     }
   },
-  "Statik Site Oluşturucu": {
+  "Statik Site Oluşturma": {
     "Nikola": {
       "url": "https://getnikola.com/",
       "desc": "Python ile yazılmış ücretsiz ve açık kaynak statik site oluşturma programı."
