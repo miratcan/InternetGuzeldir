@@ -33,7 +33,17 @@
     "Tech on The Net C tutorial": {
       "url": "https://www.techonthenet.com/c_language/index.php",
       "desc": "C dili öğrenmek için güzel tutorial"
-    }
+    },
+    "The Missing Semester of Your CS Education": {
+      "url": "https://missing.csail.mit.edu/",
+      "desc": "Her developerın alet çantasında olması gereken araçların derli toplu anlatıldığı MIT dersleri."
+    },
+  },
+  "Oyun Geliştime": {
+    "CS50’s Introduction to Game Development": {
+      "url": "https://cs50.harvard.edu/games/",
+      "desc": "Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi."
+    },
   },
   "İş & İşçi Bulma": {
     "Kod, ilan": {
