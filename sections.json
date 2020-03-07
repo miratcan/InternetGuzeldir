@@ -34,6 +34,10 @@
       "url": "https://www.techonthenet.com/c_language/index.php",
       "desc": "C dili öğrenmek için güzel tutorial."
     },
+    "Multi-Process Programming in C":{
+      "url": "https://home.deib.polimi.it/fornacia/lib/exe/fetch.php?media=teaching:aos:2016:aos201617_multiprocess_programming_updated20161223.pdf",
+      "desc": "C dilinde multiprocessing nasıl yapılır'ı anlatıyor."
+    },
     "The Missing Semester of Your CS Education": {
       "url": "https://missing.csail.mit.edu/",
       "desc": "Her developerın alet çantasında olması gereken araçların derli toplu anlatıldığı MIT dersleri."
