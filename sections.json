@@ -47,6 +47,10 @@
     "CS50’s Introduction to Game Development": {
       "url": "https://cs50.harvard.edu/games/",
       "desc": "Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi."
+    },
+    "Finishing a Game": {
+      "url": "https://makegames.tumblr.com/post/1136623767/finishing-a-game",
+      "desc": "Oyun geliştirmeye başlamak isteyen geliştiriciler için öğütler."
     }
   },
   "İş & İşçi Bulma": {
