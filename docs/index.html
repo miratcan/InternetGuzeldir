@@ -1,174 +1,187 @@
 <html>
 <head>
-	<style>
-		body {
-			column-count: 4;
-			column-gap: 1em;
-		}
-		.section {
-			display: inline-block;
-			margin: 0 0 1em;
-			width: 100%;
-		}
-		h3 {
-			margin: 0;
-			border-bottom: dashed 1px gray;
-		}
-		ul {
-			margin: 1rem 0 0 0;
-			padding: 0;
-			list-style-type: none;
-		}
-		ul li a {
-			text-decoration: none;
-		}
-		ul li p {
-			margin-top: 0rem;
-			font-size: 80%;
-		} 
-		ul li:last p {
-			margin-bottom: 0;
-		}
-    @media only screen and (max-width: 600px) {
-        body {
-          column-count: 2;
-      }
+    <style>
+        h1 {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            text-shadow: 2px 2px lightgray;
+        }
+        #sections {
+            column-count: 4;
+            column-gap: 1em;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 1rem;
+            background: white;
+        }
+        .section {
+            display: inline-block;
+            margin: 0 0 1em;
+            width: 100%;
+        }
+        h3 {
+            margin: 0;
+            border-bottom: dashed 1px gray;
+        }
+        ul {
+            margin: 1rem 0 0 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        ul li a {
+            text-decoration: none;
+        }
+        ul li p {
+            margin-top: 0rem;
+            font-size: 80%;
+        } 
+        ul li:last p {
+            margin-bottom: 0;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+                column-count: 2;
+            }
+        }
     }
-  }
-	</style>
+    </style>
 </head>
 <body>
-	
-	<div class="section">
-	<h3>Editörler</h3>
-	<ul>
-	
-		<li>
-		<a href="http://www.vimgolf.com/">VimGolf</a>
-		<p>Vim'de yeteneklerinizi geliştirmek için çeşitli bulmacalar.</p>
-		</li>
-	
-		<li>
-		<a href="https://vim-adventures.com/">Vim Adventures</a>
-		<p>Vim öğrernmek için geliştirilmiş bir oyun.</p>
-		</li>
-	
-	</ul>
-	</div>
-	
-	<div class="section">
-	<h3>Çalışma Düzeni</h3>
-	<ul>
-	
-		<li>
-		<a href="https://tomato-timer.com/">Tomato Timer</a>
-		<p>Pomodoro düzeninde çalışanlar için zaman tutucu.</p>
-		</li>
-	
-	</ul>
-	</div>
-	
-	<div class="section">
-	<h3>Grafik & Tasarım</h3>
-	<ul>
-	
-		<li>
-		<a href="https://svgartista.net">SVG Artista</a>
-		<p>SVG çizimlerini animasyonlara dönüştüren araç.</p>
-		</li>
-	
-		<li>
-		<a href="https://html5up.net/">HTML5 Up</a>
-		<p>Bedava responsive HTML5+CSS3 web site taslakları.</p>
-		</li>
-	
-		<li>
-		<a href="https://templated.co/">Templated</a>
-		<p>867 adet bedava HTML5+CSS3 web site taslakları.</p>
-		</li>
-	
-	</ul>
-	</div>
-	
-	<div class="section">
-	<h3>Yazılım Geliştime</h3>
-	<ul>
-	
-		<li>
-		<a href="https://www.techonthenet.com/c_language/index.php">Tech on The Net C tutorial</a>
-		<p>C dili öğrenmek için güzel tutorial.</p>
-		</li>
-	
-		<li>
-		<a href="https://home.deib.polimi.it/fornacia/lib/exe/fetch.php?media=teaching:aos:2016:aos201617_multiprocess_programming_updated20161223.pdf">Multi-Process Programming in C</a>
-		<p>C dilinde multiprocessing nasıl yapılır'ı anlatıyor.</p>
-		</li>
-	
-		<li>
-		<a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education</a>
-		<p>Her developerın alet çantasında olması gereken araçların derli toplu anlatıldığı MIT dersleri.</p>
-		</li>
-	
-	</ul>
-	</div>
-	
-	<div class="section">
-	<h3>Oyun Geliştime</h3>
-	<ul>
-	
-		<li>
-		<a href="https://cs50.harvard.edu/games/">CS50’s Introduction to Game Development</a>
-		<p>Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi.</p>
-		</li>
-	
-		<li>
-		<a href="https://makegames.tumblr.com/post/1136623767/finishing-a-game">Finishing a Game</a>
-		<p>Oyun geliştirmeye başlamak isteyen geliştiriciler için öğütler.</p>
-		</li>
-	
-	</ul>
-	</div>
-	
-	<div class="section">
-	<h3>İş & İşçi Bulma</h3>
-	<ul>
-	
-		<li>
-		<a href="https://kodilan.com/">Kod, ilan</a>
-		<p>Türkiye içi yazılımcı ve iş bulma sitesi.</p>
-		</li>
-	
-		<li>
-		<a href="https://twitter.com/bilisim_isleri">Bilişim İşleri</a>
-		<p>Bilişim sektörü ile ilgili ilanlar paylaşan Twitter hesabı.</p>
-		</li>
-	
-	</ul>
-	</div>
-	
-	<div class="section">
-	<h3>Metin Yazımı</h3>
-	<ul>
-	
-		<li>
-		<a href="https://zenpen.io/">ZenPen</a>
-		<p>Minimalistik, dikkat dağıtmayan online metin editörü.</p>
-		</li>
-	
-	</ul>
-	</div>
-	
-	<div class="section">
-	<h3>Statik Site Oluşturma</h3>
-	<ul>
-	
-		<li>
-		<a href="https://getnikola.com/">Nikola</a>
-		<p>Python ile yazılmış ücretsiz ve açık kaynak statik site oluşturma programı.</p>
-		</li>
-	
-	</ul>
-	</div>
-	
+    <h1>Links</h1>
+    <div id="sections">
+    
+    <div class="section">
+    <h3>Editörler</h3>
+    <ul>
+    
+        <li>
+        <a href="http://www.vimgolf.com/">VimGolf</a>
+        <p>Vim'de yeteneklerinizi geliştirmek için çeşitli bulmacalar.</p>
+        </li>
+    
+        <li>
+        <a href="https://vim-adventures.com/">Vim Adventures</a>
+        <p>Vim öğrernmek için geliştirilmiş bir oyun.</p>
+        </li>
+    
+    </ul>
+    </div>
+    
+    <div class="section">
+    <h3>Çalışma Düzeni</h3>
+    <ul>
+    
+        <li>
+        <a href="https://tomato-timer.com/">Tomato Timer</a>
+        <p>Pomodoro düzeninde çalışanlar için zaman tutucu.</p>
+        </li>
+    
+    </ul>
+    </div>
+    
+    <div class="section">
+    <h3>Grafik & Tasarım</h3>
+    <ul>
+    
+        <li>
+        <a href="https://svgartista.net">SVG Artista</a>
+        <p>SVG çizimlerini animasyonlara dönüştüren araç.</p>
+        </li>
+    
+        <li>
+        <a href="https://html5up.net/">HTML5 Up</a>
+        <p>Bedava responsive HTML5+CSS3 web site taslakları.</p>
+        </li>
+    
+        <li>
+        <a href="https://templated.co/">Templated</a>
+        <p>867 adet bedava HTML5+CSS3 web site taslakları.</p>
+        </li>
+    
+    </ul>
+    </div>
+    
+    <div class="section">
+    <h3>Yazılım Geliştime</h3>
+    <ul>
+    
+        <li>
+        <a href="https://www.techonthenet.com/c_language/index.php">Tech on The Net C tutorial</a>
+        <p>C dili öğrenmek için güzel tutorial.</p>
+        </li>
+    
+        <li>
+        <a href="https://home.deib.polimi.it/fornacia/lib/exe/fetch.php?media=teaching:aos:2016:aos201617_multiprocess_programming_updated20161223.pdf">Multi-Process Programming in C</a>
+        <p>C dilinde multiprocessing nasıl yapılır'ı anlatıyor.</p>
+        </li>
+    
+        <li>
+        <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education</a>
+        <p>Her developerın alet çantasında olması gereken araçların derli toplu anlatıldığı MIT dersleri.</p>
+        </li>
+    
+    </ul>
+    </div>
+    
+    <div class="section">
+    <h3>Oyun Geliştime</h3>
+    <ul>
+    
+        <li>
+        <a href="https://cs50.harvard.edu/games/">CS50’s Introduction to Game Development</a>
+        <p>Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi.</p>
+        </li>
+    
+        <li>
+        <a href="https://makegames.tumblr.com/post/1136623767/finishing-a-game">Finishing a Game</a>
+        <p>Oyun geliştirmeye başlamak isteyen geliştiriciler için öğütler.</p>
+        </li>
+    
+    </ul>
+    </div>
+    
+    <div class="section">
+    <h3>İş & İşçi Bulma</h3>
+    <ul>
+    
+        <li>
+        <a href="https://kodilan.com/">Kod, ilan</a>
+        <p>Türkiye içi yazılımcı ve iş bulma sitesi.</p>
+        </li>
+    
+        <li>
+        <a href="https://twitter.com/bilisim_isleri">Bilişim İşleri</a>
+        <p>Bilişim sektörü ile ilgili ilanlar paylaşan Twitter hesabı.</p>
+        </li>
+    
+    </ul>
+    </div>
+    
+    <div class="section">
+    <h3>Metin Yazımı</h3>
+    <ul>
+    
+        <li>
+        <a href="https://zenpen.io/">ZenPen</a>
+        <p>Minimalistik, dikkat dağıtmayan online metin editörü.</p>
+        </li>
+    
+    </ul>
+    </div>
+    
+    <div class="section">
+    <h3>Statik Site Oluşturma</h3>
+    <ul>
+    
+        <li>
+        <a href="https://getnikola.com/">Nikola</a>
+        <p>Python ile yazılmış ücretsiz ve açık kaynak statik site oluşturma programı.</p>
+        </li>
+    
+    </ul>
+    </div>
+    
+    </div>
 </body>
 </html>
