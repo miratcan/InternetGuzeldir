@@ -94,5 +94,11 @@
       "url": "https://www.rome2rio.com/",
       "desc": "Dünya üzerinde iki adres arasında nasıl seyehat edilebileceğini söyletebilen bir web sitesi."
     }
-  }
+  },
+  "Diğer": {
+    "FileZigZag": {
+      "url": "https://www.filezigzag.com/",
+      "desc": "Herhangi bir dosyayı başka bir formata dönüştürün, yüzlerce çeşit dosyayı destekliyor."
+    }
+  } 
 }
