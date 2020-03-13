@@ -88,5 +88,11 @@
       "url": "https://getnikola.com/",
       "desc": "Python ile yazılmış ücretsiz ve açık kaynak statik site oluşturma programı."
     }
+  },
+  "Seyehat": {
+    "Rome2Rio": {
+      "url": "https://www.rome2rio.com/",
+      "desc": "Dünya üzerinde iki adres arasında nasıl seyehat edilebileceğini söyletebilen bir web sitesi."
+    }
   }
 }
