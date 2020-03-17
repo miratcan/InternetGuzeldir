@@ -111,6 +111,10 @@
     "FileZigZag": {
       "url": "https://www.filezigzag.com/",
       "desc": "Herhangi bir dosyayı başka bir formata dönüştürün, yüzlerce çeşit dosyayı destekliyor."
+    }, 
+    "Apify": {
+      "url": "https://apify.com/",
+      "desc": "Bir çok site için veri toplama scriptlerini barındıran bir market. Kendi scriptlerinizi satarak para da kazanabiliyorsunuz sanırım."
     }
   } 
 }
