@@ -27,6 +27,18 @@
     "Templated": {
       "url": "https://templated.co/",
       "desc": "867 adet bedava HTML5+CSS3 web site taslakları."
+    },
+    "Autodraw": {
+      "url": "https://www.autodraw.com/",
+      "desc": "Yaptığınız çizimleri yapay zeka kullanarak daha önceden yapılmış vektörel çizimlerle değiştiren uygulama."
+    },
+    "Vectr": {
+      "url": "https://vectr.com/",
+      "desc": "Gelişmiş vektör tabanlı çizim programı."
+    }, 
+    "PiskelApp": {
+      "url": "https://www.piskelapp.com/",
+      "desc": "Oyun geliştiriciler ve pixel art sevenler için sprite editör."
     }
   },
   "Yazılım Geliştime": {
