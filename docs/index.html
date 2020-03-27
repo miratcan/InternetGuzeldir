@@ -10,15 +10,18 @@
             margin: 0;
             text-shadow: 2px 2px white;
         }
-        #sections {
-            column-count: 4;
-            column-gap: 1em;
-            max-width: 1024px;
+        #wrapper {
+            max-width: 1000px;
             margin: 0 auto;
+        }
+        #sections {
+            column-count: 5;
+            column-gap: 2vw;
+            max-height: 100vh;
         }
         .section {
             display: inline-block;
-            margin: 0 0 1em;
+            margin: 0;
             width: 100%;
         }
         h3 {
@@ -45,13 +48,20 @@
                 column-count: 2;
             }
         }
-    }
+        ::-webkit-scrollbar{width:.5rem}
+        ::-webkit-scrollbar-track{background:transparent;border-radius:0px}
+        ::-webkit-scrollbar-thumb{background:#aaa;border-radius:0px}
     </style>
 </head>
 <body>
-    <h1>Links</h1>
-    <p style="text-align: center;">Pull request açmak için <a
-    href="https://github.com/miratcan/links">buraya</a>.</p>
+  <div id="wrapper">
+    <h1>Seçmece Sayfalar</h1>
+    <p style="text-align: center; margin-bottom: 2rem;">Web'in eskiden daha güzel bir yer olduğunu
+       düşünenler için link listeleme sayfasıdır. Ekleme yapmak için
+       Twitter'dan <a href="https://twitter.com/miratcanbayrak">bana</a> DM
+       atabilir ya da yazılımcı iseniz github üzerinde 
+       <a href="https://github.com/miratcan/links">pull request
+       aç</a>abilirsiniz.</p>
     <div id="sections">
     
     <div class="section">
@@ -267,11 +277,24 @@
         <a href="https://onetimesecret.com/">OneTimeSecret</a>
         <p>Bir defa okunduktan sonra tamamen yok olan mesajlar göndermeyi sağlayan uygulama. Şifre gibi hassas bilgileri gönderirken mesajlaşma tarihçesinde kalmamasını sağlıyor.</p>
         </li>
+        
+        <li>
+        <a href="https://usethekeyboard.com/">Use The Keyboard</a>
+        <p>Bir çok uygulamanın klavye kısayollarının listelendiği web sitesi.</p>
+        </li>
     
     </ul>
     </div>
-    
     </div>
+  <script>
+    window.onload = function(){
+    var anchors = document.getElementsByTagName('a');
+    for (var i=0; i<anchors.length; i++){
+      anchors[i].setAttribute('target', '_blank');
+    }
+    }
+  </script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
     <script>
@@ -280,5 +303,6 @@
       gtag('js', new Date());
       gtag('config', 'UA-86514140-3');
     </script>
+  </div>
 </body>
 </html>
