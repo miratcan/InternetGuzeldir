@@ -21,22 +21,15 @@
           padding: 0;
         }
         #sections {
-          height: auto;
+          height: 100%;
           color: black;
-          display: flex;
-          flex-wrap: nowrap;
-          overflow: auto;
-          -webkit-overflow-scrolling: touch;
-          -ms-overflow-style: -ms-autohiding-scrollbar;
-          scroll-snap-type: x mandatory;
+          position: relative;
+  
         }
         .section-wrapper {
-           flex: 0 0 auto;
-           margin: 10vh 38vw 10vh 38vw;
-           width: 24vw;
-           height: 100%;
-           scroll-snap-align: center;
-           align-self: flex-end;
+          position: absolute;
+          transform-origin: center;
+          vertical-align: bottom;
         }
         .section {
           background: white;
@@ -46,6 +39,8 @@
           box-sizing: border-box;
           overflow-x: scroll;
           border-top: 2px solid #666;
+          width: 18vw;
+          height: 40vh;
         }
         .reflection {
           height: 6rem;
@@ -74,9 +69,6 @@
         ul li:last p {
             margin-bottom: 0;
         }
-        ::-webkit-scrollbar{width:.5rem}
-        ::-webkit-scrollbar-track{background:transparent;border-radius:0px}
-        ::-webkit-scrollbar-thumb{background:#aaa;border-radius:0px}
     </style>
 </head>
 <body>
@@ -318,12 +310,9 @@
     <p style="text-align: center; margin-top: 2rem;">
     <a href="https://twitter.com/miratcanbayrak">DM</a> / <a href="https://github.com/miratcan/links">PR</a></p>
   <script>
-    window.onload = function(){
     var anchors = document.getElementsByTagName('a');
-      for (var i=0; i<anchors.length; i++){
-        anchors[i].setAttribute('target', '_blank');
-      }
-      // document.getElementById('sections').style.width = ((document.getElementsByClassName('section-wrapper').length) * 100) + 'vw'
+    for (var i=0; i<anchors.length; i++){
+      anchors[i].setAttribute('target', '_blank');
     }
   </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -334,5 +323,66 @@
     gtag('js', new Date());
     gtag('config', 'UA-86514140-3');
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js" integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script>
+  <script>
+
+    let els = document.getElementsByClassName('section-wrapper');
+    let spacer = (Math.PI * 2) / els.length;
+    let ew = els.item(0).offsetWidth;
+    let eh = els.item(0).offsetHeight;
+    let s = null;
+
+    function draw(o) {
+      let parent = document.getElementById('sections');
+      let xLen = parent.offsetWidth - ew;
+      let yLen = parent.offsetHeight - eh;
+      console.log(xLen, yLen)
+      let xCen = xLen / 2;
+      let yCen = yLen / 2;
+      for (let idx=0; idx<els.length; idx++) {
+        let sinPos = idx * spacer;
+        let x = Math.sin(sinPos + o) * xCen + xCen;
+        let y = Math.cos(sinPos + o) * yCen + yCen;
+        els.item(idx).style.left = x + 'px';
+        els.item(idx).style.top = y + 'px';
+        els.item(idx).style.transform = 'scale(' + y / yLen + ')';
+        els.item(idx).style.opacity = y / yCen;
+        els.item(idx).style.zIndex = y / yLen;
+      }
+    }
+    let selected = 0;
+    let offset = {value: 0}
+
+    document.onkeydown = function(event) {
+      switch (event.keyCode) {
+        case 37:
+          selected--;
+          anime({
+            targets: offset,
+            value: spacer * selected,
+            duration: 10000,
+            easing: 'spring',
+            update: function() {
+              draw(offset.value)
+            }
+          });
+          break;
+          case 39:
+            selected++;
+            anime({
+              targets: offset,
+              value: spacer * selected,
+              duration: 10000,
+              easing: 'spring',
+              update: function() {
+                draw(offset.value)
+              }
+            });
+            break;
+        }
+    };
+  draw(0);
+  </script>
+
 </body>
 </html>
