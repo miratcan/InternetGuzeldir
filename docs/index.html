@@ -1,336 +1,585 @@
 <html>
 <head>
-    <style>
-        body {
-          padding: 0;
-          margin: 0;
-          background: #272822;
-          color: lightgray;
-          font-family: sans-serif;
-        }
-        #wrapper {
-          margin: 0 auto;
-          padding: 1rem 0 1rem 0;
-        }
-        .section {
-          box-sizing: border-box;
-          overflow-x: scroll;
-          margin: 0;
-          padding-left: 1rem;
-        }
-        h1, h2, h2, h3, h4, h5 {
-          margin: 1rem 0;
-          border-bottom: 1px dashed;
-          display: inline-block;
-        }
-        h2 {
-          border-bottom: 1px solid dashed;
-        }
-        ul {
-          margin: 0;
-        }
-        ul li {
-          margin-bottom: .5rem;
-        }
-        ul li p {
-          display: inline;
-        }
-        a {
-          color:#FD971F;
-        }
-        ul li p {
-          margin-top: 0rem;
-        }
-        ul li a:after {
-          content: ':'
-        }
-        ul li:last p {
-          margin-bottom: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <style>
+    body  {
+      font-family: sans-serif;
+      background: #000;
+      color: #d6d6d6;
+      margin: 0 auto;
+      padding: 10px;
+      max-width:800px;
+    }
+    #header {
+      margin-bottom: 50px;
+    }
+    h1    {
+      font-size:24px;
+      text-align: center;
+    }
+    p {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    h2    {
+      font-size:14px;
+      font-weight:bold;
+      margin: 0;
+      padding: 0;
+      text-align:center;
+    }
+    table {
+      background:#272822;
+      border-radius: 10px;
+      width:100%;
+      padding:0;
+      margin: 0 auto;
+      border-collapse:collapse;
+      font-size:14px;
+    }
+    td, th {
+      vertical-align:top;
+      padding: 10px;
+      border-bottom:1px dashed #75715E;
+    }
+    a {
+      color: #e87d3e;
+      text-decoration:none
+    }
+    .seperator { background: #3e3e3e}
+  </style>
 </head>
 <body>
-  <div id="wrapper">
-    <div class="section">
-      <h2>Editörler</h2>
-      <ul>
-        <li>
-          <a href="http://www.vimgolf.com/">VimGolf</a>
-          <p>Vim'de yeteneklerinizi geliştirmek için çeşitli bulmacalar.</p>
-        </li>
-        <li>
-          <a href="https://vim-adventures.com/">Vim Adventures</a>
-          <p>Vim öğrernmek için geliştirilmiş bir oyun.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Çalışma Düzeni</h2>
-      <ul>
-        <li>
-          <a href="https://tomato-timer.com/">Tomato Timer</a>
-          <p>Pomodoro düzeninde çalışanlar için zaman tutucu.</p>
-        </li>
-        <li>
-          <a href="https://pomodoro-tracker.com/">Pomodoro Tracker</a>
-          <p>Gününüzü pomodorolara bölerek planlayabileceğiniz online uygulama.</p>
-        </li>
-        <li>
-          <a href="https://noises.online/">Noises Online</a>
-          <p>Çalışma konsantrasyonunu arttırmak için arka plan sesleri.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Grafik & Tasarım</h2>
-      <ul>
-        <li>
-          <a href="https://svgartista.net">SVG Artista</a>
-          <p>SVG çizimlerini animasyonlara dönüştüren araç.</p>
-        </li>
-        <li>
-          <a href="https://html5up.net/">HTML5 Up</a>
-          <p>Bedava responsive HTML5+CSS3 web site taslakları.</p>
-        </li>
-        <li>
-          <a href="https://templated.co/">Templated</a>
-          <p>867 adet bedava HTML5+CSS3 web site taslakları.</p>
-        </li>
-        <li>
-          <a href="https://www.autodraw.com/">Autodraw</a>
-          <p>Yaptığınız çizimleri yapay zeka kullanarak daha önceden yapılmış vektörel çizimlerle değiştiren uygulama.</p>
-        </li>
-        <li>
-          <a href="https://vectr.com/">Vectr</a>
-          <p>Gelişmiş vektör tabanlı çizim programı.</p>
-        </li>
-        <li>
-          <a href="https://www.piskelapp.com/">PiskelApp</a>
-          <p>Oyun geliştiriciler ve pixel art sevenler için sprite editör.</p>
-        </li>
-        <li>
-          <a href="https://www.tinkercad.com/">Tinkercad</a>
-          <p>Web tabanlı ve çocuklar düşünülerek yapılmış 3d editor.</p>
-        </li>
-        <li>
-          <a href="https://pixel-me.tokyo/en/">Pixel-Me</a>
-          <p>Yapay zeka kullnarak fotoğrafınızı pixel art stiline
-        dönüştüren online uygulma.</p>
-        </li>
-        <li>
-          <a href="https://ditherit.com/">Dither It</a>
-          <p>Gönderdiğiniz fotoğrafları dither eden online uygulama.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Yazılım Geliştime</h2>
-      <ul>
-        <li>
-          <a href=""https://medium.com/palantir/code-review-best-practices-19e02780015f>Code Review Best Practices</a>
-          <p>İyi code review nasıl yapılır sorusuna cevap veren ayrıntılı bir
-          makale.</p>
-        </li>
-        <li>
-          <a href="https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/README.md">Tasarım Desenleri Türkçe Kaynak</a>
-          <p>Yusuf Yılmaz'ın oluşturduğu kapsamlı bir tasarım desenleri
-          rehberi.</p>
-        </li>
-        <li>
-          <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education</a>
-          <p>Her developerın alet çantasında olması gereken araçların derli toplu anlatıldığı MIT dersleri.</p>
-        </li>
-        <li>
-          <a href="https://www.html5rocks.com/en/tutorials/webrtc/basics/">Introduction to webRTC</a>
-          <p>webRTC hakkında çalışmak isteyenler için güzel bir başlangıç,</p>
-        </li>
-        <li>
-          <a href="https://dzone.com/articles/how-to-build-a-progressive-web-app-pwa-with-javasc">Introduction to PWA</a>
-          <p>Progressive Web Applications hakkında çalışmak isteyenler için güzel bir başlangıç,</p>
-        </li>
-      </ul>
-      <div class="section">
-        <h3>Algoritmalar</h3>
-        <ul>
-          <li>
-            <a href="https://algoritma-sorulari.blogspot.com/">Algoritma
-              Soruları</a>
-            <p>Algoritma sorularının bulmaca formatında yayınlandığı blog
-            Türkçe blog.</p>
-          </li>
-          <li>
-            <a
-              href="https://www.youtube.com/watch?v=5VGXfRte-vI&feature=youtu.be&list=PL1vtGId5rAwXMZbr1T7TI564akljF1dDw">Türkçe
-            Algoritmaya Giriş Dersleri</a>
-            <p>MIT'den yayınlanmış olan algoritmaya giriş derslerinin Prof. Dr.
-            Ali Yazıcı ve Haluk Ar tarafından Türkçe’ye çevirilip dublajlanmış
-            halleri.</p>
-          </li>
-        </ul>
-      </div>
-      <div class="section">
-        <h3>C Programlama Dili</h3>
-        <ul>
-          <li>
-            <a href="https://www.techonthenet.com/c_language/index.php">Tech on The Net C tutorial</a>
-            <p>C dili öğrenmek için güzel tutorial.</p>
-          </li>
-          <li>
-            <a href="https://home.deib.polimi.it/fornacia/lib/exe/fetch.php?media=teaching:aos:2016:aos201617_multiprocess_programming_updated20161223.pdf">Multi-Process Programming in C</a>
-            <p>C dilinde multiprocessing nasıl yapılır'ı anlatıyor.</p>
-          </li>
-        </ul>
-      </div>
-      <div class="section">
-        <h3>Python</h3>
-        <div class="section">
-          <h4>Django</h2>
-          <ul>
-            <li>
-              <a href="https://www.djangotemplatetagsandfilters.com/">Template Tags and Filters</a>
-              <p>Django'nun template tag ve filtrelerinin düzenli olarak listelendiği bir sayfa.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="section">
-        <h3>Javascript</h3>
-        <ul>
-          <li>
-            <a href="https://bestofjs.org/">Best Of JS</a>
-            <p>Javascript proje ve kütüphanelerinin oylandığı en iyilerin listelendiği site.</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="section">
-      <h2>Bulut Bilişim</h2>
-      <ul>
-        <li>
-          <a href="https://medium.com/serverless-turkey/nedir-bu-serverless-637a59a44e81">Nedir bu Serverless?</a>
-          <p>Serverless mimari nedir? IaaS, CaaS, PaaS, FaaS nedir gibi sorulara cevap veren bir makale.</p>
-        </li>
-        <li>
-          <a href="https://medium.com/serverless-turkey/neden-nicin-bu-serverless-2574c8228fd1">Neden/Niçin bu Serverless?</a>
-          <p>Sunucusuz mimari hangi problemleri çözer? Faydaları nelerdir? gibi sorulara cevap veren bir makale.</p>
-        </li>
-        <li>
-          <a href="https://medium.com/serverless-turkey/ne-zaman-bu-serverless-48c70329d197">Ne zaman bu Serverless?</a>
-          <p>Hangi durumlrda Serverless mimariye yönelmemiz gerektiğini anlatan bir makale.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Oyun Geliştime</h2>
-      <ul>
-        <li>
-          <a href="https://cs50.harvard.edu/games/">CS50’s Introduction to Game Development</a>
-          <p>Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi.</p>
-        </li>
-        <li>
-          <a href="https://makegames.tumblr.com/post/1136623767/finishing-a-game">Finishing a Game</a>
-          <p>Oyun geliştirmeye başlamak isteyen geliştiriciler için öğütler.</p>
-        </li>
-         <li>
-          <a href="https://github.com/cstoquer/pixelbox">PixelboxJS</a>
-          <p>İçerisinde dahili olarak sprite, harita, ses efekti ve müzik editörlerini barındıran 2 boyutlu oyun geliştirme kütüphanesi.</p>
-        </li>
-       </ul>
-    </div>
-    <div class="section">
-      <h2>İş & İşçi Bulma</h2>
-      <ul>
-        <li>
-          <a href="https://kodilan.com/">Kod, ilan</a>
-          <p>Türkiye içi yazılımcı ve iş bulma sitesi.</p>
-        </li>
-        <li>
-          <a href="https://twitter.com/bilisim_isleri">Bilişim İşleri</a>
-          <p>Bilişim sektörü ile ilgili ilanlar paylaşan Twitter hesabı.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Metin Yazımı</h2>
-      <ul>
-        <li>
-          <a href="https://zenpen.io/">ZenPen</a>
-          <p>Minimalistik, dikkat dağıtmayan online metin editörü.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Statik Site Oluşturma</h2>
-      <ul>
-        <li>
-          <a href="https://getnikola.com/">Nikola</a>
-          <p>Python ile yazılmış ücretsiz ve açık kaynak statik site oluşturma programı.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Seyehat</h2>
-      <ul>
-        <li>
-          <a href="https://www.rome2rio.com/">Rome2Rio</a>
-          <p>Dünya üzerinde iki adres arasında nasıl seyehat edilebileceğini söyletebilen bir web sitesi.</p>
-        </li>
-        <li>
-          <a href="https://www.google.com/maps/d/u/0/viewer?mid=1OXYU1CRdfYLRTIYIjsOnakf2xy8&ll=38.624311649181756%2C35.12324238355848&z=6">Türkiye'deki Kamp Alanları Listesi</a>
-          <p>Kampyerleri.org kurucusu Niyazi Solak tarafından hazırlanmış
-            ayrıntılı kamp yerleri haritası.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Kripto Para</h2>
-      <ul>
-        <li>
-          <a href="https://medium.com/@altugozturk/kripto-para-piyasas%C4%B1-hakk%C4%B1nda-bilmeniz-gereken-her%C5%9Fey-e6d72f80054">Kripto para piyasası hakkında bilmeniz gereken herşey!</a>
-          <p>Oldukça kapsamlı bir ya</p>
-        </li>
-        <li>
-          <a href="https://playescalation.com/">The Escalation Game</a>
-          <p>Etherium ile oynanan, her oyunda oyunculardan sadece birinin para kaybettigi barbut benzeri oyun.</p>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <h2>Diğer</h2>
-      <ul>
-        <li>
-          <a href="https://www.filezigzag.com/">FileZigZag</a>
-          <p>Herhangi bir dosyayı başka bir formata dönüştürün, yüzlerce çeşit dosyayı destekliyor.</p>
-        </li>
-        <li>
-          <a href="https://apify.com/">Apify</a>
-          <p>Bir çok site için veri toplama scriptlerini barındıran bir market. Kendi scriptlerinizi satarak para da kazanabiliyorsunuz sanırım.</p>
-        </li>
-        <li>
-          <a href="https://onetimesecret.com/">OneTimeSecret</a>
-          <p>Bir defa okunduktan sonra tamamen yok olan mesajlar göndermeyi sağlayan uygulama. Şifre gibi hassas bilgileri gönderirken mesajlaşma tarihçesinde kalmamasını sağlıyor.</p>
-        </li>
-        <li>
-          <a href="https://usethekeyboard.com/">Use The Keyboard</a>
-          <p>Bir çok uygulamanın klavye kısayollarının listelendiği web sitesi.</p>
-        </li>
-      </ul>
-    </div>
-    <p style="text-align: center; margin-top: 2rem;">
-    <a href="https://twitter.com/miratcanbayrak">DM</a> / <a href="https://github.com/miratcan/links">PR</a></p>
-    <script>
-      var anchors = document.getElementsByTagName('a');
-      for (var i=0; i<anchors.length; i++){
-        anchors[i].setAttribute('target', '_blank');
-      }
-    </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-86514140-3');
-    </script>
-  </body>
+<div id="header">
+  <h1>Faydalı Linkler</h1>
+  <p><a
+href="https://docs.google.com/forms/d/e/1FAIpQLSdxpZ_TYzDVaF5QAy-7aqGtoHtscfEGrBpZxANr9M35o5XBrw/viewform">Tavsiye
+Gönder</a></p>
+</div>
+  <table>
+    <tr><th>İsim</th><th>Açıklama</th><th>Tür</th><th>Dil</th></tr>
+    
+      <tr><td class="seperator" colspan=4><h2>Editörler</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.vimgolf.com/">VimGolf</a></td>
+        <td class="desc">Vim'de yetenek geliştirmek için çeşitli bulmacalar</td>
+        <td class="tayp">Browser Oyunu</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://vim-adventures.com/">Vim Adventures</a></td>
+        <td class="desc">Vim öğrernmek için geliştirilmiş oyun</td>
+        <td class="tayp">Browser Oyunu</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Çalışma Düzeni</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://vim-adventures.com/">Tomato Timer</a></td>
+        <td class="desc">Pomodoro düzeninde çalışanlar için zaman tutucu</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://pomodoro-tracker.com/">Pomodoro Tracker</a></td>
+        <td class="desc">Günü Pomodorolara bölerek planlama uygulaması</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>Çoklu Dilde</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://noises.online/">Noises Online</a></td>
+        <td class="desc">Çalışma konsantrasyonunu arttırmak için arka plan sesleri</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://pomodor.app/">Pomodor</a></td>
+        <td class="desc">Çeşitli istatistikler verebilen temiz bir pomodoro uygulaması</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Diğer</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://defonic.com/">Deftonic</a></td>
+        <td class="desc">Çalışma, uyku ya da meditasyon yapmak için arka plan sesleri</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.filezigzag.com/">FileZigZag</a></td>
+        <td class="desc">Herhangi bir dosyayı başka bir formata dönüştürün, yüzlerce çeşit dosyayı destekliyor</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://apify.com/">Apify</a></td>
+        <td class="desc">Bir çok site için veri toplama scriptleri barındıran bir servis.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://onetimesecret.com/">OneTimeSecret</a></td>
+        <td class="desc">Okunduktan sonra tamamen silinen notlar paylaşmanızı sağlayan uygulama. Şifre vs gibi önemli şeyleri paylaşmak için.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://usethekeyboard.com/">Use The Keyboard</a></td>
+        <td class="desc">Bir çok uygulamanın klavye kısayollarının listelendiği web sitesi</td>
+        <td class="tayp">Online Liste</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://audiomass.co/">Audiomass</a></td>
+        <td class="desc">Online bedava ses editörü</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://floorplanlab.com/">Floor Plan Lab</a></td>
+        <td class="desc">İç mekanların krokisinii çizmenizi sağlayan açık kaynaklı uygulama.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://copychar.cc/">CopyChar</a></td>
+        <td class="desc">Özel karakter ve emoji arayıp bulma aracı.</td>
+        <td class="tayp">Online Liste</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Grafik Tasarım</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://html5up.net/">SVG Artista</a></td>
+        <td class="desc">SVG çizimlerini animasyonlara dönüştürür</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://html5up.net/">HTML5 Up</a></td>
+        <td class="desc">Bedava responsive HTML5+CSS3 web site taslakları</td>
+        <td class="tayp">Web Sitesi</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://templated.co/">Templated</a></td>
+        <td class="desc">867 adet bedava HTML5+CSS3 web site taslakları</td>
+        <td class="tayp">Web Sitesi</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.autodraw.com/">Autodraw</a></td>
+        <td class="desc">Yaptığınız çizimleri yapay zeka kullanarak daha önceden yapılmış vektörel çizimlerle değiştiren uygulama.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://excalidraw.com/">Excalidraw</a></td>
+        <td class="desc">El çizimi gibi gözüken şemalar grafikler çizmenizi sağlayan uygulama.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://vectr.com/">Vectr</a></td>
+        <td class="desc">Gelişmiş vektör tabanlı çizim programı</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.piskelapp.com/">PiskelApp</a></td>
+        <td class="desc">Oyun geliştiriciler ve pixel art sevenler için sprite editör</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://spritestack.io/">SpriteStack</a></td>
+        <td class="desc">3Boyutlu pixel art yapmak ve paylaşmak için web uygulamas.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.tinkercad.com/">TinkerCad</a></td>
+        <td class="desc">Web tabanlı ve çocuklar düşünülerek yapılmış 3d editor</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://ditherit.com/">Dither It</a></td>
+        <td class="desc">Gönderdiğiniz fotoğrafları dither eden online uygulama</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://designvault.io/">Design Vault</a></td>
+        <td class="desc">Çeşitli web ve mobil uygulamaların ekran görüntülerinin paylaşıldığı ilham almalık web sitesi.</td>
+        <td class="tayp">Online Liste</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://colorleap.app/">ColorLeap</a></td>
+        <td class="desc">Tarihsel dönemler ve bu dönemlerde kullanılan renk paletleri hakkında bir web sitesi.</td>
+        <td class="tayp">Online Liste</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://components.ai/text-gradients">Text Gradients</a></td>
+        <td class="desc">Metinler için gradyana oluşturma aracı</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Yazılım Geliştirme</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/README.md">Tasarım Desenleri</a></td>
+        <td class="desc">Yusuf Yılmaz'ın oluşturduğu kapsamlı bir tasarım desenleri rehberi</td>
+        <td class="tayp">Online Kitap</td>
+        <td>Türkçe</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.djangotemplatetagsandfilters.com/">Template Tags and Filters</a></td>
+        <td class="desc">Django'nun template tag ve filtrelerinin düzenli olarak listelendiği bir sayfa</td>
+        <td class="tayp">Online Liste</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://bestofjs.org/">Best Of JS</a></td>
+        <td class="desc">Javascript proje ve kütüphanelerinin oylandığı en iyilerin listelendiği site</td>
+        <td class="tayp">Online Liste</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://medium.com/serverless-turkey/nedir-bu-serverless-637a59a44e81">Nedir Bu Serverless</a></td>
+        <td class="desc">Serverless mimari nedir? IaaS, CaaS, PaaS, FaaS nedir gibi sorulara cevap veren bir makale</td>
+        <td class="tayp">Makale</td>
+        <td>Türkçe</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://medium.com/serverless-turkey/neden-nicin-bu-serverless-2574c8228fd1">Niçin Bu Serverless</a></td>
+        <td class="desc">Sunucusuz mimari hangi problemleri çözer? Faydaları nelerdir? gibi sorulara cevap veren bir makale</td>
+        <td class="tayp">Makale</td>
+        <td>Türkçe</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://medium.com/serverless-turkey/ne-zaman-bu-serverless-48c70329d197">Ne Zaman Serverless</a></td>
+        <td class="desc">Hangi durumlrda Serverless mimariye yönelmemiz gerektiğini anlatan bir makale</td>
+        <td class="tayp">Makale</td>
+        <td>Türkçe</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://cs50.harvard.edu/games/2018/">CS50’s
+Introduction to Game Development</a></td>
+        <td class="desc">Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi.</td>
+        <td class="tayp">Web Sitesi</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://makegames.tumblr.com/post/1136623767/finishing-a-game">Finishing a Game</a></td>
+        <td class="desc">Oyun geliştirmeye başlamak isteyen geliştiriciler için öğütler</td>
+        <td class="tayp">Makale</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://github.com/cstoquer/pixelbox">PixelboxJS</a></td>
+        <td class="desc">İçerisinde dahili olarak sprite, harita, ses efekti ve müzik editörlerini barındıran 2 boyutlu oyun geliştirme kütüphanesi</td>
+        <td class="tayp">Web Sitesi</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://github.com/maidis/kod-olarak-matematik-cpp">Kod Olarak Matematik</a></td>
+        <td class="desc">Karmaşık matematiksel formüllerin koda nasıl dökülebileceğini anlatan bir makale</td>
+        <td class="tayp">Makale</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://exploringjs.com/deep-js/toc.html">Deep JS</a></td>
+        <td class="desc">Dr. Axel Rauschmayer'ın yazdığı Deep JavaScript: Theory and techniques kitabının free online versiyonu.</td>
+        <td class="tayp">EKitap</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://glennstovall.com/zero-to-10/">7 Day Writing Course For Develpers</a></td>
+        <td class="desc">Yazılımcılar için 7 günlük blog yazma kursu.</td>
+        <td class="tayp">Eposta Servisi</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://dev.to/o_numero10/how-to-choose-your-next-side-project-fkl">How to Choose Your Next Side Project</a></td>
+        <td class="desc">Bir sonraki side projenizi seçerken nelere dikkat etmeliyiz tadında makale.</td>
+        <td class="tayp">Makale</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://probabletrain.itch.io/dungeon-scrawl">Dungeon Scrawl</a></td>
+        <td class="desc">Oyun geliştiriciler için harita yapma uygulaması</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://github.com/dennybritz/reinforcement-learning">Reinforcement Learning</a></td>
+        <td class="desc">Reinforcement learning ile ilgili popüller algoritmaları konu edinen kod, soru ve cevaplar barındıran wiki.</td>
+        <td class="tayp">E-Kitap</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://demoman.net/?a=trig-for-games">Trigonometry for Games</a></td>
+        <td class="desc">Oyun geliştiricileri için trigonometri dersi veren online uygulama.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://github.com/lindelof/awesome-web-effect">Awesome Web Effect</a></td>
+        <td class="desc">Web sayfaları için bir çok css ve javascipt efektlerinin listelendiği sayfa.</td>
+        <td class="tayp">Online Liste</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://devhints.io/">Rico's cheatsheets</a></td>
+        <td class="desc">Yazılım geliştirme ile ilgili bir çok hile kağıdını barındırıyor.</td>
+        <td class="tayp">Online Liste</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://github.com/merveenoyan/shell-cheatsheet">Shell Cheat Sheet</a></td>
+        <td class="desc">Merve Noyan'ın hazırladığı Linux Shell kullanımını anlatan kopya kağıdı.</td>
+        <td class="tayp">Kopya Kağıdı</td>
+        <td>Türkçe</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://github.com/grangier/python-goose">Python Goose</a></td>
+        <td class="desc">Verilen linkten makale metni sökmeye yarayan Python kütüphanesi.</td>
+        <td class="tayp">Kütüphane</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>İş İşçi Bulma</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://kodilan.com/">Kod İlan</a></td>
+        <td class="desc">Türkiye içi yazılımcı ve iş bulma sitesi</td>
+        <td class="tayp">Online Liste</td>
+        <td>Türkçe</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://twitter.com/bilisim_isleri">Bilişim İşleri</a></td>
+        <td class="desc">Bilişim sektörü ile ilgili ilanlar paylaşan Twitter hesabı</td>
+        <td class="tayp">Sosyal Medya Hesabı</td>
+        <td>Türkçe</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.toptal.com/">Toptal</a></td>
+        <td class="desc">Freelance iş ve işçi bulma platformu.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://soshace.com/">Soshace</a></td>
+        <td class="desc">Freelance iş ve işçi bulma platformu.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.freelancer.com/">Freelancer</a></td>
+        <td class="desc">Freelance iş ve işçi bulma platformu.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.upwork.com/">Upwork</a></td>
+        <td class="desc">Freelance iş ve işçi bulma platformu.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Metin Yazımı</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://zenpen.io/">ZenPen</a></td>
+        <td class="desc">Minimalistik, dikkat dağıtmayan online metin editörü</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Seyehat</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.rome2rio.com/">Rome2Rio</a></td>
+        <td class="desc">Dünya üzerinde iki adres arasında nasıl seyehat edilebileceğini söyletebilen bir web sitesi</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>Çoklu Dilde</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.google.com/maps/d/u/0/viewer?mid=1OXYU1CRdfYLRTIYIjsOnakf2xy8&ll=38.624311649181756%2C35.12324238355848&z=6">Türkiye'deki Kamp Alanları Listesi</a></td>
+        <td class="desc">http://kampyerleri.org/ kurucusu Niyazi Solak tarafından hazırlanmış ayrıntılı kamp yerleri haritası</td>
+        <td class="tayp">Online Liste</td>
+        <td>Türkçe</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Kripto Para</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://medium.com/@altugozturk/kripto-para-piyasas%C4%B1-hakk%C4%B1nda-bilmeniz-gereken-her%C5%9Fey-e6d72f80054">Kripto para piyasası hakkında bilmeniz gereken herşey</a></td>
+        <td class="desc">Kriptoparalar hakkınd geniş yelpazede bilgi sunan bir makale</td>
+        <td class="tayp">Makale</td>
+        <td>Türkçe</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://playescalation.com/">The Escalation Game</a></td>
+        <td class="desc">Etherium ile oynanan, her oyunda oyunculardan sadece birinin para kaybettigi barbut benzeri oyun</td>
+        <td class="tayp">Browser Oyunu</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://blockdelta.io/6-ways-to-keep-emotions-under-control-when-trading-cryptocurrencies/">Keep Emotions Under Control When Trading Cryptocurrencies</a></td>
+        <td class="desc">Kriptoparalar ile borsa oynarken duygularımızı nasıl kontrol altında tutacağımızı anlatan makale</td>
+        <td class="tayp">Makale</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Kişisel Gelişim</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://daylio.webflow.io/">Daylio</a></td>
+        <td class="desc">Kişisel Ruh halinizi takip ederek kendinizi daha iyi tanımanızı sağlıyor.</td>
+        <td class="tayp">Mobil Uygulama</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://hackernoon.com/biohack-your-intelligence-now-or-become-obsolete-97cdd15e395f">How to biohack your intelligence</a></td>
+        <td class="desc">Zeka seviyenizi biohack teknikleri ile arttırma yollarını anlatan çok kapsamlı bir makale</td>
+        <td class="tayp">Makale</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.uclahealth.org/marc/mindful-meditations">Free Guided Meditations</a></td>
+        <td class="desc">Bedava rehberli meditasyon ses kayıtları.</td>
+        <td class="tayp">Online Liste</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Evebeynlik</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.fitfatherproject.com/">Fit Father Project</a></td>
+        <td class="desc">Babalar için düşünülmüş fit kalma ve spor yapma planları</td>
+        <td class="tayp">Web Sitesi</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Girişimcilik</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://www.failory.com/">Failory</a></td>
+        <td class="desc">Başarısız olmuş startup'ların hikayelerinin paylaşıldığı web sitesi.</td>
+        <td class="tayp">Web Sitesi</td>
+        <td>İngilizce</td>
+      </tr>
+      
+      <tr>
+        <td class="title"><a href="https://new.admitad.com/tr/webmaster/traffic-types/">Admitad</a></td>
+        <td class="desc">Affiliate linkler paylaşabilir, verdiğiniz linkler üzerinden alışveriş yapan olursa pay alabilirsiniz.</td>
+        <td class="tayp">Web Uygulaması</td>
+        <td>İngilizce</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2>Sağlık</h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="http://fehmicansaglam.net/saglikli-yasam.html">Masabaşı Çalışanlar İçin Sağlıklı Yaşama Rehberi</a></td>
+        <td class="desc">Oldukça kapsamlı bir makale. Beslenmeden motivasyona bütün konulara değinmiş.</td>
+        <td class="tayp">Makale</td>
+        <td>Türkçe</td>
+      </tr>
+      
+    
+      <tr><td class="seperator" colspan=4><h2></h2></td></tr>
+      
+      <tr>
+        <td class="title"><a href="https://previewed.app/">Previewed</a></td>
+        <td class="desc">Geliştirdiğiniz uygulama için marketting materialleri oluşturmanızı sağlayan araç.</td>
+        <td class="tayp"></td>
+        <td></td>
+      </tr>
+      
+    
+  </table>
+  <div id="sfc54hx5t2nfx3t1w6qahduxu49gk3x3g2d"></div><script type="text/javascript" src="https://counter11.stat.ovh/private/counter.js?c=54hx5t2nfx3t1w6qahduxu49gk3x3g2d&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="hit counter"><img src="https://counter11.stat.ovh/private/freecounterstat.php?c=54hx5t2nfx3t1w6qahduxu49gk3x3g2d" border="0" title="hit counter" alt="hit counter"></a></noscript>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-86514140-3');
+  </script>
+</body>
 </html>

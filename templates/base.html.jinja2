@@ -1,0 +1,79 @@
+<html>
+<head>
+    <style>
+        body {
+          background: #ccc;
+        }
+        h1 {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            text-shadow: 2px 2px white;
+        }
+        #sections {
+            column-count: 4;
+            column-gap: 1em;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+        .section {
+            display: inline-block;
+            margin: 0 0 1em;
+            width: 100%;
+        }
+        h3 {
+            margin: 0;
+            border-bottom: dashed 1px gray;
+        }
+        ul {
+            margin: 1rem 0 0 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        ul li a {
+            text-decoration: none;
+        }
+        ul li p {
+            margin-top: 0rem;
+            font-size: 80%;
+        } 
+        ul li:last p {
+            margin-bottom: 0;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+                column-count: 2;
+            }
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Links</h1>
+    <p style="text-align: center;">Pull request açmak için <a
+    href="https://github.com/miratcan/links">buraya</a>.</p>
+    <div id="sections">
+    {% for section, links in sections.items() %}
+    <div class="section">
+    <h3>{{ section }}</h3>
+    <ul>
+    {% for name, properties in links.items() %}
+        <li>
+        <a href="{{ properties.url }}">{{ name }}</a>
+        <p>{{ properties.desc}}</p>
+        </li>
+    {% endfor %}
+    </ul>
+    </div>
+    {% endfor %}
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86514140-3');
+    </script>
+</body>
+</html>
