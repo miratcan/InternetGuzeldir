@@ -1,8 +1,9 @@
-from jinja2 import Environment, FileSystemLoader, select_autoescape
-import urllib.request
-import csv
 import codecs
+import csv
+import urllib.request
 from collections import defaultdict
+
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 URL = "https://docs.google.com/spreadsheets/u/3/d/" \
           "1mK5BycfvwvuPcekTKIMhPKtsRa0EXe-dGeQsvok5wz4/pub?output=csv"
@@ -19,7 +20,7 @@ next(csv_file)
 sections = defaultdict(dict)
 
 for line in csv_file:
-    title, url, desc, category, tayp, lang = \
+    title, url, desc, category, tayp, lang, source = \
         line
     sections[category][title] = {
         'url': url,
