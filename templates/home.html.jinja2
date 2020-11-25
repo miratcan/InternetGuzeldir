@@ -3,67 +3,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
   <style>
     body  {
       font-family: sans-serif;
-      background: #000;
-      color: #d6d6d6;
+      background: #ccc;
+      color: #333;
       margin: 0 auto;
       padding: 10px;
-      max-width: 800px;
     }
-    #header { margin-bottom: 50px;}
-    h1      { text-align: center; }
-    h2      { text-align:center; }
-    table {
-      background:#272822;
-      border-radius: .5rem;
-      padding:0;
-      margin: 0;
-      border-collapse:collapse;
-      font-size:14px;
-      width: 100%;
+    h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
+    #panel {
+        width: 18%;
+        height: 100%;
+        position: fixed;
+        padding: 1rem;
+        overflow:scroll;
     }
-    th {
-      text-align: left;
+    #panel li {
+        margin: 0 0 1rem 0;
     }
-    td, th {
-      vertical-align:top;
-      padding: 10px;
-      border-bottom:1px dashed #75715E;
+    #sections {
+        width: 78%;
+        float:right;
     }
-    tr:last-child td, tr:last-child th {
-      border-bottom: none;
+    .section {
+      margin: 1rem;
+      padding: 0rem;
     }
-    a {
-      color: #e87d3e;
-      text-decoration:none
+    .section .inner {
+        margin: 1rem 0 0 1rem;
+        padding: 1rem 0 1rem 1rem;
+        border-left: 1px solid gray;
+    }
+    .section:first-child { margin-top: 0; }
+    .section:last-child { margin-bottom: 0; }
+    ul.links {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-family: serif;
+    }
+    ul.links li {
+        margin: 0 0 .5rem 0;
     }
   </style>
 </head>
 <body>
 <div id="header">
+
+  <div id="panel">
   <h1>Faydalı Linkler</h1>
-  <p><a
-href="https://docs.google.com/forms/d/e/1FAIpQLSdxpZ_TYzDVaF5QAy-7aqGtoHtscfEGrBpZxANr9M35o5XBrw/viewform">Tavsiye
-Gönder</a></p>
-</div>
-{% for section, links in sections.items() %}
-  <div class="section">
-  <h2>{{section}}</h2>
-  <table>
-    <tr><th>İsim</th><th>Açıklama</th><th>Tür</th><th>Dil</th></tr>
-      {% for name, properties in links.items() %}
-      <tr>
-        <td class="title"><a href="{{ properties.url }}">{{ name }}</a></td>
-        <td class="desc">{{properties.desc}}</td>
-        <td class="tayp">{{properties.tayp}}</td>
-        <td>{{properties.lang}}</td>
-      </tr>
-      {% endfor %}
-  </table>
-  </div>
+
+  <ul>
+  {% for section_title, section_props in sections.sections.items() recursive %}
+
+    <li class="level{{loop.depth + 1}}"><a href="#{{ section_props.slug }}">{{
+    section_title
+    }}</a></li>
+    {% if section_props.sections %}
+      <ul>
+      {{ loop(section_props.sections.items()) }}
+      </ul>
+    {% endif %}
+    </li>
   {% endfor %}
+  </ul>
+  </div>
+  <div id="sections">
+  {% for section_title, section_props in sections.sections.items() recursive %}
+  <div class="section level{{ loop.depth }}" id="{{ section_props.slug }}">
+    <h{{loop.depth + 1}}>{{ section_title }}</h2>
+    <div class="inner">
+    {% if section_props.links %}
+    <ul class="links">
+      {% for link in section_props.links %}
+      <li class="link"><a href="{{ link.url }}">{{ link.title }}</a>: {{link
+      .desc}}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+    {% if section_props.sections %}
+      {{ loop(section_props.sections.items()) }}
+    {% endif %}
+    </div>
+    </div>
+  {% endfor %}
+  </div>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
   <script>
@@ -72,5 +98,6 @@ Gönder</a></p>
     gtag('js', new Date());
     gtag('config', 'UA-86514140-3');
   </script>
+
 </body>
 </html>
