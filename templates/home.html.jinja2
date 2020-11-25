@@ -55,12 +55,12 @@
             }
 
             .section {
-                margin: 1rem;
-                padding: 0rem;
+                margin: 0;
+                padding: 0;
             }
 
             .section .inner {
-                margin: 1rem 0 0 1rem;
+                margin: 1rem 0 1rem 1rem;
                 padding: 1rem 0 1rem 1rem;
                 border-left: 1px solid gray;
             }
@@ -84,6 +84,9 @@
                 display: flex;
                 flex-direction: row;
                 margin: 0 0 .5rem 0;
+            }
+            ul.links li:last-child {
+                margin: 0;
             }
 
             ul.links li .favicon {
@@ -114,13 +117,11 @@
                 display: block;
               }
               body {
-                padding: 0;
+                padding: .5rem;
               }
-              .section {
-                margin: .5rem;
-              }
+              .section {}
               .section .inner {
-                margin: .5rem 0 0 .5rem;
+                margin: .5rem 0 .5rem .5rem;
                 padding: .5rem 0 .5rem .5rem;
               }
             }
