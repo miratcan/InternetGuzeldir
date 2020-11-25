@@ -31,7 +31,7 @@ def get_sections(csv_lines, category_separator=DEFAULT_CATEGORY_SEPARATOR):
     csv_reader = csv.reader(csv_lines)
 
     sections = {"links": [], "sections": {}, "title": "root", "path": "/"}
-    for line in csv_reader:
+    for line in csv_reader  :
         title, url, desc, category_str, tayp, lang, source = line
         category_path = [part.strip() for part in category_str.split(
                          category_separator)]
