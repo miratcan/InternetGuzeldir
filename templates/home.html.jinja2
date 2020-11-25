@@ -16,7 +16,7 @@
                 display: flex;
                 flex-direction: column;
                 font-family: 'Garamond', 'Georgia', serif;
-                font-size: 18px;
+                font-size: 1rem;
             }
 
             body,
@@ -85,13 +85,19 @@
 
             a {
                 color: #004b6b;
-                border-bottom: 1px dotted #004b6b;
-                text-decoration: none;
+                text-decoration: underline;
+                transition: letter-spacing .5s ease;
             }
 
             a:hover {
-                border-bottom: 1px solid #004b6b;
+                letter-spacing: 1px;
             }
+
+            .favicon {
+              width: 16px;
+              height: 16px;
+            }
+
         </style>
     </head>
     <body>
@@ -119,7 +125,11 @@
                                 <ul class="links">
                                 {% for link in section_props.links %}
                                     <li class="link">
-                                        <a target="_blank" href="{{ link.url }}">{{ link.title}}</a>: {{link.desc}}
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" /> <a
+                                        target="_blank"
+                                        href="{{
+                                        link.url
+                                        }}">{{ link.title}}</a>: {{link.desc}}
                                     </li>
                                 {% endfor %}
                                 </ul>
