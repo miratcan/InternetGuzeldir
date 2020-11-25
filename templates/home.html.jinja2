@@ -1,103 +1,118 @@
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <style>
+        html {  scroll-behavior: smooth;}
+         body  {
 
-  <style>
-    body  {
-      font-family: sans-serif;
-      background: #ccc;
-      color: #333;
-      margin: 0 auto;
-      padding: 10px;
-    }
-    h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
-    #panel {
-        width: 18%;
-        height: 100%;
-        position: fixed;
-        padding: 1rem;
-        overflow:scroll;
-    }
-    #panel li {
-        margin: 0 0 1rem 0;
-    }
-    #sections {
-        width: 78%;
-        float:right;
-    }
-    .section {
-      margin: 1rem;
-      padding: 0rem;
-    }
-    .section .inner {
-        margin: 1rem 0 0 1rem;
-        padding: 1rem 0 1rem 1rem;
-        border-left: 1px solid gray;
-    }
-    .section:first-child { margin-top: 0; }
-    .section:last-child { margin-bottom: 0; }
-    ul.links {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        font-family: serif;
-    }
-    ul.links li {
-        margin: 0 0 .5rem 0;
-    }
-  </style>
-</head>
-<body>
-<div id="header">
+         font-family: sans-serif;
+         background: #fff;
+         color: #3e4349;
+         margin: 0 auto;
+         padding: 1rem;
+         display: flex;
+         flex-direction: column;
+         font-family: 'Garamond', 'Georgia', serif;
+         font-size: 18px;
+         }
+         body, p, li {
+         line-height: 1.4;
+         }
+         h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
+         main {
+            flex-grow: 1;
+            display: flex; flex-direction: row;
+         }
+         #aside {
+         margin-right: 2rem;
+         }
+         #aside li {
+         margin: 0;
+         list-style: square;
+         }
+         #sections {
+         flex-grow: 1;
+         }
+         .section {
+         margin: 1rem;
+         padding: 0rem;
+         }
+         .section .inner {
+         margin: 1rem 0 0 1rem;
+         padding: 1rem 0 1rem 1rem;
+         border-left: 1px solid gray;
+         }
+         .section:first-child { margin-top: 0; }
+         .section:last-child { margin-bottom: 0; }
+         ul.links {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         font-family: serif;
+         }
+         ul.links li {
+         margin: 0 0 .5rem 0;
+         }
+         a{
+         color: #004b6b;
+         border-bottom: 1px dotted #004b6b;
+         text-decoration: none;
+         }
+         a:hover {
+         border-bottom: 1px solid #004b6b;
+         }
 
-  <div id="panel">
-  <h1>Faydalı Linkler</h1>
-
-  <ul>
-  {% for section_title, section_props in sections.sections.items() recursive %}
-
-    <li class="level{{loop.depth + 1}}"><a href="#{{ section_props.slug }}">{{
-    section_title
-    }}</a></li>
-    {% if section_props.sections %}
-      <ul>
-      {{ loop(section_props.sections.items()) }}
-      </ul>
-    {% endif %}
-    </li>
-  {% endfor %}
-  </ul>
-  </div>
-  <div id="sections">
-  {% for section_title, section_props in sections.sections.items() recursive %}
-  <div class="section level{{ loop.depth }}" id="{{ section_props.slug }}">
-    <h{{loop.depth + 1}}>{{ section_title }}</h2>
-    <div class="inner">
-    {% if section_props.links %}
-    <ul class="links">
-      {% for link in section_props.links %}
-      <li class="link"><a href="{{ link.url }}">{{ link.title }}</a>: {{link
-      .desc}}</li>
-      {% endfor %}
-      {% endif %}
-    </ul>
-    {% if section_props.sections %}
-      {{ loop(section_props.sections.items()) }}
-    {% endif %}
-    </div>
-    </div>
-  {% endfor %}
-  </div>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-86514140-3');
-  </script>
-
-</body>
+      </style>
+   </head>
+   <body>
+       <main style="flex-grow: 1; display: flex; flex-direction: row;">
+      <div id="aside">
+         <ul>
+            {% for section_title, section_props in sections.sections.items() recursive %}
+            <li class="level{{loop.depth + 1}}"><a href="#{{ section_props.slug }}">{{
+               section_title
+               }}</a>
+            </li>
+            {% if section_props.sections %}
+            <ul>
+               {{ loop(section_props.sections.items()) }}
+            </ul>
+            {% endif %}
+            </li>
+            {% endfor %}
+         </ul>
+      </div>
+      <div id="sections">
+         {% for section_title, section_props in sections.sections.items() recursive %}
+         <div class="section level{{ loop.depth }}" id="{{ section_props.slug }}">
+            <h{{loop.depth + 1}}>{{ section_title }}</h2>
+            <div class="inner">
+               {% if section_props.links %}
+               <ul class="links">
+                  {% for link in section_props.links %}
+                  <li class="link"><a href="{{ link.url }}">{{ link.title }}</a>: {{link
+                     .desc}}
+                  </li>
+                  {% endfor %}
+                  {% endif %}
+               </ul>
+               {% if section_props.sections %}
+               {{ loop(section_props.sections.items()) }}
+               {% endif %}
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'UA-86514140-3');
+      </script>
+      </main>
+   </body>
 </html>
