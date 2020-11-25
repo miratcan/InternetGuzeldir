@@ -17,6 +17,7 @@
                 flex-direction: column;
                 font-family: 'Garamond', 'Georgia', serif;
                 font-size: 1rem;
+                #max-width: 800px;
             }
 
             body,
@@ -80,7 +81,22 @@
             }
 
             ul.links li {
+                display: flex;
+                flex-direction: row;
                 margin: 0 0 .5rem 0;
+            }
+
+            ul.links li .favicon {
+              width: 16px;
+              height: 16px;
+              display: flex;
+              margin: 3px 5px 0 0;
+            }
+
+            ul.links li p {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
             }
 
             a {
@@ -93,10 +109,6 @@
                 letter-spacing: 1px;
             }
 
-            .favicon {
-              width: 16px;
-              height: 16px;
-            }
 
         </style>
     </head>
@@ -125,11 +137,14 @@
                                 <ul class="links">
                                 {% for link in section_props.links %}
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
+                                        <p>
+                                        <a
                                         target="_blank"
                                         href="{{
                                         link.url
-                                        }}">{{ link.title}}</a>: {{link.desc}}
+                                        }}">{{ link.title}}</a> {{link.desc}}
+                                        </p>
                                     </li>
                                 {% endfor %}
                                 </ul>

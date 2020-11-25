@@ -17,6 +17,7 @@
                 flex-direction: column;
                 font-family: 'Garamond', 'Georgia', serif;
                 font-size: 1rem;
+                #max-width: 800px;
             }
 
             body,
@@ -80,24 +81,34 @@
             }
 
             ul.links li {
+                display: flex;
+                flex-direction: row;
                 margin: 0 0 .5rem 0;
+            }
+
+            ul.links li .favicon {
+              width: 16px;
+              height: 16px;
+              display: flex;
+              margin: 3px 5px 0 0;
+            }
+
+            ul.links li p {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
             }
 
             a {
                 color: #004b6b;
                 text-decoration: underline;
                 transition: letter-spacing .5s ease;
-
             }
 
             a:hover {
-                letter-spacing: 2px;
+                letter-spacing: 1px;
             }
 
-            .favicon {
-              width: 16px;
-              height: 16px;
-            }
 
         </style>
     </head>
@@ -300,15 +311,21 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.vimgolf.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.vimgolf.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.vimgolf.com/">VimGolf</a>: Vim'de yetenek geliştirmek için çeşitli bulmacalar
+                                        href="https://www.vimgolf.com/">VimGolf</a> Vim'de yetenek geliştirmek için çeşitli bulmacalar
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://vim-adventures.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://vim-adventures.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://vim-adventures.com/">Vim Adventures</a>: Vim öğrernmek için geliştirilmiş oyun
+                                        href="https://vim-adventures.com/">Vim Adventures</a> Vim öğrernmek için geliştirilmiş oyun
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -322,33 +339,48 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://shapez.io/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://shapez.io/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://shapez.io/">Shapez.io</a>: Javascript ile yazılmış Factorio benzeri oyun. 
+                                        href="https://shapez.io/">Shapez.io</a> Javascript ile yazılmış Factorio benzeri oyun. 
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://designpatternsgame.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://designpatternsgame.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://designpatternsgame.com/">Design Patterns Game</a>: Javascript ile yazılmış tasarım desenlerini tanıma üzerine bir oyun.
+                                        href="https://designpatternsgame.com/">Design Patterns Game</a> Javascript ile yazılmış tasarım desenlerini tanıma üzerine bir oyun.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=http://alexnisnevich.github.io/untrusted/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=http://alexnisnevich.github.io/untrusted/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="http://alexnisnevich.github.io/untrusted/">Untrusted</a>: Oyunun kodları üzerinde değişiklik yaparak seviyeleri geçmeniz gereken roguelike oyun.
+                                        href="http://alexnisnevich.github.io/untrusted/">Untrusted</a> Oyunun kodları üzerinde değişiklik yaparak seviyeleri geçmeniz gereken roguelike oyun.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=http://adarkroom.doublespeakgames.com/?lang=tr" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=http://adarkroom.doublespeakgames.com/?lang=tr" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="http://adarkroom.doublespeakgames.com/?lang=tr">A Dark Room</a>: Çok basit başlayan ancak sonrasında inanılmaz derinliğe ulaşan metin macera oyunu.
+                                        href="http://adarkroom.doublespeakgames.com/?lang=tr">A Dark Room</a> Çok basit başlayan ancak sonrasında inanılmaz derinliğe ulaşan metin macera oyunu.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://hextris.io/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://hextris.io/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://hextris.io/">Hextris</a>: Tetris benzeri bulmaca-aksiyon oyunu.
+                                        href="https://hextris.io/">Hextris</a> Tetris benzeri bulmaca-aksiyon oyunu.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -368,39 +400,57 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://vim-adventures.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://vim-adventures.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://vim-adventures.com/">Tomato Timer</a>: Pomodoro düzeninde çalışanlar için zaman tutucu
+                                        href="https://vim-adventures.com/">Tomato Timer</a> Pomodoro düzeninde çalışanlar için zaman tutucu
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://pomodoro-tracker.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://pomodoro-tracker.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://pomodoro-tracker.com/">Pomodoro Tracker</a>: Günü Pomodorolara bölerek planlama uygulaması
+                                        href="https://pomodoro-tracker.com/">Pomodoro Tracker</a> Günü Pomodorolara bölerek planlama uygulaması
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://noises.online/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://noises.online/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://noises.online/">Noises Online</a>: Çalışma konsantrasyonunu arttırmak için arka plan sesleri
+                                        href="https://noises.online/">Noises Online</a> Çalışma konsantrasyonunu arttırmak için arka plan sesleri
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://defonic.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://defonic.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://defonic.com/">Deftonic</a>: Çalışma, uyku ya da meditasyon yapmak için arka plan sesleri
+                                        href="https://defonic.com/">Deftonic</a> Çalışma, uyku ya da meditasyon yapmak için arka plan sesleri
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://pomodor.app/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://pomodor.app/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://pomodor.app/">Pomodor</a>: Çeşitli istatistikler verebilen temiz bir pomodoro uygulaması
+                                        href="https://pomodor.app/">Pomodor</a> Çeşitli istatistikler verebilen temiz bir pomodoro uygulaması
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://soundscape.world/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://soundscape.world/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://soundscape.world/">Soundscape World</a>: Çalışırken konsantrasonunuzu arttracak müzik döngüleri inşa etmenizi sağlıyor.
+                                        href="https://soundscape.world/">Soundscape World</a> Çalışırken konsantrasonunuzu arttracak müzik döngüleri inşa etmenizi sağlıyor.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -416,27 +466,39 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://svgartista.net/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://svgartista.net/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://svgartista.net/">SVG Artista</a>: SVG çizimlerini animasyonlara dönüştürür
+                                        href="https://svgartista.net/">SVG Artista</a> SVG çizimlerini animasyonlara dönüştürür
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.tinkercad.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.tinkercad.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.tinkercad.com/">TinkerCad</a>: Web tabanlı ve çocuklar düşünülerek yapılmış 3d editor
+                                        href="https://www.tinkercad.com/">TinkerCad</a> Web tabanlı ve çocuklar düşünülerek yapılmış 3d editor
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://designvault.io/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://designvault.io/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://designvault.io/">Design Vault</a>: Çeşitli web ve mobil uygulamaların ekran görüntülerinin paylaşıldığı ilham almalık web sitesi.
+                                        href="https://designvault.io/">Design Vault</a> Çeşitli web ve mobil uygulamaların ekran görüntülerinin paylaşıldığı ilham almalık web sitesi.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://components.ai/text-gradients" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://components.ai/text-gradients" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://components.ai/text-gradients">Text Gradients</a>: Metinler için gradyana oluşturma aracı
+                                        href="https://components.ai/text-gradients">Text Gradients</a> Metinler için gradyana oluşturma aracı
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -450,15 +512,21 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://html5up.net/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://html5up.net/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://html5up.net/">HTML5 Up</a>: Bedava responsive HTML5+CSS3 web site taslakları
+                                        href="https://html5up.net/">HTML5 Up</a> Bedava responsive HTML5+CSS3 web site taslakları
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://templated.co/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://templated.co/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://templated.co/">Templated</a>: 867 adet bedava HTML5+CSS3 web site taslakları
+                                        href="https://templated.co/">Templated</a> 867 adet bedava HTML5+CSS3 web site taslakları
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -474,45 +542,66 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.autodraw.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.autodraw.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.autodraw.com/">Autodraw</a>: Yaptığınız çizimleri yapay zeka kullanarak daha önceden yapılmış vektörel çizimlerle değiştiren uygulama.
+                                        href="https://www.autodraw.com/">Autodraw</a> Yaptığınız çizimleri yapay zeka kullanarak daha önceden yapılmış vektörel çizimlerle değiştiren uygulama.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://excalidraw.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://excalidraw.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://excalidraw.com/">Excalidraw</a>: El çizimi gibi gözüken şemalar grafikler çizmenizi sağlayan uygulama.
+                                        href="https://excalidraw.com/">Excalidraw</a> El çizimi gibi gözüken şemalar grafikler çizmenizi sağlayan uygulama.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://vectr.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://vectr.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://vectr.com/">Vectr</a>: Gelişmiş vektör tabanlı çizim programı
+                                        href="https://vectr.com/">Vectr</a> Gelişmiş vektör tabanlı çizim programı
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.piskelapp.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.piskelapp.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.piskelapp.com/">PiskelApp</a>: Oyun geliştiriciler ve pixel art sevenler için sprite editör
+                                        href="https://www.piskelapp.com/">PiskelApp</a> Oyun geliştiriciler ve pixel art sevenler için sprite editör
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://spritestack.io/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://spritestack.io/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://spritestack.io/">SpriteStack</a>: 3Boyutlu pixel art yapmak ve paylaşmak için web uygulamas.
+                                        href="https://spritestack.io/">SpriteStack</a> 3Boyutlu pixel art yapmak ve paylaşmak için web uygulamas.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://ditherit.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://ditherit.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://ditherit.com/">Dither It</a>: Gönderdiğiniz fotoğrafları dither eden online uygulama
+                                        href="https://ditherit.com/">Dither It</a> Gönderdiğiniz fotoğrafları dither eden online uygulama
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://tinypng.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://tinypng.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://tinypng.com/">Tiny Png</a>: Online png sıkıştırıcı
+                                        href="https://tinypng.com/">Tiny Png</a> Online png sıkıştırıcı
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -528,15 +617,21 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://colorleap.app/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://colorleap.app/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://colorleap.app/">ColorLeap</a>: Tarihsel dönemler ve bu dönemlerde kullanılan renk paletleri hakkında bir web sitesi.
+                                        href="https://colorleap.app/">ColorLeap</a> Tarihsel dönemler ve bu dönemlerde kullanılan renk paletleri hakkında bir web sitesi.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=http://skuawk.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=http://skuawk.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="http://skuawk.com/">Skuawk</a>: Küratörler tarafındana seçilmiş kamu kullanımına açık fotoğraflar paylaşan web sitesi.
+                                        href="http://skuawk.com/">Skuawk</a> Küratörler tarafındana seçilmiş kamu kullanımına açık fotoğraflar paylaşan web sitesi.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -556,63 +651,93 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/README.md" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/README.md" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/README.md">Tasarım Desenleri</a>: Yusuf Yılmaz'ın oluşturduğu kapsamlı bir tasarım desenleri rehberi
+                                        href="https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/README.md">Tasarım Desenleri</a> Yusuf Yılmaz'ın oluşturduğu kapsamlı bir tasarım desenleri rehberi
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://medium.com/serverless-turkey/nedir-bu-serverless-637a59a44e81" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://medium.com/serverless-turkey/nedir-bu-serverless-637a59a44e81" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://medium.com/serverless-turkey/nedir-bu-serverless-637a59a44e81">Nedir Bu Serverless</a>: Serverless mimari nedir? IaaS, CaaS, PaaS, FaaS nedir gibi sorulara cevap veren bir makale
+                                        href="https://medium.com/serverless-turkey/nedir-bu-serverless-637a59a44e81">Nedir Bu Serverless</a> Serverless mimari nedir? IaaS, CaaS, PaaS, FaaS nedir gibi sorulara cevap veren bir makale
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://medium.com/serverless-turkey/neden-nicin-bu-serverless-2574c8228fd1" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://medium.com/serverless-turkey/neden-nicin-bu-serverless-2574c8228fd1" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://medium.com/serverless-turkey/neden-nicin-bu-serverless-2574c8228fd1">Niçin Bu Serverless</a>: Sunucusuz mimari hangi problemleri çözer? Faydaları nelerdir? gibi sorulara cevap veren bir makale
+                                        href="https://medium.com/serverless-turkey/neden-nicin-bu-serverless-2574c8228fd1">Niçin Bu Serverless</a> Sunucusuz mimari hangi problemleri çözer? Faydaları nelerdir? gibi sorulara cevap veren bir makale
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://medium.com/serverless-turkey/ne-zaman-bu-serverless-48c70329d197" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://medium.com/serverless-turkey/ne-zaman-bu-serverless-48c70329d197" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://medium.com/serverless-turkey/ne-zaman-bu-serverless-48c70329d197">Ne Zaman Serverless</a>: Hangi durumlrda Serverless mimariye yönelmemiz gerektiğini anlatan bir makale
+                                        href="https://medium.com/serverless-turkey/ne-zaman-bu-serverless-48c70329d197">Ne Zaman Serverless</a> Hangi durumlrda Serverless mimariye yönelmemiz gerektiğini anlatan bir makale
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/maidis/kod-olarak-matematik-cpp" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/maidis/kod-olarak-matematik-cpp" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://github.com/maidis/kod-olarak-matematik-cpp">Kod Olarak Matematik</a>: Karmaşık matematiksel formüllerin koda nasıl dökülebileceğini anlatan bir makale
+                                        href="https://github.com/maidis/kod-olarak-matematik-cpp">Kod Olarak Matematik</a> Karmaşık matematiksel formüllerin koda nasıl dökülebileceğini anlatan bir makale
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/lindelof/awesome-web-effect" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/lindelof/awesome-web-effect" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://github.com/lindelof/awesome-web-effect">Awesome Web Effect</a>: Web sayfaları için bir çok css ve javascipt efektlerinin listelendiği sayfa.
+                                        href="https://github.com/lindelof/awesome-web-effect">Awesome Web Effect</a> Web sayfaları için bir çok css ve javascipt efektlerinin listelendiği sayfa.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://devhints.io/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://devhints.io/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://devhints.io/">Rico's cheatsheets</a>: Yazılım geliştirme ile ilgili bir çok hile kağıdını barındırıyor.
+                                        href="https://devhints.io/">Rico's cheatsheets</a> Yazılım geliştirme ile ilgili bir çok hile kağıdını barındırıyor.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/merveenoyan/shell-cheatsheet" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/merveenoyan/shell-cheatsheet" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://github.com/merveenoyan/shell-cheatsheet">Shell Cheat Sheet</a>: Merve Noyan'ın hazırladığı Linux Shell kullanımını anlatan kopya kağıdı.
+                                        href="https://github.com/merveenoyan/shell-cheatsheet">Shell Cheat Sheet</a> Merve Noyan'ın hazırladığı Linux Shell kullanımını anlatan kopya kağıdı.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://ozguradem.net/turkish/coding/2017/04/23/test-turleri-ve-arasindaki-farklar/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://ozguradem.net/turkish/coding/2017/04/23/test-turleri-ve-arasindaki-farklar/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://ozguradem.net/turkish/coding/2017/04/23/test-turleri-ve-arasindaki-farklar/">Yazılımda Test Türleri ve Arasındaki Farklar</a>: Özgür Adem'in kalema aldığı oldukça aydınlatıcı bir yazı.
+                                        href="https://ozguradem.net/turkish/coding/2017/04/23/test-turleri-ve-arasindaki-farklar/">Yazılımda Test Türleri ve Arasındaki Farklar</a> Özgür Adem'in kalema aldığı oldukça aydınlatıcı bir yazı.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://list.community/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://list.community/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://list.community/">List Community</a>: Github'da yayınlanmış çeşitli konulardaki listeler için dizin.
+                                        href="https://list.community/">List Community</a> Github'da yayınlanmış çeşitli konulardaki listeler için dizin.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -626,9 +751,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://calmcode.io/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://calmcode.io/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://calmcode.io/">Calm Code</a>: Pyhon dilini öğrenmeyi stressiz hale getirmeye çalışan bir web sitesi. İçinde kısa videolar halinde bir çok konuda anlatımlar barındırıyor.
+                                        href="https://calmcode.io/">Calm Code</a> Pyhon dilini öğrenmeyi stressiz hale getirmeye çalışan bir web sitesi. İçinde kısa videolar halinde bir çok konuda anlatımlar barındırıyor.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -642,9 +770,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.djangotemplatetagsandfilters.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.djangotemplatetagsandfilters.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.djangotemplatetagsandfilters.com/">Template Tags and Filters</a>: Django'nun template tag ve filtrelerinin düzenli olarak listelendiği bir sayfa
+                                        href="https://www.djangotemplatetagsandfilters.com/">Template Tags and Filters</a> Django'nun template tag ve filtrelerinin düzenli olarak listelendiği bir sayfa
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -660,9 +791,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/grangier/python-goose" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/grangier/python-goose" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://github.com/grangier/python-goose">Python Goose</a>: Verilen linkten makale metni sökmeye yarayan Python kütüphanesi.
+                                        href="https://github.com/grangier/python-goose">Python Goose</a> Verilen linkten makale metni sökmeye yarayan Python kütüphanesi.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -682,21 +816,30 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://bestofjs.org/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://bestofjs.org/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://bestofjs.org/">Best Of JS</a>: Javascript proje ve kütüphanelerinin oylandığı en iyilerin listelendiği site
+                                        href="https://bestofjs.org/">Best Of JS</a> Javascript proje ve kütüphanelerinin oylandığı en iyilerin listelendiği site
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://exploringjs.com/deep-js/toc.html" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://exploringjs.com/deep-js/toc.html" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://exploringjs.com/deep-js/toc.html">Deep JS</a>: Dr. Axel Rauschmayer'ın yazdığı Deep JavaScript: Theory and techniques kitabının free online versiyonu.
+                                        href="https://exploringjs.com/deep-js/toc.html">Deep JS</a> Dr. Axel Rauschmayer'ın yazdığı Deep JavaScript: Theory and techniques kitabının free online versiyonu.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://hackernoon.com/step-by-step-guide-to-building-and-launching-your-chrome-extension-th3h3tx1" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://hackernoon.com/step-by-step-guide-to-building-and-launching-your-chrome-extension-th3h3tx1" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://hackernoon.com/step-by-step-guide-to-building-and-launching-your-chrome-extension-th3h3tx1">Step-by-Step Guide to Building and Launching your Chrome Extension</a>: Google Chrome için eklenti geliştirmeyi anlatıyor.
+                                        href="https://hackernoon.com/step-by-step-guide-to-building-and-launching-your-chrome-extension-th3h3tx1">Step-by-Step Guide to Building and Launching your Chrome Extension</a> Google Chrome için eklenti geliştirmeyi anlatıyor.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -712,15 +855,21 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://cs50.harvard.edu/games/2018/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://cs50.harvard.edu/games/2018/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://cs50.harvard.edu/games/2018/">CS50’s Introduction to Game Development</a>: Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi.
+                                        href="https://cs50.harvard.edu/games/2018/">CS50’s Introduction to Game Development</a> Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://makegames.tumblr.com/post/1136623767/finishing-a-game" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://makegames.tumblr.com/post/1136623767/finishing-a-game" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://makegames.tumblr.com/post/1136623767/finishing-a-game">Finishing a Game</a>: Oyun geliştirmeye başlamak isteyen geliştiriciler için öğütler
+                                        href="https://makegames.tumblr.com/post/1136623767/finishing-a-game">Finishing a Game</a> Oyun geliştirmeye başlamak isteyen geliştiriciler için öğütler
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -734,21 +883,30 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/cstoquer/pixelbox" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/cstoquer/pixelbox" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://github.com/cstoquer/pixelbox">PixelboxJS</a>: İçerisinde dahili olarak sprite, harita, ses efekti ve müzik editörlerini barındıran 2 boyutlu oyun geliştirme kütüphanesi
+                                        href="https://github.com/cstoquer/pixelbox">PixelboxJS</a> İçerisinde dahili olarak sprite, harita, ses efekti ve müzik editörlerini barındıran 2 boyutlu oyun geliştirme kütüphanesi
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://probabletrain.itch.io/dungeon-scrawl" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://probabletrain.itch.io/dungeon-scrawl" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://probabletrain.itch.io/dungeon-scrawl">Dungeon Scrawl</a>: Oyun geliştiriciler için harita yapma uygulaması
+                                        href="https://probabletrain.itch.io/dungeon-scrawl">Dungeon Scrawl</a> Oyun geliştiriciler için harita yapma uygulaması
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://killedbyapixel.github.io/ZzFX/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://killedbyapixel.github.io/ZzFX/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://killedbyapixel.github.io/ZzFX/">ZzFX</a>: Oyun geliştiriciler için ses efekti sentezleyici.
+                                        href="https://killedbyapixel.github.io/ZzFX/">ZzFX</a> Oyun geliştiriciler için ses efekti sentezleyici.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -764,9 +922,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://demoman.net/?a=trig-for-games" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://demoman.net/?a=trig-for-games" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://demoman.net/?a=trig-for-games">Trigonometry for Games</a>: Oyun geliştiricileri için trigonometri dersi veren online uygulama.
+                                        href="https://demoman.net/?a=trig-for-games">Trigonometry for Games</a> Oyun geliştiricileri için trigonometri dersi veren online uygulama.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -786,9 +947,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://glennstovall.com/zero-to-10/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://glennstovall.com/zero-to-10/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://glennstovall.com/zero-to-10/">7 Day Writing Course For Develpers</a>: Yazılımcılar için 7 günlük blog yazma kursu.
+                                        href="https://glennstovall.com/zero-to-10/">7 Day Writing Course For Develpers</a> Yazılımcılar için 7 günlük blog yazma kursu.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -804,9 +968,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/dennybritz/reinforcement-learning" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://github.com/dennybritz/reinforcement-learning" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://github.com/dennybritz/reinforcement-learning">Reinforcement Learning</a>: Reinforcement learning ile ilgili popüller algoritmaları konu edinen kod, soru ve cevaplar barındıran wiki.
+                                        href="https://github.com/dennybritz/reinforcement-learning">Reinforcement Learning</a> Reinforcement learning ile ilgili popüller algoritmaları konu edinen kod, soru ve cevaplar barındıran wiki.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -822,9 +989,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://drive.google.com/file/d/1BnwK6xjmrTqtuwsYWjNSkyJ6l_v1qwre/view" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://drive.google.com/file/d/1BnwK6xjmrTqtuwsYWjNSkyJ6l_v1qwre/view" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://drive.google.com/file/d/1BnwK6xjmrTqtuwsYWjNSkyJ6l_v1qwre/view">Matematikçiller İçin Fonksiyonel Programlamaya Davet</a>: Sonat Süer'in yazıp bedava olarak dağıttığı kitap. Henüz okumadım ancak çok iyi bir kaynağa benziyor.
+                                        href="https://drive.google.com/file/d/1BnwK6xjmrTqtuwsYWjNSkyJ6l_v1qwre/view">Matematikçiller İçin Fonksiyonel Programlamaya Davet</a> Sonat Süer'in yazıp bedava olarak dağıttığı kitap. Henüz okumadım ancak çok iyi bir kaynağa benziyor.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -844,39 +1014,57 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://kodilan.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://kodilan.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://kodilan.com/">Kod İlan</a>: Türkiye içi yazılımcı ve iş bulma sitesi
+                                        href="https://kodilan.com/">Kod İlan</a> Türkiye içi yazılımcı ve iş bulma sitesi
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://twitter.com/bilisim_isleri" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://twitter.com/bilisim_isleri" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://twitter.com/bilisim_isleri">Bilişim İşleri</a>: Bilişim sektörü ile ilgili ilanlar paylaşan Twitter hesabı
+                                        href="https://twitter.com/bilisim_isleri">Bilişim İşleri</a> Bilişim sektörü ile ilgili ilanlar paylaşan Twitter hesabı
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.toptal.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.toptal.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.toptal.com/">Toptal</a>: Freelance iş ve işçi bulma platformu.
+                                        href="https://www.toptal.com/">Toptal</a> Freelance iş ve işçi bulma platformu.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://soshace.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://soshace.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://soshace.com/">Soshace</a>: Freelance iş ve işçi bulma platformu.
+                                        href="https://soshace.com/">Soshace</a> Freelance iş ve işçi bulma platformu.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.freelancer.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.freelancer.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.freelancer.com/">Freelancer</a>: Freelance iş ve işçi bulma platformu.
+                                        href="https://www.freelancer.com/">Freelancer</a> Freelance iş ve işçi bulma platformu.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.upwork.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.upwork.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.upwork.com/">Upwork</a>: Freelance iş ve işçi bulma platformu.
+                                        href="https://www.upwork.com/">Upwork</a> Freelance iş ve işçi bulma platformu.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -892,9 +1080,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://zenpen.io/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://zenpen.io/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://zenpen.io/">ZenPen</a>: Minimalistik, dikkat dağıtmayan online metin editörü
+                                        href="https://zenpen.io/">ZenPen</a> Minimalistik, dikkat dağıtmayan online metin editörü
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -910,15 +1101,21 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.rome2rio.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.rome2rio.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.rome2rio.com/">Rome2Rio</a>: Dünya üzerinde iki adres arasında nasıl seyehat edilebileceğini söyletebilen bir web sitesi
+                                        href="https://www.rome2rio.com/">Rome2Rio</a> Dünya üzerinde iki adres arasında nasıl seyehat edilebileceğini söyletebilen bir web sitesi
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.google.com/maps/d/u/0/viewer?mid=1OXYU1CRdfYLRTIYIjsOnakf2xy8&ll=38.624311649181756%2C35.12324238355848&z=6" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.google.com/maps/d/u/0/viewer?mid=1OXYU1CRdfYLRTIYIjsOnakf2xy8&ll=38.624311649181756%2C35.12324238355848&z=6" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.google.com/maps/d/u/0/viewer?mid=1OXYU1CRdfYLRTIYIjsOnakf2xy8&ll=38.624311649181756%2C35.12324238355848&z=6">Türkiye'deki Kamp Alanları Listesi</a>: http://kampyerleri.org/ kurucusu Niyazi Solak tarafından hazırlanmış ayrıntılı kamp yerleri haritası
+                                        href="https://www.google.com/maps/d/u/0/viewer?mid=1OXYU1CRdfYLRTIYIjsOnakf2xy8&ll=38.624311649181756%2C35.12324238355848&z=6">Türkiye'deki Kamp Alanları Listesi</a> http://kampyerleri.org/ kurucusu Niyazi Solak tarafından hazırlanmış ayrıntılı kamp yerleri haritası
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -934,15 +1131,21 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://medium.com/@altugozturk/kripto-para-piyasas%C4%B1-hakk%C4%B1nda-bilmeniz-gereken-her%C5%9Fey-e6d72f80054" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://medium.com/@altugozturk/kripto-para-piyasas%C4%B1-hakk%C4%B1nda-bilmeniz-gereken-her%C5%9Fey-e6d72f80054" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://medium.com/@altugozturk/kripto-para-piyasas%C4%B1-hakk%C4%B1nda-bilmeniz-gereken-her%C5%9Fey-e6d72f80054">Kripto para piyasası hakkında bilmeniz gereken herşey</a>: Kriptoparalar hakkınd geniş yelpazede bilgi sunan bir makale
+                                        href="https://medium.com/@altugozturk/kripto-para-piyasas%C4%B1-hakk%C4%B1nda-bilmeniz-gereken-her%C5%9Fey-e6d72f80054">Kripto para piyasası hakkında bilmeniz gereken herşey</a> Kriptoparalar hakkınd geniş yelpazede bilgi sunan bir makale
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://blockdelta.io/6-ways-to-keep-emotions-under-control-when-trading-cryptocurrencies/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://blockdelta.io/6-ways-to-keep-emotions-under-control-when-trading-cryptocurrencies/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://blockdelta.io/6-ways-to-keep-emotions-under-control-when-trading-cryptocurrencies/">Keep Emotions Under Control When Trading Cryptocurrencies</a>: Kriptoparalar ile borsa oynarken duygularımızı nasıl kontrol altında tutacağımızı anlatan makale
+                                        href="https://blockdelta.io/6-ways-to-keep-emotions-under-control-when-trading-cryptocurrencies/">Keep Emotions Under Control When Trading Cryptocurrencies</a> Kriptoparalar ile borsa oynarken duygularımızı nasıl kontrol altında tutacağımızı anlatan makale
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -956,9 +1159,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://playescalation.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://playescalation.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://playescalation.com/">The Escalation Game</a>: Etherium ile oynanan, her oyunda oyunculardan sadece birinin para kaybettigi barbut benzeri oyun
+                                        href="https://playescalation.com/">The Escalation Game</a> Etherium ile oynanan, her oyunda oyunculardan sadece birinin para kaybettigi barbut benzeri oyun
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -978,51 +1184,75 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.filezigzag.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.filezigzag.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.filezigzag.com/">FileZigZag</a>: Herhangi bir dosyayı başka bir formata dönüştürün, yüzlerce çeşit dosyayı destekliyor
+                                        href="https://www.filezigzag.com/">FileZigZag</a> Herhangi bir dosyayı başka bir formata dönüştürün, yüzlerce çeşit dosyayı destekliyor
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://apify.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://apify.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://apify.com/">Apify</a>: Bir çok site için veri toplama scriptleri barındıran bir servis.
+                                        href="https://apify.com/">Apify</a> Bir çok site için veri toplama scriptleri barındıran bir servis.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://onetimesecret.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://onetimesecret.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://onetimesecret.com/">OneTimeSecret</a>: Okunduktan sonra tamamen silinen notlar paylaşmanızı sağlayan uygulama. Şifre vs gibi önemli şeyleri paylaşmak için.
+                                        href="https://onetimesecret.com/">OneTimeSecret</a> Okunduktan sonra tamamen silinen notlar paylaşmanızı sağlayan uygulama. Şifre vs gibi önemli şeyleri paylaşmak için.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://usethekeyboard.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://usethekeyboard.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://usethekeyboard.com/">Use The Keyboard</a>: Bir çok uygulamanın klavye kısayollarının listelendiği web sitesi
+                                        href="https://usethekeyboard.com/">Use The Keyboard</a> Bir çok uygulamanın klavye kısayollarının listelendiği web sitesi
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://audiomass.co/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://audiomass.co/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://audiomass.co/">Audiomass</a>: Online bedava ses editörü
+                                        href="https://audiomass.co/">Audiomass</a> Online bedava ses editörü
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://floorplanlab.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://floorplanlab.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://floorplanlab.com/">Floor Plan Lab</a>: İç mekanların krokisini çizmenizi sağlayan açık kaynaklı uygulama.
+                                        href="https://floorplanlab.com/">Floor Plan Lab</a> İç mekanların krokisini çizmenizi sağlayan açık kaynaklı uygulama.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://copychar.cc/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://copychar.cc/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://copychar.cc/">CopyChar</a>: Özel karakter ve emoji arayıp bulma aracı.
+                                        href="https://copychar.cc/">CopyChar</a> Özel karakter ve emoji arayıp bulma aracı.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://rasterbator.net/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://rasterbator.net/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://rasterbator.net/">Rasterbator</a>: Fotoğraflarınızı parça parça çıktı alarak büyük posterler haline getirmenizi sağlayan online uygulama
+                                        href="https://rasterbator.net/">Rasterbator</a> Fotoğraflarınızı parça parça çıktı alarak büyük posterler haline getirmenizi sağlayan online uygulama
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -1038,21 +1268,30 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://daylio.webflow.io/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://daylio.webflow.io/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://daylio.webflow.io/">Daylio</a>: Kişisel ruh halinizi takip ederek kendinizi daha iyi tanımanızı sağlıyor.
+                                        href="https://daylio.webflow.io/">Daylio</a> Kişisel ruh halinizi takip ederek kendinizi daha iyi tanımanızı sağlıyor.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://hackernoon.com/biohack-your-intelligence-now-or-become-obsolete-97cdd15e395f" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://hackernoon.com/biohack-your-intelligence-now-or-become-obsolete-97cdd15e395f" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://hackernoon.com/biohack-your-intelligence-now-or-become-obsolete-97cdd15e395f">How to biohack your intelligence</a>: Zeka seviyenizi biohack teknikleri ile arttırma yollarını anlatan çok kapsamlı bir makale
+                                        href="https://hackernoon.com/biohack-your-intelligence-now-or-become-obsolete-97cdd15e395f">How to biohack your intelligence</a> Zeka seviyenizi biohack teknikleri ile arttırma yollarını anlatan çok kapsamlı bir makale
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.uclahealth.org/marc/mindful-meditations" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.uclahealth.org/marc/mindful-meditations" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.uclahealth.org/marc/mindful-meditations">Free Guided Meditations</a>: Bedava rehberli meditasyon ses kayıtları.
+                                        href="https://www.uclahealth.org/marc/mindful-meditations">Free Guided Meditations</a> Bedava rehberli meditasyon ses kayıtları.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -1068,9 +1307,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.fitfatherproject.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.fitfatherproject.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.fitfatherproject.com/">Fit Father Project</a>: Babalar için düşünülmüş fit kalma ve spor yapma planları
+                                        href="https://www.fitfatherproject.com/">Fit Father Project</a> Babalar için düşünülmüş fit kalma ve spor yapma planları
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -1086,21 +1328,30 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.failory.com/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.failory.com/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://www.failory.com/">Failory</a>: Başarısız olmuş startup'ların hikayelerinin paylaşıldığı web sitesi.
+                                        href="https://www.failory.com/">Failory</a> Başarısız olmuş startup'ların hikayelerinin paylaşıldığı web sitesi.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://new.admitad.com/tr/webmaster/traffic-types/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://new.admitad.com/tr/webmaster/traffic-types/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://new.admitad.com/tr/webmaster/traffic-types/">Admitad</a>: Affiliate linkler paylaşabilir, verdiğiniz linkler üzerinden alışveriş yapan olursa pay alabilirsiniz.
+                                        href="https://new.admitad.com/tr/webmaster/traffic-types/">Admitad</a> Affiliate linkler paylaşabilir, verdiğiniz linkler üzerinden alışveriş yapan olursa pay alabilirsiniz.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://dev.to/o_numero10/how-to-choose-your-next-side-project-fkl" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://dev.to/o_numero10/how-to-choose-your-next-side-project-fkl" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://dev.to/o_numero10/how-to-choose-your-next-side-project-fkl">How to Choose Your Next Side Project</a>: Bir sonraki side projenizi seçerken nelere dikkat etmeliyiz tadında makale.
+                                        href="https://dev.to/o_numero10/how-to-choose-your-next-side-project-fkl">How to Choose Your Next Side Project</a> Bir sonraki side projenizi seçerken nelere dikkat etmeliyiz tadında makale.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -1116,9 +1367,12 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=http://fehmicansaglam.net/saglikli-yasam.html" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=http://fehmicansaglam.net/saglikli-yasam.html" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="http://fehmicansaglam.net/saglikli-yasam.html">Masabaşı Çalışanlar İçin Sağlıklı Yaşama Rehberi</a>: Oldukça kapsamlı bir makale. Beslenmeden motivasyona bütün konulara değinmiş.
+                                        href="http://fehmicansaglam.net/saglikli-yasam.html">Masabaşı Çalışanlar İçin Sağlıklı Yaşama Rehberi</a> Oldukça kapsamlı bir makale. Beslenmeden motivasyona bütün konulara değinmiş.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -1134,15 +1388,21 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://previewed.app/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://previewed.app/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://previewed.app/">Previewed</a>: Geliştirdiğiniz uygulama için pazarlama materialleri oluşturmanızı sağlayan araç.
+                                        href="https://previewed.app/">Previewed</a> Geliştirdiğiniz uygulama için pazarlama materialleri oluşturmanızı sağlayan araç.
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://headlime.com/app" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://headlime.com/app" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://headlime.com/app">HeadLime</a>: Uygulamanız için tek cümlelik özet yazmanıza yardımcı basit web uygulaması.
+                                        href="https://headlime.com/app">HeadLime</a> Uygulamanız için tek cümlelik özet yazmanıza yardımcı basit web uygulaması.
+                                        </p>
                                     </li>
                                 
                                 </ul>
@@ -1164,15 +1424,21 @@
                                 <ul class="links">
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://html5drummachine.com/virtual-drum-machine/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://html5drummachine.com/virtual-drum-machine/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://html5drummachine.com/virtual-drum-machine/">Html5 Drum Machine</a>: HTML5 ile yazılmış browser içinde çalışaan davul makinesi
+                                        href="https://html5drummachine.com/virtual-drum-machine/">Html5 Drum Machine</a> HTML5 ile yazılmış browser içinde çalışaan davul makinesi
+                                        </p>
                                     </li>
                                 
                                     <li class="link">
-                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://808303.studio/" /> <a
+                                        <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://808303.studio/" />
+                                        <p>
+                                        <a
                                         target="_blank"
-                                        href="https://808303.studio/">808303 Studio</a>: TR-808 Davul makinesi ve TB-303 bas sentezleyicisini senkronize şekilde çaldırmanızı sağlayan online müzik yapma aracı.
+                                        href="https://808303.studio/">808303 Studio</a> TR-808 Davul makinesi ve TB-303 bas sentezleyicisini senkronize şekilde çaldırmanızı sağlayan online müzik yapma aracı.
+                                        </p>
                                     </li>
                                 
                                 </ul>
