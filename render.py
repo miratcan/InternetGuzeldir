@@ -40,6 +40,8 @@ def get_sections(csv_lines, category_separator=DEFAULT_CATEGORY_SEPARATOR):
         for level in range(len(category_path)):
             if "sections" not in parent:
                 parent["sections"] = {}
+            else:
+                parent['sections'] = dict(sorted(parent['sections'].items()))
             section_title = category_path[level]
             if section_title not in parent["sections"]:
                 parent["sections"][section_title] = {"title": section_title}
@@ -47,7 +49,9 @@ def get_sections(csv_lines, category_separator=DEFAULT_CATEGORY_SEPARATOR):
                                     replacements=[['>', '_'],])
             if category_slug not in parent["sections"]:
                 parent["sections"][section_title]["slug"] = category_slug
+
             parent = parent["sections"][section_title]
+    
         if "links" not in parent:
             parent['links'] = []
         parent['links'].append({'title': title, 'url': url, 'desc': desc,
@@ -66,8 +70,6 @@ csv_lines = [
 ]
 
 sections = get_sections(csv_lines, category_separator=">")
-import pprint
-pprint.pprint(sections)
 
 home = env.get_template('home.html.jinja2')
 

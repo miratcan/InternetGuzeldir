@@ -5,13 +5,10 @@
         <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <style>
         body {
-          font-family: sans-serif;
-          background: #fff;
-          color: #3e4349;
           margin: 0;
           padding: 0;
-          font-family: 'Garamond', 'Georgia', serif;
-          font-size: 1rem;
+          font-size: 16px;
+          line-height: 18px;
           display: grid;
           grid-template-areas: 'aside main main';
           grid-gap: 0;
@@ -32,30 +29,21 @@
         h1 {
           font-size: 28px;
           line-height: 36px;
-          z-index: 10;
         }
 
         h2 {
           font-size: 24px;
           line-height: 30px;
-          z-index: 9;
         }
 
         h3 {
           font-size: 20px;
           line-height: 26px;
-          z-index: 8;
         }
 
         h4 {
           font-size: 16px;
           line-height: 22px;
-          z-index: 7;
-        }
-
-        main h1:first-child {
-          margin-top;
-             0;
         }
 
         aside {
@@ -63,16 +51,12 @@
           padding: 2rem;
           height: 100vh;
           overflow: scroll;
-          border-right: 1px solid black;
-          background: floralwhite;
         }
 
         main {
           grid-area: main;
           overflow: scroll;
-          padding: 1rem 1rem 1rem 2rem;
-          background: rgb(119, 119, 119);
-          background: linear-gradient(90deg, rgba(119, 119, 119, 1) 0%, rgba(153, 153, 153, 1) 0.1%, rgba(187, 187, 187, 1) 0.3%, rgba(221, 221, 221, 1) 0.6%, rgba(238, 238, 238, 1) 1%, rgba(255, 255, 255, 1) 1.5%, rgba(255, 255, 255, 1) 100%);
+          padding: 1rem 1rem 2rem 2rem;
           scroll-behavior: smooth;
         }
 
@@ -86,7 +70,7 @@
         }
 
         aside li {
-          margin: 0 0 .5rem 0;
+          margin: 0 0 .25rem 0;
           list-style: square;
           white-space: nowrap;
         }
@@ -102,8 +86,8 @@
         }
 
         section .inner {
-          margin: 0 0 0 1rem;
-          padding: 0 0 0 1rem;
+          margin: 0 0 0 .5rem;
+          padding: 0 0 0 .5rem;
           border-left: 1px solid lightgray;
         }
 
@@ -119,13 +103,10 @@
           list-style-type: none;
           margin: 0;
           padding: 0;
-          font-family: serif;
         }
 
         ul.links li {
-          display: flex;
-          flex-direction: row;
-          margin: 0 0 1rem 0;
+          margin: 0 0 .5rem 0;
         }
 
         ul.links li:last-child {
@@ -135,8 +116,8 @@
         ul.links li .favicon {
           width: 16px;
           height: 16px;
-          display: flex;
-          margin: 3px 5px 0 0;
+          margin: 0;
+          vertical-align: bottom;
         }
 
         ul.links li .content {
@@ -151,7 +132,6 @@
         }
 
         a {
-          color: #004b6b;
           text-decoration: underline;
         }
 
@@ -189,10 +169,10 @@
                 {% endfor %}
                 </ul>
             </nav>
-            </aside>
+        </aside>
         <main>
             {% for section_title, section_props in sections.sections.items() recursive %}
-                <section level{{ loop.depth }}" id="{{ section_props.slug }}">
+                <section class="level{{ loop.depth }}" id="{{ section_props.slug }}">
                     <h{{loop.depth + 1}}>{{ section_title }}</h{{loop.depth + 1}}>
                     <div class="inner">
                         {% if section_props.links %}
@@ -200,10 +180,7 @@
                             {% for link in section_props.links %}
                                 <li class="link">
                                     <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-                                    <div class="content">
-                                        <div class="title"><a target="_blank" href="{{ link.url }}">{{ link.title}}</a></div>
-                                        <div class="desc">{{link.desc}}</div>
-                                    </div>
+                                    <span class="title"><a target="_blank" href="{{ link.url }}">{{ link.title}}</a>: </span>{{link.desc}}
                                 </li>
                             {% endfor %}
                             </ul>
