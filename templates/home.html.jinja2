@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta charset="UTF-8">
+        < charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <style>
@@ -134,6 +134,10 @@
         a {
           text-decoration: underline;
         }
+        .meta {
+          font-size: 12px;
+          color:gray;
+        }
 
         @media only screen and (max-width: 600px) {
           aside {
@@ -180,7 +184,7 @@
                             {% for link in section_props.links %}
                                 <li class="link">
                                     <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-                                    <span class="title"><a target="_blank" href="{{ link.url }}">{{ link.title}}</a>: </span>{{link.desc}}
+                                    <span class="title"><a target="_blank" href="{{ link.url }}">{{ link.title}}</a>: </span>{{link.desc}} <span class="meta">({{link.lang}}, {{link.tayp}})</span>
                                 </li>
                             {% endfor %}
                             </ul>
