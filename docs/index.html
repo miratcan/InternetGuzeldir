@@ -1,6 +1,5 @@
 <html>
     <head>
-        < charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <style>
@@ -9,13 +8,16 @@
           padding: 0;
           font-size: 16px;
           line-height: 18px;
-          display: grid;
-          grid-template-areas: 'aside main main';
-          grid-gap: 0;
           padding: 0;
-          height: 100vh;
-          overflow: scroll;
           background: lightgray;
+
+          display: grid;
+          grid-template-columns: min-content 1fr 1fr 1fr;
+          grid-template-rows: 1fr;
+          gap: 0px 0px;
+          grid-template-areas:
+            "aside main main right";
+
         }
 
         h1, h2, h3, h4, h5 {
@@ -50,15 +52,11 @@
         aside {
           grid-area: aside;
           padding: 2rem;
-          height: 100vh;
-          overflow: scroll;
         }
 
         main {
           grid-area: main;
-          overflow: scroll;
           padding: 1rem 1rem 2rem 2rem;
-          scroll-behavior: smooth;
         }
 
         aside h2 {
@@ -390,7 +388,7 @@
                 
                 </ul>
             </nav>
-        </aside>
+          </aside>
         <main>
             
                 <section class="level1" id="diger">
@@ -1438,5 +1436,29 @@
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
             <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
         </main>
+        <div class="right">
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://links-2.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+
+
+        </div>
     </body>
 </html>
