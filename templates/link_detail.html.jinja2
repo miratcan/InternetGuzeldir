@@ -1,5 +1,11 @@
 {% extends "base.html.jinja2" %}
 
+{% block left %}
+<dl>
+	<dt>Dil</dt>
+	<dd>{{ link.lang }}</dd>
+</dl>
+{% endblock %}
 
 {% block main %}
 <h2>{{ link.title }}</h2>

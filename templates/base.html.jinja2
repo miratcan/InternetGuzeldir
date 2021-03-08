@@ -14,6 +14,13 @@
           padding: 0;
           background: white;
           display: grid;
+          grid-template-columns: min-content 2fr;
+          grid-template-rows: min-content 1fr;
+          gap: 0px 0px;
+          grid-template-areas:
+            "header header header"
+            "left main right";
+          margin: 0 auto;
         }
 
         main { grid-area: main; }
@@ -154,14 +161,13 @@
         }
 
         #disqus_thread {
-          padding: 1rem;
           border: 1px solid gray;
+          padding: 1rem;
         }
-
         </style>
     </head>  
     <body>
-      <header><h1><a href="/">İNTERNET GÜZELDİR</a></h1></header>
+      <header><h1><a href="index.html">İNTERNET GÜZELDİR</a></h1></header>
       <aside class="left">
         {% block left %}{% endblock %}
       </aside>
