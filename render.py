@@ -1,6 +1,7 @@
 import csv
 import urllib.request
 from slugify import slugify
+import datetime
 
 
 DEFAULT_CATEGORY_SEPARATOR = ">"
@@ -31,8 +32,9 @@ def get_sections(csv_lines, category_separator=DEFAULT_CATEGORY_SEPARATOR):
     csv_reader = csv.reader(csv_lines)
 
     sections = {"links": [], "sections": {}, "title": "root", "path": "/"}
-    for line in csv_reader  :
-        title, url, desc, category_str, tayp, lang, source = line
+
+    for line in csv_reader:
+        title, url, desc, category_str, tayp, lang, source = line[:-1]
         category_path = [part.strip() for part in category_str.split(
                          category_separator)]
         category_path = list(filter(lambda i: bool(i), category_path))
@@ -43,12 +45,16 @@ def get_sections(csv_lines, category_separator=DEFAULT_CATEGORY_SEPARATOR):
             else:
                 parent['sections'] = dict(sorted(parent['sections'].items()))
             section_title = category_path[level]
+
             if section_title not in parent["sections"]:
-                parent["sections"][section_title] = {"title": section_title}
-            category_slug = slugify(category_str, separator='-',
-                                    replacements=[['>', '_'],])
-            if category_slug not in parent["sections"]:
-                parent["sections"][section_title]["slug"] = category_slug
+                category_slug = slugify(category_str, separator='-',
+                        replacements=[['>', '_'],])
+
+                parent["sections"][section_title] = {
+                    "title": section_title,
+                    "category_str": category_str,
+                    "slug": category_slug
+                }
 
             parent = parent["sections"][section_title]
     
@@ -56,7 +62,21 @@ def get_sections(csv_lines, category_separator=DEFAULT_CATEGORY_SEPARATOR):
             parent['links'] = []
         parent['links'].append({'title': title, 'url': url, 'desc': desc,
                                 'tayp': tayp, 'lang': lang})
+    
     return sections
+
+
+def get_latest_links(csv_lines):
+    csv_reader = csv.reader(csv_lines)
+    links = []
+    for line in csv_reader:
+        title, url, desc, category_str, tayp, lang, source, date_str = line
+        date = datetime.datetime.strptime(date_str, "%d.%m.%Y").date()
+        links.append({"title": title, "url": url, "desc": desc,
+                      "category": category_str, "tayp": tayp, "lang": lang,
+                      "source": source, "date": date})
+    return sorted(links, key=lambda i: i['date'])
+
 
 
 URL = "https://docs.google.com/spreadsheets/u/3/d/" \
@@ -70,8 +90,11 @@ csv_lines = [
 ]
 
 sections = get_sections(csv_lines, category_separator=">")
+import json
+print(json.dumps(sections))
 
+latest_links = get_latest_links(csv_lines)
 home = env.get_template('home.html.jinja2')
 
 with open('docs/index.html', 'w')as file:
-    file.write(home.render(sections=sections))
+    file.write(home.render(sections=sections, latest_links=latest_links))

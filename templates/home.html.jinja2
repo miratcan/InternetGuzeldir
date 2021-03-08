@@ -3,25 +3,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <style>
+        html {
+          background: darkgray; 
+        }
         body {
-          margin: 0;
-          padding: 0;
           font-size: 16px;
           line-height: 18px;
           padding: 0;
-          background: lightgray;
-
+          background: white;
           display: grid;
-          grid-template-columns: min-content 1fr 1fr 1fr;
-          grid-template-rows: 1fr;
+          grid-template-columns: min-content 2fr 1fr;
+          grid-template-rows: min-content 1fr min-content;
           gap: 0px 0px;
           grid-template-areas:
-            "aside main main right";
-
+            "header header header"
+            "left main right"
+            "footer footer footer";
+          margin: 0 auto;
         }
 
+        main { grid-area: main; }
+        header { grid-area: header; }
+        aside.left { grid-area:left; }
+        aside.right { grid-area:right; }
+        footer { grid-area: footer; }
+
         h1, h2, h3, h4, h5 {
-          margin: 0 0 1rem 0;
           padding: 0;
         }
 
@@ -30,8 +37,10 @@
         }
 
         h1 {
-          font-size: 28px;
-          line-height: 36px;
+          text-align: center;
+          font-size: 36px;
+          line-height: 42px;
+          color: white;
         }
 
         h2 {
@@ -49,31 +58,27 @@
           line-height: 22px;
         }
 
-        aside {
-          grid-area: aside;
-          padding: 2rem;
-        }
+        aside { padding: 1rem; }
+
+        header { background: black; border-bottom: 1px solid darkgray }
 
         main {
-          grid-area: main;
           padding: 1rem 1rem 2rem 2rem;
         }
 
-        aside h2 {
-          margin-top: 0;
-        }
-
-        aside ul {
+        aside.left {  }
+        aside.left ul {
           margin: 0 0 0 1rem;
           padding: 0;
         }
 
-        aside li {
+        aside.left li {
           margin: 0 0 .25rem 0;
           list-style: square;
           white-space: nowrap;
         }
 
+        aside.right {}
         #sections {
           height: 100vh;
           overflow: scroll;
@@ -87,7 +92,6 @@
         section .inner {
           margin: 0 0 0 .5rem;
           padding: 0 0 0 .5rem;
-          border-left: 1px solid darkgray;
         }
 
         section:first-child {
@@ -154,61 +158,63 @@
         }
 
         </style>
-    </head>
+    </head>  
     <body>
-        <aside>
-            <nav>
-                <h2>Kategoriler</h2>
-                <ul>
-                {% for section_title, section_props in sections.sections.items() recursive %}
-                    <li class="level{{loop.depth + 1}}">
-                        <a href="#{{ section_props.slug }}">{{ section_title }}</a>
-                    </li>
-                    {% if section_props.sections %}
-                        <ul>
-                            {{ loop(section_props.sections.items()) }}
-                        </ul>
-                    {% endif %}
-                {% endfor %}
-                </ul>
-            </nav>
-          </aside>
+      <header><h1>İNTERNET GÜZELDİR</h1></header>
+      <aside class="left">
+          <nav>
+              <h2>Kategoriler</h2>
+              <ul>
+              {% for section_title, section_props in sections.sections.items() recursive %}
+                  <li class="level{{loop.depth + 1}}">
+                      <a href="#{{ section_props.slug }}">{{ section_title }}</a>
+                  </li>
+                  {% if section_props.sections %}
+                      <ul>
+                          {{ loop(section_props.sections.items()) }}
+                      </ul>
+                  {% endif %}
+              {% endfor %}
+              </ul>
+          </nav>
+        </aside>
         <main>
-            {% for section_title, section_props in sections.sections.items() recursive %}
-                <section class="level{{ loop.depth }}" id="{{ section_props.slug }}">
-                    <h{{loop.depth + 1}}>{{ section_title }}</h{{loop.depth + 1}}>
-                    <div class="inner">
-                        {% if section_props.links %}
-                            <ul class="links">
-                            {% for link in section_props.links %}
-                                <li class="link">
-                                    <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-                                    <span class="title"><a target="_blank" href="{{ link.url }}">{{ link.title}}</a>: </span>{{link.desc}} <span class="meta">({{link.lang}}, {{link.tayp}})</span>
-                                </li>
-                            {% endfor %}
-                            </ul>
-                        {% endif %}
-                        {% if section_props.sections %}
-                            {{ loop(section_props.sections.items()) }}
-                        {% endif %}
-                    </div>
-                </section>
-            {% endfor %}
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
-            <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
-        </main>
-        <div class="right">
-<div id="hyvor-talk-view"></div>
-<script type="text/javascript">
-    var HYVOR_TALK_WEBSITE = 3428; // DO NOT CHANGE THIS
-    var HYVOR_TALK_CONFIG = {
-        url: false,
-        id: false
-    };
-</script>
-<script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+          {% for section_title, section_props in sections.sections.items() recursive %}
+              <section class="level{{ loop.depth }}" id="{{ section_props.slug }}">
+                  <h{{loop.depth + 1}}>{{ section_props.category_str }}</h{{loop.depth + 1}}>
 
-        </div>
+                  <div class="inner">
+                      {% if section_props.links %}
+                          <ul class="links">
+                          {% for link in section_props.links %}
+                              <li class="link">
+                                  <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
+                                  <span class="title"><a target="_blank" href="{{ link.url }}">{{ link.title}}</a>: </span>{{link.desc}} <span class="meta">({{link.lang}}, {{link.tayp}})</span>
+                              </li>
+                          {% endfor %}
+                          </ul>
+                      {% endif %}
+                      {% if section_props.sections %}
+                          {{ loop(section_props.sections.items()) }}
+                      {% endif %}
+                  </div>
+              </section>
+          {% endfor %}
+        </main>
+        <aside class="right">
+          <h2>Son Eklenenler</h2>
+          <ul class="links">
+          {% for link in latest_links %}
+            <li class="link">
+                <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
+                <span class="title"><a target="_blank" href="{{ link.url }}">{{ link.title}}</a>: </span>{{link.desc}} <span class="meta">({{link.lang}}, {{link.tayp}})</span>
+            </li>
+          {% endfor %}
+          </ul>
+        </aside>
+        <footer></footer>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
+        <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
     </body>
 </html>
