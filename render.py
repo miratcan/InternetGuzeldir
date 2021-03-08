@@ -2,6 +2,7 @@ import csv
 import urllib.request
 from slugify import slugify
 import datetime
+from os.path import join
 
 
 DEFAULT_CATEGORY_SEPARATOR = ">"
@@ -49,7 +50,6 @@ def get_sections(csv_lines, category_separator=DEFAULT_CATEGORY_SEPARATOR):
             if section_title not in parent["sections"]:
                 category_slug = slugify(category_str, separator='-',
                         replacements=[['>', '_'],])
-
                 parent["sections"][section_title] = {
                     "title": section_title,
                     "category_str": category_str,
@@ -60,8 +60,10 @@ def get_sections(csv_lines, category_separator=DEFAULT_CATEGORY_SEPARATOR):
     
         if "links" not in parent:
             parent['links'] = []
+
         parent['links'].append({'title': title, 'url': url, 'desc': desc,
-                                'tayp': tayp, 'lang': lang})
+                                'tayp': tayp, 'lang': lang,
+                                'url_slug': slugify(url)})
     
     return sections
 
@@ -95,6 +97,13 @@ print(json.dumps(sections))
 
 latest_links = get_latest_links(csv_lines)
 home = env.get_template('home.html.jinja2')
+link_detail = env.get_template('link_detail.html.jinja2')
 
 with open('docs/index.html', 'w')as file:
     file.write(home.render(sections=sections, latest_links=latest_links))
+
+for link in latest_links:
+    with open(join('docs', slugify(link['url'])) + '.html', 'w') as file:
+        file.write(link_detail.render(link=link))
+
+

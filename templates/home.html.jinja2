@@ -1,220 +1,58 @@
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <style>
-        html {
-          background: darkgray; 
-        }
-        body {
-          font-size: 16px;
-          line-height: 18px;
-          padding: 0;
-          background: white;
-          display: grid;
-          grid-template-columns: min-content 2fr 1fr;
-          grid-template-rows: min-content 1fr min-content;
-          gap: 0px 0px;
-          grid-template-areas:
-            "header header header"
-            "left main right"
-            "footer footer footer";
-          margin: 0 auto;
-        }
+{% extends "base.html.jinja2" %}
+{% block left %}
+<nav>
+    <h2>Kategoriler</h2>
+    <ul>
+    {% for section_title, section_props in sections.sections.items() recursive %}
+        <li class="level{{loop.depth + 1}}">
+            <a href="#{{ section_props.slug }}">{{ section_title }}</a>
+        </li>
+        {% if section_props.sections %}
+            <ul>
+                {{ loop(section_props.sections.items()) }}
+            </ul>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
 
-        main { grid-area: main; }
-        header { grid-area: header; }
-        aside.left { grid-area:left; }
-        aside.right { grid-area:right; }
-        footer { grid-area: footer; }
+{% block main %}
+{% for section_title, section_props in sections.sections.items() recursive %}
+    <section class="level{{ loop.depth }}" id="{{ section_props.slug }}">
+        <h{{loop.depth + 1}}>{{ section_props.category_str }}</h{{loop.depth + 1}}>
 
-        h1, h2, h3, h4, h5 {
-          padding: 0;
-        }
+        <div class="inner">
+            {% if section_props.links %}
+                <ul class="links">
+                {% for link in section_props.links %}
+                    <li class="link">
+                        <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
+                        <div class="content">
+                          <a class="title" target="_blank" href="{{ link.url_slug }}.html">{{ link.title }}</a>
+                          <p class="desc">{{ link.desc }}</p>
+                          <a class="link">{{ link.url }}</a>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% if section_props.sections %}
+                {{ loop(section_props.sections.items()) }}
+            {% endif %}
+        </div>
+    </section>
+{% endfor %}
+{% endblock %}
 
-        h2, h3, h4, h5 {
-          margin: 1rem 0;
-        }
-
-        h1 {
-          text-align: center;
-          font-size: 36px;
-          line-height: 42px;
-          color: white;
-        }
-
-        h2 {
-          font-size: 24px;
-          line-height: 30px;
-        }
-
-        h3 {
-          font-size: 20px;
-          line-height: 26px;
-        }
-
-        h4 {
-          font-size: 16px;
-          line-height: 22px;
-        }
-
-        aside { padding: 1rem; }
-
-        header { background: black; border-bottom: 1px solid darkgray }
-
-        main {
-          padding: 1rem 1rem 2rem 2rem;
-        }
-
-        aside.left {  }
-        aside.left ul {
-          margin: 0 0 0 1rem;
-          padding: 0;
-        }
-
-        aside.left li {
-          margin: 0 0 .25rem 0;
-          list-style: square;
-          white-space: nowrap;
-        }
-
-        aside.right {}
-        #sections {
-          height: 100vh;
-          overflow: scroll;
-        }
-
-        section {
-          margin: 0;
-          padding: 0;
-        }
-
-        section .inner {
-          margin: 0 0 0 .5rem;
-          padding: 0 0 0 .5rem;
-        }
-
-        section:first-child {
-          margin-top: 0;
-        }
-
-        section:last-child {
-          margin-bottom: 0;
-        }
-
-        ul.links {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-
-        ul.links li {
-          margin: 0 0 .5rem 0;
-        }
-
-        ul.links li:last-child {
-          margin: 0;
-        }
-
-        ul.links li .favicon {
-          width: 16px;
-          height: 16px;
-          margin: 0;
-          vertical-align: bottom;
-        }
-
-        ul.links li .content {
-          display: flex;
-          flex-direction: column;
-          flex-grow: 1;
-          margin: 0;
-        }
-
-        ul.links li .content .desc {
-            margin-top: .2rem;
-        }
-
-        a {
-          text-decoration: underline;
-        }
-        .meta {
-          font-size: 12px;
-          color:gray;
-        }
-
-        @media only screen and (max-width: 600px) {
-          aside {
-            display: none;
-          }
-
-          body {
-            padding: .5rem;
-          }
-
-          section .inner {
-            margin: .5rem 0 .5rem .5rem;
-            padding: .5rem 0 .5rem .5rem;
-          }
-        }
-
-        </style>
-    </head>  
-    <body>
-      <header><h1>İNTERNET GÜZELDİR</h1></header>
-      <aside class="left">
-          <nav>
-              <h2>Kategoriler</h2>
-              <ul>
-              {% for section_title, section_props in sections.sections.items() recursive %}
-                  <li class="level{{loop.depth + 1}}">
-                      <a href="#{{ section_props.slug }}">{{ section_title }}</a>
-                  </li>
-                  {% if section_props.sections %}
-                      <ul>
-                          {{ loop(section_props.sections.items()) }}
-                      </ul>
-                  {% endif %}
-              {% endfor %}
-              </ul>
-          </nav>
-        </aside>
-        <main>
-          {% for section_title, section_props in sections.sections.items() recursive %}
-              <section class="level{{ loop.depth }}" id="{{ section_props.slug }}">
-                  <h{{loop.depth + 1}}>{{ section_props.category_str }}</h{{loop.depth + 1}}>
-
-                  <div class="inner">
-                      {% if section_props.links %}
-                          <ul class="links">
-                          {% for link in section_props.links %}
-                              <li class="link">
-                                  <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-                                  <span class="title"><a target="_blank" href="{{ link.url }}">{{ link.title}}</a>: </span>{{link.desc}} <span class="meta">({{link.lang}}, {{link.tayp}})</span>
-                              </li>
-                          {% endfor %}
-                          </ul>
-                      {% endif %}
-                      {% if section_props.sections %}
-                          {{ loop(section_props.sections.items()) }}
-                      {% endif %}
-                  </div>
-              </section>
-          {% endfor %}
-        </main>
-        <aside class="right">
-          <h2>Son Eklenenler</h2>
-          <ul class="links">
-          {% for link in latest_links %}
-            <li class="link">
-                <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-                <span class="title"><a target="_blank" href="{{ link.url }}">{{ link.title}}</a>: </span>{{link.desc}} <span class="meta">({{link.lang}}, {{link.tayp}})</span>
-            </li>
-          {% endfor %}
-          </ul>
-        </aside>
-        <footer></footer>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
-        <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
-    </body>
-</html>
+{% block right %}
+<h2>Son Eklenenler</h2>
+<ul class="links">
+{% for link in latest_links %}
+  <li class="link">
+      <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
+      <span class="title"><a target="_blank" href="{{ link.url_slug }}">{{ link.title}}</a>: </span>{{link.desc}} <span class="meta">({{link.lang}}, {{link.tayp}})</span>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}
