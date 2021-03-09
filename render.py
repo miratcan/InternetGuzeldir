@@ -104,6 +104,6 @@ with open('docs/index.html', 'w')as file:
 
 for link in latest_links:
     with open(join('docs', slugify(link['url'])) + '.html', 'w') as file:
-        file.write(link_detail.render(link=link))
+        file.write(link_detail.render(link=link, sections=sections))
 
 

@@ -5,14 +5,14 @@
     <h2>Kategoriler</h2>
     <ul>
     {% for section_title, section_props in sections.sections.items() recursive %}
-        <li class="level{{loop.depth + 1}}">
-            <a href="#{{ section_props.slug }}">{{ section_title }}</a>
-        </li>
-        {% if section_props.sections %}
-            <ul>
-                {{ loop(section_props.sections.items()) }}
-            </ul>
-        {% endif %}
+      <li class="level{{loop.depth + 1}}">
+        <a href="#{{ section_props.slug }}">{{ section_title }}</a>
+      </li>
+      {% if section_props.sections %}
+          <ul>
+              {{ loop(section_props.sections.items()) }}
+          </ul>
+      {% endif %}
     {% endfor %}
     </ul>
 </nav>
@@ -28,12 +28,12 @@
                 <ul class="links">
                 {% for link in section_props.links %}
                     <li class="link">
-                        <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-                        <div class="content">
-                          <a class="title" target="_blank" href="{{ link.url_slug }}.html">{{ link.title }}</a>
-                          <p class="desc">{{ link.desc }}</p>
-                          <a class="link">{{ link.url }}</a>
-                        </div>
+                      <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
+                      <div class="content">
+                        <a class="title" target="_blank" href="{{ link.url_slug }}.html">{{ link.title }}</a>
+                        <p class="desc">{{ link.desc }}</p>
+                        <a class="link" href="{{ link.url }}">{{ link.url }}</a>
+                      </div>
                     </li>
                 {% endfor %}
                 </ul>
@@ -52,7 +52,7 @@
 {% for link in latest_links %}
   <li class="link">
       <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-      <span class="title"><a target="_blank" href="{{ link.url_slug }}">{{ link.title}}</a>: </span>{{link.desc}} <span class="meta">({{link.lang}}, {{link.tayp}})</span>
+      <span class="title"><a target="_blank" href="{{ link.url_slug }}">{{ link.title}}</a>: </span>{{link.desc}}
   </li>
 {% endfor %}
 </ul>

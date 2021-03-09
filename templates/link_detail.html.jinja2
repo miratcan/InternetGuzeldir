@@ -1,15 +1,33 @@
 {% extends "base.html.jinja2" %}
 
+{% block title %}{{ link.title}} / Internet Güzeldir{% endblock title %}
+
 {% block left %}
-<dl>
-	<dt>Dil</dt>
-	<dd>{{ link.lang }}</dd>
-</dl>
+<nav>
+    <h2>Kategoriler</h2>
+    <ul>
+    {% for section_title, section_props in sections.sections.items() recursive %}
+      <li class="level{{loop.depth + 1}}">
+        <a href="index.html#{{ section_props.slug }}">{{ section_title }}</a>
+      </li>
+      {% if section_props.sections %}
+          <ul>
+              {{ loop(section_props.sections.items()) }}
+          </ul>
+      {% endif %}
+    {% endfor %}
+    </ul>
+</nav>
 {% endblock %}
 
 {% block main %}
-<h2>{{ link.title }}</h2>
-<p>{{ link.desc }}</p>
+<div id="link_detail">
+  <h2>{{ link.title }}</h2>
+  <p class="meta">{{link.lang}} dilinde {{link.tayp}}</p>
+  <p>{{ link.desc }}</p>
+  <a class="link" href="{{ link.url }}">{{ link.url }}</a>
+</div>
+
 <div id="disqus_thread"></div>
 <script>
     /**
