@@ -83,7 +83,7 @@ def get_latest_links(csv_lines):
             "source": source, "date": date,
 
         })
-    return sorted(links, key=lambda i: i['date'])
+    return sorted(links, key=lambda i: i['date'], reverse=True)
 
 
 
