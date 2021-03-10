@@ -14,7 +14,7 @@
           padding: 0;
           background: white;
           display: grid;
-          grid-template-columns: min-content 2fr;
+          grid-template-columns: min-content 2fr 1fr;
           grid-template-rows: min-content 1fr;
           gap: 0px 0px;
           grid-template-areas:
@@ -75,6 +75,10 @@
           margin: 0 0 .25rem 0;
           list-style: square;
           white-space: nowrap;
+        }
+
+        aside.left li a.active {
+          font-weight: bold;
         }
 
         aside.right {}
@@ -174,19 +178,56 @@
           border: 1px solid gray;
           padding: 1rem;
         }
+        .button {
+          border: 1px outset lightgray;
+          background: lightgray;
+          padding: .5rem;
+        }
+        .button:hover {
+          background: gray;
+        }
         </style>
         <title>{% block title %}İnternet Güzeldir{% endblock %}</title>
+
     </head>  
     <body>
-      <header><h1><a href="index.html">İNTERNET GÜZELDİR</a></h1></header>
+      <header>
+        <h1><a href="{% if current_category %}{% for idx in range(current_category.level + 1) %}../{% endfor %}{% endif %}index.html">İNTERNET GÜZELDİR</a></h1>
+      </header>
       <aside class="left">
-        {% block left %}{% endblock %}
+        {% block left %}
+        <nav>
+            <h2>Kategoriler</h2>
+            <ul>
+            {% for title, category in categories.categories.items() recursive %}
+              <li class="level{{loop.depth + 1}}">
+                <a {% if current_category and current_category.category_url == category.category_url%}class="active"{% endif %} href="{% if current_category %}{% for idx in range(current_category.level + 1) %}../{% endfor %}{% endif %}{{ category.category_url }}index.html">{{ title }}</a>
+              </li>
+              {% if category.categories %}
+                <ul>
+                  {{ loop(category.categories.items()) }}
+                </ul>
+              {% endif %}
+            {% endfor %}
+            </ul>
+        </nav>
+        {% endblock %}
       </aside>
       <main>
         {% block main %}{% endblock %}
       </main>
       <aside class="right">
-        {% block right %}{% endblock %}
+
+        {% block right %}
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdxpZ_TYzDVaF5QAy-7aqGtoHtscfEGrBpZxANr9M35o5XBrw/viewform?usp=sf_link">
+          <input class="button" type="submit" value="Öneri Gönder" />
+        </form>
+
+        <h2>Dilencilik Köşesi</h2>
+        <p>Reklamlar olmadan siteyi yürütmek istiyorum ancak bunun için bağış gerekli. Şu cüzdana BTC göndererek bağışta bulunabilirsin:</p>
+        <p><code>17NQycT3YpsQ2QWvMU64Je3NC6BEpEeiUx</code></p>
+
+        {% endblock %}
       </aside>
     </body>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>

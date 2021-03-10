@@ -1,59 +1,19 @@
 {% extends "base.html.jinja2" %}
 
-{% block left %}
-<nav>
-    <h2>Kategoriler</h2>
-    <ul>
-    {% for section_title, section_props in sections.sections.items() recursive %}
-      <li class="level{{loop.depth + 1}}">
-        <a href="#{{ section_props.slug }}">{{ section_title }}</a>
-      </li>
-      {% if section_props.sections %}
-          <ul>
-              {{ loop(section_props.sections.items()) }}
-          </ul>
-      {% endif %}
-    {% endfor %}
-    </ul>
-</nav>
-{% endblock %}
-
 {% block main %}
-{% for section_title, section_props in sections.sections.items() recursive %}
-    <section class="level{{ loop.depth }}" id="{{ section_props.slug }}">
-        <h{{loop.depth + 1}}>{{ section_props.category_str }}</h{{loop.depth + 1}}>
-
-        <div class="inner">
-            {% if section_props.links %}
-                <ul class="links">
-                {% for link in section_props.links %}
-                    <li class="link">
-                      <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-                      <div class="content">
-                        <a class="title" target="_blank" href="{{ link.url_slug }}.html">{{ link.title }}</a>
-                        <p class="desc">{{ link.desc }}</p>
-                        <a class="link" href="{{ link.url }}">{{ link.url }}</a>
-                      </div>
-                    </li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-            {% if section_props.sections %}
-                {{ loop(section_props.sections.items()) }}
-            {% endif %}
-        </div>
-    </section>
-{% endfor %}
-{% endblock %}
-
-{% block right %}
 <h2>Son Eklenenler</h2>
+
 <ul class="links">
 {% for link in latest_links %}
-  <li class="link">
+    <li class="link">
       <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-      <span class="title"><a target="_blank" href="{{ link.url_slug }}">{{ link.title}}</a>: </span>{{link.desc}}
-  </li>
+      <div class="content">
+        <a class="title" href="{{ link.category_url}}{{ link.filename }}">{{ link.title }}</a>
+        <p class="desc">{{ link.desc }}</p>
+        <a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a>
+      </div>
+    </li>
 {% endfor %}
 </ul>
+
 {% endblock %}
