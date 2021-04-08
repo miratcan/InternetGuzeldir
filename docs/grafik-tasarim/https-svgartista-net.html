@@ -50,9 +50,17 @@
           font-size: 16px;
           line-height: 22px;
         }
-        main { margin-left: 2rem; }
 
-        aside.left {  }
+        main {
+          margin-left: 2rem;
+          height: calc(100vh - 2rem);
+          overflow: scroll;
+        }
+
+        aside.left {
+          height: calc(100vh - 2rem);
+          overflow: scroll;
+        }
         aside.left ul {
           margin: 0 0 0 1rem;
           padding: 0;
@@ -152,7 +160,9 @@
           aside {
             display: none;
           }
-
+          main {
+          margin: 0;
+          }
           body {
             padding: .5rem;
           }
