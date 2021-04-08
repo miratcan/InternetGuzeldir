@@ -4,66 +4,53 @@
         <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <style>
         html {
-          background: darkgray;
-            scroll-behavior: smooth;
-
+          background: black;
+          scroll-behavior: smooth;
         }
         body {
-          font-size: 16px;
+          font-family: monospace;
+          font-size: 14px;
           line-height: 18px;
+          color: lightgray;
           padding: 0;
-          background: white;
           display: grid;
           grid-template-columns: min-content 2fr 1fr;
           grid-template-rows: min-content 1fr;
           gap: 0px 0px;
           grid-template-areas:
             "header header header"
-            "left main right";
+            "left main main";
+          max-width: 800px;
           margin: 0 auto;
         }
-
         main { grid-area: main; }
         header { grid-area: header; }
         aside.left { grid-area:left; }
         aside.right { grid-area:right; }
-
         h1, h2, h3, h4, h5 {
           padding: 0;
         }
-
         h2, h3, h4, h5 {
           margin: 1rem 0;
         }
-
         h1 {
           font-size: 24px;
           line-height: 30px;
           color: black;
         }
-
         h2 {
-          font-size: 24px;
-          line-height: 30px;
+          font-size: 18px;
+          line-height: 22px;
         }
-
         h3 {
           font-size: 20px;
           line-height: 26px;
         }
-
         h4 {
           font-size: 16px;
           line-height: 22px;
         }
-
-        aside { padding: 1rem; }
-
-        header { border-bottom: 1px solid darkgray; padding: 0 1rem; }
-
-        main {
-          padding: 1rem 1rem 2rem 2rem;
-        }
+        main { margin-left: 2rem; }
 
         aside.left {  }
         aside.left ul {
@@ -72,7 +59,7 @@
         }
 
         aside.left li {
-          margin: 0 0 .25rem 0;
+          margin: 0 0 .5rem 0;
           list-style: square;
           white-space: nowrap;
         }
@@ -113,7 +100,7 @@
         }
 
         ul.links li {
-          margin: 0 0 1.5rem 0;
+          margin: 0 2rem 2rem 0;
           position: relative;
           overflow: auto;
         }
@@ -135,14 +122,16 @@
           float: left;
           margin-left: 10px;
           width: calc(100% - 26px);
+          overflow: hidden;
         }
 
         ul.links li .content .desc {
-            margin: .2rem 0;
+            margin: .4rem 0;
         }
 
         a {
           text-decoration: underline;
+          color: lightblue;
         }
         #link_detail {
           margin: 0 0 2rem 0;
@@ -482,19 +471,6 @@
 
 
       </main>
-      <aside class="right">
-
-        
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdxpZ_TYzDVaF5QAy-7aqGtoHtscfEGrBpZxANr9M35o5XBrw/viewform?usp=sf_link">
-          <input class="button" type="submit" value="Öneri Gönder" />
-        </form>
-
-        <h2>Dilencilik Köşesi</h2>
-        <p>Yeterli bağış gelirse reklam koymama gerek kalmaz:</p>
-        <p><code>17NQycT3YpsQ2QWvMU64Je3NC6BEpEeiUx</code></p>
-        <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-      </aside>
     </body>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
