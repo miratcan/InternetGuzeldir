@@ -1,20 +1,15 @@
 {% extends "base.html.jinja2" %}
 
+{% block title %}{{ current_category.title }} Kategorisindeki Linkler{% endblock %}
+
 {% block main %}
 
 <h2>{{ current_category.title }}</h2>
 {% if current_category.links %}
   <ul class="links">
     {% for link in current_category.links %}
-        <li class="link">
-          <img class="favicon"src="https://www.google.com/s2/favicons?domain={{ link.url }}" />
-          <div class="content">
-        <a class="title" href="{% for idx in range(current_category.level + 1) %}../{% endfor %}{{ link.category_url}}{{ link.filename }}">{{ link.title }}</a>
-            <p class="desc">{{ link.desc }}</p>
-            <a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a>
-          </div>
-        </li>
+      {% include "link_as_list_item.html.jinja2" %}
     {% endfor %}
-    </ul>
+  </ul>
 {% endif %}
 {% endblock %}
