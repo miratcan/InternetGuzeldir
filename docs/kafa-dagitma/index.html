@@ -1,78 +1,74 @@
-<html>
+<!DOCTYPE html>
+<html lang="tr">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <style>
         html {
-          background: darkgray;
-            scroll-behavior: smooth;
-
+          background: black;
+          scroll-behavior: smooth;
         }
         body {
-          font-size: 16px;
+          font-family: monospace;
+          font-size: 14px;
           line-height: 18px;
+          color: lightgray;
           padding: 0;
-          background: white;
           display: grid;
           grid-template-columns: min-content 2fr 1fr;
           grid-template-rows: min-content 1fr;
           gap: 0px 0px;
           grid-template-areas:
             "header header header"
-            "left main right";
+            "left main main";
+          max-width: 800px;
           margin: 0 auto;
         }
-
         main { grid-area: main; }
         header { grid-area: header; }
         aside.left { grid-area:left; }
         aside.right { grid-area:right; }
-
         h1, h2, h3, h4, h5 {
           padding: 0;
         }
-
         h2, h3, h4, h5 {
           margin: 1rem 0;
         }
-
         h1 {
           font-size: 24px;
           line-height: 30px;
           color: black;
         }
-
         h2 {
-          font-size: 24px;
-          line-height: 30px;
+          font-size: 18px;
+          line-height: 22px;
         }
-
         h3 {
           font-size: 20px;
           line-height: 26px;
         }
-
         h4 {
           font-size: 16px;
           line-height: 22px;
         }
 
-        aside { padding: 1rem; }
-
-        header { border-bottom: 1px solid darkgray; padding: 0 1rem; }
-
         main {
-          padding: 1rem 1rem 2rem 2rem;
+          margin-left: 2rem;
+          height: calc(100vh - 4rem);
+          overflow-y: auto;
         }
 
-        aside.left {  }
+        aside.left {
+          height: calc(100vh - 4rem);
+          overflow-y: auto;
+        }
         aside.left ul {
           margin: 0 0 0 1rem;
           padding: 0;
         }
 
         aside.left li {
-          margin: 0 0 .25rem 0;
+          margin: 0 0 .5rem 0;
           list-style: square;
           white-space: nowrap;
         }
@@ -87,23 +83,10 @@
           overflow: scroll;
         }
 
-        section {
-          margin: 0;
-          padding: 0;
-        }
-
-        section .inner {
-          margin: 0 0 0 .5rem;
-          padding: 0 0 0 1rem;
-          border-left: 1px solid darkgray;
-        }
-
-        section:first-child {
-          margin-top: 0;
-        }
-
-        section:last-child {
-          margin-bottom: 0;
+        #main-header {
+            border-bottom: 1px dashed gray;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
         }
 
         ul.links {
@@ -113,7 +96,7 @@
         }
 
         ul.links li {
-          margin: 0 0 1.5rem 0;
+          margin: 0 2rem 2rem 0;
           position: relative;
           overflow: auto;
         }
@@ -135,14 +118,16 @@
           float: left;
           margin-left: 10px;
           width: calc(100% - 26px);
+          overflow: hidden;
         }
 
         ul.links li .content .desc {
-            margin: .2rem 0;
+            margin: .4rem 0;
         }
 
         a {
           text-decoration: underline;
+          color: lightblue;
         }
         #link_detail {
           margin: 0 0 2rem 0;
@@ -163,7 +148,9 @@
           aside {
             display: none;
           }
-
+          main {
+          margin: 0;
+          }
           body {
             padding: .5rem;
           }
@@ -187,8 +174,10 @@
           background: gray;
         }
         </style>
-        <title>İnternet Güzeldir</title>
-
+        <title>Kafa Dağıtma Kategorisindeki Linkler</title>
+        <meta
+           name="description"
+           content="İnternet'in ne kadar güzel olduğunu hatırlamanızı sağlayacak link dizini">
     </head>  
     <body>
       <header>
@@ -203,6 +192,15 @@
               <li class="level2">
                 <a  href="../blokzincir/index.html">Blokzincir</a>
               </li>
+              
+                <ul>
+                  
+              <li class="level3">
+                <a  href="../blokzincir/yazilim-gelistirme/index.html">Yazılım Geliştirme</a>
+              </li>
+              
+            
+                </ul>
               
             
               <li class="level2">
@@ -221,7 +219,7 @@
               
             
               <li class="level2">
-                <a  href="../grafik-tasarim/index.html">Grafik Tasarım</a>
+                <a  href="../grafik-tasarim/araclar/index.html">Grafik Tasarım</a>
               </li>
               
                 <ul>
@@ -237,18 +235,18 @@
               
             
               <li class="level3">
-                <a  href="../grafik-tasarim/web-tasarim/kaynaklar/index.html">Web Tasarım</a>
+                <a  href="../grafik-tasarim/web-tasarim/araclar/index.html">Web Tasarım</a>
               </li>
               
                 <ul>
                   
               <li class="level4">
-                <a  href="../grafik-tasarim/web-tasarim/kaynaklar/index.html">Kaynaklar</a>
+                <a  href="../grafik-tasarim/web-tasarim/araclar/index.html">Araçlar</a>
               </li>
               
             
               <li class="level4">
-                <a  href="../grafik-tasarim/web-tasarim/araclar/index.html">Araçlar</a>
+                <a  href="../grafik-tasarim/web-tasarim/kaynaklar/index.html">Kaynaklar</a>
               </li>
               
             
@@ -272,6 +270,11 @@
                   
               <li class="level4">
                 <a  href="../kafa-dagitma/oyunlar/browser-oyunlari/index.html">Browser Oyunları</a>
+              </li>
+              
+            
+              <li class="level4">
+                <a  href="../kafa-dagitma/oyunlar/masaustu-oyunlari/index.html">Masaüstü Oyunları</a>
               </li>
               
             
@@ -341,31 +344,12 @@
                 <ul>
                   
               <li class="level3">
+                <a  href="../yazilim-gelistirme/altyapi/index.html">Altyapı</a>
+              </li>
+              
+            
+              <li class="level3">
                 <a  href="../yazilim-gelistirme/araclar/index.html">Araçlar</a>
-              </li>
-              
-            
-              <li class="level3">
-                <a  href="../yazilim-gelistirme/blockchain/solidty/index.html">BlockChain</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level4">
-                <a  href="../yazilim-gelistirme/blockchain/solidty/index.html">Solidty</a>
-              </li>
-              
-            
-              <li class="level4">
-                <a  href="../yazilim-gelistirme/blockchain/ethereum/index.html">Ethereum</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-              <li class="level3">
-                <a  href="../yazilim-gelistirme/javascript/index.html">Javascript</a>
               </li>
               
             
@@ -400,12 +384,12 @@
                 <ul>
                   
               <li class="level4">
-                <a  href="../yazilim-gelistirme/oyun-gelistirme/arac-kitleri/index.html">Araç Kitleri</a>
+                <a  href="../yazilim-gelistirme/oyun-gelistirme/araclar/index.html">Araçlar</a>
               </li>
               
             
               <li class="level4">
-                <a  href="../yazilim-gelistirme/oyun-gelistirme/kaynaklara/index.html">Kaynaklara</a>
+                <a  href="../yazilim-gelistirme/oyun-gelistirme/kaynaklar/index.html">Kaynaklar</a>
               </li>
               
             
@@ -413,14 +397,23 @@
               
             
               <li class="level3">
-                <a  href="../yazilim-gelistirme/python/django/index.html">Python</a>
+                <a  href="../yazilim-gelistirme/python/index.html">Python</a>
               </li>
               
                 <ul>
                   
               <li class="level4">
-                <a  href="../yazilim-gelistirme/python/django/index.html">Django</a>
+                <a  href="../yazilim-gelistirme/python/django/kaynaklar/index.html">Django</a>
               </li>
+              
+                <ul>
+                  
+              <li class="level5">
+                <a  href="../yazilim-gelistirme/python/django/kaynaklar/index.html">Kaynaklar</a>
+              </li>
+              
+            
+                </ul>
               
             
               <li class="level4">
@@ -432,7 +425,12 @@
               
             
               <li class="level3">
-                <a  href="../yazilim-gelistirme/sunucu-kiralama/index.html">Sunucu Kiralama</a>
+                <a  href="../yazilim-gelistirme/onyuz-gelistirme/index.html">Önyüz Geliştirme</a>
+              </li>
+              
+            
+              <li class="level3">
+                <a  href="../yazilim-gelistirme/test-otomasyonu/index.html">Test Otomasyonu</a>
               </li>
               
             
@@ -449,11 +447,6 @@
               </li>
               
             
-              <li class="level2">
-                <a  href="../yaziilim-gelistirme/index.html">Yazıılım Geliştirme</a>
-              </li>
-              
-            
             </ul>
         </nav>
         
@@ -461,45 +454,28 @@
       <main>
         
 
-<h2>Kafa Dağıtma</h2>
+<div id="main-header">
+    <h2>Kafa Dağıtma</h2>
+    
+</div>
+
 
   <ul class="links">
     
-        <li class="link">
-          <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://www.vimgolf.com/" />
-          <div class="content">
-        <a class="title" href="../kafa-dagitma/https-www-vimgolf-com.html">VimGolf</a>
-            <p class="desc">Vim'de yetenek geliştirmek için çeşitli bulmacalar</p>
-            <a class="link" target="_blank" href="https://www.vimgolf.com/">https://www.vimgolf.com/</a>
-          </div>
-        </li>
+      <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.window-swap.com/)"></div>
+  <div class="content">
+    <a class="title" href="../kafa-dagitma/https-www-window-swap-com.html">Window Swap</a>
+    <p class="desc">Bilgisayarınızın ekranını dünyanın herhangi bir yerindeki pencereye dönüştürüyor. Kesinlikle denemelisiniz.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://www.window-swap.com/">https://www.window-swap.com/</a>
+  </div>
+</li>
+
     
-        <li class="link">
-          <img class="favicon"src="https://www.google.com/s2/favicons?domain=https://vim-adventures.com/" />
-          <div class="content">
-        <a class="title" href="../kafa-dagitma/https-vim-adventures-com.html">Vim Adventures</a>
-            <p class="desc">Vim öğrernmek için geliştirilmiş oyun</p>
-            <a class="link" target="_blank" href="https://vim-adventures.com/">https://vim-adventures.com/</a>
-          </div>
-        </li>
-    
-    </ul>
+  </ul>
 
 
       </main>
-      <aside class="right">
-
-        
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdxpZ_TYzDVaF5QAy-7aqGtoHtscfEGrBpZxANr9M35o5XBrw/viewform?usp=sf_link">
-          <input class="button" type="submit" value="Öneri Gönder" />
-        </form>
-
-        <h2>Dilencilik Köşesi</h2>
-        <p>Yeterli bağış gelirse reklam koymama gerek kalmaz:</p>
-        <p><code>17NQycT3YpsQ2QWvMU64Je3NC6BEpEeiUx</code></p>
-        <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
-      </aside>
     </body>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
