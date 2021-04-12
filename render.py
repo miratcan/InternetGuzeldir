@@ -124,8 +124,8 @@ def get_latest_links(workbook):
     links = []
     for line in get_lines(workbook[LINKS]):
         title, url, desc, category_str, tayp, lang, source, date_str = line
-        print(date_str)
         date = datetime.datetime.strptime(date_str, "%d.%m.%Y").date()
+        print(date)
         links.append({
             "title": title, "url": url, "desc": desc,
             "tayp": tayp, "lang": lang,
