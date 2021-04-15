@@ -7,7 +7,11 @@ from os import makedirs
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from openpyxl import load_workbook
 
+from tempfile import TemporaryFile, NamedTemporaryFile
 
+# TODO: Read these as parameters from shell.
+DOCUMENT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXBGnECx6IhFmmeTt6QKLvy3rOvtvmUVaHq_Ubo1mPzWaJu_AfykRrJlurwrd9Ade9S5t7N4Zo2Qpa/pubhtml"
+DOCUMENT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXBGnECx6IhFmmeTt6QKLvy3rOvtvmUVaHq_Ubo1mPzWaJu_AfykRrJlurwrd9Ade9S5t7N4Zo2Qpa/pub?output=xlsx"
 
 CATEGORY_SEPARATOR = ">"
 LINKS = "Bağlantılar"
@@ -16,8 +20,6 @@ CATEGORIES = "Kategoriler"
 env = Environment(
     loader=FileSystemLoader('templates/'),
     autoescape=select_autoescape(['html', 'xml']))
-
-wb = load_workbook(filename='test.xlsx', read_only=True)
 
 def get_lines(worksheet):
     """Returns worksheet as list of lists"""
@@ -123,9 +125,7 @@ def get_latest_links(workbook):
 
     links = []
     for line in get_lines(workbook[LINKS]):
-        title, url, desc, category_str, tayp, lang, source, date_str = line
-        date = datetime.datetime.strptime(date_str, "%d.%m.%Y").date()
-        print(date)
+        title, url, desc, category_str, tayp, lang, source, date = line
         links.append({
             "title": title, "url": url, "desc": desc,
             "tayp": tayp, "lang": lang,
@@ -136,7 +136,10 @@ def get_latest_links(workbook):
         })
     return sorted(links, key=lambda i: i['date'], reverse=True)
 
-workbook = load_workbook(filename='test.xlsx', read_only=True)
+
+temp_file = NamedTemporaryFile(suffix='.xlsx')
+temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())
+workbook = load_workbook(filename=temp_file.name, read_only=True)
 categories = build_categorsed_links(workbook)
 latest_links = get_latest_links(workbook)[:20]
 
