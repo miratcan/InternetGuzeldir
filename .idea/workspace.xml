@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b266a644-1208-4f18-828b-d61578e69a81" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.jinja2" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
