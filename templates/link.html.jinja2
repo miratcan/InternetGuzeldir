@@ -6,9 +6,9 @@
 {% block main %}
 <div id="link_detail">
   <h2>{{ link.title }}</h2>
-  <p class="meta">{{link.lang}} dilinde {{link.tayp}}</p>
   <p>{{ link.desc }}</p>
-  <a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a>
+  <p><a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a></p>
+  <p class="meta">Bu site {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
 </div>
 
 <div id="disqus_thread"></div>
