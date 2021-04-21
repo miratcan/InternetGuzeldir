@@ -3,9 +3,10 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <meta charset="UTF-8">
         <style>
         html {
-          background: black;
+          background: #0d1117;
           scroll-behavior: smooth;
         }
         body {
@@ -26,7 +27,7 @@
         }
         main { grid-area: main; }
         header { grid-area: header; }
-        aside.left { grid-area:left; }
+        aside.left { grid-area:left; padding-right: 1rem; }
         aside.right { grid-area:right; }
         h1, h2, h3, h4, h5 {
           padding: 0;
@@ -127,14 +128,19 @@
 
         a {
           text-decoration: underline;
-          color: lightblue;
+          color: #58a6ff;
         }
+
         #link_detail {
-          margin: 0 0 2rem 0;
+          margin: 0;
+          padding: 1rem;
+          background: #182030;
+          border: 1px solid #30363d;
+          border-radius: 6px;
         }
 
         #link_detail h2 {
-          margin: 1rem 0 0 0;
+          margin: 0;
         }
 
         p.meta {
@@ -174,7 +180,7 @@
           background: gray;
         }
         </style>
-        <title>Templated / Internet Güzeldir</title>
+        <title>Templated — Internet Güzeldir</title>
         <meta
            name="description"
            content="867 adet bedava HTML5+CSS3 web site taslakları">
@@ -465,25 +471,14 @@
   <p class="meta">Bu site İngilizce dilinde bir Online Liste olup, 01-01-2020 tarihinde eklenmiştir.</p>
 </div>
 
-<div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://links-2.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
+<script src="https://utteranc.es/client.js"
+        repo="miratcan/internetguzeldir"
+        issue-term="pathname"
+        label="comment"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
       </main>
