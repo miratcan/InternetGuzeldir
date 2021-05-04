@@ -12,7 +12,7 @@
 
 {% if current_category.links %}
   <ul class="links">
-    {% for link in current_category.links %}
+    {% for link in current_category.links|sort(attribute='create_time') %}
       {% include "link_as_list_item.html.jinja2" %}
     {% endfor %}
   </ul>
