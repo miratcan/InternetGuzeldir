@@ -7,43 +7,43 @@
 
         <meta charset="UTF-8">
         <style>
-  :root {
-    --blue: #000084;
-    --dark-blue: #000044;
-    --indigo: #55f;
-    --purple: #aa00aa;
-    --pink: #f5f;
-    --red: #aa0000;
-    --orange: #f55;
-    --yellow: #ff5;
-    --green: #00aa00;
-    --teal: #00aaaa;
-    --cyan: #00aaaa;
-    --white: #fff;
-    --gray: #bbbbbb;
-    --gray-dark: #bbbbbb;
-    --primary: #bbbbbb;
-    --secondary: #bbbbbb;
-    --success: #00aa00;
-    --info: #00aaaa;
-    --warning: #aa5500;
-    --danger: #aa0000;
-    --light: #fff;
-    --dark: #000000;
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 960px;
-    --breakpoint-xl: 1152px;
-    --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
-    --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
-  }
+        :root {
+          --blue: #000084;
+          --dark-blue: #000044;
+          --indigo: #55f;
+          --purple: #aa00aa;
+          --pink: #f5f;
+          --red: #aa0000;
+          --orange: #f55;
+          --yellow: #ff5;
+          --green: #00aa00;
+          --teal: #00aaaa;
+          --cyan: #00aaaa;
+          --white: #fff;
+          --gray: #bbbbbb;
+          --gray-dark: #bbbbbb;
+          --primary: #bbbbbb;
+          --secondary: #bbbbbb;
+          --success: #00aa00;
+          --info: #00aaaa;
+          --warning: #aa5500;
+          --danger: #aa0000;
+          --light: #fff;
+          --dark: #000000;
+          --breakpoint-xs: 0;
+          --breakpoint-sm: 576px;
+          --breakpoint-md: 768px;
+          --breakpoint-lg: 960px;
+          --breakpoint-xl: 1152px;
+          --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
+          --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
+        }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
 
         html {
           font-family: monospace;
@@ -57,8 +57,8 @@
           font-family: var(--font-family-monospace);
         }
         body {
-          padding: 0;
-          margin: 4rem auto;
+          padding: 2rem 0 0 0;
+          margin: 0 auto;
           max-width: 1000px;
         }
         h1, h2, h3, h4, h5 {
@@ -78,7 +78,6 @@
           padding: 1rem;
           margin: 2rem 0 3rem 0;
           background: var(--blue);
-          box-shadow: 1rem 1rem var(--primary);
         }
         #sub-categories ul {
           display: grid;
@@ -155,7 +154,7 @@
           background: var(--blue);
           box-shadow: 1rem 1rem var(--dark-blue);
         }
-        #link_detail .inner {
+        .inner {
           border: 2px solid var(--primary);
           padding: 2rem;
         }
@@ -198,10 +197,12 @@
       </header>
       <main>
 <div id="sub-categories">
+<div class="inner">
   <ul>
     <li class="up"><a href="../index.html">Üst Klasör</a></li>
     
   </ul>
+</div>
 </div>
 <div id="main-header">
   <h2>Online Bedava Browser Oyunları</h2>

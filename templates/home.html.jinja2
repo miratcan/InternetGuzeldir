@@ -2,6 +2,7 @@
 
 {% block main %}
 <div id="sub-categories">
+<div class="inner">
   <ul>
     {% for category in categories.values() %}
       {% if category.parent == None %}
@@ -9,6 +10,7 @@
       {% endif %}
     {% endfor %}
   </ul>
+</div>
 </div>
 <div id="main-header">
   <h2>Son Eklenen 20 Bağlantı</h2>

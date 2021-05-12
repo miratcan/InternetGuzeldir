@@ -106,7 +106,6 @@ def get_category_overrides(lines):
         overrides[line[0]] = override
     return overrides
 
-
 def get_category_info(id_, overrides):
     name = get_category_parts(id_)[-1]
     result = {

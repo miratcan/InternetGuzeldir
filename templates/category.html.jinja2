@@ -1,6 +1,7 @@
 {% extends "base.html.jinja2" %}
 {% block main %}
 <div id="sub-categories">
+<div class="inner">
   <ul>
     <li class="up"><a href="../index.html">Üst Klasör</a></li>
     {% if category.children %}
@@ -10,6 +11,7 @@
       {% endfor %}
     {% endif %}
   </ul>
+</div>
 </div>
 <div id="main-header">
   <h2>{{ category.title }}</h2>
