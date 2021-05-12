@@ -1,7 +1,7 @@
 <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain={{ link.url }})"></div>
   <div class="content">
-    <a class="title" href="{% if current_category %}{% for idx in range(current_category.level + 1) %}../{% endfor %}{% endif %}{{ link.category_url}}{{ link.filename }}">{{ link.title }}</a>
+    <a class="title" href="{{ root_path }}{{ link.file_path}}">{{ link.title }}</a>
     <p class="desc">{{ link.desc }}</p>
     <a class="link" target="_blank" rel=”nofollow” href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a>
   </div>

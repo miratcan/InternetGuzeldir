@@ -1,20 +1,15 @@
 {% extends "base.html.jinja2" %}
 
 {% block main %}
-<div id="main-header" content-editable>
-    <h2>Web 1.0'ın Anısına...</h2>
-    <img alt="Aşırı yakışıklı bir insanın pikselize edilmiş fotoğrafı" style="width:100px; height:100px; float: left; margin: 0 1rem 0 0" src="https://scontent.fist1-3.fna.fbcdn.net/v/t1.18169-9/8311_10153790469597889_7554738808910878236_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=174925&_nc_ohc=ayQjIN-h_FwAX_jFjOt&_nc_ht=scontent.fist1-3.fna&oh=a0612d280c09b1d3f9801542abf57383&oe=609734D2">
-    <p><a href="https://twitter.com/miratcanbayrak/">Ben</a> 36 yaşında İstanbul'da yaşayan bir yazılım geliştiricisiyim.</p>
-    <p>İnternet bana artık kocaman bir AVM içerisinde gezmek gibi geliyor. Büyük, parlak, dev gibi resimlerle, yuvarlak köşelerle, bootstrap denen zımbırtının ürettiği birbirinin aynısı iskeletler üzerine yükselen bir yapı.</p>
-    <p>Görüntüsü güzel, ancak içeriği karın doyurmuyor.  Algoritmaların sadece o adres üzerinde daha çok zaman geçirmemiz için seçtiği bomboş içerikler denizi içinde yüzüyoruz. Her gün kendimi dalgın gözlerle instagram ana sayfasını dakikalarca aşağıya kaydırırken buluyorum.</p>
-    <p>Bu siteyi (eğer varsa) benim gibi hisseden insanlar için yaptım.<p>
-    <p>İçerisinde sadece kendi seçtiğim kategorize edilmiş linkler var. Sol taraftaki menüden bu kategorilere tıklayarak gezinebilirsiniz.<p>
-    <p>Bu linkler çeşitli türlerde olabiliyor: web siteleri, makaleler, online web uygulamaları, online listeler vs gibi. Dil olarak ise Türkçe ve İngilizce içeriklere yer veriyorum.</p>
-    <p>Her hafta mutlaka bir şeyler ekleniyor. Bookmarklayıp arada bir ziyaret etmenizi tavsiye ederim.</p>
-    <p>İçerik tavsiyesinde bulunmak için aklınızı kullanıp bir şekilde benle iletişime geçebilirsiniz.</p>
-    <p>Hepinize iyi günler dilerim. I kiss you.</p>
+<div id="sub-categories">
+  <ul>
+    {% for category in categories.values() %}
+      {% if category.parent == None %}
+        <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </div>
-
 <h2>Son Eklenen 20 Bağlantı</h2>
 <ul class="links">
 {% for link in latest_links %}

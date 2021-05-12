@@ -1,0 +1,11 @@
+<svg width="74" height="70" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.cls-1{fill:none;}.cls-2{fill:lightgray}</style>
+ </defs>
+ <title>ic</title>
+ <g>
+  <title>Layer 1</title>
+  <path class="cls-2" d="m20.85391,4.16953l9,5.42a4,4 0 0 0 2.07,0.58l35.88,0a1.5,1.5 0 0 1 1.5,1.5l0,53a1.5,1.5 0 0 1 -1.5,1.5l-62,0a1.5,1.5 0 0 1 -1.5,-1.5l0,-59a1.5,1.5 0 0 1 1.5,-1.5l15,0m1.12,-4l-16.12,0a5.5,5.5 0 0 0 -5.5,5.5l0,59a5.5,5.5 0 0 0 5.5,5.5l62,0a5.5,5.5 0 0 0 5.5,-5.5l0,-53a5.5,5.5 0 0 0 -5.5,-5.5l-35.92,0l-9.92,-6l-0.04,0z" id="svg_1"/>
+  <rect class="cls-2" x="0.34391" y="20.16953" width="72.92" height="4" id="svg_2"/>
+ </g>
+</svg>

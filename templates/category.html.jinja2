@@ -1,18 +1,23 @@
 {% extends "base.html.jinja2" %}
-
-{% block title %}{{ current_category.seo_title }} Kategorisindeki Linkler{% endblock %}
-{% block description %}{{ current_category.seo_title }} Kategorisindeki Linkler — Internet Güzeldir{% endblock %}
-
 {% block main %}
-
-<div id="main-header">
-    <h2>{{ current_category.seo_title }}</h2>
-    {% if current_category.seo_desc %}<p>{{ current_category.seo_desc }}</p>{% endif %}
+<div id="sub-categories">
+  <ul>
+    <li class="up"><a href="../index.html">Üst Klasör</a></li>
+    {% if category.children %}
+      {% for sub_category_id in category.children %}
+        {% set category = categories[sub_category_id] %}
+        <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
+      {% endfor %}
+    {% endif %}
+  </ul>
 </div>
-
-{% if current_category.links %}
+<div id="main-header">
+  <h2>{{ category.title }}</h2>
+  {% if category.desc %}<p>{{ category.desc }}</p>{% endif %}
+</div>
+{% if links %}
   <ul class="links">
-    {% for link in current_category.links|sort(attribute='create_time') %}
+    {% for link in links|sort(attribute='create_time') %}
       {% include "link_as_list_item.html.jinja2" %}
     {% endfor %}
   </ul>

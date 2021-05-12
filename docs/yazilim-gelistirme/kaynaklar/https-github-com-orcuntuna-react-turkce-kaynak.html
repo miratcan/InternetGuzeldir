@@ -5,132 +5,109 @@
         <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <meta charset="UTF-8">
         <style>
-        html {
-          background: #0d1117;
-          scroll-behavior: smooth;
-        }
+        html {background: #0d1117;}
         body {
           font-family: monospace;
           font-size: 14px;
           line-height: 18px;
           color: lightgray;
-          padding: 0;
-          display: grid;
-          grid-template-columns: min-content 2fr 1fr;
-          grid-template-rows: min-content 1fr;
-          gap: 0px 0px;
-          grid-template-areas:
-            "header header header"
-            "left main main";
-          max-width: 1000px;
+          padding: 2rem;
           margin: 0 auto;
+          width: 800px;
         }
-        main { grid-area: main; }
-        header { grid-area: header; }
-        aside.left { grid-area:left; padding-right: 1rem; }
-        aside.right { grid-area:right; }
         h1, h2, h3, h4, h5 {
           padding: 0;
-        }
-        h2, h3, h4, h5 {
-          margin: 1rem 0;
+          margin: 0 0 1rem 0;
         }
         h1 {
           font-size: 24px;
           line-height: 30px;
-          color: black;
         }
         h2 {
           font-size: 18px;
           line-height: 22px;
         }
         h3 {
-          font-size: 20px;
-          line-height: 26px;
+          font-size: 16px;
+          line-height: 18px;
         }
         h4 {
           font-size: 16px;
           line-height: 22px;
         }
-
-        main {
-          margin-left: 2rem;
-          height: calc(100vh - 4rem);
-          overflow-y: auto;
+        #main-header {
+          margin-bottom: 1rem;
+          overflow: auto;
         }
-
-        aside.left {
-          height: calc(100vh - 4rem);
-          overflow-y: auto;
+        #main-header p {
+          color:gray;
         }
-        aside.left ul {
-          margin: 0 0 0 1rem;
+        #sub-categories {
+          margin-bottom: 1rem;
+          padding: 1rem 0;
+          margin: 2rem 0 2rem 0;
+          border-top: 1px dashed gray;
+          border-bottom: 1px dashed gray;
+        }
+        #sub-categories ul {
+          display: grid;
+          gap: .25rem;
+          list-style-type: none;
+          grid-template-columns: auto auto auto auto;
           padding: 0;
+          margin: 0;
         }
-
-        aside.left li {
-          margin: 0 0 .5rem 0;
-          list-style: square;
-          white-space: nowrap;
+        #sub-categories ul li {
+          padding: 0;
+          margin: 0;
+          line-height: 1.6rem;
+          background:
+            url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/)
+            left center no-repeat;
+          background-size: 1rem;
+          padding-left: 1.4rem;
         }
-
-        aside.left li a.active {
+        #sub-categories ul li.up {
+          background-image:
+            url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
+        }
+        ul.categories li:hover {
           font-weight: bold;
         }
-
-        aside.right {}
-        #sections {
-          height: 100vh;
-          overflow: scroll;
-        }
-
-        #main-header {
-            border-bottom: 1px dashed gray;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-        }
-
         ul.links {
           list-style-type: none;
           margin: 0;
           padding: 0;
         }
-
         ul.links li {
           margin: 0 2rem 2rem 0;
           position: relative;
           overflow: auto;
         }
-
         ul.links li:last-child {
           margin: 0;
         }
-
         ul.links li .favicon {
           width: 16px;
           height: 16px;
           margin: 0;
-          vertical-align: bottom;
-          display: block;
-          float: left;
+          vertical-align:bottom;
+          display:block;
+          float:left;
         }
-
         ul.links li .content {
-          float: left;
-          margin-left: 10px;
-          width: calc(100% - 26px);
-          overflow: hidden;
+          float:left;
+          margin-left:10px;
+          width:calc(100% - 26px);
+          overflow:hidden;
         }
-
         ul.links li .content .desc {
-            margin: .4rem 0;
+          margin: .4rem 0;
         }
-
         a {
           text-decoration: underline;
           color: #58a6ff;
         }
-
         #link_detail {
           margin: 0;
           padding: 1rem;
@@ -138,46 +115,28 @@
           border: 1px solid #30363d;
           border-radius: 6px;
         }
-
         #link_detail h2 {
           margin: 0;
         }
-
         p.meta {
           font-size: 12px;
           color: gray;
           margin: 0;
           padding: 0;
         }
-
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 750px) {
           aside {
             display: none;
           }
           main {
-          margin: 0;
+            margin: 0;
           }
           body {
-            padding: .5rem;
+            padding: .25rem;
           }
-
-          section .inner {
-            margin: .5rem 0 .5rem .5rem;
-            padding: .5rem 0 .5rem .5rem;
+          #sub-categories ul {
+            grid-template-columns: auto auto;
           }
-        }
-
-        #disqus_thread {
-          border: 1px solid gray;
-          padding: 1rem;
-        }
-        .button {
-          border: 1px outset lightgray;
-          background: lightgray;
-          padding: .5rem;
-        }
-        .button:hover {
-          background: gray;
         }
         </style>
         <title>React Türkçe Kaynak — Internet Güzeldir</title>
@@ -187,283 +146,9 @@
     </head>  
     <body>
       <header>
-        <h1><a href="../../index.html">İNTERNET GÜZELDİR</a></h1>
+        <h1><a href="../../index.html">İNTERNET GÜZELDİR</a>
       </header>
-      <aside class="left">
-        
-        <nav>
-            <h2>Kategoriler</h2>
-            <ul>
-            
-              <li class="level2">
-                <a  href="../../blokzincir/index.html">Blokzincir</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level3">
-                <a  href="../../blokzincir/yazilim-gelistirme/index.html">Yazılım Geliştirme</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-              <li class="level2">
-                <a  href="../../diger/index.html">Diğer</a>
-              </li>
-              
-            
-              <li class="level2">
-                <a  href="../../evebeynlik/index.html">Evebeynlik</a>
-              </li>
-              
-            
-              <li class="level2">
-                <a  href="../../girisimcilik/index.html">Girişimcilik</a>
-              </li>
-              
-            
-              <li class="level2">
-                <a  href="../../grafik-tasarim/araclar/index.html">Grafik Tasarım</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level3">
-                <a  href="../../grafik-tasarim/araclar/index.html">Araçlar</a>
-              </li>
-              
-            
-              <li class="level3">
-                <a  href="../../grafik-tasarim/kaynaklar/index.html">Kaynaklar</a>
-              </li>
-              
-            
-              <li class="level3">
-                <a  href="../../grafik-tasarim/web-tasarim/araclar/index.html">Web Tasarım</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level4">
-                <a  href="../../grafik-tasarim/web-tasarim/araclar/index.html">Araçlar</a>
-              </li>
-              
-            
-              <li class="level4">
-                <a  href="../../grafik-tasarim/web-tasarim/kaynaklar/index.html">Kaynaklar</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-                </ul>
-              
-            
-              <li class="level2">
-                <a  href="../../kafa-dagitma/index.html">Kafa Dağıtma</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level3">
-                <a  href="../../kafa-dagitma/oyunlar/browser-oyunlari/index.html">Oyunlar</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level4">
-                <a  href="../../kafa-dagitma/oyunlar/browser-oyunlari/index.html">Browser Oyunları</a>
-              </li>
-              
-            
-              <li class="level4">
-                <a  href="../../kafa-dagitma/oyunlar/masaustu-oyunlari/index.html">Masaüstü Oyunları</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-                </ul>
-              
-            
-              <li class="level2">
-                <a  href="../../kisisel-gelisim/index.html">Kişisel Gelişim</a>
-              </li>
-              
-            
-              <li class="level2">
-                <a  href="../../kripto-para/index.html">Kripto Para</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level3">
-                <a  href="../../kripto-para/oyunlar/index.html">Oyunlar</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-              <li class="level2">
-                <a  href="../../metin-yazimi/index.html">Metin Yazımı</a>
-              </li>
-              
-            
-              <li class="level2">
-                <a  href="../../muzik/index.html">Müzik</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level3">
-                <a  href="../../muzik/bestecilik/index.html">Bestecilik</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-              <li class="level2">
-                <a  href="../../pazarlama/index.html">Pazarlama</a>
-              </li>
-              
-            
-              <li class="level2">
-                <a  href="../../saglik/index.html">Sağlık</a>
-              </li>
-              
-            
-              <li class="level2">
-                <a  href="../../seyahat/index.html">Seyahat</a>
-              </li>
-              
-            
-              <li class="level2">
-                <a  href="../../yazilim-gelistirme/index.html">Yazılım Geliştirme</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level3">
-                <a  href="../../yazilim-gelistirme/altyapi/index.html">Altyapı</a>
-              </li>
-              
-            
-              <li class="level3">
-                <a  href="../../yazilim-gelistirme/araclar/index.html">Araçlar</a>
-              </li>
-              
-            
-              <li class="level3">
-                <a class="active" href="../../yazilim-gelistirme/kaynaklar/index.html">Kaynaklar</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level4">
-                <a  href="../../yazilim-gelistirme/kaynaklar/egitim/index.html">Eğitim</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-              <li class="level3">
-                <a  href="../../yazilim-gelistirme/kisisel-yetenekler/index.html">Kişisel Yetenekler</a>
-              </li>
-              
-            
-              <li class="level3">
-                <a  href="../../yazilim-gelistirme/makine-ogrenmesi/index.html">Makine Öğrenmesi</a>
-              </li>
-              
-            
-              <li class="level3">
-                <a  href="../../yazilim-gelistirme/oyun-gelistirme/index.html">Oyun Geliştirme</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level4">
-                <a  href="../../yazilim-gelistirme/oyun-gelistirme/araclar/index.html">Araçlar</a>
-              </li>
-              
-            
-              <li class="level4">
-                <a  href="../../yazilim-gelistirme/oyun-gelistirme/kaynaklar/index.html">Kaynaklar</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-              <li class="level3">
-                <a  href="../../yazilim-gelistirme/python/index.html">Python</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level4">
-                <a  href="../../yazilim-gelistirme/python/django/kaynaklar/index.html">Django</a>
-              </li>
-              
-                <ul>
-                  
-              <li class="level5">
-                <a  href="../../yazilim-gelistirme/python/django/kaynaklar/index.html">Kaynaklar</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-              <li class="level4">
-                <a  href="../../yazilim-gelistirme/python/kutuphaneler/index.html">Kütüphaneler</a>
-              </li>
-              
-            
-              <li class="level4">
-                <a  href="../../yazilim-gelistirme/python/kaynaklar/index.html">Kaynaklar</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-              <li class="level3">
-                <a  href="../../yazilim-gelistirme/onyuz-gelistirme/index.html">Önyüz Geliştirme</a>
-              </li>
-              
-            
-              <li class="level3">
-                <a  href="../../yazilim-gelistirme/test-otomasyonu/index.html">Test Otomasyonu</a>
-              </li>
-              
-            
-                </ul>
-              
-            
-              <li class="level2">
-                <a  href="../../calisma-duzeni/index.html">Çalışma Düzeni</a>
-              </li>
-              
-            
-              <li class="level2">
-                <a  href="../../is-isci-bulma/index.html">İş İşçi Bulma</a>
-              </li>
-              
-            
-            </ul>
-        </nav>
-        
-      </aside>
       <main>
-        
 <div id="link_detail">
   <h2>React Türkçe Kaynak</h2>
   <p>Orçun Tuna'nın yazıp kamulaştırdığı Türkçe React kitabı.</p>
@@ -480,8 +165,7 @@
         async>
 </script>
 
-
-      </main>
+</main>
     </body>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>

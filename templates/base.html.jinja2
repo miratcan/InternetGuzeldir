@@ -5,132 +5,109 @@
         <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <meta charset="UTF-8">
         <style>
-        html {
-          background: #0d1117;
-          scroll-behavior: smooth;
-        }
+        html {background: #0d1117;}
         body {
           font-family: monospace;
           font-size: 14px;
           line-height: 18px;
           color: lightgray;
-          padding: 0;
-          display: grid;
-          grid-template-columns: min-content 2fr 1fr;
-          grid-template-rows: min-content 1fr;
-          gap: 0px 0px;
-          grid-template-areas:
-            "header header header"
-            "left main main";
-          max-width: 1000px;
+          padding: 2rem;
           margin: 0 auto;
+          width: 800px;
         }
-        main { grid-area: main; }
-        header { grid-area: header; }
-        aside.left { grid-area:left; padding-right: 1rem; }
-        aside.right { grid-area:right; }
         h1, h2, h3, h4, h5 {
           padding: 0;
-        }
-        h2, h3, h4, h5 {
-          margin: 1rem 0;
+          margin: 0 0 1rem 0;
         }
         h1 {
           font-size: 24px;
           line-height: 30px;
-          color: black;
         }
         h2 {
           font-size: 18px;
           line-height: 22px;
         }
         h3 {
-          font-size: 20px;
-          line-height: 26px;
+          font-size: 16px;
+          line-height: 18px;
         }
         h4 {
           font-size: 16px;
           line-height: 22px;
         }
-
-        main {
-          margin-left: 2rem;
-          height: calc(100vh - 4rem);
-          overflow-y: auto;
+        #main-header {
+          margin-bottom: 1rem;
+          overflow: auto;
         }
-
-        aside.left {
-          height: calc(100vh - 4rem);
-          overflow-y: auto;
+        #main-header p {
+          color:gray;
         }
-        aside.left ul {
-          margin: 0 0 0 1rem;
+        #sub-categories {
+          margin-bottom: 1rem;
+          padding: 1rem 0;
+          margin: 2rem 0 2rem 0;
+          border-top: 1px dashed gray;
+          border-bottom: 1px dashed gray;
+        }
+        #sub-categories ul {
+          display: grid;
+          gap: .25rem;
+          list-style-type: none;
+          grid-template-columns: auto auto auto auto;
           padding: 0;
+          margin: 0;
         }
-
-        aside.left li {
-          margin: 0 0 .5rem 0;
-          list-style: square;
-          white-space: nowrap;
+        #sub-categories ul li {
+          padding: 0;
+          margin: 0;
+          line-height: 1.6rem;
+          background:
+            url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/)
+            left center no-repeat;
+          background-size: 1rem;
+          padding-left: 1.4rem;
         }
-
-        aside.left li a.active {
+        #sub-categories ul li.up {
+          background-image:
+            url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
+        }
+        ul.categories li:hover {
           font-weight: bold;
         }
-
-        aside.right {}
-        #sections {
-          height: 100vh;
-          overflow: scroll;
-        }
-
-        #main-header {
-            border-bottom: 1px dashed gray;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-        }
-
         ul.links {
           list-style-type: none;
           margin: 0;
           padding: 0;
         }
-
         ul.links li {
           margin: 0 2rem 2rem 0;
           position: relative;
           overflow: auto;
         }
-
         ul.links li:last-child {
           margin: 0;
         }
-
         ul.links li .favicon {
           width: 16px;
           height: 16px;
           margin: 0;
-          vertical-align: bottom;
-          display: block;
-          float: left;
+          vertical-align:bottom;
+          display:block;
+          float:left;
         }
-
         ul.links li .content {
-          float: left;
-          margin-left: 10px;
-          width: calc(100% - 26px);
-          overflow: hidden;
+          float:left;
+          margin-left:10px;
+          width:calc(100% - 26px);
+          overflow:hidden;
         }
-
         ul.links li .content .desc {
-            margin: .4rem 0;
+          margin: .4rem 0;
         }
-
         a {
           text-decoration: underline;
           color: #58a6ff;
         }
-
         #link_detail {
           margin: 0;
           padding: 1rem;
@@ -138,46 +115,28 @@
           border: 1px solid #30363d;
           border-radius: 6px;
         }
-
         #link_detail h2 {
           margin: 0;
         }
-
         p.meta {
           font-size: 12px;
           color: gray;
           margin: 0;
           padding: 0;
         }
-
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 750px) {
           aside {
             display: none;
           }
           main {
-          margin: 0;
+            margin: 0;
           }
           body {
-            padding: .5rem;
+            padding: .25rem;
           }
-
-          section .inner {
-            margin: .5rem 0 .5rem .5rem;
-            padding: .5rem 0 .5rem .5rem;
+          #sub-categories ul {
+            grid-template-columns: auto auto;
           }
-        }
-
-        #disqus_thread {
-          border: 1px solid gray;
-          padding: 1rem;
-        }
-        .button {
-          border: 1px outset lightgray;
-          background: lightgray;
-          padding: .5rem;
-        }
-        .button:hover {
-          background: gray;
         }
         </style>
         <title>{% block title %}İnternet Güzeldir{% endblock %}</title>
@@ -187,30 +146,9 @@
     </head>  
     <body>
       <header>
-        <h1><a href="{% if current_category %}{% for idx in range(current_category.level + 1) %}../{% endfor %}{% endif %}index.html">İNTERNET GÜZELDİR</a></h1>
+        <h1><a href="{{ root_path }}index.html">İNTERNET GÜZELDİR</a>
       </header>
-      <aside class="left">
-        {% block left %}
-        <nav>
-            <h2>Kategoriler</h2>
-            <ul>
-            {% for title, category in categories.categories.items() recursive %}
-              <li class="level{{loop.depth + 1}}">
-                <a {% if current_category and current_category.category_url == category.category_url%}class="active"{% endif %} href="{% if current_category %}{% for idx in range(current_category.level + 1) %}../{% endfor %}{% endif %}{{ category.category_url }}index.html">{{ title }}</a>
-              </li>
-              {% if category.categories %}
-                <ul>
-                  {{ loop(category.categories.items()) }}
-                </ul>
-              {% endif %}
-            {% endfor %}
-            </ul>
-        </nav>
-        {% endblock %}
-      </aside>
-      <main>
-        {% block main %}{% endblock %}
-      </main>
+      <main>{% block main %}{% endblock %}</main>
     </body>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
