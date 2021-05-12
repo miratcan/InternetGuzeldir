@@ -7,19 +7,74 @@
 
         <meta charset="UTF-8">
         <style>
-        html {
-          background-color: #000000;
-          background-image: linear-gradient(353deg, #000000 0%, #182030 74%);
-          min-height: 100vh;
-        }
+  :root {
+    --blue: #000084;
+    --indigo: #55f;
+    --purple: #aa00aa;
+    --pink: #f5f;
+    --red: #aa0000;
+    --orange: #f55;
+    --yellow: #ff5;
+    --green: #00aa00;
+    --teal: #00aaaa;
+    --cyan: #00aaaa;
+    --white: #fff;
+    --gray: #bbbbbb;
+    --gray-dark: #bbbbbb;
+    --primary: #bbbbbb;
+    --secondary: #bbbbbb;
+    --success: #00aa00;
+    --info: #00aaaa;
+    --warning: #aa5500;
+    --danger: #aa0000;
+    --light: #fff;
+    --dark: #000000;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 960px;
+    --breakpoint-xl: 1152px;
+    --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
+    --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
+  }
+
+  @font-face {
+    font-family: 'DOS';
+    src: url("https://kristopolous.github.io/BOOTSTRA.386/fonts/Px437_IBM_EGA8.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-kerning: none;
+    font-kerning: none;
+    font-synthesis: none;
+    -webkit-font-variant-ligatures: none;
+    font-variant-ligatures: none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+html {
+  font-family: 'DOS', monospace;
+  line-height: 20px;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  line-height-step: 14px;
+  background: var(--blue);
+  color: var(--primary);
+  font-family: var(--font-family-monospace);
+}
+
+
+
         body {
-          font-family: sans-serif;
-          font-size: 14px;
-          line-height: 18px;
-          color: lightgray;
-          padding: 2rem;
-          margin: 0 auto;
-          max-width: 800px;
+          padding: 0;
+          margin: 4rem auto;
+          max-width: 1000px;
         }
         h1, h2, h3, h4, h5 {
           padding: 0;
@@ -51,11 +106,10 @@
           color:lightgray;
         }
         #sub-categories {
-          margin-bottom: 1rem;
-          padding: 1rem 0;
-          margin: 2rem 0 2rem 0;
-          border-top: 1px dashed #58a6ff;
-          border-bottom: 1px dashed #58a6ff;
+          padding: 1rem;
+          margin: 2rem 0 3rem 0;
+          background: var(--cyan);
+          box-shadow: 1rem 1rem var(--dark);
         }
         #sub-categories ul {
           display: grid;
@@ -75,6 +129,13 @@
           background-size: 1rem;
           padding-left: 1.4rem;
         }
+        #sub-categories ul li:hover {
+          background: var(--gray-dark);
+        }
+ 
+        #sub-categories ul li a {
+          color:var(--dark);
+        }
         #sub-categories ul li.up {
           background-image:
             url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
@@ -88,7 +149,8 @@
           padding: 0;
         }
         ul.links li {
-          margin: 0 2rem 2rem 0;
+          margin: 0 0 1rem 0;
+          padding-bottom: 1rem;
           position: relative;
           overflow: auto;
         }
@@ -114,20 +176,17 @@
         }
         a {
           text-decoration: none;
-          color: #58a6ff;
+          color: var(--yellow);
         }
         #link_detail {
           margin: 0;
-          padding: 1rem;
-          background: #182030;
-          border: 1px solid #30363d;
-          border-radius: 6px;
+          padding: 2rem;
+          background: var(--dark);
         }
         #link_detail h2 {
           margin: 0;
         }
         p.meta {
-          font-size: 12px;
           color: gray;
           margin: 0;
           padding: 0;
