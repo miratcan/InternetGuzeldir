@@ -4,11 +4,14 @@
 {% block description %}{{ link.desc }}{% endblock %}
 
 {% block main %}
+
 <div id="link_detail">
-  <h2>{{ link.title }}</h2>
-  <p>{{ link.desc }}</p>
-  <p><a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a></p>
-  <p class="meta">Bu site {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
+  <div class="inner">
+    <h2>{{ link.title }}</h2>
+    <p>{{ link.desc }}</p>
+    <p><a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a></p>
+    <p class="meta">Bu site {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
+  </div>
 </div>
 
 <script src="https://utteranc.es/client.js"

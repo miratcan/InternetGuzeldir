@@ -9,6 +9,7 @@
         <style>
   :root {
     --blue: #000084;
+    --dark-blue: #000044;
     --indigo: #55f;
     --purple: #aa00aa;
     --pink: #f5f;
@@ -38,39 +39,23 @@
     --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
   }
 
-  @font-face {
-    font-family: 'DOS';
-    src: url("https://kristopolous.github.io/BOOTSTRA.386/fonts/Px437_IBM_EGA8.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-    -webkit-font-kerning: none;
-    font-kerning: none;
-    font-synthesis: none;
-    -webkit-font-variant-ligatures: none;
-    font-variant-ligatures: none;
-    font-variant-numeric: tabular-nums;
-  }
-
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-html {
-  font-family: 'DOS', monospace;
-  line-height: 20px;
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  line-height-step: 14px;
-  background: var(--blue);
-  color: var(--primary);
-  font-family: var(--font-family-monospace);
-}
-
-
-
+        html {
+          font-family: monospace;
+          line-height: 16px;
+          font-size: 14px;
+          -webkit-text-size-adjust: 100%;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          line-height-step: 14px;
+          background: var(--dark);
+          color: var(--primary);
+          font-family: var(--font-family-monospace);
+        }
         body {
           padding: 0;
           margin: 4rem auto;
@@ -80,23 +65,7 @@ html {
           padding: 0;
           margin: 0 0 1rem 0;
           color: white;
-        }
-        h1 {
-          font-size: 24px;
-          line-height: 30px;
-        }
-        h2 {
-          font-size: 18px;
-          line-height: 22px;
-
-        }
-        h3 {
-          font-size: 16px;
-          line-height: 18px;
-        }
-        h4 {
-          font-size: 16px;
-          line-height: 22px;
+          font-size: inherit;
         }
         #main-header {
           margin-bottom: 1rem;
@@ -108,8 +77,8 @@ html {
         #sub-categories {
           padding: 1rem;
           margin: 2rem 0 3rem 0;
-          background: var(--cyan);
-          box-shadow: 1rem 1rem var(--dark);
+          background: var(--blue);
+          box-shadow: 1rem 1rem var(--primary);
         }
         #sub-categories ul {
           display: grid;
@@ -132,9 +101,11 @@ html {
         #sub-categories ul li:hover {
           background: var(--gray-dark);
         }
- 
+        #sub-categories ul li:hover a {
+          color: var(--dark);
+        }
         #sub-categories ul li a {
-          color:var(--dark);
+          color:var(--primary);
         }
         #sub-categories ul li.up {
           background-image:
@@ -179,9 +150,14 @@ html {
           color: var(--yellow);
         }
         #link_detail {
-          margin: 0;
+          margin: 0 0 4rem 0;
+          padding: 10px;
+          background: var(--blue);
+          box-shadow: 1rem 1rem var(--dark-blue);
+        }
+        #link_detail .inner {
+          border: 2px solid var(--primary);
           padding: 2rem;
-          background: var(--dark);
         }
         #link_detail h2 {
           margin: 0;
@@ -221,11 +197,14 @@ html {
         <h1><a href="../index.html">İNTERNET GÜZELDİR</a>
       </header>
       <main>
+
 <div id="link_detail">
-  <h2>Deftonic</h2>
-  <p>Çalışma, uyku ya da meditasyon yapmak için arka plan sesleri</p>
-  <p><a class="link" target="_blank" href="https://defonic.com/">https://defonic.com/</a></p>
-  <p class="meta">Bu site İngilizce dilinde bir Web Uygulaması olup, 12-01-2021 tarihinde eklenmiştir.</p>
+  <div class="inner">
+    <h2>Deftonic</h2>
+    <p>Çalışma, uyku ya da meditasyon yapmak için arka plan sesleri</p>
+    <p><a class="link" target="_blank" href="https://defonic.com/">https://defonic.com/</a></p>
+    <p class="meta">Bu site İngilizce dilinde bir Web Uygulaması olup, 12-01-2021 tarihinde eklenmiştir.</p>
+  </div>
 </div>
 
 <script src="https://utteranc.es/client.js"
