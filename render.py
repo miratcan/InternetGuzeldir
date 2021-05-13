@@ -12,6 +12,8 @@ from openpyxl import load_workbook
 from tempfile import TemporaryFile, NamedTemporaryFile
 
 DOCUMENT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXBGnECx6IhFmmeTt6QKLvy3rOvtvmUVaHq_Ubo1mPzWaJu_AfykRrJlurwrd9Ade9S5t7N4Zo2Qpa/pub?output=xlsx"
+# DOCUMENT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSeKe2vu0nXrb6FAAChDlp3hRW5q-iQNFbvflyoIE1qk_Q1SFwLlWqWLGkbkZXXKwadWP9utLrZuaUd/pub?output=xlsx"
+
 SITE_TITLE = "LINK SITE"
 SITE_DESCRIPTION = "LINK SITE DESCRIPTION"
 
@@ -67,8 +69,10 @@ def get_category_depth(id_):
 
 
 def get_category_parent_id(id_):
+    if id_ is None:
+        return None
     parts = get_category_parts(id_)
-    return f" {SEPERATOR} ".join(parts[:-1]) if parts else None
+    return f" {SEPERATOR} ".join(parts[:-1]) if len(parts) > 1 else None
 
 
 def get_link_from_line(line):
@@ -131,23 +135,38 @@ def get_max_category_depth(links_page_lines):
 def get_categories(links_page_lines, categories_page_lines):
     categories = {}
     overrides = get_category_overrides(categories_page_lines)
-    max_depth = get_max_category_depth(links_page_lines)
-    for level in range(max_depth + 1):
-        for line in links_page_lines:
-            id_ = line[CATEGORY_COL]
-            depth = get_category_depth(id_)
-            if depth > level:
-                continue
-            category = get_category_info(id_, overrides)
-            categories[id_] = category
-            if depth == 0:
-                continue
-            parent_id = get_category_parent_id(id_)
-            categories[id_]["parent"] = parent_id
-            if parent_id not in categories:
+    for line in links_page_lines:
+        id_ = line[CATEGORY_COL]
+        if id_ in categories:
+            continue
+        category = get_category_info(id_, overrides)
+        categories[id_] = category
+
+    for line in links_page_lines:
+
+        child_id = line[CATEGORY_COL]
+        parent_id = get_category_parent_id(child_id)
+
+        while child_id:
+
+            if child_id not in categories:
+                categories[child_id] = get_category_info(child_id, overrides)
+
+            if parent_id and parent_id not in categories:
                 categories[parent_id] = get_category_info(parent_id, overrides)
-            if id_ not in categories[parent_id]['children']:
-                categories[parent_id]["children"].append(id_)
+
+            if child_id and child_id not in categories:
+                categories[child_id] = get_category_info(child_id, overrides)
+
+            if parent_id and child_id:
+                if categories[child_id]['parent'] is None:
+                    categories[child_id]['parent'] = parent_id
+                if child_id not in categories[parent_id]['children']:
+                    categories[parent_id]['children'].append(child_id)
+
+            child_id = parent_id
+            parent_id = get_category_parent_id(child_id)
+
     return categories
 
 
