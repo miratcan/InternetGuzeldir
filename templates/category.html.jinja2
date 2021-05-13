@@ -13,10 +13,10 @@
   </ul>
 </div>
 </div>
-<div id="main-header">
+<header>
   <h2>{{ category.title }}</h2>
   {% if category.desc %}<p>{{ category.desc }}</p>{% endif %}
-</div>
+</header>
 {% if links %}
   <ul class="links">
     {% for link in links|sort(attribute='create_time') %}
