@@ -19,3 +19,12 @@
 {% endfor %}
 </ul>
 {% endblock %}
+{% block footer %}
+<P style="text-align: center;">
+Son Güncelleme: {{ last_update.strftime('%d-%m-%Y') }}, Toplam Link: {{ num_of_links}}</p>
+
+<p style="text-align: center;">
+  <a href="https://github.com/miratcan/internetguzeldir">Kaynak Kod</a>,
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfowx93hakWPZaEjmeG2TtjQJnT9dvW2i1Xg7B-yXJYCMjm8Q/viewform?usp=sf_link">Bağlantı Ekleme Talebi</a>
+</p>
+{% endblock %}

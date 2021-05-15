@@ -219,11 +219,13 @@ def render_links(base_path, links_by_category, template):
 
 def render_home(base_path, link_page_lines, categories, template):
     links = get_links_by_date(link_page_lines)
+    last_update = datetime.date.today()
     file_path = join(base_path, "index.html")
     with open(file_path, "w") as file:
         file.write(
             template.render(
-                latest_links=links[:20], root_path="./", categories=categories
+                latest_links=links[:20], root_path="./", categories=categories,
+                last_update=last_update, num_of_links=len(link_page_lines)
             )
         )
 
