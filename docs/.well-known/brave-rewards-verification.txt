@@ -1,0 +1,6 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: internetguzeldir.com
+Token: bd32d17d1b11a3088390cbf935c6256e95424e743daa007b2d8fcbf3ee983475
+
+
