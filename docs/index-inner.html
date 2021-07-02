@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta charset="UTF-8">
+        <style>
+        :root {
+          --blue: #000084;
+          --dark-blue: #000044;
+          --indigo: #55f;
+          --purple: #aa00aa;
+          --pink: #f5f;
+          --red: #aa0000;
+          --orange: #f55;
+          --yellow: #ff5;
+          --green: #00aa00;
+          --teal: #00aaaa;
+          --cyan: #00aaaa;
+          --white: #fff;
+          --gray: #bbbbbb;
+          --gray-dark: #bbbbbb;
+          --primary: #bbbbbb;
+          --secondary: #bbbbbb;
+          --success: #00aa00;
+          --info: #00aaaa;
+          --warning: #aa5500;
+          --danger: #aa0000;
+          --light: #fff;
+          --dark: #000000;
+          --breakpoint-xs: 0;
+          --breakpoint-sm: 576px;
+          --breakpoint-md: 768px;
+          --breakpoint-lg: 960px;
+          --breakpoint-xl: 1152px;
+          --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
+          --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
+        }
+
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+
+        html {
+          font-family: monospace;
+          line-height: 16px;
+          font-size: 14px;
+          -webkit-text-size-adjust: 100%;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          line-height-step: 14px;
+          color: var(--primary);
+          font-family: var(--font-family-monospace);
+        }
+        body {
+          padding: 0 1rem 1rem 1rem;
+          margin: 0 auto;
+          max-width: 1000px;
+        }
+        h1, h2, h3, h4, h5 {
+          padding: 0;
+          margin: 1rem 0;
+          color: white;
+          font-size: inherit;
+        }
+        header {margin:2rem 0}
+        header h2 {margin:0;}
+        #sub-categories {
+          padding: 10px;
+          margin: 0;
+          background: var(--blue);
+        }
+        footer {
+          margin-top: 1rem;
+          padding-top: 1rem;
+          border-top: 1px solid var(--gray-dark);
+        }
+        #sub-categories ul {
+          display: grid;
+          gap: .25rem;
+          list-style-type: none;
+          grid-template-columns: auto auto auto auto;
+          padding: 0;
+          margin: 0;
+        }
+        #sub-categories ul li {
+          padding: 0;
+          margin: 0;
+          line-height: 1.6rem;
+          background:
+            url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/)
+            left center no-repeat;
+          background-size: 1rem;
+          padding-left: 1.4rem;
+        }
+        #sub-categories ul li:hover {
+          background: var(--gray-dark);
+        }
+        #sub-categories ul li:hover a {
+          color: var(--dark);
+        }
+        #sub-categories ul li a {
+          color:var(--primary);
+        }
+        #sub-categories ul li.up {
+          background-image:
+            url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
+        }
+        ul.categories li:hover {
+          font-weight: bold;
+        }
+        ul.links {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+        ul.links li {
+          margin: 0 0 1rem 0;
+          padding-bottom: 1rem;
+          position: relative;
+          overflow: auto;
+        }
+        ul.links li:last-child {
+          margin: 0;
+        }
+        ul.links li .favicon {
+          width: 16px;
+          height: 16px;
+          margin: 0;
+          vertical-align:bottom;
+          display:block;
+          float:left;
+        }
+        ul.links li .content {
+          float:left;
+          margin-left:10px;
+          width:calc(100% - 26px);
+          overflow:hidden;
+        }
+        ul.links li .content .desc {
+          margin: .4rem 0;
+        }
+        a {
+          text-decoration: none;
+          color: var(--yellow);
+        }
+        #link_detail {
+          margin: 2rem 0 4rem 0;
+          padding: 10px;
+          background: var(--blue);
+          box-shadow: 1rem 1rem var(--dark-blue);
+        }
+        .inner {
+          border: 2px solid var(--primary);
+          padding: 10px;
+        }
+        #link_detail h2 {
+          margin: 0;
+        }
+        p.meta {
+          color: gray;
+          margin: 0;
+          padding: 0;
+        }
+        @media only screen and (max-width: 750px) {
+          aside {
+            display: none;
+          }
+          main {
+            margin: 0;
+          }
+          body {
+            padding: 1rem;
+          }
+          #sub-categories ul {
+            grid-template-columns: auto auto auto;
+          }
+        }
+        @media only screen and (max-width: 500px) {
+          #sub-categories ul {
+            grid-template-columns: auto;
+          }
+        }
+        </style>
+        <title>İnternet Güzeldir</title>
+        <meta
+           name="description"
+           content="İnternet'in ne kadar güzel olduğunu hatırlamanızı sağlayacak link dizini">
+    </head>  
+    
+    <canvas id="canvas" style="position:fixed;bottom:0;left:0;height:100wv;width:100wh;z-index:-10;"></canvas>
+    
+    <body>
+
+      <header><h1><a href="./index.html">İNTERNET GÜZELDİR</a></h1></header>
+      <main>
+
+
+              <marquee scrolldelay=1000 scrollamount=100>Bizi twitter'da takip edebilirsiniz: <a href="https://twitter.com/internetguzel?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">@internetguzel</a></marquee>
+<div id="sub-categories">
+<div class="inner">
+  <ul>
+    
+      
+        <li><a href="./calisma-duzeni/index.html">Çalışma Düzeni</a></li>
+      
+    
+      
+        <li><a href="./diger/index.html">Diğer</a></li>
+      
+    
+      
+        <li><a href="./evebeynlik/index.html">Evebeynlik</a></li>
+      
+    
+      
+        <li><a href="./finans/index.html">Finans</a></li>
+      
+    
+      
+        <li><a href="./girisimcilik/index.html">Girişimcilik</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li><a href="./is-isci-bulma/index.html">İş İşçi Bulma</a></li>
+      
+    
+      
+        <li><a href="./kafa-dagitma/index.html">Kafa Dağıtma</a></li>
+      
+    
+      
+        <li><a href="./kisisel-gelisim/index.html">Kişisel Gelişim</a></li>
+      
+    
+      
+        <li><a href="./kripto-para/index.html">Kripto Para</a></li>
+      
+    
+      
+    
+      
+        <li><a href="./metin-yazimi/index.html">Metin Yazımı</a></li>
+      
+    
+      
+        <li><a href="./muzik/index.html">Müzik</a></li>
+      
+    
+      
+    
+      
+        <li><a href="./pazarlama/index.html">Pazarlama</a></li>
+      
+    
+      
+        <li><a href="./saglik/index.html">Sağlık</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li><a href="./ses/index.html">Ses</a></li>
+      
+    
+      
+        <li><a href="./seyahat/index.html">Seyahat</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li><a href="./bilgisayarlar/index.html">Bilgisayarlar</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li><a href="./grafik-tasarim/index.html">Grafik Tasarım</a></li>
+      
+    
+      
+    
+      
+        <li><a href="./sanat/index.html">Sanat</a></li>
+      
+    
+      
+    
+      
+    
+      
+        <li><a href="./toplum/index.html">Toplum</a></li>
+      
+    
+      
+    
+  </ul>
+</div>
+</div>
+<header><h2>Son Eklenen 20 Bağlantı</h2></header>
+<ul class="links">
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://media.consensys.net/you-can-make-money-on-these-12-live-ethereum-dapps-today-heres-how-dcdf391430d0)"></div>
+  <div class="content">
+    <a class="title" href="./bilgisayarlar/blokzincir/https-media-consensys-net-you-can-make-money-on-these-12-live-ethereum-dapps-today-heres-how-dcdf391430d0.html">You Can Make Money on These 12 Live Ethereum Dapps Today — Here’s How…</a>
+    <p class="desc">Ethereum ağından para kazanmanızı sağlayabilecek 12 merkeziyetsiz uygulama.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://media.consensys.net/you-can-make-money-on-these-12-live-ethereum-dapps-today-heres-how-dcdf391430d0">https://media.consensys.net/you-can-make-money-...</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://github.com/luong-komorebi/Awesome-Linux-Software)"></div>
+  <div class="content">
+    <a class="title" href="./bilgisayarlar/isletim-sistemleri/linux/https-github-com-luong-komorebi-awesome-linux-software.html">Awesome Linux Software</a>
+    <p class="desc">Linux türevi işletim sistemlerinde kullanabileceğiniz kaliteli yazılımların listesi.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://github.com/luong-komorebi/Awesome-Linux-Software">https://github.com/luong-komorebi/Awesome-Linux...</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://wellfire.co/learn/easier-12-factor-django/)"></div>
+  <div class="content">
+    <a class="title" href="./bilgisayarlar/yazilim-gelistirme/python/django/kaynaklar/https-wellfire-co-learn-easier-12-factor-django.html">Deploying Django Sites Using the 12-Factor Pattern: Flexibility, Portability, and Maintainability</a>
+    <p class="desc">Bir Django projesini deploy ederken dikkat etmeniz gereken şeyleri listeleyen makale.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://wellfire.co/learn/easier-12-factor-django/">https://wellfire.co/learn/easier-12-factor-django/</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://pypi.org/project/bandit/)"></div>
+  <div class="content">
+    <a class="title" href="./bilgisayarlar/yazilim-gelistirme/python/kutuphaneler/https-pypi-org-project-bandit.html">bandit</a>
+    <p class="desc">Python kodunuzu güvenlik taramasından geçirmek için kullanabileceğiniz Python kütüphanesi.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://pypi.org/project/bandit/">https://pypi.org/project/bandit/</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://dev.to/damxipo/avoid-use-if-on-our-js-scripts-1b95)"></div>
+  <div class="content">
+    <a class="title" href="./bilgisayarlar/yazilim-gelistirme/javascript/https-dev-to-damxipo-avoid-use-if-on-our-js-scripts-1b95.html">Avoid use IF on our JS scripts</a>
+    <p class="desc">Javascript yazarken IF kullanımınızı azaltmak için 6 farklı yöntem öneren makale.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://dev.to/damxipo/avoid-use-if-on-our-js-scripts-1b95">https://dev.to/damxipo/avoid-use-if-on-our-js-s...</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://blog.defiyield.app/why-decentralized-finance-matters-and-why-you-should-know-about-it-78fb807eb742)"></div>
+  <div class="content">
+    <a class="title" href="./finans/https-blog-defiyield-app-why-decentralized-finance-matters-and-why-you-should-know-about-it-78fb807eb742.html">Why Decentralized Finance Matters and Why You Should Know About It</a>
+    <p class="desc">Merkeziyetsiz finans nedir ve neden önemlidir konusunu aydınlatmaya çalışan bir makale.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://blog.defiyield.app/why-decentralized-finance-matters-and-why-you-should-know-about-it-78fb807eb742">https://blog.defiyield.app/why-decentralized-fi...</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://flippa.com/)"></div>
+  <div class="content">
+    <a class="title" href="./girisimcilik/https-flippa-com.html">Flippa</a>
+    <p class="desc">Uygulama, blog, web sitelerinin alınıp satıldığı pazar yeri.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://flippa.com/">https://flippa.com/</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.sequencer64.com/sequencer/session)"></div>
+  <div class="content">
+    <a class="title" href="./muzik/bestecilik/https-www-sequencer64-com-sequencer-session.html">Sequencer64</a>
+    <p class="desc">Online davul makinesi.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://www.sequencer64.com/sequencer/session">https://www.sequencer64.com/sequencer/session</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://landingpage.fyi/)"></div>
+  <div class="content">
+    <a class="title" href="./pazarlama/https-landingpage-fyi.html">landing page fyi</a>
+    <p class="desc">Günlük olarak ilham almalık varış sayfası örnekleri paylaşan web sitesi.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://landingpage.fyi/">https://landingpage.fyi/</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://documentation.mjml.io/)"></div>
+  <div class="content">
+    <a class="title" href="./pazarlama/https-documentation-mjml-io.html">MJML</a>
+    <p class="desc">Responsive e-postalar tasarlamanızı kolaylaştırdığını iddia eden işaretleme dili.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://documentation.mjml.io/">https://documentation.mjml.io/</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=İhttps://kampolog.com/)"></div>
+  <div class="content">
+    <a class="title" href="./seyahat/ihttps-kampolog-com.html">Kampolog.com</a>
+    <p class="desc">Kamp Alanları,Karavan Alanları ve Glampingler için arama motoru.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="İhttps://kampolog.com/">İhttps://kampolog.com/</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.inklestudios.com/ink/)"></div>
+  <div class="content">
+    <a class="title" href="./bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/araclar/https-www-inklestudios-com-ink.html">Inkle</a>
+    <p class="desc">İnteraktif hikayeler yazmak için geliştirilmiş betik dili ve editörü.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://www.inklestudios.com/ink/">https://www.inklestudios.com/ink/</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://github.com/vadimdemedes/ink)"></div>
+  <div class="content">
+    <a class="title" href="./bilgisayarlar/yazilim-gelistirme/javascript/kutuphaneler/https-github-com-vadimdemedes-ink.html">ink</a>
+    <p class="desc">React ile  komut satırı uygulamaları yapmanızı sağlayan kütüphane.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://github.com/vadimdemedes/ink">https://github.com/vadimdemedes/ink</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.youtube.com/watch?v=RTxtiLp1C8Y)"></div>
+  <div class="content">
+    <a class="title" href="./bilgisayarlar/yazilim-gelistirme/javascript/https-www-youtube-com-watch-v-rtxtilp1c8y.html">Martin Kleppe: 1024+ Seconds of JS Wizardry -- JSConf EU 2013</a>
+    <p class="desc">Javascript hakkında çok eğlenceli bir sunum.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://www.youtube.com/watch?v=RTxtiLp1C8Y">https://www.youtube.com/watch?v=RTxtiLp1C8Y</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://craftinginterpreters.com/)"></div>
+  <div class="content">
+    <a class="title" href="./bilgisayarlar/yazilim-gelistirme/https-craftinginterpreters-com.html">Crafting Interpreters</a>
+    <p class="desc">Kendi betik dilinizi nasıl oluşturabileceğinizi anlatan bir online kitap.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://craftinginterpreters.com/">https://craftinginterpreters.com/</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://wormhole.app/)"></div>
+  <div class="content">
+    <a class="title" href="./diger/https-wormhole-app.html">WormHole</a>
+    <p class="desc">Wetransfer gibi, ancak paylaştığınız dosyaları uçtan uca şifreleyerek gönderiyor ve 24 saat sonra sunuculardan silme sözü veriyor.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://wormhole.app/">https://wormhole.app/</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.youtube.com/c/%C4%B0Y%C4%B0GEL%C4%B0R)"></div>
+  <div class="content">
+    <a class="title" href="./finans/https-www-youtube-com-c-c4-b0y-c4-b0gel-c4-b0r.html">İyi Gelir</a>
+    <p class="desc">Fonları tanıtan, insanların ücretsiz kullanabileceği kendi risk iştahlarına göre fon sepet dağılımı yapan start-up kurucusu Prof. Dr. Serra Eren'in Youtube kanalı.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://www.youtube.com/c/%C4%B0Y%C4%B0GEL%C4%B0R">https://www.youtube.com/c/%C4%B0Y%C4%B0GEL%C4%B0R</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.youtube.com/c/PROFDR%C3%96ZG%C3%9CRDEM%C4%B0RTA%C5%9E/)"></div>
+  <div class="content">
+    <a class="title" href="./finans/https-www-youtube-com-c-profdr-c3-96zg-c3-9crdem-c4-b0rta-c5-9e.html">Prof. Dr. Özgür Demirtaş</a>
+    <p class="desc">Prof. Dr. Özgür Demirtaş'ın Youtube kanalı.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://www.youtube.com/c/PROFDR%C3%96ZG%C3%9CRDEM%C4%B0RTA%C5%9E/">https://www.youtube.com/c/PROFDR%C3%96ZG%C3%9CR...</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.youtube.com/channel/UC9PfAU8pdnTs7afxIXKhgVA/)"></div>
+  <div class="content">
+    <a class="title" href="./finans/https-www-youtube-com-channel-uc9pfau8pdnts7afxixkhgva.html">Erkan Öz</a>
+    <p class="desc">Ekonomi gazetecisi, yazar ve yapımcı Erkan Öz'ün Youtube kanalı.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://www.youtube.com/channel/UC9PfAU8pdnTs7afxIXKhgVA/">https://www.youtube.com/channel/UC9PfAU8pdnTs7a...</a>
+  </div>
+</li>
+
+
+  <li class="link">
+  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.youtube.com/c/kanalfinans-webtv/)"></div>
+  <div class="content">
+    <a class="title" href="./finans/https-www-youtube-com-c-kanalfinans-webtv.html">Kanal Finans</a>
+    <p class="desc">Borsa, viop, forex, altın yorumları ve finans haberleri yayınlayan, ekonomi alanında videolu eğitimler veren finansal bilgi kanalı.</p>
+    <a class="link" target="_blank" rel=”nofollow” href="https://www.youtube.com/c/kanalfinans-webtv/">https://www.youtube.com/c/kanalfinans-webtv/</a>
+  </div>
+</li>
+
+
+</ul>
+</main>
+      <footer>
+<P style="text-align: center;">
+Son Güncelleme: 27-06-2021, Toplam Link: 224</p>
+
+<p style="text-align: center;">
+  <a href="https://github.com/miratcan/internetguzeldir">Kaynak Kod</a>,
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfowx93hakWPZaEjmeG2TtjQJnT9dvW2i1Xg7B-yXJYCMjm8Q/viewform?usp=sf_link">Bağlantı Ekleme Talebi</a>
+</p>
+</footer>
+
+    </body>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
+</html>

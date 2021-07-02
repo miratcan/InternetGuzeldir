@@ -1,15 +1,13 @@
-import csv
 import datetime
 import urllib.request
 
-from copy import deepcopy
 from slugify import slugify
 from os.path import join, exists
 from os import makedirs as _makedirs
 from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from openpyxl import load_workbook
-from tempfile import TemporaryFile, NamedTemporaryFile
+from tempfile import NamedTemporaryFile
 
 DOCUMENT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXBGnECx6IhFmmeTt6QKLvy3rOvtvmUVaHq_Ubo1mPzWaJu_AfykRrJlurwrd9Ade9S5t7N4Zo2Qpa/pub?output=xlsx"
 # DOCUMENT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSeKe2vu0nXrb6FAAChDlp3hRW5q-iQNFbvflyoIE1qk_Q1SFwLlWqWLGkbkZXXKwadWP9utLrZuaUd/pub?output=xlsx"
@@ -36,7 +34,8 @@ LINK_COLUMNS = (
 )
 
 env = Environment(
-    loader=FileSystemLoader("templates/"), autoescape=select_autoescape(["html", "xml"])
+    loader=FileSystemLoader("templates/"),
+    autoescape=select_autoescape(["html", "xml"]),
 )
 
 
@@ -51,7 +50,10 @@ def get_lines(worksheet):
 
 def get_category_parts(id_):
     return list(
-        filter(lambda part: bool(part), [part.strip() for part in id_.split(SEPERATOR)])
+        filter(
+            lambda part: bool(part),
+            [part.strip() for part in id_.split(SEPERATOR)],
+        )
     )
 
 
@@ -110,6 +112,7 @@ def get_category_overrides(lines):
         overrides[line[0]] = override
     return overrides
 
+
 def get_category_info(id_, overrides):
     name = get_category_parts(id_)[-1]
     result = {
@@ -159,10 +162,10 @@ def get_categories(links_page_lines, categories_page_lines):
                 categories[child_id] = get_category_info(child_id, overrides)
 
             if parent_id and child_id:
-                if categories[child_id]['parent'] is None:
-                    categories[child_id]['parent'] = parent_id
-                if child_id not in categories[parent_id]['children']:
-                    categories[parent_id]['children'].append(child_id)
+                if categories[child_id]["parent"] is None:
+                    categories[child_id]["parent"] = parent_id
+                if child_id not in categories[parent_id]["children"]:
+                    categories[parent_id]["children"].append(child_id)
 
             child_id = parent_id
             parent_id = get_category_parent_id(child_id)
@@ -213,7 +216,9 @@ def render_links(base_path, links_by_category, template):
             file_path = join(base_path, link["file_path"])
             with open(file_path, "w") as file:
                 file.write(
-                    template.render(link=link, root_path=get_category_root_path(id_))
+                    template.render(
+                        link=link, root_path=get_category_root_path(id_)
+                    )
                 )
 
 
@@ -224,8 +229,11 @@ def render_home(base_path, link_page_lines, categories, template):
     with open(file_path, "w") as file:
         file.write(
             template.render(
-                latest_links=links[:20], root_path="./", categories=categories,
-                last_update=last_update, num_of_links=len(link_page_lines)
+                latest_links=links[:20],
+                root_path="./",
+                categories=categories,
+                last_update=last_update,
+                num_of_links=len(link_page_lines),
             )
         )
 
@@ -254,14 +262,18 @@ def build(
     temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())
     workbook = load_workbook(filename=temp_file.name, read_only=True)
     links_page_lines = get_lines(workbook[links_page_name_on_workbook])
-    categories_page_lines = get_lines(workbook[categories_page_name_on_workbook])
+    categories_page_lines = get_lines(
+        workbook[categories_page_name_on_workbook]
+    )
     category_template = env.get_template(category_template_name)
     link_template = env.get_template(link_template_name)
     home_template = env.get_template(home_template_name)
     links_by_category = get_links_by_category(links_page_lines)
     categories = get_categories(links_page_lines, categories_page_lines)
     create_category_paths(root_path, links_page_lines)
-    render_categories(root_path, links_by_category, categories, category_template)
+    render_categories(
+        root_path, links_by_category, categories, category_template
+    )
     render_links(root_path, links_by_category, link_template)
     render_home(root_path, links_page_lines, categories, home_template)
 
