@@ -1,27 +1,27 @@
 {% extends "base.html.jinja2" %}
 {% block main %}
-<div id="sub-categories">
-<div class="inner">
-  <ul>
-    <li class="up"><a href="../index.html">Üst Klasör</a></li>
-    {% if category.children %}
-      {% for sub_category_id in category.children %}
-        {% set category = categories[sub_category_id] %}
-        <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
-      {% endfor %}
-    {% endif %}
-  </ul>
-</div>
-</div>
-<header>
-  <h2>{{ category.title }}</h2>
-  {% if category.desc %}<p>{{ category.desc }}</p>{% endif %}
-</header>
-{% if links %}
-  <ul class="links">
-    {% for link in links|sort(attribute='create_time') %}
-      {% include "link_as_list_item.html.jinja2" %}
+
+<ul class="categories">
+  <li class="up"><a href="../index.html">Üst Klasör</a></li>
+  {% if category.children %}
+    {% for sub_category_id in category.children %}
+      {% set category = categories[sub_category_id] %}
+      <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
     {% endfor %}
-  </ul>
+  {% endif %}
+</ul>
+
+{% if links %}
+<div class="outer mt mb" style="background: var(--blue)">
+  <div class="inner">
+    <h2 {% if category.desc %}class="mb"{% endif %}>{{ category.title }}</h2>
+    {% if category.desc %}<p>{{ category.desc }}</p>{% endif %}
+  </div>
+</div>
+<ul class="links">
+  {% for link in links|sort(attribute='create_time') %}
+    {% include "link_as_list_item.html.jinja2" %}
+  {% endfor %}
+</ul>
 {% endif %}
 {% endblock %}

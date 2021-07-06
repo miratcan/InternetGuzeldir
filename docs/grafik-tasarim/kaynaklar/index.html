@@ -1,217 +1,213 @@
 <!DOCTYPE html>
 <html lang="tr">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <meta charset="UTF-8">
-        <style>
-        :root {
-          --blue: #000084;
-          --dark-blue: #000044;
-          --indigo: #55f;
-          --purple: #aa00aa;
-          --pink: #f5f;
-          --red: #aa0000;
-          --orange: #f55;
-          --yellow: #ff5;
-          --green: #00aa00;
-          --teal: #00aaaa;
-          --cyan: #00aaaa;
-          --white: #fff;
-          --gray: #bbbbbb;
-          --gray-dark: #bbbbbb;
-          --primary: #bbbbbb;
-          --secondary: #bbbbbb;
-          --success: #00aa00;
-          --info: #00aaaa;
-          --warning: #aa5500;
-          --danger: #aa0000;
-          --light: #fff;
-          --dark: #000000;
-          --breakpoint-xs: 0;
-          --breakpoint-sm: 576px;
-          --breakpoint-md: 768px;
-          --breakpoint-lg: 960px;
-          --breakpoint-xl: 1152px;
-          --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
-          --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
-        }
-
-        *,
-        *::before,
-        *::after {
-          box-sizing: border-box;
-        }
-
-        html {
-          font-family: monospace;
-          line-height: 16px;
-          font-size: 14px;
-          -webkit-text-size-adjust: 100%;
-          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-          line-height-step: 14px;
-          background: var(--dark);
-          color: var(--primary);
-          font-family: var(--font-family-monospace);
-        }
-        body {
-          padding: 0 1rem 1rem 1rem;
-          margin: 0 auto;
-          max-width: 1000px;
-        }
-        h1, h2, h3, h4, h5 {
-          padding: 0;
-          margin: 1rem 0;
-          color: white;
-          font-size: inherit;
-        }
-        header {margin:2rem 0}
-        header h2 {margin:0;}
-        #sub-categories {
-          padding: 10px;
-          margin: 0;
-          background: var(--blue);
-        }
-        footer {
-          margin-top: 1rem;
-          padding-top: 1rem;
-          border-top: 1px solid var(--gray-dark);
-        }
-        #sub-categories ul {
-          display: grid;
-          gap: .25rem;
-          list-style-type: none;
-          grid-template-columns: auto auto auto auto;
-          padding: 0;
-          margin: 0;
-        }
-        #sub-categories ul li {
-          padding: 0;
-          margin: 0;
-          line-height: 1.6rem;
-          background:
-            url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/)
-            left center no-repeat;
-          background-size: 1rem;
-          padding-left: 1.4rem;
-        }
-        #sub-categories ul li:hover {
-          background: var(--gray-dark);
-        }
-        #sub-categories ul li:hover a {
-          color: var(--dark);
-        }
-        #sub-categories ul li a {
-          color:var(--primary);
-        }
-        #sub-categories ul li.up {
-          background-image:
-            url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
-        }
-        ul.categories li:hover {
-          font-weight: bold;
-        }
-        ul.links {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-        ul.links li {
-          margin: 0 0 1rem 0;
-          padding-bottom: 1rem;
-          position: relative;
-          overflow: auto;
-        }
-        ul.links li:last-child {
-          margin: 0;
-        }
-        ul.links li .favicon {
-          width: 16px;
-          height: 16px;
-          margin: 0;
-          vertical-align:bottom;
-          display:block;
-          float:left;
-        }
-        ul.links li .content {
-          float:left;
-          margin-left:10px;
-          width:calc(100% - 26px);
-          overflow:hidden;
-        }
-        ul.links li .content .desc {
-          margin: .4rem 0;
-        }
-        a {
-          text-decoration: none;
-          color: var(--yellow);
-        }
-        #link_detail {
-          margin: 2rem 0 4rem 0;
-          padding: 10px;
-          background: var(--blue);
-          box-shadow: 1rem 1rem var(--dark-blue);
-        }
-        .inner {
-          border: 2px solid var(--primary);
-          padding: 10px;
-        }
-        #link_detail h2 {
-          margin: 0;
-        }
-        p.meta {
-          color: gray;
-          margin: 0;
-          padding: 0;
-        }
-        @media only screen and (max-width: 750px) {
-          aside {
-            display: none;
-          }
-          main {
-            margin: 0;
-          }
-          body {
-            padding: 1rem;
-          }
-          #sub-categories ul {
-            grid-template-columns: auto auto auto;
-          }
-        }
-        @media only screen and (max-width: 500px) {
-          #sub-categories ul {
-            grid-template-columns: auto;
-          }
-        }
-        </style>
-        <title>İnternet Güzeldir</title>
-        <meta
-           name="description"
-           content="İnternet'in ne kadar güzel olduğunu hatırlamanızı sağlayacak link dizini">
-    </head>  
-    <body>
-      <header>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <style>
+      :root {
+      --blue: #000084;
+      --dark-blue: #000044;
+      --indigo: #55f;
+      --purple: #aa00aa;
+      --pink: #f5f;
+      --red: #aa0000;
+      --orange: #f55;
+      --yellow: #ff5;
+      --green: #00aa00;
+      --teal: #00aaaa;
+      --cyan: #00aaaa;
+      --white: #fff;
+      --gray: #bbbbbb;
+      --gray-dark: #bbbbbb;
+      --primary: #bbbbbb;
+      --secondary: #bbbbbb;
+      --success: #00aa00;
+      --info: #00aaaa;
+      --warning: #aa5500;
+      --danger: #aa0000;
+      --light: #fff;
+      --dark: #000000;
+      --breakpoint-xs: 0;
+      --breakpoint-sm: 576px;
+      --breakpoint-md: 768px;
+      --breakpoint-lg: 960px;
+      --breakpoint-xl: 1152px;
+      --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
+      --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
+      }
+      *,
+      *::before,
+      *::after {
+      box-sizing: border-box;
+      }
+      html {
+      font-family: monospace;
+      line-height: 16px;
+      font-size: 14px;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      line-height-step: 14px;
+      background: var(--dark);
+      color: var(--primary);
+      font-family: var(--font-family-monospace);
+      }
+      body {
+      padding: 0 1rem 1rem 1rem;
+      margin: 0 auto;
+      }
+      h1, h2, h3, h4, h5, p {
+      padding: 0;
+      margin: 0;
+      }
+      h1, h2, h3, h4, h5 { 
+      color: white;
+      font-size: inherit;
+      }
+      .outer {
+      padding: 10px;
+      }
+      .mt { margin-top: 20px; }
+      .mb { margin-bottom: 20px; }
+      footer {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gray-dark);
+      }
+      ul.categories {
+      display: grid;
+      gap: .25rem;
+      list-style-type: none;
+      grid-template-columns: auto auto auto auto;
+      padding: 0;
+      margin: 0 0 10px 0;
+      }
+      ul.categories li {
+      padding: 0;
+      margin: 0;
+      line-height: 1.6rem;
+      background:
+      url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/)
+      left center no-repeat;
+      background-size: 1rem;
+      padding-left: 1.4rem;
+      }
+      ul.categories li:hover {
+      font-weight: bold;
+      background: var(--gray-dark);
+      }
+      ul.categories li:hover a {
+      color: var(--dark);
+      }
+      ul.categories li a {
+      color:var(--primary);
+      }
+      ul.categories li.up {
+      background-image:
+      url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
+      }
+      ul.links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      }
+      ul.links li {
+      margin: 0 0 1rem 0;
+      padding-bottom: 1rem;
+      position: relative;
+      overflow: auto;
+      }
+      ul.links li:last-child {
+      margin: 0;
+      }
+      ul.links li .favicon {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+      vertical-align:bottom;
+      display:block;
+      float:left;
+      }
+      ul.links li .content {
+      float:left;
+      margin-left:10px;
+      width:calc(100% - 26px);
+      overflow:hidden;
+      }
+      ul.links li .content .desc {
+      margin: .4rem 0;
+      }
+      a {
+      text-decoration: none;
+      color: var(--yellow);
+      }
+      #link_detail {
+      margin: 2rem 0 4rem 0;
+      padding: 10px;
+      background: var(--blue);
+      box-shadow: 1rem 1rem var(--dark-blue);
+      }
+      .inner {
+      border: 2px solid var(--primary);
+      padding: 10px;
+      }
+      #link_detail h2 {
+      margin: 0;
+      }
+      p.meta {
+      color: gray;
+      margin: 0;
+      padding: 0;
+      }
+      header, main, footer { max-width: 800px; margin: 0 auto }
+      @media only screen and (max-width: 750px) {
+      aside {
+      display: none;
+      }
+      main {
+      margin: 0;
+      }
+      body {
+      padding: 1rem;
+      }
+      ul.categories {
+      grid-template-columns: auto auto auto;
+      }
+      }
+      @media only screen and (max-width: 500px) {
+      ul.categories {
+      grid-template-columns: auto;
+      }
+      }
+    </style>
+    <title>İnternet Güzeldir</title>
+    <meta
+      name="description"
+      content="İnternet'in ne kadar güzel olduğunu hatırlamanızı sağlayacak link dizini">
+  </head>
+  <body>
+    
+    <header class="mt mb">
       <h1><a href="../../index.html">İNTERNET GÜZELDİR</a></h1>
-      </header>
-      <main>
-<div id="sub-categories">
-<div class="inner">
-  <ul>
-    <li class="up"><a href="../index.html">Üst Klasör</a></li>
-    
-  </ul>
-</div>
-</div>
-<header>
-  <h2>Grafik Tasarımcılar İçin Faydalı Kaynaklar</h2>
-  <p>Grafik tasarım konusuyla ilgili akıl sahibi varlıklar için çeşitli kaynaklar burada listeleniyor.</p>
-</header>
+    </header>
+    <main>
 
-  <ul class="links">
-    
-      <li class="link">
+<ul class="categories">
+  <li class="up"><a href="../index.html">Üst Klasör</a></li>
+  
+</ul>
+
+
+<div class="outer mt mb" style="background: var(--blue)">
+  <div class="inner">
+    <h2 class="mb">Grafik Tasarımcılar İçin Faydalı Kaynaklar</h2>
+    <p>Grafik tasarım konusuyla ilgili akıl sahibi varlıklar için çeşitli kaynaklar burada listeleniyor.</p>
+  </div>
+</div>
+<ul class="links">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://designvault.io/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-designvault-io.html">Design Vault</a>
@@ -220,8 +216,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://colorleap.app/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-colorleap-app.html">ColorLeap</a>
@@ -230,8 +226,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=http://skuawk.com/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/http-skuawk-com.html">Skuawk</a>
@@ -240,8 +236,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://2.flexiple.com/scale/all-illustrations)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-2-flexiple-com-scale-all-illustrations.html">Scale by Flexiple</a>
@@ -250,8 +246,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://heroicons.com/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-heroicons-com.html">Hero Icons</a>
@@ -260,8 +256,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://simpleicons.org/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-simpleicons-org.html">Simple Icons</a>
@@ -270,8 +266,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://squoosh.app/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-squoosh-app.html">Squash</a>
@@ -280,8 +276,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://css.gg/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-css-gg.html">700 CSS Icons</a>
@@ -290,8 +286,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://enes.in/sorted-colors/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-enes-in-sorted-colors.html">Sorted CSS Colors</a>
@@ -300,8 +296,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://tabler-icons.io/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-tabler-icons-io.html">Tabler Icons</a>
@@ -310,8 +306,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://colorpalettes.earth/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-colorpalettes-earth.html">Colorpalettes Earth</a>
@@ -320,8 +316,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.supremo.co.uk/typeterms/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-www-supremo-co-uk-typeterms.html">Type Terms</a>
@@ -330,8 +326,8 @@
   </div>
 </li>
 
-    
-      <li class="link">
+  
+    <li class="link">
   <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://iconduck.com/)"></div>
   <div class="content">
     <a class="title" href="../../grafik-tasarim/kaynaklar/https-iconduck-com.html">Icon Duck</a>
@@ -340,175 +336,12 @@
   </div>
 </li>
 
-    
-  </ul>
+  
+</ul>
 
 </main>
-      <footer></footer>
-    </body>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
-          <script>
-
-        // This is a direct port of my old Firedemo effect
-        // Made to celebrate the 20th anniversary :)
-        // (C) 2013 by Javier Arevalo
-        // This code is released under the MIT license.
-        // https://github.com/TheJare/FiredemoHTML5
-
-        // Select a fast numeric array where available. (from Tojiro's gl-matrix)
-        var MAT_TYPE = (typeof Float32Array !== 'undefined') ? Float32Array : Array;
-
-        var FirePalette = (function() {
-            // The original hand-rolled palette
-            var pal = [
-                  0,   0,   0,   0,   1,   1,   0,   4,   5,   0,   7,   9,
-                  0,   8,  11,   0,   9,  12,  15,   6,   8,  25,   4,   4,
-                 33,   3,   3,  40,   2,   2,  48,   2,   2,  55,   1,   1,
-                 63,   0,   0,  63,   0,   0,  63,   3,   0,  63,   7,   0,
-                 63,  10,   0,  63,  13,   0,  63,  16,   0,  63,  20,   0,
-                 63,  23,   0,  63,  26,   0,  63,  29,   0,  63,  33,   0,
-                 63,  36,   0,  63,  39,   0,  63,  39,   0,  63,  40,   0,
-                 63,  40,   0,  63,  41,   0,  63,  42,   0,  63,  42,   0,
-                 63,  43,   0,  63,  44,   0,  63,  44,   0,  63,  45,   0,
-                 63,  45,   0,  63,  46,   0,  63,  47,   0,  63,  47,   0,
-                 63,  48,   0,  63,  49,   0,  63,  49,   0,  63,  50,   0,
-                 63,  51,   0,  63,  51,   0,  63,  52,   0,  63,  53,   0,
-                 63,  53,   0,  63,  54,   0,  63,  55,   0,  63,  55,   0,
-                 63,  56,   0,  63,  57,   0,  63,  57,   0,  63,  58,   0,
-                 63,  58,   0,  63,  59,   0,  63,  60,   0,  63,  60,   0,
-                 63,  61,   0,  63,  62,   0,  63,  62,   0,  63,  63,   0];
-            var realPalette = new MAT_TYPE(256*3);
-            var i = 0;
-            for (; i < pal.length; ++i) {
-                realPalette[i] = Math.floor(pal[i]*255/63);
-            }
-            // Fill the upper 192 entries with pure white
-            for (; i < realPalette.length; ++i) {
-                realPalette[i] = 255;
-            }
-            return realPalette;
-        })();
-
-        var Fire = function() {
-            this.w = parseInt(window.innerWidth / 2);
-            this.h = parseInt(window.innerHeight / 2);
-            this.Reset();
-        }
-
-        Fire.prototype.Reset = function() {
-            var s = this.w*this.h;
-            function makeBuf() {
-                var g = new MAT_TYPE(s);
-                for (var j = 0; j < s; ++j) {
-                    g[j] = 0;
-                }
-                return g;
-            }
-            this.backbuffer = makeBuf();
-            this.tempbuffer = makeBuf();
-        }
-
-        Fire.prototype.tick = function() {
-            var src = this.backbuffer;
-            var temp = this.tempbuffer;
-            var w = this.w;
-            var h = this.h;
-         
-            // Transform backbuffer spreading the heat, cooling down and randomly creating sparks below
-            var max = w*(h-1)-1;
-            var coolmax = w*(h-8);
-            for (var i = w+1; i < max; ++i) {
-                // Average neighbours - this spreads the heat
-                var v = src[i-1-w] + src[i-w] + src[i+1-w] + src[i-1] + src[i+1] + src[i-1+w] + src[i+w] + src[i+1+w];
-                var finalv = Math.floor(v/8);
-                // 25% of cells in a more or less random selection will be cooled
-                var bcool = v & 3;
-                // We cool cells only if they are not zero already - *except* in the lower lines of the buffer
-                // Cooling zero pixels in the lower area will 'wrap around' into random hot pixels
-                // Incidentally, in the beginning all pixels wrap, meaning a big explosion
-                if (!bcool && (i >= coolmax || finalv > 0)) {
-                    finalv = (255+finalv) % 256;
-                }
-                temp[i] = finalv;
-            }
-            // Scroll up & copy back the results
-            max = w*(h-2);
-            for (var x = 0; x < max; ++x) {
-                src[x] = temp[x+w];
-            }
-            // Smooth bottom rows - just for rendering
-            max = w*(h-1);
-            for (var x = w*(h-6); x < max; ++x) {
-                if (temp[x] < 15)
-                    temp[x] = (255-temp[x] + 22) % 256;
-            }
-        }
-
-        Fire.prototype.render = function(dest, offset) {
-            var s = this.w*(this.h-offset);
-            var g = this.tempbuffer;
-            for (var j = 0, i = 0; j < s; ++j, i += 4) {
-                dest[i  ] = FirePalette[g[j]*3  ];
-                dest[i+1] = FirePalette[g[j]*3+1];
-                dest[i+2] = FirePalette[g[j]*3+2];
-                dest[i+3] = 255;
-            }
-        }
-
-        // Helper to provides requestAnimationFrame in a cross browser way.
-        // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-        if ( !window.requestAnimationFrame ) {
-            window.requestAnimationFrame = ( function() {
-                return window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame ||
-                window.oRequestAnimationFrame ||
-                window.msRequestAnimationFrame ||
-                function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
-                    window.setTimeout( callback, 1000 / 60 );
-                };
-            } )();
-        }
-
-        window.onload = function() {
-            var fire = new Fire();
-            var offset = 2; // Skip the bottom 2 lines when blitting to screen - too noisy and ugly
-
-            var canvas = document.getElementById("canvas");
-            var ctx = canvas.getContext("2d");
-
-            canvas.width = fire.w;
-            canvas.height = fire.h - offset;
-
-            // Resizing support
-            function resizeCanvas() {
-                var wr = document.body.clientWidth/document.body.clientHeight;
-                var fr = fire.w/fire.h;
-                if (wr < fr) {
-                    canvas.style.width = window.innerWidth+"px";
-                    canvas.style.height = Math.floor(window.innerWidth/fr)+"px";
-                } else {
-                    canvas.style.height = window.innerHeight+"px";
-                    canvas.style.width = Math.floor(window.innerHeight*fr)+"px";
-                }
-            }
-            window.addEventListener("resize", resizeCanvas);
-            document.addEventListener("orientationChanged", resizeCanvas);
-            resizeCanvas();
-            // Prevent panning & make canvas clickable
-            document.addEventListener("touchmove", function(e) {e.preventDefault();})
-
-            var id = ctx.createImageData(canvas.width, canvas.height);
-
-            // Main loop
-            var tick = function() {
-                fire.tick();
-                fire.render(id.data, offset);
-                ctx.putImageData(id, 0, 0);
-                setTimeout(function(){ requestAnimationFrame(tick) }, 100);
-            }
-            tick(); // Go!
-        }
-
-      </script>
+    
+  </body>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
 </html>

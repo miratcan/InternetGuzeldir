@@ -1,30 +1,37 @@
 {% extends "base.html.jinja2" %}
 
 {% block main %}
-<div id="sub-categories">
-<div class="inner">
-  <ul>
-    {% for category in categories.values() %}
-      {% if category.parent == None %}
-        <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+<div class="outer mb" style="background: var(--red); color: white;">
+  <div class="inner">
+    <marquee>TWITTER'DAN TAKIP ETMEYI UNUTMAYIN: <a href="https://twitter.com/intent/follow?ref_src=twsrc%5Etfw&region=follow_link&screen_name=internetguzel&tw_p=followbutton">@internetguzel</a></marquee>
+  </div>
 </div>
-</div>
-<header><h2>Son Eklenen 20 Bağlantı</h2></header>
+
+<ul class="categories mb">
+  {% for category in categories.values() %}
+    {% if category.parent == None %}
+      <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+
+<h2 class="mt mb">Son Eklenen 20 Bağlantı</h2>
 <ul class="links">
 {% for link in latest_links %}
   {% include "link_as_list_item.html.jinja2" %}
 {% endfor %}
 </ul>
 {% endblock %}
+
 {% block footer %}
+<footer>
 <P style="text-align: center;">
 Son Güncelleme: {{ last_update.strftime('%d-%m-%Y') }}, Toplam Link: {{ num_of_links}}</p>
-
 <p style="text-align: center;">
+  <a href="https://twitter.com/internetguzel">Twitter</a>,
   <a href="https://github.com/miratcan/internetguzeldir">Kaynak Kod</a>,
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfowx93hakWPZaEjmeG2TtjQJnT9dvW2i1Xg7B-yXJYCMjm8Q/viewform?usp=sf_link">Bağlantı Ekleme Talebi</a>
 </p>
+</footer>
 {% endblock %}
