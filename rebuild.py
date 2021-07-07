@@ -188,7 +188,8 @@ def render_sitemap(root_path, categories, links_by_category, sitemap_template):
                 root_path=root_path,
                 links_by_category=links_by_category,
                 categories=categories,
-                render_date=datetime.date.today()
+                render_date=datetime.date.today(),
+                strftime=datetime.date.strftime
             )
         )
 
