@@ -1,6 +1,9 @@
 {% extends "base.html.jinja2" %}
-{% block main %}
 
+{% block title %}{{ category.title}} — Internet Güzeldir{% endblock title %}
+{% block description %}{{ category.desc }}{% endblock %}
+
+{% block main %}
 <ul class="categories">
   <li class="up"><a href="../index.html">Üst Klasör</a></li>
   {% if category.children %}
