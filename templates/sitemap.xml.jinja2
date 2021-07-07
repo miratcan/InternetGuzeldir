@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   {% for category in categories.values() %}
+   <url>
+      <loc>https://internetguzeldir.com/{{ category.path }}</loc>
+      <lastmod>{{ render_date.year }}-{{ render_date.month }}-{{ render_date.day }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   {% endfor %}
+   {% for links in links_by_category.values() %} {% for link in links %}
+   <url>
+      <loc>https://internetguzeldir.com/{{ link.file_path }}</loc>
+      <lastmod>{{ link.create_time.year }}-{{ link.create_time.month }}-{{ link.create_time.day }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   {% endfor %}{% endfor %}
+</urlset>
