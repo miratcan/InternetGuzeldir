@@ -7,9 +7,9 @@
 
 <div id="link_detail">
   <div class="inner">
-    <h2>{{ link.title }}</h2>
-    <p>{{ link.desc }}</p>
-    <p><a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a></p>
+    <h2 class="mb">{{ link.title }}</h2>
+    <p class="mb">{{ link.desc }}</p>
+    <p class="mb"><a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a></p>
     <p class="meta">Bu site {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
   </div>
 </div>

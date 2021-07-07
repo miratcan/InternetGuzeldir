@@ -36,6 +36,7 @@
       --breakpoint-xl: 1152px;
       --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
       --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
+      --margin-size: 20px;
       }
       *,
       *::before,
@@ -68,8 +69,8 @@
       .outer {
       padding: 10px;
       }
-      .mt { margin-top: 20px; }
-      .mb { margin-bottom: 20px; }
+      .mt { margin-top: var(--margin-size); }
+      .mb { margin-bottom: var(--margin-size); }
       footer {
       margin-top: 1rem;
       padding-top: 1rem;
@@ -152,9 +153,6 @@
       border: 2px solid var(--primary);
       padding: 10px;
       }
-      #link_detail h2 {
-      margin: 0;
-      }
       p.meta {
       color: gray;
       margin: 0;
@@ -195,9 +193,9 @@
 
 <div id="link_detail">
   <div class="inner">
-    <h2>Remote Python</h2>
-    <p>Sadece uzaktan çalışan Python geliştiricilerine odaklanmış iş ve işçi bulma platformu.</p>
-    <p><a class="link" target="_blank" href="https://www.remotepython.com/">https://www.remotepython.com/</a></p>
+    <h2 class="mb">Remote Python</h2>
+    <p class="mb">Sadece uzaktan çalışan Python geliştiricilerine odaklanmış iş ve işçi bulma platformu.</p>
+    <p class="mb"><a class="link" target="_blank" href="https://www.remotepython.com/">https://www.remotepython.com/</a></p>
     <p class="meta">Bu site İngilizce dilinde bir Web Uygulaması olup, 12-04-2021 tarihinde eklenmiştir.</p>
   </div>
 </div>

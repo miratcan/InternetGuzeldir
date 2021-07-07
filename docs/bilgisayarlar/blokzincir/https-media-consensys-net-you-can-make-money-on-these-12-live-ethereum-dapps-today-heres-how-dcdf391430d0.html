@@ -36,6 +36,7 @@
       --breakpoint-xl: 1152px;
       --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
       --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
+      --margin-size: 20px;
       }
       *,
       *::before,
@@ -68,8 +69,8 @@
       .outer {
       padding: 10px;
       }
-      .mt { margin-top: 20px; }
-      .mb { margin-bottom: 20px; }
+      .mt { margin-top: var(--margin-size); }
+      .mb { margin-bottom: var(--margin-size); }
       footer {
       margin-top: 1rem;
       padding-top: 1rem;
@@ -152,9 +153,6 @@
       border: 2px solid var(--primary);
       padding: 10px;
       }
-      #link_detail h2 {
-      margin: 0;
-      }
       p.meta {
       color: gray;
       margin: 0;
@@ -195,9 +193,9 @@
 
 <div id="link_detail">
   <div class="inner">
-    <h2>You Can Make Money on These 12 Live Ethereum Dapps Today — Here’s How…</h2>
-    <p>Ethereum ağından para kazanmanızı sağlayabilecek 12 merkeziyetsiz uygulama.</p>
-    <p><a class="link" target="_blank" href="https://media.consensys.net/you-can-make-money-on-these-12-live-ethereum-dapps-today-heres-how-dcdf391430d0">https://media.consensys.net/you-can-make-money-...</a></p>
+    <h2 class="mb">You Can Make Money on These 12 Live Ethereum Dapps Today — Here’s How…</h2>
+    <p class="mb">Ethereum ağından para kazanmanızı sağlayabilecek 12 merkeziyetsiz uygulama.</p>
+    <p class="mb"><a class="link" target="_blank" href="https://media.consensys.net/you-can-make-money-on-these-12-live-ethereum-dapps-today-heres-how-dcdf391430d0">https://media.consensys.net/you-can-make-money-...</a></p>
     <p class="meta">Bu site İngilizce dilinde bir Makale olup, 27-06-2021 tarihinde eklenmiştir.</p>
   </div>
 </div>

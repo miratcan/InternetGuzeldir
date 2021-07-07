@@ -36,6 +36,7 @@
       --breakpoint-xl: 1152px;
       --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
       --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
+      --margin-size: 20px;
       }
       *,
       *::before,
@@ -68,8 +69,8 @@
       .outer {
       padding: 10px;
       }
-      .mt { margin-top: 20px; }
-      .mb { margin-bottom: 20px; }
+      .mt { margin-top: var(--margin-size); }
+      .mb { margin-bottom: var(--margin-size); }
       footer {
       margin-top: 1rem;
       padding-top: 1rem;
@@ -152,9 +153,6 @@
       border: 2px solid var(--primary);
       padding: 10px;
       }
-      #link_detail h2 {
-      margin: 0;
-      }
       p.meta {
       color: gray;
       margin: 0;
@@ -195,9 +193,9 @@
 
 <div id="link_detail">
   <div class="inner">
-    <h2>Sizzy Browser</h2>
-    <p>Önyüz geliştiricişleri için özelleştirilmiş internet tarayıcısı. Yaptığınız bir değişikliği aynı anda birden fazla cihaz çözünürlüğü üzerinde gösterebilmek gibi faydalı ve hızlandırıcı özellikleri var.</p>
-    <p><a class="link" target="_blank" href="https://sizzy.co/">https://sizzy.co/</a></p>
+    <h2 class="mb">Sizzy Browser</h2>
+    <p class="mb">Önyüz geliştiricişleri için özelleştirilmiş internet tarayıcısı. Yaptığınız bir değişikliği aynı anda birden fazla cihaz çözünürlüğü üzerinde gösterebilmek gibi faydalı ve hızlandırıcı özellikleri var.</p>
+    <p class="mb"><a class="link" target="_blank" href="https://sizzy.co/">https://sizzy.co/</a></p>
     <p class="meta">Bu site İngilizce dilinde bir Masaüstü Uygulaması olup, 12-04-2021 tarihinde eklenmiştir.</p>
   </div>
 </div>

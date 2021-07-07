@@ -36,6 +36,7 @@
       --breakpoint-xl: 1152px;
       --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
       --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
+      --margin-size: 20px;
       }
       *,
       *::before,
@@ -68,8 +69,8 @@
       .outer {
       padding: 10px;
       }
-      .mt { margin-top: 20px; }
-      .mb { margin-bottom: 20px; }
+      .mt { margin-top: var(--margin-size); }
+      .mb { margin-bottom: var(--margin-size); }
       footer {
       margin-top: 1rem;
       padding-top: 1rem;
@@ -152,9 +153,6 @@
       border: 2px solid var(--primary);
       padding: 10px;
       }
-      #link_detail h2 {
-      margin: 0;
-      }
       p.meta {
       color: gray;
       margin: 0;
@@ -195,9 +193,9 @@
 
 <div id="link_detail">
   <div class="inner">
-    <h2>Julius</h2>
-    <p>Caesar III oyunun açık kaynaklı olarak tekrar inşa edilmiş versiyonu. Bir çok platformda çalışabiliyor.</p>
-    <p><a class="link" target="_blank" href="https://github.com/bvschaik/julius/wiki/Julius-release">https://github.com/bvschaik/julius/wiki/Julius-...</a></p>
+    <h2 class="mb">Julius</h2>
+    <p class="mb">Caesar III oyunun açık kaynaklı olarak tekrar inşa edilmiş versiyonu. Bir çok platformda çalışabiliyor.</p>
+    <p class="mb"><a class="link" target="_blank" href="https://github.com/bvschaik/julius/wiki/Julius-release">https://github.com/bvschaik/julius/wiki/Julius-...</a></p>
     <p class="meta">Bu site İngilizce dilinde bir Masaüstü Uygulaması olup, 13-05-2021 tarihinde eklenmiştir.</p>
   </div>
 </div>

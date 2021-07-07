@@ -180,6 +180,19 @@ def get_links_by_date(lines):
     return sorted(links, key=lambda i: i["create_time"], reverse=True)
 
 
+def render_sitemap(root_path, categories, links_by_category, sitemap_template):
+    import pprint    
+    with open(join(root_path, "sitemap.xml"), "w") as file:
+        file.write(
+            sitemap_template.render(
+                root_path=root_path,
+                links_by_category=links_by_category,
+                categories=categories,
+                render_date=datetime.date.today()
+            )
+        )
+
+
 def render_categories(base_path, links_by_category, categories, template):
     for id_, links in links_by_category.items():
         category = categories[id_]
@@ -255,19 +268,18 @@ def build(
     category_template_name="category.html.jinja2",
     home_template_name="home.html.jinja2",
     link_template_name="link.html.jinja2",
-    root_path="docs/",
+    sitemap_template_name="sitemap.xml.jinja2",
+    root_path="docs/"
 ):
-
     temp_file = NamedTemporaryFile(suffix=".xlsx")
     temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())
     workbook = load_workbook(filename=temp_file.name, read_only=True)
     links_page_lines = get_lines(workbook[links_page_name_on_workbook])
     categories_page_lines = get_lines(
-        workbook[categories_page_name_on_workbook]
-    )
+        workbook[categories_page_name_on_workbook])
     category_template = env.get_template(category_template_name)
     link_template = env.get_template(link_template_name)
-    home_template = env.get_template(home_template_name)
+    home_template = env.get_template(home_template_name)    
     links_by_category = get_links_by_category(links_page_lines)
     categories = get_categories(links_page_lines, categories_page_lines)
     create_category_paths(root_path, links_page_lines)
@@ -276,6 +288,9 @@ def build(
     )
     render_links(root_path, links_by_category, link_template)
     render_home(root_path, links_page_lines, categories, home_template)
+
+    sitemap_template = env.get_template(sitemap_template_name)
+    render_sitemap(root_path, categories, links_by_category, sitemap_template)
 
 
 build()

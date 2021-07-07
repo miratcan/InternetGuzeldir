@@ -36,6 +36,7 @@
       --breakpoint-xl: 1152px;
       --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
       --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
+      --margin-size: 20px;
       }
       *,
       *::before,
@@ -68,8 +69,8 @@
       .outer {
       padding: 10px;
       }
-      .mt { margin-top: 20px; }
-      .mb { margin-bottom: 20px; }
+      .mt { margin-top: var(--margin-size); }
+      .mb { margin-bottom: var(--margin-size); }
       footer {
       margin-top: 1rem;
       padding-top: 1rem;
@@ -152,9 +153,6 @@
       border: 2px solid var(--primary);
       padding: 10px;
       }
-      #link_detail h2 {
-      margin: 0;
-      }
       p.meta {
       color: gray;
       margin: 0;
@@ -195,9 +193,9 @@
 
 <div id="link_detail">
   <div class="inner">
-    <h2>Nedir Bu Serverless</h2>
-    <p>Serverless mimari nedir? IaaS, CaaS, PaaS, FaaS nedir gibi sorulara cevap veren bir makale.</p>
-    <p><a class="link" target="_blank" href="https://medium.com/serverless-turkey/nedir-bu-serverless-637a59a44e81">https://medium.com/serverless-turkey/nedir-bu-s...</a></p>
+    <h2 class="mb">Nedir Bu Serverless</h2>
+    <p class="mb">Serverless mimari nedir? IaaS, CaaS, PaaS, FaaS nedir gibi sorulara cevap veren bir makale.</p>
+    <p class="mb"><a class="link" target="_blank" href="https://medium.com/serverless-turkey/nedir-bu-serverless-637a59a44e81">https://medium.com/serverless-turkey/nedir-bu-s...</a></p>
     <p class="meta">Bu site Türkçe dilinde bir Makale olup, 01-01-2020 tarihinde eklenmiştir.</p>
   </div>
 </div>
