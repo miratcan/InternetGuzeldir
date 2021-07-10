@@ -1,7 +1,9 @@
 {% extends "base.html.jinja2" %}
 
+
 {% block title %}{{ link.title}} — Internet Güzeldir{% endblock title %}
 {% block description %}{{ link.desc }}{% endblock %}
+{% block body_class %}two_column{% endblock body_class %}
 
 {% block extra_head %}
   <meta name="twitter:card" content="summary_large_image" />
@@ -12,7 +14,7 @@
 {% endblock %}
 
 {% block main %}
-
+<main>
 
 <div id="link_detail">
   <div class="inner">
@@ -31,5 +33,5 @@
         crossorigin="anonymous"
         async>
 </script>
-
+</main>
 {% endblock %}

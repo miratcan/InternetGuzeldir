@@ -58,6 +58,14 @@
       padding: 0 1rem 1rem 1rem;
       margin: 0 auto;
       }
+      #two_columns {
+      max-width:800px;
+      margin:  0 auto;
+      display: grid;
+      gap: .5rem;
+      grid-template-columns: auto auto;
+      padding: 0;
+      }
       h1, h2, h3, h4, h5, p {
       padding: 0;
       margin: 0;
@@ -80,7 +88,7 @@
       display: grid;
       gap: .25rem;
       list-style-type: none;
-      grid-template-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto;
       padding: 0;
       margin: 0;
       }
@@ -160,9 +168,8 @@
       }
       header, main, footer { max-width: 800px; margin: 0 auto }
       @media only screen and (max-width: 750px) {
-      #ali {
-        display: none;
-      }
+      #two_columns { display: block; }
+      #two_columns aside { display: none }
       main {
       margin: 0;
       }
@@ -178,6 +185,7 @@
       grid-template-columns: auto;
       }
       }
+
     </style>
     <title>Tiyatro — Internet Güzeldir</title>
     <meta
@@ -186,12 +194,13 @@
     
     
   </head>
-  <body>
+  <body">
     
     <header class="mt mb">
       <h1><a href="../../index.html">İNTERNET GÜZELDİR</a></h1>
     </header>
-    <main>
+    
+<main>
 <ul class="categories">
   <li class="up"><a href="../index.html">Üst Klasör</a></li>
   
@@ -203,7 +212,7 @@
 </ul>
 
 
-</main>
+
     
   </body>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>

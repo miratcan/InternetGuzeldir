@@ -4,6 +4,7 @@
 {% block description %}{{ category.desc }}{% endblock %}
 
 {% block main %}
+<main>
 <ul class="categories">
   <li class="up"><a href="../index.html">Üst Klasör</a></li>
   {% if category.children %}
@@ -26,5 +27,6 @@
     {% include "link_as_list_item.html.jinja2" %}
   {% endfor %}
 </ul>
+</main>
 {% endif %}
 {% endblock %}
