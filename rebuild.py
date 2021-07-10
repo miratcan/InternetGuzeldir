@@ -2,15 +2,16 @@ import datetime
 import urllib.request
 
 from slugify import slugify
-from os.path import join, exists
+from os.path import join, exists, dirname, realpath
 from os import makedirs as _makedirs
 from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from openpyxl import load_workbook
 from tempfile import NamedTemporaryFile
+from selenium import webdriver
 
 DOCUMENT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXBGnECx6IhFmmeTt6QKLvy3rOvtvmUVaHq_Ubo1mPzWaJu_AfykRrJlurwrd9Ade9S5t7N4Zo2Qpa/pub?output=xlsx"
-# DOCUMENT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSeKe2vu0nXrb6FAAChDlp3hRW5q-iQNFbvflyoIE1qk_Q1SFwLlWqWLGkbkZXXKwadWP9utLrZuaUd/pub?output=xlsx"
+
 
 SITE_TITLE = "LINK SITE"
 SITE_DESCRIPTION = "LINK SITE DESCRIPTION"
@@ -225,15 +226,31 @@ def render_categories(base_path, links_by_category, categories, template):
 
 
 def render_links(base_path, links_by_category, template):
+
+    cleaner_js = """
+        document.getElementsByTagName('header')[0].remove();
+        document.getElementsByTagName('script')[0].remove();
+        document.getElementsByTagName('script')[0].remove();
+        document.getElementsByTagName('script')[0].remove();
+        document.getElementsByClassName('utterances')[0].remove();
+    """
+
+    safari = webdriver.Safari()
+    safari.set_window_size(600, 350)
     for id_, links in links_by_category.items():
         for link in links:
             file_path = join(base_path, link["file_path"])
+            image_url = link["file_path"] + ".png"
             with open(file_path, "w") as file:
                 file.write(
                     template.render(
-                        link=link, root_path=get_category_root_path(id_)
+                        link=link, root_path=get_category_root_path(id_),
+                        image_url=image_url
                     )
                 )
+            safari.get('file://' + join(base_path, file_path))
+            safari.execute_script(cleaner_js)
+            safari.save_screenshot(join(base_path, image_url))
 
 
 def render_home(base_path, link_page_lines, categories, template):
@@ -270,7 +287,7 @@ def build(
     home_template_name="home.html.jinja2",
     link_template_name="link.html.jinja2",
     sitemap_template_name="sitemap.xml.jinja2",
-    root_path="docs/"
+    root_path=join(dirname(realpath(__file__)), "docs/")
 ):
     temp_file = NamedTemporaryFile(suffix=".xlsx")
     temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())

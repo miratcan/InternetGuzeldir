@@ -3,7 +3,16 @@
 {% block title %}{{ link.title}} — Internet Güzeldir{% endblock title %}
 {% block description %}{{ link.desc }}{% endblock %}
 
+{% block extra_head %}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@internetguzel" />
+  <meta name="twitter:title" content="{{ link.title }}" />
+  <meta name="twitter:description" content="{{ link.desc }}" />
+  <meta name="twitter:image" content="https://internetguzeldir.com/{{ image_url }}" />
+{% endblock %}
+
 {% block main %}
+
 
 <div id="link_detail">
   <div class="inner">
