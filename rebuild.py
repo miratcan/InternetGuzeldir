@@ -173,11 +173,17 @@ def get_categories(links_page_lines, categories_page_lines):
     return categories
 
 
-def get_links_by_date(lines, sort_direction=True):
+def get_links_by_date(lines, reverse=True):
     links = []
     for line in lines:
         links.append(get_link_from_line(line))
-    return sorted(links, key=lambda i: i["create_time"], reverse=sort_direction)
+    return sorted(links, key=lambda i: i["create_time"], reverse=reverse)
+
+
+def _load_workbook():
+    temp_file = NamedTemporaryFile(suffix=".xlsx")
+    temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())
+    return load_workbook(filename=temp_file.name, read_only=True)
 
 
 def render_sitemap(root_path, categories, links_by_category, sitemap_template):
@@ -289,9 +295,7 @@ def build(
     sitemap_template_name="sitemap.xml.jinja2",
     root_path=join(dirname(realpath(__file__)), "docs/")
 ):
-    temp_file = NamedTemporaryFile(suffix=".xlsx")
-    temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())
-    workbook = load_workbook(filename=temp_file.name, read_only=True)
+    workbook = _load_workbook()
     links_page_lines = get_lines(workbook[links_page_name_on_workbook])
     categories_page_lines = get_lines(
         workbook[categories_page_name_on_workbook])
