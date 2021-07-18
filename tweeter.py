@@ -1,12 +1,8 @@
 from dotenv import dotenv_values
-import urllib.request
-from openpyxl import load_workbook
-from tempfile import NamedTemporaryFile
-from rebuild import get_lines, get_links_by_date, DOCUMENT_URL, WORKBOOK_LINKS_TITLE
+from rebuild import get_lines, get_links_by_date, _load_workbook, WORKBOOK_LINKS_TITLE
 import pickle
 import tweepy
-
-BASE_URL = 'https://internetguzeldir.com/'
+from urllib.parse import urljoin
 
 
 def load_env():
@@ -18,7 +14,7 @@ class Tweeter:
     document_url = None
     current_index = None
     links_sheet = None
-    link = None
+    link_to_share = None
     api = None
 
     def __init__(self):
@@ -35,51 +31,44 @@ class Tweeter:
         if not len(self.env):
             raise Exception('are you missing something? [.env file empty!]')
 
-        required_credentials = list(["CONSUMER_KEY", "CONSUMER_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET"])
+        required_credentials = list(["CONSUMER_KEY", "CONSUMER_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET", "BASE_URL"])
         missing_env_fields = [string for string in required_credentials if string not in list(self.env.keys())]
         if len(missing_env_fields):
             raise Exception(f"missing env credentials", format(', '.join(missing_env_fields)))
 
 
-    def load_excel_data(self):
-        temp_file = NamedTemporaryFile(suffix=".xlsx")
-        temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())
-        workbook = load_workbook(filename=temp_file.name, read_only=True)
-        self.links_sheet = get_lines(workbook[WORKBOOK_LINKS_TITLE])
+    def load_links(self):
+        workbook = _load_workbook()
+        self.links_sheet = get_links_by_date(get_lines(workbook[WORKBOOK_LINKS_TITLE]), reverse=False)
 
 
-    def sort_by_created_date(self):
-        sorted_links_sheet = get_links_by_date(self.links_sheet, sort_direction=False)
-        self.links_sheet = sorted_links_sheet
-
-
-    def create_pickle(self):
+    def create_index(self):
         self.current_index = 0
         pickle_file = {"index": str(self.current_index)}
         pickle.dump(pickle_file, open("pickle.index", "wb"))
 
 
-    def load_pickle(self):
+    def load_index(self):
         try:
             pickle_file = pickle.load(open("pickle.index", "rb"))
             self.current_index = int(pickle_file['index'])
         except FileNotFoundError:
-            self.create_pickle()
+            self.create_index()
 
 
-    def save_pickle(self):
+    def save_index(self):
         pickle_file = {"index": str(self.current_index)}
         pickle.dump(pickle_file, open("pickle.index", "wb"))
 
 
-    def prepare_daily_link(self):
+    def set_link_to_share(self):
         if self.current_index > len(self.links_sheet):
             raise Exception('No new links to publish')
-        self.link = self.links_sheet[self.current_index]
+        self.link_to_share = self.links_sheet[self.current_index]
 
 
     def get_url(self):
-        return BASE_URL + self.link['file_path']
+        return urljoin(self.env.get('BASE_URL'), self.link_to_share['file_path'])
 
 
     def tweet(self):
@@ -90,10 +79,9 @@ class Tweeter:
 
 if __name__ == '__main__':
     tweeter = Tweeter()
-    tweeter.load_pickle()
-    tweeter.load_excel_data()
-    tweeter.sort_by_created_date()
-    tweeter.prepare_daily_link()
+    tweeter.load_index()
+    tweeter.load_links()
+    tweeter.set_link_to_share()
     tweeter.tweet()
     tweeter.current_index += 1
-    tweeter.save_pickle()
+    tweeter.save_index()
