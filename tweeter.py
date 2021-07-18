@@ -73,8 +73,8 @@ class Tweeter:
 
     def tweet(self):
         tweet = self.get_url()
-        print(f"daily mal: {tweet}")
-        # self.api.update_status(tweet)
+        print(f"Günün linki: {tweet}")
+        self.api.update_status(f"Günün linki: {tweet}")
 
 
 if __name__ == '__main__':
