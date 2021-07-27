@@ -12,7 +12,6 @@ from selenium import webdriver
 
 DOCUMENT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXBGnECx6IhFmmeTt6QKLvy3rOvtvmUVaHq_Ubo1mPzWaJu_AfykRrJlurwrd9Ade9S5t7N4Zo2Qpa/pub?output=xlsx"
 
-
 SITE_TITLE = "LINK SITE"
 SITE_DESCRIPTION = "LINK SITE DESCRIPTION"
 
@@ -175,11 +174,17 @@ def get_categories(links_page_lines, categories_page_lines):
     return categories
 
 
-def get_links_by_date(lines):
+def get_links_by_date(lines, reverse=True):
     links = []
     for line in lines:
         links.append(get_link_from_line(line))
-    return sorted(links, key=lambda i: i["create_time"], reverse=True)
+    return sorted(links, key=lambda i: i["create_time"], reverse=reverse)
+
+
+def _load_workbook():
+    temp_file = NamedTemporaryFile(suffix=".xlsx")
+    temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())
+    return load_workbook(filename=temp_file.name, read_only=True)
 
 
 def render_sitemap(root_path, categories, links_by_category, sitemap_template):
@@ -226,7 +231,6 @@ def render_categories(base_path, links_by_category, categories, template):
 
 
 def render_links(base_path, links_by_category, template):
-
     cleaner_js = """
         document.getElementsByTagName('header')[0].remove();
         document.getElementsByTagName('script')[0].remove();
@@ -293,9 +297,7 @@ def build(
     sitemap_template_name="sitemap.xml.jinja2",
     root_path=join(dirname(realpath(__file__)), "docs/"),
 ):
-    temp_file = NamedTemporaryFile(suffix=".xlsx")
-    temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())
-    workbook = load_workbook(filename=temp_file.name, read_only=True)
+    workbook = _load_workbook()
     links_page_lines = get_lines(workbook[links_page_name_on_workbook])
     categories_page_lines = get_lines(workbook[categories_page_name_on_workbook])
     category_template = env.get_template(category_template_name)
