@@ -30,6 +30,7 @@ LINK_COLUMNS = (
     "category_str",
     "kind",
     "lang",
+    "sender",
     "source",
     "create_time",
 )
@@ -182,7 +183,6 @@ def get_links_by_date(lines):
 
 
 def render_sitemap(root_path, categories, links_by_category, sitemap_template):
-    import pprint    
     with open(join(root_path, "sitemap.xml"), "w") as file:
         file.write(
             sitemap_template.render(
@@ -190,7 +190,7 @@ def render_sitemap(root_path, categories, links_by_category, sitemap_template):
                 links_by_category=links_by_category,
                 categories=categories,
                 render_date=datetime.date.today(),
-                strftime=datetime.date.strftime
+                strftime=datetime.date.strftime,
             )
         )
 
@@ -244,13 +244,14 @@ def render_links(base_path, links_by_category, template):
             with open(file_path, "w") as file:
                 file.write(
                     template.render(
-                        link=link, root_path=get_category_root_path(id_),
-                        image_url=image_url
+                        link=link,
+                        root_path=get_category_root_path(id_),
+                        image_url=image_url,
                     )
                 )
             image_path = join(base_path, image_url)
-            if not exists(image_path):
-                safari.get('file://' + join(base_path, file_path))
+            if not exists(image_path) or 1:
+                safari.get("file://" + join(base_path, file_path))
                 safari.execute_script(cleaner_js)
                 safari.save_screenshot(join(base_path, image_url))
 
@@ -277,8 +278,9 @@ def makedirs(path):
     try:
         _makedirs(path)
     except OSError as e:
-        if e.errno != errno.EEXIST:
-            raise
+        print(e)
+        """if e.errno != errno.EEXIST:
+            raise"""
 
 
 def build(
@@ -289,23 +291,20 @@ def build(
     home_template_name="home.html.jinja2",
     link_template_name="link.html.jinja2",
     sitemap_template_name="sitemap.xml.jinja2",
-    root_path=join(dirname(realpath(__file__)), "docs/")
+    root_path=join(dirname(realpath(__file__)), "docs/"),
 ):
     temp_file = NamedTemporaryFile(suffix=".xlsx")
     temp_file.write(urllib.request.urlopen(DOCUMENT_URL).read())
     workbook = load_workbook(filename=temp_file.name, read_only=True)
     links_page_lines = get_lines(workbook[links_page_name_on_workbook])
-    categories_page_lines = get_lines(
-        workbook[categories_page_name_on_workbook])
+    categories_page_lines = get_lines(workbook[categories_page_name_on_workbook])
     category_template = env.get_template(category_template_name)
     link_template = env.get_template(link_template_name)
-    home_template = env.get_template(home_template_name)    
+    home_template = env.get_template(home_template_name)
     links_by_category = get_links_by_category(links_page_lines)
     categories = get_categories(links_page_lines, categories_page_lines)
     create_category_paths(root_path, links_page_lines)
-    render_categories(
-        root_path, links_by_category, categories, category_template
-    )
+    render_categories(root_path, links_by_category, categories, category_template)
     render_links(root_path, links_by_category, link_template)
     render_home(root_path, links_page_lines, categories, home_template)
 

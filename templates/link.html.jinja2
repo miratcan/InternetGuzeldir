@@ -21,7 +21,7 @@
     <h2 class="mb">{{ link.title }}</h2>
     <p class="mb">{{ link.desc }}</p>
     <p class="mb"><a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a></p>
-    <p class="meta">Bu site {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
+    <p class="meta{% if link.source %} mb{% endif %}">Bu site {% if link.sender %}<a href="https://twitter.com/{{ link.sender }}">@{{ link.sender }}</a> tarafindan gönderilmiş {% endif %} {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>    
   </div>
 </div>
 
