@@ -1,6 +1,6 @@
 {% extends "base.html.jinja2" %}
 
-{% block title %}{{ category.title}} — Internet Güzeldir{% endblock title %}
+{% block title %}{{ category.title}} — {{ env.SITE_TITLE }}{% endblock title %}
 {% block description %}{{ category.desc }}{% endblock %}
 
 {% block main %}
