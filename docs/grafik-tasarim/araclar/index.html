@@ -1,404 +1,226 @@
-<!DOCTYPE html>
-<html lang="tr">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <style>
-      :root {
-      --blue: #000084;
-      --dark-blue: #000044;
-      --indigo: #55f;
-      --purple: #aa00aa;
-      --pink: #f5f;
-      --red: #aa0000;
-      --orange: #f55;
-      --yellow: #ff5;
-      --green: #00aa00;
-      --teal: #00aaaa;
-      --cyan: #00aaaa;
-      --white: #fff;
-      --gray: #bbbbbb;
-      --gray-dark: #bbbbbb;
-      --primary: #bbbbbb;
-      --secondary: #bbbbbb;
-      --success: #00aa00;
-      --info: #00aaaa;
-      --warning: #aa5500;
-      --danger: #aa0000;
-      --light: #fff;
-      --dark: #000000;
-      --breakpoint-xs: 0;
-      --breakpoint-sm: 576px;
-      --breakpoint-md: 768px;
-      --breakpoint-lg: 960px;
-      --breakpoint-xl: 1152px;
-      --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
-      --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
-      --margin-size: 20px;
-      }
-      *,
-      *::before,
-      *::after {
-      box-sizing: border-box;
-      }
-      html {
-      font-family: monospace;
-      line-height: 18px;
-      font-size: 14px;
-      -webkit-text-size-adjust: 100%;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      line-height-step: 14px;
-      background: var(--dark);
-      color: var(--primary);
-      font-family: var(--font-family-monospace);
-      }
-      body {
-      padding: 0 1rem 1rem 1rem;
-      margin: 0 auto;
-      }
-      #two_columns {
-      max-width:800px;
-      margin:  0 auto;
-      display: grid;
-      gap: .5rem;
-      grid-template-columns: auto auto;
-      padding: 0;
-      }
-      h1, h2, h3, h4, h5, p {
-      padding: 0;
-      margin: 0;
-      }
-      h1, h2, h3, h4, h5 { 
-      color: white;
-      font-size: inherit;
-      }
-      .outer {
-      padding: 10px;
-      }
-      .mt { margin-top: var(--margin-size); }
-      .mb { margin-bottom: var(--margin-size); }
-      footer {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--gray-dark);
-      }
-      ul.categories {
-      display: grid;
-      gap: .25rem;
-      list-style-type: none;
-      grid-template-columns: auto auto auto;
-      padding: 0;
-      margin: 0;
-      }
-      ul.categories li {
-      padding: 0;
-      margin: 0;
-      line-height: 1.6rem;
-      background:
-      url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/)
-      left center no-repeat;
-      background-size: 1rem;
-      padding-left: 1.4rem;
-      }
-      ul.categories li:hover {
-      font-weight: bold;
-      background: var(--gray-dark);
-      }
-      ul.categories li:hover a {
-      color: var(--dark);
-      }
-      ul.categories li a {
-      color:var(--primary);
-      }
-      ul.categories li.up {
-      background-image:
-      url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
-      }
-      ul.links {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      }
-      ul.links li {
-      margin: 0 0 1rem 0;
-      padding-bottom: 1rem;
-      position: relative;
-      overflow: auto;
-      }
-      ul.links li:last-child {
-      margin: 0;
-      }
-      ul.links li .favicon {
-      width: 16px;
-      height: 16px;
-      margin: 0;
-      vertical-align:bottom;
-      display:block;
-      float:left;
-      }
-      ul.links li .content {
-      float:left;
-      margin-left:10px;
-      width:calc(100% - 26px);
-      overflow:hidden;
-      }
-      ul.links li .content .desc {
-      margin: .4rem 0;
-      }
-      a {
-      text-decoration: none;
-      color: var(--yellow);
-      }
-      #link_detail {
-      margin: 2rem 0 4rem 0;
-      padding: 10px;
-      background: var(--blue);
-      box-shadow: 1rem 1rem var(--dark-blue);
-      }
-      .inner {
-      border: 2px solid var(--primary);
-      padding: 10px;
-      }
-      p.meta {
-      color: var(--gray-dark);
-      }
-      header, main, footer { max-width: 800px; margin: 0 auto }
-      @media only screen and (max-width: 750px) {
-      #two_columns { display: block; }
-      #two_columns aside { display: none }
-      main {
-      margin: 0;
-      }
-      body {
-      padding: 1rem;
-      }
-      ul.categories {
-      grid-template-columns: auto auto auto;
-      }
-      }
-      @media only screen and (max-width: 500px) {
-      ul.categories {
-      grid-template-columns: auto;
-      }
-      }
+<!DOCTYPE html><html lang=tr> <head><meta name=viewport content="width=device-width, initial-scale=1.0"><script data-ad-client=ca-pub-3821665691664234 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><meta name=viewport content="width=device-width, initial-scale=1"><meta charset=UTF-8><style>
+        :root {
+            --blue: #000084;
+            --dark-blue: #000044;
+            --indigo: #55f;
+            --purple: #aa00aa;
+            --pink: #f5f;
+            --red: #aa0000;
+            --orange: #f55;
+            --yellow: #ff5;
+            --green: #00aa00;
+            --teal: #00aaaa;
+            --cyan: #00aaaa;
+            --white: #fff;
+            --gray: #bbbbbb;
+            --gray-dark: #bbbbbb;
+            --primary: #bbbbbb;
+            --secondary: #bbbbbb;
+            --success: #00aa00;
+            --info: #00aaaa;
+            --warning: #aa5500;
+            --danger: #aa0000;
+            --light: #fff;
+            --dark: #000000;
+            --breakpoint-xs: 0;
+            --breakpoint-sm: 576px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 960px;
+            --breakpoint-xl: 1152px;
+            --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
+            --font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+            --margin-size: 20px;
+        }
 
-    </style>
-    <title>Bedava Grafik Tasarm Araçları — İnternet Güzeldir</title>
-    <meta
-      name="description"
-      content="Online ve masaüstü grafik tasarım araçları">
-    
-    
-  </head>
-  <body">
-    
-    <header class="mt mb">
-      <h1><a href="../../index.html">İNTERNET GÜZELDİR</a></h1>
-    </header>
-    
-<main>
-<ul class="categories">
-  <li class="up"><a href="../index.html">Üst Klasör</a></li>
-  
-</ul>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
 
+        html {
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            background: var(--dark);
+            color: var(--primary);
+            font-family: var(--font-family-monospace);
+            line-height: 18px;
+            font-size: 14px;
+        }
 
-<div class="outer mt mb" style="background: var(--blue)">
-  <div class="inner">
-    <h2 class="mb">Bedava Grafik Tasarm Araçları</h2>
-    <p>Online ve masaüstü grafik tasarım araçları</p>
-  </div>
-</div>
-<ul class="links">
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://svgartista.net/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-svgartista-net.html">SVG Artista</a>
-    <p class="desc">SVG çizimlerini animasyonlara dönüştürür.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://svgartista.net/">https://svgartista.net/</a>
-  </div>
-</li>
+        body {
+            padding: 0 1rem 1rem 1rem;
+            margin: 0 auto;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.tinkercad.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-www-tinkercad-com.html">TinkerCad</a>
-    <p class="desc">Web tabanlı ve çocuklar düşünülerek yapılmış 3d editor.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://www.tinkercad.com/">https://www.tinkercad.com/</a>
-  </div>
-</li>
+        #two_columns {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: .5rem;
+            grid-template-columns: auto auto;
+            padding: 0;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.autodraw.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-www-autodraw-com.html">Autodraw</a>
-    <p class="desc">Yaptığınız çizimleri yapay zeka kullanarak daha önceden yapılmış vektörel çizimlerle değiştiren uygulama.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://www.autodraw.com/">https://www.autodraw.com/</a>
-  </div>
-</li>
+        h1, h2, h3, h4, h5, p {
+            padding: 0;
+            margin: 0;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://excalidraw.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-excalidraw-com.html">Excalidraw</a>
-    <p class="desc">El çizimi gibi gözüken şemalar grafikler çizmenizi sağlayan uygulama.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://excalidraw.com/">https://excalidraw.com/</a>
-  </div>
-</li>
+        h1, h2, h3, h4, h5 {
+            color: white;
+            font-size: inherit;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://vectr.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-vectr-com.html">Vectr</a>
-    <p class="desc">Gelişmiş vektör tabanlı çizim programı.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://vectr.com/">https://vectr.com/</a>
-  </div>
-</li>
+        .outer {
+            padding: 10px;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.piskelapp.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-www-piskelapp-com.html">PiskelApp</a>
-    <p class="desc">Oyun geliştiriciler ve pixel art sevenler için sprite editör.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://www.piskelapp.com/">https://www.piskelapp.com/</a>
-  </div>
-</li>
+        .mt {
+            margin-top: var(--margin-size);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://spritestack.io/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-spritestack-io.html">SpriteStack</a>
-    <p class="desc">3Boyutlu pixel art yapmak ve paylaşmak için web uygulaması.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://spritestack.io/">https://spritestack.io/</a>
-  </div>
-</li>
+        .mb {
+            margin-bottom: var(--margin-size);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://ditherit.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-ditherit-com.html">Dither It</a>
-    <p class="desc">Gönderdiğiniz fotoğrafları dither eden online uygulama</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://ditherit.com/">https://ditherit.com/</a>
-  </div>
-</li>
+        footer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-dark);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://tinypng.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-tinypng-com.html">Tiny Png</a>
-    <p class="desc">Online png sıkıştırıcı.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://tinypng.com/">https://tinypng.com/</a>
-  </div>
-</li>
+        ul.categories {
+            display: grid;
+            gap: .25rem;
+            list-style-type: none;
+            grid-template-columns: auto auto auto;
+            padding: 0;
+            margin: 0;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.figma.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-www-figma-com.html">Figma</a>
-    <p class="desc">Web odaklı, takım çalışmasına yönelik görsel tasarım uygulaması.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://www.figma.com/">https://www.figma.com/</a>
-  </div>
-</li>
+        ul.categories li {
+            padding: 0;
+            margin: 0;
+            line-height: 1.6rem;
+            background: url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/) left center no-repeat;
+            background-size: 1rem;
+            padding-left: 1.4rem;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://coolors.co/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-coolors-co.html">Coolors</a>
-    <p class="desc">Renk paleti üreteci.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://coolors.co/">https://coolors.co/</a>
-  </div>
-</li>
+        ul.categories li:hover {
+            font-weight: bold;
+            background: var(--gray-dark);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://grayscale.design/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-grayscale-design.html">Grayscale Design</a>
-    <p class="desc">Renklerden önce parlaklık değerlerinin ön planda tutulduğu bir renk paleti üreteci.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://grayscale.design/">https://grayscale.design/</a>
-  </div>
-</li>
+        ul.categories li:hover a {
+            color: var(--dark);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://gradient-designer.csspost.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-gradient-designer-csspost-com.html">Gradient Designer</a>
-    <p class="desc">Gradyanlar tasarlayıp CSS olarak çıktısını alabileceğiniz bir araç.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://gradient-designer.csspost.com/">https://gradient-designer.csspost.com/</a>
-  </div>
-</li>
+        ul.categories li a {
+            color: var(--primary);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://adevade.github.io/color-scheme-generator/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-adevade-github-io-color-scheme-generator.html">Color Scheme Generator</a>
-    <p class="desc">Basit renk paleti üretme aracı.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://adevade.github.io/color-scheme-generator/">https://adevade.github.io/color-scheme-generator/</a>
-  </div>
-</li>
+        ul.categories li.up {
+            background-image: url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://components.ai/text-gradients)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-components-ai-text-gradients.html">Text Gradients</a>
-    <p class="desc">Metinler için gradyana oluşturma aracı.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://components.ai/text-gradients">https://components.ai/text-gradients</a>
-  </div>
-</li>
+        ul.links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://fontjoy.com/)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-fontjoy-com.html">Font Joy</a>
-    <p class="desc">Makine öğrenmesi yardımıyla font kombinasyonları oluşturmanıza yardımcı olan uygulama.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://fontjoy.com/">https://fontjoy.com/</a>
-  </div>
-</li>
+        ul.links li {
+            margin: 0 0 1rem 0;
+            padding-bottom: 1rem;
+            position: relative;
+            overflow: auto;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://cartoonize-lkqov62dia-de.a.run.app/cartoonize)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-cartoonize-lkqov62dia-de-a-run-app-cartoonize.html">Cartoonize</a>
-    <p class="desc">Verdiğiniz fotoğrafı ya da videoyu çizgi film haline getiren online uygulama.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://cartoonize-lkqov62dia-de.a.run.app/cartoonize">https://cartoonize-lkqov62dia-de.a.run.app/cart...</a>
-  </div>
-</li>
+        ul.links li:last-child {
+            margin: 0;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://demos.algorithmia.com/colorize-photos)"></div>
-  <div class="content">
-    <a class="title" href="../../grafik-tasarim/araclar/https-demos-algorithmia-com-colorize-photos.html">Colorize Photos</a>
-    <p class="desc">Verdiğiniz siyah beyaz fotoğrafı renkli hale getiren online yapay zeka uygulamasıç</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://demos.algorithmia.com/colorize-photos">https://demos.algorithmia.com/colorize-photos</a>
-  </div>
-</li>
+        ul.links li .favicon {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            vertical-align: bottom;
+            display: block;
+            float: left;
+        }
 
-  
-</ul>
-</main>
+        ul.links li .content {
+            float: left;
+            margin-left: 10px;
+            width: calc(100% - 26px);
+            overflow: hidden;
+        }
 
+        ul.links li .content .desc {
+            margin: .4rem 0;
+        }
 
-    
-  </body>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
-</html>
+        a {
+            text-decoration: none;
+            color: var(--yellow);
+        }
+
+        #link_detail {
+            margin: 2rem 0 4rem 0;
+            padding: 10px;
+            background: var(--blue);
+            box-shadow: 1rem 1rem var(--dark-blue);
+        }
+
+        .inner {
+            border: 2px solid var(--primary);
+            padding: 10px;
+        }
+
+        p.meta {
+            color: var(--gray-dark);
+        }
+
+        header, main, footer {
+            max-width: 800px;
+            margin: 0 auto
+        }
+
+        @media only screen and (max-width: 750px) {
+            #two_columns {
+                display: block;
+            }
+
+            #two_columns aside {
+                display: none
+            }
+
+            main {
+                margin: 0;
+            }
+
+            body {
+                padding: 1rem;
+            }
+
+            ul.categories {
+                grid-template-columns: auto auto auto;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            ul.categories {
+                grid-template-columns: auto;
+            }
+        }
+
+    </style><title>Bedava Grafik Tasarm Araçları — İnternet Güzeldir</title><meta name=description content="Online ve masaüstü grafik tasarım araçları"></head> <body &quot;> <header class="mt mb"> <h1><a href=../../index.html>İNTERNET GÜZELDİR</a></h1> </header> <main> <ul class=categories> <li class=up><a href=../index.html>Üst Klasör</a></li> </ul> <div class="outer mt mb" style="background: var(--blue)"> <div class=inner> <h2 class=mb>Bedava Grafik Tasarm Araçları</h2> <p>Online ve masaüstü grafik tasarım araçları</p> </div> </div> <ul class=links> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://svgartista.net/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-svgartista-net.html>SVG Artista</a> <p class=desc>SVG çizimlerini animasyonlara dönüştürür.</p> <a class=link target=_blank href=https://svgartista.net/ rel=”nofollow”>https://svgartista.net/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.tinkercad.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-www-tinkercad-com.html>TinkerCad</a> <p class=desc>Web tabanlı ve çocuklar düşünülerek yapılmış 3d editor.</p> <a class=link target=_blank href=https://www.tinkercad.com/ rel=”nofollow”>https://www.tinkercad.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.autodraw.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-www-autodraw-com.html>Autodraw</a> <p class=desc>Yaptığınız çizimleri yapay zeka kullanarak daha önceden yapılmış vektörel çizimlerle değiştiren uygulama.</p> <a class=link target=_blank href=https://www.autodraw.com/ rel=”nofollow”>https://www.autodraw.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://excalidraw.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-excalidraw-com.html>Excalidraw</a> <p class=desc>El çizimi gibi gözüken şemalar grafikler çizmenizi sağlayan uygulama.</p> <a class=link target=_blank href=https://excalidraw.com/ rel=”nofollow”>https://excalidraw.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://vectr.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-vectr-com.html>Vectr</a> <p class=desc>Gelişmiş vektör tabanlı çizim programı.</p> <a class=link target=_blank href=https://vectr.com/ rel=”nofollow”>https://vectr.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.piskelapp.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-www-piskelapp-com.html>PiskelApp</a> <p class=desc>Oyun geliştiriciler ve pixel art sevenler için sprite editör.</p> <a class=link target=_blank href=https://www.piskelapp.com/ rel=”nofollow”>https://www.piskelapp.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://spritestack.io/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-spritestack-io.html>SpriteStack</a> <p class=desc>3Boyutlu pixel art yapmak ve paylaşmak için web uygulaması.</p> <a class=link target=_blank href=https://spritestack.io/ rel=”nofollow”>https://spritestack.io/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://ditherit.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-ditherit-com.html>Dither It</a> <p class=desc>Gönderdiğiniz fotoğrafları dither eden online uygulama</p> <a class=link target=_blank href=https://ditherit.com/ rel=”nofollow”>https://ditherit.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://tinypng.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-tinypng-com.html>Tiny Png</a> <p class=desc>Online png sıkıştırıcı.</p> <a class=link target=_blank href=https://tinypng.com/ rel=”nofollow”>https://tinypng.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.figma.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-www-figma-com.html>Figma</a> <p class=desc>Web odaklı, takım çalışmasına yönelik görsel tasarım uygulaması.</p> <a class=link target=_blank href=https://www.figma.com/ rel=”nofollow”>https://www.figma.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://coolors.co/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-coolors-co.html>Coolors</a> <p class=desc>Renk paleti üreteci.</p> <a class=link target=_blank href=https://coolors.co/ rel=”nofollow”>https://coolors.co/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://grayscale.design/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-grayscale-design.html>Grayscale Design</a> <p class=desc>Renklerden önce parlaklık değerlerinin ön planda tutulduğu bir renk paleti üreteci.</p> <a class=link target=_blank href=https://grayscale.design/ rel=”nofollow”>https://grayscale.design/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://gradient-designer.csspost.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-gradient-designer-csspost-com.html>Gradient Designer</a> <p class=desc>Gradyanlar tasarlayıp CSS olarak çıktısını alabileceğiniz bir araç.</p> <a class=link target=_blank href=https://gradient-designer.csspost.com/ rel=”nofollow”>https://gradient-designer.csspost.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://adevade.github.io/color-scheme-generator/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-adevade-github-io-color-scheme-generator.html>Color Scheme Generator</a> <p class=desc>Basit renk paleti üretme aracı.</p> <a class=link target=_blank href=https://adevade.github.io/color-scheme-generator/ rel=”nofollow”>https://adevade.github.io/color-scheme-generator/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://components.ai/text-gradients)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-components-ai-text-gradients.html>Text Gradients</a> <p class=desc>Metinler için gradyana oluşturma aracı.</p> <a class=link target=_blank rel=”nofollow” href=https://components.ai/text-gradients>https://components.ai/text-gradients</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://fontjoy.com/)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-fontjoy-com.html>Font Joy</a> <p class=desc>Makine öğrenmesi yardımıyla font kombinasyonları oluşturmanıza yardımcı olan uygulama.</p> <a class=link target=_blank href=https://fontjoy.com/ rel=”nofollow”>https://fontjoy.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://cartoonize-lkqov62dia-de.a.run.app/cartoonize)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-cartoonize-lkqov62dia-de-a-run-app-cartoonize.html>Cartoonize</a> <p class=desc>Verdiğiniz fotoğrafı ya da videoyu çizgi film haline getiren online uygulama.</p> <a class=link target=_blank rel=”nofollow” href=https://cartoonize-lkqov62dia-de.a.run.app/cartoonize>https://cartoonize-lkqov62dia-de.a.run.app/cart...</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://demos.algorithmia.com/colorize-photos)"></div> <div class=content> <a class=title href=../../grafik-tasarim/araclar/https-demos-algorithmia-com-colorize-photos.html>Colorize Photos</a> <p class=desc>Verdiğiniz siyah beyaz fotoğrafı renkli hale getiren online yapay zeka uygulamasıç</p> <a class=link target=_blank rel=”nofollow” href=https://demos.algorithmia.com/colorize-photos>https://demos.algorithmia.com/colorize-photos</a> </div> </li> </ul> </main> </body> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script> <script>window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+gtag('config', 'UA-86514140-3');</script> </html>

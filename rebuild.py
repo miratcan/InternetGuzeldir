@@ -6,6 +6,7 @@ from os.path import dirname, exists, join, realpath
 from tempfile import NamedTemporaryFile
 
 from dotenv import dotenv_values
+from htmlmin import minify
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from openpyxl import load_workbook
 from selenium import webdriver
@@ -15,6 +16,7 @@ LINK_COLUMNS = ("title", "url", "desc", "category_str", "kind", "lang",
                 "sender", "source", "create_time")
 CATEGORY_COLUMN_INDEX = LINK_COLUMNS.index("category_str")
 ENV = None
+
 
 def get_lines(worksheet):
     """Load lines from worksheet and return as list of lists.
@@ -104,8 +106,8 @@ def get_link_from_row(link_row):
     link = {column: link_row[index] for index, column in enumerate(LINK_COLUMNS)}
     link["file_path"] = (
             get_category_path(
-            link_row[CATEGORY_COLUMN_INDEX]) + slugify(link["url"]
-                                                       ) + ".html"
+                link_row[CATEGORY_COLUMN_INDEX]) + slugify(link["url"]
+                                                           ) + ".html"
     )
     return link
 
@@ -185,7 +187,7 @@ def get_categories(links_page_rows, categories_page_rows):
         while child_category_str:
 
             if child_category_str not in categories:
-                categories[child_category_str] =\
+                categories[child_category_str] = \
                     get_category_info(child_category_str, overrides)
 
             if parent_category_str and parent_category_str not in categories:
@@ -202,7 +204,7 @@ def get_categories(links_page_rows, categories_page_rows):
                         parent_category_str
                 if child_category_str not in \
                         categories[parent_category_str]["children"]:
-                    categories[parent_category_str]["children"]\
+                    categories[parent_category_str]["children"] \
                         .append(child_category_str)
 
             child_category_str = parent_category_str
@@ -221,13 +223,13 @@ def get_links_by_date(link_rows, reverse=True):
 def render_sitemap(root_path, categories, links_by_category, sitemap_template):
     with open(join(root_path, "sitemap.xml"), "w") as file:
         file.write(
-            sitemap_template.render(
+            minify(sitemap_template.render(
                 root_path=root_path,
                 links_by_category=links_by_category,
                 categories=categories,
                 render_date=datetime.date.today(),
                 strftime=datetime.date.strftime,
-            )
+            ))
         )
 
 
@@ -238,13 +240,15 @@ def render_categories(base_path, links_by_category, categories, template):
         root_path = get_category_root_path(category_str)
         with open(file_path, "w") as file:
             file.write(
-                template.render(
-                    site_title=ENV["SITE_TITLE"],
-                    links=links,
-                    root_path=root_path,
-                    category=category,
-                    categories=categories,
-                    env=ENV,
+                minify(
+                    template.render(
+                        site_title=ENV["SITE_TITLE"],
+                        links=links,
+                        root_path=root_path,
+                        category=category,
+                        categories=categories,
+                        env=ENV,
+                    )
                 )
             )
     for category_str, category in categories.items():
@@ -254,12 +258,14 @@ def render_categories(base_path, links_by_category, categories, template):
         root_path = get_category_root_path(category_str)
         with open(file_path, "w") as file:
             file.write(
-                template.render(
-                    links=[],
-                    root_path=root_path,
-                    category=category,
-                    categories=categories,
-                    env=ENV,
+                minify(
+                    template.render(
+                        links=[],
+                        root_path=root_path,
+                        category=category,
+                        categories=categories,
+                        env=ENV,
+                    )
                 )
             )
 
@@ -281,11 +287,13 @@ def render_links(base_path, links_by_category, template):
             image_url = link["file_path"] + ".png"
             with open(file_path, "w") as file:
                 file.write(
-                    template.render(
-                        link=link,
-                        root_path=get_category_root_path(category_str),
-                        image_url=image_url,
-                        env=ENV,
+                    minify(
+                        template.render(
+                            link=link,
+                            root_path=get_category_root_path(category_str),
+                            image_url=image_url,
+                            env=ENV,
+                        )
                     )
                 )
             image_path = join(base_path, image_url)
@@ -301,13 +309,15 @@ def render_home(base_path, link_page_rows, categories, template):
     file_path = join(base_path, "index.html")
     with open(file_path, "w") as file:
         file.write(
-            template.render(
-                latest_links=links[:20],
-                root_path="./",
-                categories=categories,
-                last_update=last_update,
-                num_of_links=len(link_page_rows),
-                env=ENV,
+            minify(
+                template.render(
+                    latest_links=links[:20],
+                    root_path="./",
+                    categories=categories,
+                    last_update=last_update,
+                    num_of_links=len(link_page_rows),
+                    env=ENV,
+                )
             )
         )
 
@@ -358,6 +368,7 @@ def build(root_path=join(dirname(realpath(__file__)), "docs/"),
     render_links(root_path, links_by_category, link_template)
     render_home(root_path, links_page_lines, categories, home_template)
     render_sitemap(root_path, categories, links_by_category, sitemap_template)
+
 
 if __name__ == "__main__":
     build()

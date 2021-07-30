@@ -1,344 +1,226 @@
-<!DOCTYPE html>
-<html lang="tr">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script data-ad-client="ca-pub-3821665691664234" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <style>
-      :root {
-      --blue: #000084;
-      --dark-blue: #000044;
-      --indigo: #55f;
-      --purple: #aa00aa;
-      --pink: #f5f;
-      --red: #aa0000;
-      --orange: #f55;
-      --yellow: #ff5;
-      --green: #00aa00;
-      --teal: #00aaaa;
-      --cyan: #00aaaa;
-      --white: #fff;
-      --gray: #bbbbbb;
-      --gray-dark: #bbbbbb;
-      --primary: #bbbbbb;
-      --secondary: #bbbbbb;
-      --success: #00aa00;
-      --info: #00aaaa;
-      --warning: #aa5500;
-      --danger: #aa0000;
-      --light: #fff;
-      --dark: #000000;
-      --breakpoint-xs: 0;
-      --breakpoint-sm: 576px;
-      --breakpoint-md: 768px;
-      --breakpoint-lg: 960px;
-      --breakpoint-xl: 1152px;
-      --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
-      --font-family-monospace:  Monaco, Menlo, Consolas, "Courier New", monospace;
-      --margin-size: 20px;
-      }
-      *,
-      *::before,
-      *::after {
-      box-sizing: border-box;
-      }
-      html {
-      font-family: monospace;
-      line-height: 18px;
-      font-size: 14px;
-      -webkit-text-size-adjust: 100%;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      line-height-step: 14px;
-      background: var(--dark);
-      color: var(--primary);
-      font-family: var(--font-family-monospace);
-      }
-      body {
-      padding: 0 1rem 1rem 1rem;
-      margin: 0 auto;
-      }
-      #two_columns {
-      max-width:800px;
-      margin:  0 auto;
-      display: grid;
-      gap: .5rem;
-      grid-template-columns: auto auto;
-      padding: 0;
-      }
-      h1, h2, h3, h4, h5, p {
-      padding: 0;
-      margin: 0;
-      }
-      h1, h2, h3, h4, h5 { 
-      color: white;
-      font-size: inherit;
-      }
-      .outer {
-      padding: 10px;
-      }
-      .mt { margin-top: var(--margin-size); }
-      .mb { margin-bottom: var(--margin-size); }
-      footer {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--gray-dark);
-      }
-      ul.categories {
-      display: grid;
-      gap: .25rem;
-      list-style-type: none;
-      grid-template-columns: auto auto auto;
-      padding: 0;
-      margin: 0;
-      }
-      ul.categories li {
-      padding: 0;
-      margin: 0;
-      line-height: 1.6rem;
-      background:
-      url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/)
-      left center no-repeat;
-      background-size: 1rem;
-      padding-left: 1.4rem;
-      }
-      ul.categories li:hover {
-      font-weight: bold;
-      background: var(--gray-dark);
-      }
-      ul.categories li:hover a {
-      color: var(--dark);
-      }
-      ul.categories li a {
-      color:var(--primary);
-      }
-      ul.categories li.up {
-      background-image:
-      url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
-      }
-      ul.links {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      }
-      ul.links li {
-      margin: 0 0 1rem 0;
-      padding-bottom: 1rem;
-      position: relative;
-      overflow: auto;
-      }
-      ul.links li:last-child {
-      margin: 0;
-      }
-      ul.links li .favicon {
-      width: 16px;
-      height: 16px;
-      margin: 0;
-      vertical-align:bottom;
-      display:block;
-      float:left;
-      }
-      ul.links li .content {
-      float:left;
-      margin-left:10px;
-      width:calc(100% - 26px);
-      overflow:hidden;
-      }
-      ul.links li .content .desc {
-      margin: .4rem 0;
-      }
-      a {
-      text-decoration: none;
-      color: var(--yellow);
-      }
-      #link_detail {
-      margin: 2rem 0 4rem 0;
-      padding: 10px;
-      background: var(--blue);
-      box-shadow: 1rem 1rem var(--dark-blue);
-      }
-      .inner {
-      border: 2px solid var(--primary);
-      padding: 10px;
-      }
-      p.meta {
-      color: var(--gray-dark);
-      }
-      header, main, footer { max-width: 800px; margin: 0 auto }
-      @media only screen and (max-width: 750px) {
-      #two_columns { display: block; }
-      #two_columns aside { display: none }
-      main {
-      margin: 0;
-      }
-      body {
-      padding: 1rem;
-      }
-      ul.categories {
-      grid-template-columns: auto auto auto;
-      }
-      }
-      @media only screen and (max-width: 500px) {
-      ul.categories {
-      grid-template-columns: auto;
-      }
-      }
+<!DOCTYPE html><html lang=tr> <head><meta name=viewport content="width=device-width, initial-scale=1.0"><script data-ad-client=ca-pub-3821665691664234 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><meta name=viewport content="width=device-width, initial-scale=1"><meta charset=UTF-8><style>
+        :root {
+            --blue: #000084;
+            --dark-blue: #000044;
+            --indigo: #55f;
+            --purple: #aa00aa;
+            --pink: #f5f;
+            --red: #aa0000;
+            --orange: #f55;
+            --yellow: #ff5;
+            --green: #00aa00;
+            --teal: #00aaaa;
+            --cyan: #00aaaa;
+            --white: #fff;
+            --gray: #bbbbbb;
+            --gray-dark: #bbbbbb;
+            --primary: #bbbbbb;
+            --secondary: #bbbbbb;
+            --success: #00aa00;
+            --info: #00aaaa;
+            --warning: #aa5500;
+            --danger: #aa0000;
+            --light: #fff;
+            --dark: #000000;
+            --breakpoint-xs: 0;
+            --breakpoint-sm: 576px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 960px;
+            --breakpoint-xl: 1152px;
+            --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
+            --font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+            --margin-size: 20px;
+        }
 
-    </style>
-    <title>Evden Çalışmanızı Kolaylaştıracak Uygulamalar — İnternet Güzeldir</title>
-    <meta
-      name="description"
-      content="Evden çalışırken iş yerindeki gibi odaklı ve planlı kalmanızı kolaylaştırmak için tasarlanmış çeşitli uygulamaları bulabilirsiniz.">
-    
-    
-  </head>
-  <body">
-    
-    <header class="mt mb">
-      <h1><a href="../index.html">İNTERNET GÜZELDİR</a></h1>
-    </header>
-    
-<main>
-<ul class="categories">
-  <li class="up"><a href="../index.html">Üst Klasör</a></li>
-  
-</ul>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
 
+        html {
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            background: var(--dark);
+            color: var(--primary);
+            font-family: var(--font-family-monospace);
+            line-height: 18px;
+            font-size: 14px;
+        }
 
-<div class="outer mt mb" style="background: var(--blue)">
-  <div class="inner">
-    <h2 class="mb">Evden Çalışmanızı Kolaylaştıracak Uygulamalar</h2>
-    <p>Evden çalışırken iş yerindeki gibi odaklı ve planlı kalmanızı kolaylaştırmak için tasarlanmış çeşitli uygulamaları bulabilirsiniz.</p>
-  </div>
-</div>
-<ul class="links">
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://tomato-timer.com/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-tomato-timer-com.html">Tomato Timer</a>
-    <p class="desc">Pomodoro düzeninde çalışanlar için zaman tutucu.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://tomato-timer.com/">https://tomato-timer.com/</a>
-  </div>
-</li>
+        body {
+            padding: 0 1rem 1rem 1rem;
+            margin: 0 auto;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://pomodoro-tracker.com/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-pomodoro-tracker-com.html">Pomodoro Tracker</a>
-    <p class="desc">Günü Pomodorolara bölerek planlama uygulaması.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://pomodoro-tracker.com/">https://pomodoro-tracker.com/</a>
-  </div>
-</li>
+        #two_columns {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: .5rem;
+            grid-template-columns: auto auto;
+            padding: 0;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://noises.online/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-noises-online.html">Noises Online</a>
-    <p class="desc">Çalışma konsantrasyonunu arttırmak için arka plan sesleri.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://noises.online/">https://noises.online/</a>
-  </div>
-</li>
+        h1, h2, h3, h4, h5, p {
+            padding: 0;
+            margin: 0;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://defonic.com/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-defonic-com.html">Deftonic</a>
-    <p class="desc">Çalışma, uyku ya da meditasyon yapmak için arka plan sesleri.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://defonic.com/">https://defonic.com/</a>
-  </div>
-</li>
+        h1, h2, h3, h4, h5 {
+            color: white;
+            font-size: inherit;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://pomodor.app/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-pomodor-app.html">Pomodor</a>
-    <p class="desc">Çeşitli istatistikler verebilen temiz bir pomodoro uygulaması.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://pomodor.app/">https://pomodor.app/</a>
-  </div>
-</li>
+        .outer {
+            padding: 10px;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://soundscape.world/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-soundscape-world.html">Soundscape World</a>
-    <p class="desc">Çalışırken konsantrasonunuzu arttracak müzik döngüleri inşa etmenizi sağlıyor.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://soundscape.world/">https://soundscape.world/</a>
-  </div>
-</li>
+        .mt {
+            margin-top: var(--margin-size);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.deprocrastination.co/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-www-deprocrastination-co.html">Deprocrastination</a>
-    <p class="desc">Evden çalışırken ortaya çıkan verimlilik ve dikkat dağılması problemini çözen Chrome Eklentisi.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://www.deprocrastination.co/">https://www.deprocrastination.co/</a>
-  </div>
-</li>
+        .mb {
+            margin-bottom: var(--margin-size);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.notion.so/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-www-notion-so.html">Notion</a>
-    <p class="desc">Şahsınıza ait Wikipedia. Yazılarınızı, notlarınızı yapılacak işlerinizi düzenli bir şekilde tutmanızı sağlıyor. Bulut temelli olduğu için nereden login olursanız olun hemen notlarınıza ulaşabiliyorsunuz.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://www.notion.so/">https://www.notion.so/</a>
-  </div>
-</li>
+        footer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-dark);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://obsidian.md/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-obsidian-md.html">Obsidian</a>
-    <p class="desc">Notion gibi ancak biraz daha teknik kullanıcılar için ve ücretsiz. Sadece Markdown formatndaki dosyalar düzenleyerek çalışıyorsunuz. Kayıt yeri olarak sabit diskinizi kullanıyor.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://obsidian.md/">https://obsidian.md/</a>
-  </div>
-</li>
+        ul.categories {
+            display: grid;
+            gap: .25rem;
+            list-style-type: none;
+            grid-template-columns: auto auto auto;
+            padding: 0;
+            margin: 0;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://musicforprogramming.net/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-musicforprogramming-net.html">Music For Programming</a>
-    <p class="desc">Kod yazarken dinlenebilecek dikkat dağıtmayan müzikler barındıran online müzik çalıcısı. Müzik seçimleri hem de arayüz olarak oldukça başarılı.  Şiddetle tavsiye ediyorum.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://musicforprogramming.net/">https://musicforprogramming.net/</a>
-  </div>
-</li>
+        ul.categories li {
+            padding: 0;
+            margin: 0;
+            line-height: 1.6rem;
+            background: url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/) left center no-repeat;
+            background-size: 1rem;
+            padding-left: 1.4rem;
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://imisstheoffice.eu/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-imisstheoffice-eu.html">I Miss The Office</a>
-    <p class="desc">Pandemi döneminde ofiste çalışmayı özleyenler için ofis sesleri ile atmosfer yaratan web uygulaması.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://imisstheoffice.eu/">https://imisstheoffice.eu/</a>
-  </div>
-</li>
+        ul.categories li:hover {
+            font-weight: bold;
+            background: var(--gray-dark);
+        }
 
-  
-    <li class="link">
-  <div class="favicon" style="background-image:url(https://www.google.com/s2/favicons?domain=https://invoice-generator.com/)"></div>
-  <div class="content">
-    <a class="title" href="../calisma-duzeni/https-invoice-generator-com.html">Invoice Generator</a>
-    <p class="desc">Kullandığım fatura üreteci, oldukça kolay şekilde fatura kesme işinizi halledebiliyor.</p>
-    <a class="link" target="_blank" rel=”nofollow” href="https://invoice-generator.com/">https://invoice-generator.com/</a>
-  </div>
-</li>
+        ul.categories li:hover a {
+            color: var(--dark);
+        }
 
-  
-</ul>
-</main>
+        ul.categories li a {
+            color: var(--primary);
+        }
 
+        ul.categories li.up {
+            background-image: url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
+        }
 
-    
-  </body>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
-</html>
+        ul.links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.links li {
+            margin: 0 0 1rem 0;
+            padding-bottom: 1rem;
+            position: relative;
+            overflow: auto;
+        }
+
+        ul.links li:last-child {
+            margin: 0;
+        }
+
+        ul.links li .favicon {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            vertical-align: bottom;
+            display: block;
+            float: left;
+        }
+
+        ul.links li .content {
+            float: left;
+            margin-left: 10px;
+            width: calc(100% - 26px);
+            overflow: hidden;
+        }
+
+        ul.links li .content .desc {
+            margin: .4rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--yellow);
+        }
+
+        #link_detail {
+            margin: 2rem 0 4rem 0;
+            padding: 10px;
+            background: var(--blue);
+            box-shadow: 1rem 1rem var(--dark-blue);
+        }
+
+        .inner {
+            border: 2px solid var(--primary);
+            padding: 10px;
+        }
+
+        p.meta {
+            color: var(--gray-dark);
+        }
+
+        header, main, footer {
+            max-width: 800px;
+            margin: 0 auto
+        }
+
+        @media only screen and (max-width: 750px) {
+            #two_columns {
+                display: block;
+            }
+
+            #two_columns aside {
+                display: none
+            }
+
+            main {
+                margin: 0;
+            }
+
+            body {
+                padding: 1rem;
+            }
+
+            ul.categories {
+                grid-template-columns: auto auto auto;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            ul.categories {
+                grid-template-columns: auto;
+            }
+        }
+
+    </style><title>Evden Çalışmanızı Kolaylaştıracak Uygulamalar — İnternet Güzeldir</title><meta name=description content="Evden çalışırken iş yerindeki gibi odaklı ve planlı kalmanızı kolaylaştırmak için tasarlanmış çeşitli uygulamaları bulabilirsiniz."></head> <body &quot;> <header class="mt mb"> <h1><a href=../index.html>İNTERNET GÜZELDİR</a></h1> </header> <main> <ul class=categories> <li class=up><a href=../index.html>Üst Klasör</a></li> </ul> <div class="outer mt mb" style="background: var(--blue)"> <div class=inner> <h2 class=mb>Evden Çalışmanızı Kolaylaştıracak Uygulamalar</h2> <p>Evden çalışırken iş yerindeki gibi odaklı ve planlı kalmanızı kolaylaştırmak için tasarlanmış çeşitli uygulamaları bulabilirsiniz.</p> </div> </div> <ul class=links> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://tomato-timer.com/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-tomato-timer-com.html>Tomato Timer</a> <p class=desc>Pomodoro düzeninde çalışanlar için zaman tutucu.</p> <a class=link target=_blank href=https://tomato-timer.com/ rel=”nofollow”>https://tomato-timer.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://pomodoro-tracker.com/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-pomodoro-tracker-com.html>Pomodoro Tracker</a> <p class=desc>Günü Pomodorolara bölerek planlama uygulaması.</p> <a class=link target=_blank href=https://pomodoro-tracker.com/ rel=”nofollow”>https://pomodoro-tracker.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://noises.online/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-noises-online.html>Noises Online</a> <p class=desc>Çalışma konsantrasyonunu arttırmak için arka plan sesleri.</p> <a class=link target=_blank href=https://noises.online/ rel=”nofollow”>https://noises.online/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://defonic.com/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-defonic-com.html>Deftonic</a> <p class=desc>Çalışma, uyku ya da meditasyon yapmak için arka plan sesleri.</p> <a class=link target=_blank href=https://defonic.com/ rel=”nofollow”>https://defonic.com/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://pomodor.app/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-pomodor-app.html>Pomodor</a> <p class=desc>Çeşitli istatistikler verebilen temiz bir pomodoro uygulaması.</p> <a class=link target=_blank href=https://pomodor.app/ rel=”nofollow”>https://pomodor.app/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://soundscape.world/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-soundscape-world.html>Soundscape World</a> <p class=desc>Çalışırken konsantrasonunuzu arttracak müzik döngüleri inşa etmenizi sağlıyor.</p> <a class=link target=_blank href=https://soundscape.world/ rel=”nofollow”>https://soundscape.world/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.deprocrastination.co/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-www-deprocrastination-co.html>Deprocrastination</a> <p class=desc>Evden çalışırken ortaya çıkan verimlilik ve dikkat dağılması problemini çözen Chrome Eklentisi.</p> <a class=link target=_blank href=https://www.deprocrastination.co/ rel=”nofollow”>https://www.deprocrastination.co/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://www.notion.so/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-www-notion-so.html>Notion</a> <p class=desc>Şahsınıza ait Wikipedia. Yazılarınızı, notlarınızı yapılacak işlerinizi düzenli bir şekilde tutmanızı sağlıyor. Bulut temelli olduğu için nereden login olursanız olun hemen notlarınıza ulaşabiliyorsunuz.</p> <a class=link target=_blank href=https://www.notion.so/ rel=”nofollow”>https://www.notion.so/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://obsidian.md/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-obsidian-md.html>Obsidian</a> <p class=desc>Notion gibi ancak biraz daha teknik kullanıcılar için ve ücretsiz. Sadece Markdown formatndaki dosyalar düzenleyerek çalışıyorsunuz. Kayıt yeri olarak sabit diskinizi kullanıyor.</p> <a class=link target=_blank href=https://obsidian.md/ rel=”nofollow”>https://obsidian.md/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://musicforprogramming.net/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-musicforprogramming-net.html>Music For Programming</a> <p class=desc>Kod yazarken dinlenebilecek dikkat dağıtmayan müzikler barındıran online müzik çalıcısı. Müzik seçimleri hem de arayüz olarak oldukça başarılı. Şiddetle tavsiye ediyorum.</p> <a class=link target=_blank href=https://musicforprogramming.net/ rel=”nofollow”>https://musicforprogramming.net/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://imisstheoffice.eu/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-imisstheoffice-eu.html>I Miss The Office</a> <p class=desc>Pandemi döneminde ofiste çalışmayı özleyenler için ofis sesleri ile atmosfer yaratan web uygulaması.</p> <a class=link target=_blank href=https://imisstheoffice.eu/ rel=”nofollow”>https://imisstheoffice.eu/</a> </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://invoice-generator.com/)"></div> <div class=content> <a class=title href=../calisma-duzeni/https-invoice-generator-com.html>Invoice Generator</a> <p class=desc>Kullandığım fatura üreteci, oldukça kolay şekilde fatura kesme işinizi halledebiliyor.</p> <a class=link target=_blank href=https://invoice-generator.com/ rel=”nofollow”>https://invoice-generator.com/</a> </div> </li> </ul> </main> </body> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script> <script>window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+gtag('config', 'UA-86514140-3');</script> </html>
