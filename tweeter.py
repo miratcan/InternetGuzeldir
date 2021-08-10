@@ -1,13 +1,12 @@
 from dotenv import dotenv_values
-from rebuild import get_lines, get_links_by_date, load_workbook, WORKBOOK_LINKS_TITLE
+from rebuild import get_lines, get_links_by_date
 import pickle
 import tweepy
 from urllib.parse import urljoin
-
-
-def load_env():
-    return dotenv_values(".env")
-
+from tempfile import NamedTemporaryFile
+import urllib.request
+from openpyxl import load_workbook
+from rebuild import ENV
 
 class Tweeter:
     env = None
@@ -18,20 +17,19 @@ class Tweeter:
     api = None
 
     def __init__(self):
-        self.load_environments()
+        self.check_env()
 
         auth = tweepy.OAuthHandler(
-            self.env.get("CONSUMER_KEY"), self.env.get("CONSUMER_SECRET")
+            ENV.get("CONSUMER_KEY"), ENV.get("CONSUMER_SECRET")
         )
         auth.set_access_token(
-            self.env.get("ACCESS_TOKEN"), self.env.get("ACCESS_TOKEN_SECRET")
+            ENV.get("ACCESS_TOKEN"), ENV.get("ACCESS_TOKEN_SECRET")
         )
         self.api = tweepy.API(auth)
 
-    def load_environments(self):
-        self.env = load_env()
+    def check_env(self):
 
-        if not len(self.env):
+        if not len(ENV):
             raise Exception("are you missing something? [.env file empty!]")
 
         required_credentials = list(
@@ -40,13 +38,13 @@ class Tweeter:
                 "CONSUMER_SECRET",
                 "ACCESS_TOKEN",
                 "ACCESS_TOKEN_SECRET",
-                "BASE_URL",
+                "SITE_URL",
             ]
         )
         missing_env_fields = [
             string
             for string in required_credentials
-            if string not in list(self.env.keys())
+            if string not in list(ENV.keys())
         ]
         if len(missing_env_fields):
             raise Exception(
@@ -54,9 +52,13 @@ class Tweeter:
             )
 
     def load_links(self):
-        workbook = load_workbook()
+        with NamedTemporaryFile(suffix=".xlsx") as spreadsheet_file:
+            with urllib.request.urlopen(ENV["SPREADSHEET_URL"]) as remote_file:
+                spreadsheet_file.write(remote_file.read())
+                workbook = load_workbook(filename=spreadsheet_file.name,
+                                         read_only=True)
         self.links_sheet = get_links_by_date(
-            get_lines(workbook[WORKBOOK_LINKS_TITLE]), reverse=False
+            get_lines(workbook[ENV['SPREADSHEET_LINKS_PAGE_NAME']]), reverse=False
         )
 
     def create_index(self):
@@ -81,7 +83,7 @@ class Tweeter:
         self.link_to_share = self.links_sheet[self.current_index]
 
     def get_url(self):
-        return urljoin(self.env.get("BASE_URL"), self.link_to_share["file_path"])
+        return urljoin(ENV.get("SITE_URL"), self.link_to_share["file_path"])
 
     def tweet(self):
         tweet = self.get_url()

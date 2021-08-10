@@ -15,7 +15,7 @@ from slugify import slugify
 LINK_COLUMNS = ("title", "url", "desc", "category_str", "kind", "lang",
                 "sender", "source", "create_time")
 CATEGORY_COLUMN_INDEX = LINK_COLUMNS.index("category_str")
-ENV = None
+ENV = dotenv_values(join(dirname(realpath(__file__)), ".env"))
 
 
 def get_lines(worksheet):
@@ -332,11 +332,7 @@ def makedirs(path):
             raise
 
 
-def build(root_path=join(dirname(realpath(__file__)), "docs/"),
-          env_file_path=join(dirname(realpath(__file__)), ".env")):
-    global ENV
-    ENV = dotenv_values(env_file_path)
-
+def build(root_path=join(dirname(realpath(__file__)), "docs/")):
     jinja = Environment(loader=FileSystemLoader("templates/"),
                         autoescape=select_autoescape(["html", "xml"]))
 
