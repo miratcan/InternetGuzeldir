@@ -17,17 +17,7 @@
       {% for link in latest_links %}
         {% include "link_as_list_item.html.jinja2" %}
         {% if loop.index == 3 %}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3821665691664234"
-        crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-format="fluid"
-        data-ad-layout-key="-h4-16+57-2b-7l"
-        data-ad-client="ca-pub-3821665691664234"
-        data-ad-slot="3203504682"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+          {% include "ad_as_list_item.html.jinja2" %}
         {% endif %}
       {% endfor %}
     </ul>
