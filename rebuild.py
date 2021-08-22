@@ -90,9 +90,9 @@ def get_parent_category_str(category_str):
         return None
     parts = get_category_parts(category_str)
     return (
-        f" {ENV['SPREADSHEET_CATEGORY_SEPERATOR']} ".join(parts[:-1])
-        if len(parts) > 1
-        else None
+        f" {ENV['SPREADSHEET_CATEGORY_SEPERATOR']} ".join(parts[:-1]) \
+        if len(parts) > 1 \
+        else None \
     )
 
 

@@ -4,4 +4,5 @@ openpyxl==3.0.7
 
 selenium~=3.141.0
 python-dotenv~=0.18.0
-tweepy~=3.10.0htmlmin==0.1.12
+tweepy~=3.10.0
+htmlmin==0.1.12
