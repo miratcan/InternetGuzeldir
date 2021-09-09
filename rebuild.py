@@ -232,6 +232,67 @@ def render_sitemap(root_path, categories, links_by_category, sitemap_template):
             ))
         )
 
+def render_graph(root_path, categories, links_by_category, graph_template):
+
+    category_ids = {}
+    category_relations = []
+
+    nodes = [{
+        'id': 0,
+        'label': 'Ana Sayfa',
+        'shape': 'box',
+        'color': 'yellow',
+        'shadow': {'enabled': 'true', 'color': 'rgba(255,255,255,0.25)'}
+    }]
+    edges = []
+
+    for idx, (category_str, category_info) in enumerate(categories.items(), 1):
+        if category_str not in category_ids:
+            category_ids[category_str] = idx
+            nodes.append({'id': idx, 'label': category_info['name'],
+                           'shape': 'box', 'color': 'greenyellow'})
+
+    for category_str, category_info in categories.items():
+
+        related_category_strs = category_info['children'].copy()
+        if category_info['parent'] is not None:
+            related_category_strs += [category_info['parent']]
+
+        for related_category_str in related_category_strs:
+            key = tuple(sorted([category_ids[category_str],
+                                category_ids[related_category_str]]))
+            if key not in category_relations:
+                category_relations.append(key)
+                edges.append({'from': key[0], 'to': key[1]})
+
+
+        if category_info['parent'] is None:
+            category_relations.append((0, category_ids[category_str]))
+            edges.append({'from': 0, 'to': category_ids[category_str]})
+    
+    for category, links in links_by_category.items():
+        for link in links:
+            idx += 1
+            nodes.append({
+                'id': idx, 'label': link['title'], 'shape': 'box',
+                'font': {'color': 'white'},
+                'color': 'green', 'shapeProperties': {'title': link['desc']}
+
+            })
+            key = sorted([category_ids[link['category_str']], idx])
+            edges.append({'from': key[0], 'to': key[1]})
+
+
+    with open(join(root_path, "graph.html"), "w") as file:
+            file.write(
+                minify(graph_template.render(
+                    nodes=nodes,
+                    edges=edges,
+                    root_path=root_path,
+                    env=ENV
+                ))
+            )    
+
 
 def render_categories(base_path, links_by_category, categories, template):
     for category_str, links in links_by_category.items():
@@ -354,6 +415,7 @@ def build(root_path=join(dirname(realpath(__file__)), "docs/")):
     link_template = jinja.get_template("link.html.jinja2")
     home_template = jinja.get_template("home.html.jinja2")
     sitemap_template = jinja.get_template("sitemap.xml.jinja2")
+    graph_template = jinja.get_template("graph.html.jinja2")
 
     links_by_category = get_links_by_category(links_page_lines)
     categories = get_categories(links_page_lines, categories_page_lines)
@@ -364,6 +426,7 @@ def build(root_path=join(dirname(realpath(__file__)), "docs/")):
     render_links(root_path, links_by_category, link_template)
     render_home(root_path, links_page_lines, categories, home_template)
     render_sitemap(root_path, categories, links_by_category, sitemap_template)
+    render_graph(root_path, categories, links_by_category, graph_template)
 
 
 if __name__ == "__main__":

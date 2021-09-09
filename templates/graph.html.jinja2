@@ -1,0 +1,34 @@
+{% extends "base.html.jinja2" %}
+
+{% block extra_head %}
+  <script
+    type="text/javascript"
+    src="https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js"
+  ></script>
+  <style>
+    #mynetwork {width:100vw;height:100vh;position:fixed;top:0;left:0}
+  </style>
+{% endblock %}
+
+{% block main %}
+
+
+  <div id="mynetwork"></div>
+
+  <script type="text/javascript">
+    // create an array with nodes
+    var nodes = new vis.DataSet({{ nodes }});
+
+    // create an array with edges
+    var edges = new vis.DataSet({{ edges }});
+
+    // create a network
+    var container = document.getElementById("mynetwork");
+    var data = {
+      nodes: nodes,
+      edges: edges,
+    };
+    var options = {};
+    var network = new vis.Network(container, data, options);
+  </script>
+{% endblock %}
