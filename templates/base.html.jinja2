@@ -8,28 +8,6 @@
     <meta charset="UTF-8">
     <style>
         :root {
-            --blue: #000084;
-            --dark-blue: #000044;
-            --indigo: #55f;
-            --purple: #aa00aa;
-            --pink: #f5f;
-            --red: #aa0000;
-            --orange: #f55;
-            --yellow: #ff5;
-            --green: #00aa00;
-            --teal: #00aaaa;
-            --cyan: #00aaaa;
-            --white: #fff;
-            --gray: #bbbbbb;
-            --gray-dark: #bbbbbb;
-            --primary: #bbbbbb;
-            --secondary: #bbbbbb;
-            --success: #00aa00;
-            --info: #00aaaa;
-            --warning: #aa5500;
-            --danger: #aa0000;
-            --light: #fff;
-            --dark: #000000;
             --breakpoint-xs: 0;
             --breakpoint-sm: 576px;
             --breakpoint-md: 768px;
@@ -49,11 +27,6 @@
         html {
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            background: var(--dark);
-            color: var(--primary);
-            font-family: var(--font-family-monospace);
-            line-height: 18px;
-            font-size: 14px;
         }
 
         body {
@@ -75,13 +48,9 @@
             margin: 0;
         }
 
-        h1, h2, h3, h4, h5 {
-            color: white;
-            font-size: inherit;
-        }
-
         .outer {
             padding: 10px;
+            border: 1px solid gray;
         }
 
         .mt {
@@ -93,9 +62,7 @@
         }
 
         footer {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--gray-dark);
+            border-top: 1px solid gray;
         }
 
         ul.categories {
@@ -112,25 +79,14 @@
             margin: 0;
             line-height: 1.6rem;
             background: url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/) left center no-repeat;
+  	    filter: brightness(50%);
             background-size: 1rem;
             padding-left: 1.4rem;
         }
 
-        ul.categories li:hover {
-            font-weight: bold;
-            background: var(--gray-dark);
-        }
-
-        ul.categories li:hover a {
-            color: var(--dark);
-        }
-
-        ul.categories li a {
-            color: var(--primary);
-        }
-
         ul.categories li.up {
             background-image: url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
+  	    filter: brightness(50%);
         }
 
         ul.links {
@@ -171,14 +127,16 @@
 
         a {
             text-decoration: none;
-            color: var(--yellow);
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         #link_detail {
             margin: 2rem 0 4rem 0;
             padding: 10px;
-            background: var(--blue);
-            box-shadow: 1rem 1rem var(--dark-blue);
+            border: 1px solid gray;
         }
 
         .inner {
