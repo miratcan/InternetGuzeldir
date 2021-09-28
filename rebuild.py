@@ -372,7 +372,7 @@ def render_home(base_path, link_page_rows, categories, template):
         file.write(
             minify(
                 template.render(
-                    latest_links=links[:20],
+                    latest_links=links[:100],
                     root_path="./",
                     categories=categories,
                     last_update=last_update,
