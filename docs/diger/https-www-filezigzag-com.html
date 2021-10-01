@@ -7,7 +7,7 @@
             --breakpoint-xl: 1152px;
             --font-family-sans-serif: Monaco, Menlo, Consolas, "Courier New", monospace;
             --font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
-            --margin-size: 20px;
+            --margin-size: 1rem;
         }
 
         *,
@@ -45,18 +45,12 @@
             border: 1px solid gray;
         }
 
-        .mt {
-            margin-top: var(--margin-size);
-        }
-
-        .mb {
-            margin-bottom: var(--margin-size);
-        }
+	.pt { padding-top: var(--margin-size) }
+        .mt { margin-top: var(--margin-size) }
+        .mb { margin-bottom: var(--margin-size); }
 
         footer {
             border-top: 1px solid gray;
-            margin-top: 1rem;
-            padding-top: 1rem;
         }
 
         ul.categories {
