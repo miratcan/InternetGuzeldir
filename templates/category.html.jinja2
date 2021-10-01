@@ -5,6 +5,11 @@
 
 {% block main %}
 <main>
+<div class="outer mt mb" style="background: var(--blue)">
+  <div class="inner">
+    <h2 {% if category.desc %}class="mb"{% endif %}>{{ category.title }}</h2>
+    {% if category.desc %}<p>{{ category.desc }}</p>{% endif %}
+
 <ul class="categories">
   <li class="up"><a href="../index.html">Üst Klasör</a></li>
   {% if category.children %}
@@ -15,13 +20,11 @@
   {% endif %}
 </ul>
 
-{% if links %}
-<div class="outer mt mb" style="background: var(--blue)">
-  <div class="inner">
-    <h2 {% if category.desc %}class="mb"{% endif %}>{{ category.title }}</h2>
-    {% if category.desc %}<p>{{ category.desc }}</p>{% endif %}
+
   </div>
 </div>
+
+{% if links %}
 <ul class="links">
   {% for link in links|sort(attribute='create_time') %}
     {% include "link_as_list_item.html.jinja2" %}
