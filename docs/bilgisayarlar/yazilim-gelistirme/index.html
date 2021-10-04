@@ -19,11 +19,13 @@
         html {
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            background: lightgray;
         }
 
         body {
             padding: 0 1rem 1rem 1rem;
             margin: 0 auto;
+	   max-width: 1000px;
         }
 
         #two_columns {
@@ -40,13 +42,14 @@
         }
 
         .outer {
-            padding: 10px;
-            border: 1px solid gray;
+            padding: 1rem 0;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
         }
 
-	.pt { padding-top: var(--margin-size) }
-        .mt { margin-top: var(--margin-size) }
-        .mb { margin-bottom: var(--margin-size); }
+	.pt { padding-top: var(--margin-size) !important; }
+        .mt { margin-top: var(--margin-size) !important; }
+        .mb { margin-bottom: var(--margin-size) !important; }
 
         footer {
             border-top: 1px solid gray;
@@ -58,7 +61,7 @@
             list-style-type: none;
             grid-template-columns: auto auto auto auto auto;
             padding: 0;
-            margin: 1rem 0 0 0;
+            margin: 0;
         }
 
         ul.categories li {
@@ -83,7 +86,7 @@
         }
 
         ul.links li {
-            margin: 0 0 1rem 0;
+            margin: 0 0 .5rem 0;
             position: relative;
             overflow: auto;
         }
@@ -127,8 +130,6 @@
         }
 
         .inner {
-            border: 2px solid var(--primary);
-            padding: 10px;
         }
 
         p.meta {
@@ -167,7 +168,7 @@
             }
         }
 
-    </style><title>Yazılım Geliştirme — İnternet Güzeldir</title><meta name=description content=None></head> <body> <header class="mt mb"> <h1><a href=../../index.html>İNTERNET GÜZELDİR</a></h1> </header> <main> <div class="outer mt mb" style="background: var(--blue)"> <div class=inner> <h2>Yazılım Geliştirme</h2> <ul class=categories> <li class=up><a href=../index.html>Üst Klasör</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/python/index.html>Python</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/altyapi/index.html>Altyapı</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/araclar/index.html>Araçlar</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/blokzincir/index.html>Blokzincir</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/javascript/index.html>Javascript</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/kaynaklar/index.html>Kaynaklar</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/kisisel-yetenekler/index.html>Kişisel Yetenekler</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/makine-ogrenmesi/index.html>Makine Öğrenmesi</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/index.html>Oyun Geliştirme</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/index.html>Önyüz Geliştirme</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/veritabanlari/index.html>Veritabanları</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/rust/index.html>Rust</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/test-otomasyonu/index.html>Test Otomasyonu</a></li> </ul> </div> </div> <ul class=links> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/README.md)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-github-com-yusufyilmazfr-tasarim-desenleri-turkce-kaynak-blob-master-readme-md.html>Tasarım Desenleri</a> - Yusuf Yılmaz'ın oluşturduğu kapsamlı bir tasarım desenleri rehberi. </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://github.com/maidis/kod-olarak-matematik-cpp)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-github-com-maidis-kod-olarak-matematik-cpp.html>Kod Olarak Matematik</a> - Karmaşık matematiksel formüllerin koda nasıl dökülebileceğini anlatan bir makale. </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://devhints.io/)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-devhints-io.html>Rico's cheatsheets</a> - Yazılım geliştirme ile ilgili bir çok kopya kağıdını barındırıyor. </div> </li> <ins class="adsbygoogle mb" style=display:block data-ad-format=fluid data-ad-layout-key=-h1-u-y-3h+jf data-ad-client=ca-pub-3821665691664234 data-ad-slot=9192391010></ins> <script>
+    </style><title>Yazılım Geliştirme — İnternet Güzeldir</title><meta name=description content=None></head> <body> <header class="mt mb"> <h1><a href=../../index.html>İNTERNET GÜZELDİR</a></h1> </header> <main> <div class="outer mb"> <div class=inner> <h2>Yazılım Geliştirme</h2> <ul class="categories mt"> <li class=up><a href=../index.html>Üst Klasör</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/python/index.html>Python</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/altyapi/index.html>Altyapı</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/araclar/index.html>Araçlar</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/blokzincir/index.html>Blokzincir</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/javascript/index.html>Javascript</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/kaynaklar/index.html>Kaynaklar</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/kisisel-yetenekler/index.html>Kişisel Yetenekler</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/makine-ogrenmesi/index.html>Makine Öğrenmesi</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/index.html>Oyun Geliştirme</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/index.html>Önyüz Geliştirme</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/veritabanlari/index.html>Veritabanları</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/rust/index.html>Rust</a></li> <li><a href=../../bilgisayarlar/yazilim-gelistirme/test-otomasyonu/index.html>Test Otomasyonu</a></li> </ul> </div> </div> <ul class=links> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/README.md)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-github-com-yusufyilmazfr-tasarim-desenleri-turkce-kaynak-blob-master-readme-md.html>Tasarım Desenleri</a> - Yusuf Yılmaz'ın oluşturduğu kapsamlı bir tasarım desenleri rehberi. </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://github.com/maidis/kod-olarak-matematik-cpp)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-github-com-maidis-kod-olarak-matematik-cpp.html>Kod Olarak Matematik</a> - Karmaşık matematiksel formüllerin koda nasıl dökülebileceğini anlatan bir makale. </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://devhints.io/)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-devhints-io.html>Rico's cheatsheets</a> - Yazılım geliştirme ile ilgili bir çok kopya kağıdını barındırıyor. </div> </li> <ins class="adsbygoogle mb" style=display:block data-ad-format=fluid data-ad-layout-key=-h1-u-y-3h+jf data-ad-client=ca-pub-3821665691664234 data-ad-slot=9192391010></ins> <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://github.com/merveenoyan/shell-cheatsheet)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-github-com-merveenoyan-shell-cheatsheet.html>Shell Cheat Sheet</a> - Merve Noyan'ın hazırladığı Linux Shell kullanımını anlatan kopya kağıdı. </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://list.community/)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-list-community.html>List Community</a> - Github'da yayınlanmış çeşitli konulardaki listeler için dizin. </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://dzone.com/articles/should-i-consider-the-gitops-methodology)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-dzone-com-articles-should-i-consider-the-gitops-methodology.html>Should You Use Gitops?</a> - Sürüm kontrolü yaparken GitOps denen sistemi kullanmak faydalı olur mu? Sorusuna cevap arayan bir makale. </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://gitmoji.dev/)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-gitmoji-dev.html>Gitmoji</a> - Git kullanırken commit mesajlarına çeşitli emojiler ekleyerek etiketleme yapmanız için rehber niteliğinde web sitesi. </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://craftinginterpreters.com/)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-craftinginterpreters-com.html>Crafting Interpreters</a> - Kendi betik dilinizi nasıl oluşturabileceğinizi anlatan bir online kitap. </div> </li> <li class=link> <div class=favicon style="background-image:url(https://www.google.com/s2/favicons?domain=https://algoritma-sorulari.blogspot.com/)"></div> <div class=content> <a class=title href=../../bilgisayarlar/yazilim-gelistirme/https-algoritma-sorulari-blogspot-com.html>Algoritma Soruları</a> - Algoritma kasınızı güçlendirmek için bir çok farklı konuda elle yazılmış Türkçe algoritma sorularına sahip blog. </div> </li> </ul> </main> </body> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script> <script>window.dataLayer = window.dataLayer || [];
 

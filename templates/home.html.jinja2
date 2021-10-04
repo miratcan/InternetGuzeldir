@@ -3,13 +3,15 @@
 {% block main %}
 <div id="two_columns">
   <main>
-    <ul class="categories mb">
+    <div class="outer">
+    <ul class="categories">
       {% for category in categories.values() %}
         {% if category.parent == None %}
           <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
         {% endif %}
       {% endfor %}
     </ul>
+</div>
 
     <h2 class="mt mb">Son Eklenen 10 Link</h2>
 

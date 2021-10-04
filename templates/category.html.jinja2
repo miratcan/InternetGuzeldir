@@ -5,22 +5,19 @@
 
 {% block main %}
 <main>
-<div class="outer mt mb" style="background: var(--blue)">
+<div class="outer mb">
   <div class="inner">
     <h2 {% if category.desc %}class="mb"{% endif %}>{{ category.title }}</h2>
     {% if category.desc %}<p>{{ category.desc }}</p>{% endif %}
-
-<ul class="categories">
-  <li class="up"><a href="../index.html">Üst Klasör</a></li>
-  {% if category.children %}
-    {% for sub_category_id in category.children %}
-      {% set category = categories[sub_category_id] %}
-      <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
-    {% endfor %}
-  {% endif %}
-</ul>
-
-
+    <ul class="categories mt">
+      <li class="up"><a href="../index.html">Üst Klasör</a></li>
+      {% if category.children %}
+        {% for sub_category_id in category.children %}
+          {% set category = categories[sub_category_id] %}
+          <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
+        {% endfor %}
+      {% endif %}
+    </ul>
   </div>
 </div>
 
