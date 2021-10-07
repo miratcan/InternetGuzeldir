@@ -11,6 +11,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from openpyxl import load_workbook
 from selenium import webdriver
 from slugify import slugify
+from rcssmin import cssmin
 
 LINK_COLUMNS = ("title", "url", "desc", "category_str", "kind", "lang",
                 "sender", "source", "create_time")
@@ -392,6 +393,13 @@ def makedirs(path):
         if e.errno != errno.EEXIST:
             raise
 
+def build_assets(root_path):
+    # TODO: Make this better.
+    with open('assets/style.css', 'r') as file:
+        style = cssmin(file.read())
+    with open(join(root_path, 'style.css'), 'w') as file:
+        file.write(style)
+
 
 def build(root_path=join(dirname(realpath(__file__)), "docs/")):
     jinja = Environment(loader=FileSystemLoader("templates/"),
@@ -427,7 +435,7 @@ def build(root_path=join(dirname(realpath(__file__)), "docs/")):
     render_home(root_path, links_page_lines, categories, home_template)
     render_sitemap(root_path, categories, links_by_category, sitemap_template)
     render_graph(root_path, categories, links_by_category, graph_template)
-
+    build_assets(root_path)
 
 if __name__ == "__main__":
     build()
