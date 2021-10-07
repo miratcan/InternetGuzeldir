@@ -8,10 +8,23 @@
     <link rel="stylesheet" href="{{ root_path }}style.css">
     <title>{% block title %}{{ env.SITE_TITLE }}{% endblock %}</title>
     <meta name="description" content="{% block description %}İnternet'in ne kadar güzel olduğunu hatırlamanızı sağlayacak link dizini{% endblock %}">
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W8DKVKD');</script>
+
     {% block extra_head %}
     {% endblock %}
   </head>
   <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8DKVKD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     {% block before_header %}{% endblock %}
     <header class="mt mb">
       <h1><a href="{{ root_path }}index.html">İNTERNET GÜZELDİR</a></h1>
