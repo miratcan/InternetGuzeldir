@@ -12,11 +12,14 @@ from openpyxl import load_workbook
 from selenium import webdriver
 from slugify import slugify
 from rcssmin import cssmin
+import json
+
 
 LINK_COLUMNS = ("title", "url", "desc", "category_str", "kind", "lang",
                 "sender", "source", "create_time")
 CATEGORY_COLUMN_INDEX = LINK_COLUMNS.index("category_str")
 ENV = dotenv_values(join(dirname(realpath(__file__)), ".env"))
+
 
 
 def get_lines(worksheet):
@@ -401,6 +404,20 @@ def build_assets(root_path):
         file.write(style)
 
 
+def render_json(root_path, categories, links_by_category):
+    class DateTimeEncoder(json.JSONEncoder):
+        def default(self, o):
+            if isinstance(o, datetime.datetime):
+                return o.isoformat()
+            return json.JSONEncoder.default(self, o)
+    with open(join(root_path, 'data.json'), 'w', encoding='utf8') as file:
+        data = {
+            'categories': categories,
+            'links_by_category': links_by_category
+        }
+        json.dump(data, file, cls=DateTimeEncoder, ensure_ascii=False)
+
+
 def build(root_path=join(dirname(realpath(__file__)), "docs/")):
     jinja = Environment(loader=FileSystemLoader("templates/"),
                         autoescape=select_autoescape(["html", "xml"]))
@@ -430,6 +447,7 @@ def build(root_path=join(dirname(realpath(__file__)), "docs/")):
 
     create_category_paths(root_path, links_page_lines)
 
+    render_json(root_path, categories, links_by_category)
     render_categories(root_path, links_by_category, categories, category_template)
     render_links(root_path, links_by_category, link_template)
     render_home(root_path, links_page_lines, categories, home_template)
