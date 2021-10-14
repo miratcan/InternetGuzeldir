@@ -24,12 +24,11 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8DKVKD"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
     {% block before_header %}{% endblock %}
-    <header class="mt mb">
-      <h1><a href="{{ root_path }}index.html">İNTERNET GÜZELDİR</a></h1>
-    </header>
+    <h1><a href="{{ root_path }}index.html">İNTERNET GÜZELDİR</a></h1>
+    <div id="wrapper">
     {% block main %}{% endblock %}
+    </div>
     {% block footer %}{% endblock %}
   </body>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>

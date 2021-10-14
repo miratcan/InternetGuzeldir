@@ -16,32 +16,32 @@
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background: lightgray;
+  background: darkslategray;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 18px;
 }
 
-body {
+#wrapper {
   background-color: white;
-  width: 800px;
+  max-width: 800px;
   padding: 1rem;
   border-radius: 1rem;
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
 }
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
-h1, h2, h3, h4, h5, p {
-    padding: 0;
-    margin: 0;
-}
+h1, h2, h3, h4, h5, p { padding: 0; margin: 0; }
+h2 { margin-top: 1rem }
 
 h1 {
   text-align: center;
+  color: white;
+  margin-top: var(--margin-size);
 }
+
+h1 a { color: white; }
 
 .outer {
     padding: 0;
@@ -52,12 +52,17 @@ h1 {
 .mt { margin-top: var(--margin-size) !important; }
 .mb { margin-bottom: var(--margin-size) !important; }
 
-footer {
-    border-top: 1px solid gray;
-}
-
 footer ul {
 padding: 0; margin: 0; overflow: auto;
+}
+
+footer a, footer {
+  color: lightblue;
+}
+
+footer {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 footer ul li {
@@ -137,9 +142,7 @@ ul.links li .content .desc {
     border: 1px solid gray;
 }
 
-p.meta {
-    color: lightgray;
-}
+p.meta { color: gray; }
 
 @media only screen and (max-width: 750px) {
     #two_columns {
