@@ -5,9 +5,9 @@
 
 {% block main %}
 <main>
-<div class="outer mb">
+<h2 {% if category.desc %}class="mb"{% endif %}>{{ category.title }}</h2>
+<div class="outer ">
   <div class="inner">
-    <h2 {% if category.desc %}class="mb"{% endif %}>{{ category.title }}</h2>
     {% if category.desc %}<p>{{ category.desc }}</p>{% endif %}
     <ul class="categories mt">
       <li class="up"><a href="../index.html">Üst Klasör</a></li>
