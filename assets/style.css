@@ -24,15 +24,6 @@ html {
 body {
   padding: 0 1rem 1rem 1rem;
   margin: 0 auto;
-  max-width: 1000px;
-}
-
-#two_columns {
-    margin: 0 auto;
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: auto 250px;
-    padding: 0;
 }
 
 h1, h2, h3, h4, h5, p {
@@ -52,6 +43,16 @@ h1, h2, h3, h4, h5, p {
 
 footer {
     border-top: 1px solid gray;
+}
+
+footer ul {
+padding: 0; margin: 0; overflow: auto;
+}
+
+footer ul li {
+  float: left;
+  margin-right: var(--margin-size); 
+  list-style-type: none;
 }
 
 ul.categories {
@@ -109,47 +110,29 @@ ul.links li .content {
     width: calc(100% - 26px);
     overflow: hidden;
 }
+ul.links li .content .desc::before{
+  content: "- ";
+}
+
+ 
 
 ul.links li .content .desc {
     margin: .4rem 0;
 }
 
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 #link_detail {
-    margin: 2rem 0 4rem 0;
-    padding: 10px;
+    margin: calc(--margin-size * 2) 0 calc(--margin-size * 4)  0;
+    padding: var(--margin-size);
     border: 1px solid gray;
 }
 
-.inner {
-}
-
 p.meta {
-    color: var(--gray-dark);
-}
-
-header, main, footer {
-    margin: 0 auto
+    color: lightgray;
 }
 
 @media only screen and (max-width: 750px) {
     #two_columns {
 	display: block;
-    }
-
-    #two_columns aside {
-	display: none
-    }
-
-    main {
-	margin: 0;
     }
 
     body {
