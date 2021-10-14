@@ -337,15 +337,13 @@ def render_categories(base_path, links_by_category, categories, template):
 
 def render_links(base_path, links_by_category, template):
     cleaner_js = """
-        document.getElementsByTagName('header')[0].remove();
         document.getElementsByTagName('script')[0].remove();
-        document.getElementsByTagName('script')[0].remove();
-        document.getElementsByTagName('script')[0].remove();
-        document.getElementsByClassName('utterances')[0].remove();
+        document.getElementsByClassName('meta')[0].remove();
+        document.getElementsByTagName('p')[1].classList.remove('mb');
     """
 
-    # safari = webdriver.Safari()
-    # safari.set_window_size(600, 350)
+    safari = webdriver.Safari()
+    safari.set_window_size(600, 400)
     for category_str, links in links_by_category.items():
         for link in links:
             file_path = join(base_path, link["file_path"])
@@ -362,10 +360,10 @@ def render_links(base_path, links_by_category, template):
                     )
                 )
             image_path = join(base_path, image_url)
-            # if not exists(image_path) and False:
-            #    safari.get("file://" + join(base_path, file_path))
-            #    safari.execute_script(cleaner_js)
-            #    safari.save_screenshot(join(base_path, image_url))
+            if True or not exists(image_path):
+                safari.get("file://" + join(base_path, file_path))
+                safari.execute_script(cleaner_js)
+                safari.save_screenshot(join(base_path, image_url))
 
 
 def render_home(base_path, link_page_rows, categories, template):
