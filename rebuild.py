@@ -5,6 +5,8 @@ from os import makedirs as _makedirs
 from os.path import dirname, exists, join, realpath
 from tempfile import NamedTemporaryFile
 
+from feedgen.feed import FeedGenerator
+
 from dotenv import dotenv_values
 from htmlmin import minify
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -236,6 +238,20 @@ def render_sitemap(root_path, categories, links_by_category, sitemap_template):
             ))
         )
 
+def render_feed(root_path, links_by_category):
+    feed = FeedGenerator()
+    feed.id('http://internetguzeldir.com')
+    feed.title('İnternet Güzeldir')
+    feed.link( href='https://internetguzeldir.com', rel='alternate' )
+    feed.subtitle('İnternet\'in ne kadar güzel olduğunu hatırlamanızı ' \
+                'sağlayacak elle seçilmiş link arşivi.')
+    feed.link( href='http://internetguzeldir.com/feed.rss', rel='self' )
+    feed.language('tr')
+    rssfeed  = feed.rss_str(pretty=True) # Get the RSS feed as string
+    print(rssfeed)
+
+
+
 def render_graph(root_path, categories, links_by_category, graph_template):
 
     category_ids = {}
@@ -451,6 +467,7 @@ def build(root_path=join(dirname(realpath(__file__)), "docs/")):
     render_home(root_path, links_page_lines, categories, home_template)
     render_sitemap(root_path, categories, links_by_category, sitemap_template)
     render_graph(root_path, categories, links_by_category, graph_template)
+    render_feed(root_path, links_by_category)
     build_assets(root_path)
 
 if __name__ == "__main__":
