@@ -1,37 +1,45 @@
 {% extends "base.html.jinja2" %}
-
-
 {% block title %}{{ link.title}} — {{ env.SITE_TITLE }}{% endblock title %}
 {% block description %}{{ link.desc }}{% endblock %}
 {% block body_class %}two_column{% endblock body_class %}
-
 {% block extra_head %}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@internetguzel" />
-  <meta name="twitter:title" content="{{ link.title }}" />
-  <meta name="twitter:description" content="{{ link.desc }}" />
-  <meta name="twitter:image" content="https://internetguzeldir.com/{{ image_url }}" />
-{% endblock %}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@internetguzel" />
+<meta name="twitter:title" content="{{ link.title }}" />
+<meta name="twitter:description" content="{{ link.desc }}" />
+<meta name="twitter:image" content="https://internetguzeldir.com/{{ image_url }}" />
 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/css/socializer.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
+{% endblock %}
 {% block main %}
 <main>
-
-<div id="link_detail">
-  <div class="inner">
-    <h2 class="mb">{{ link.title }}</h2>
-    <p class="mb">{{ link.desc }}</p>
-    <p class="mb"><a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a></p>
-    <p class="meta">Bu site {% if link.sender %}<a href="https://twitter.com/{{ link.sender }}">@{{ link.sender }}</a> tarafindan gönderilmiş {% endif %} {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>    
+  <div id="link_detail">
+    <div class="inner">
+      <h2 class="mb">{{ link.title }}</h2>
+      <p class="mb">{{ link.desc }}</p>
+      <p class="mb"><a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a></p>
+      <p class="meta">Bu site {% if link.sender %}<a href="https://twitter.com/{{ link.sender }}">@{{ link.sender }}</a> tarafindan gönderilmiş {% endif %} {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
+    </div>
   </div>
-</div>
 
-<script src="https://utteranc.es/client.js"
-        repo="miratcan/internetguzeldir"
-        issue-term="pathname"
-        label="comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+  <div class="socializer" data-features="32px,opacity,fluid,icon-white,pad" data-sites="facebook,twitter,whatsapp,telegram,reddit"></div>
+
+  <script src="https://utteranc.es/client.js"
+    repo="miratcan/internetguzeldir"
+    issue-term="pathname"
+    label="comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async></script>
 </main>
+
+<script src="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/js/socializer.min.js"></script>
+<script>
+(function(){
+    socializer( '.socializer' );
+}());
+</script>
+
 {% endblock %}

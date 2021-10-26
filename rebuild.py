@@ -355,6 +355,7 @@ def render_links(base_path, links_by_category, template):
     cleaner_js = """
         document.getElementsByTagName('script')[0].remove();
         document.getElementsByClassName('meta')[0].remove();
+        document.getElementsByClassName('socializer')[0].remove()
         document.getElementsByTagName('p')[1].classList.remove('mb');
     """
 
