@@ -1,7 +1,7 @@
 import datetime
 import urllib.request
 from collections import defaultdict
-from os import makedirs as _makedirs
+from os import makedirs as _makedirs # noqa
 from os.path import dirname, exists, join, realpath
 from tempfile import NamedTemporaryFile
 
@@ -17,11 +17,19 @@ from rcssmin import cssmin
 import json
 
 
-LINK_COLUMNS = ("title", "url", "desc", "category_str", "kind", "lang",
-                "sender", "source", "create_time")
+LINK_COLUMNS = (
+    "title",
+    "url",
+    "desc",
+    "category_str",
+    "kind",
+    "lang",
+    "sender",
+    "source",
+    "create_time",
+)
 CATEGORY_COLUMN_INDEX = LINK_COLUMNS.index("category_str")
 ENV = dotenv_values(join(dirname(realpath(__file__)), ".env"))
-
 
 
 def get_lines(worksheet):
@@ -40,16 +48,16 @@ def get_lines(worksheet):
 
 def get_category_parts(category_str):
     """
-    Seperate category to list items.
+    Separate category to list items.
 
     :param category_str: String representing a category. E.g. "a > b > c
     :return: list of elements. E.g.: ["a", "b", "c]
     """
+    separator = ENV["SPREADSHEET_CATEGORY_SEPARATOR"]
     return list(
         filter(
             lambda part: bool(part),
-            [part.strip() for part in category_str.split(
-                ENV['SPREADSHEET_CATEGORY_SEPERATOR'])],
+            [part.strip() for part in category_str.split(separator)],
         )
     )
 
@@ -82,7 +90,7 @@ def get_category_depth(category_str):
     :param category_str: String representing a category. E.g. "a > b > c"
     :return: 2
     """
-    return category_str.count(ENV['SPREADSHEET_CATEGORY_SEPERATOR'])
+    return category_str.count(ENV["SPREADSHEET_CATEGORY_SEPARATOR"])
 
 
 def get_parent_category_str(category_str):
@@ -96,9 +104,9 @@ def get_parent_category_str(category_str):
         return None
     parts = get_category_parts(category_str)
     return (
-        f" {ENV['SPREADSHEET_CATEGORY_SEPERATOR']} ".join(parts[:-1]) \
-        if len(parts) > 1 \
-        else None \
+        f" {ENV['SPREADSHEET_CATEGORY_SEPARATOR']} ".join(parts[:-1])
+        if len(parts) > 1
+        else None
     )
 
 
@@ -109,11 +117,13 @@ def get_link_from_row(link_row):
     :param link_row: List of items that represents a row in links page.
     :return: dict
     """
-    link = {column: link_row[index] for index, column in enumerate(LINK_COLUMNS)}
+    link = {
+        column: link_row[index] for index, column in enumerate(LINK_COLUMNS)
+    }
     link["file_path"] = (
-            get_category_path(
-                link_row[CATEGORY_COLUMN_INDEX]) + slugify(link["url"]
-                                                           ) + ".html"
+        get_category_path(link_row[CATEGORY_COLUMN_INDEX])
+        + slugify(link["url"])
+        + ".html"
     )
     return link
 
@@ -135,8 +145,8 @@ def create_category_paths(base_path, link_rows):
     :param link_rows: List of lists that represents a rows in links page.
     :return: None
     """
-    category_strs = get_links_by_category(link_rows).keys()
-    for category_str in category_strs:
+    category_str_list = get_links_by_category(link_rows).keys()
+    for category_str in category_str_list:
         path = join(base_path, get_category_path(category_str))
         makedirs(path)
 
@@ -193,25 +203,32 @@ def get_categories(links_page_rows, categories_page_rows):
         while child_category_str:
 
             if child_category_str not in categories:
-                categories[child_category_str] = \
-                    get_category_info(child_category_str, overrides)
+                categories[child_category_str] = get_category_info(
+                    child_category_str, overrides
+                )
 
             if parent_category_str and parent_category_str not in categories:
-                categories[parent_category_str] = \
-                    get_category_info(parent_category_str, overrides)
+                categories[parent_category_str] = get_category_info(
+                    parent_category_str, overrides
+                )
 
             if child_category_str and child_category_str not in categories:
-                categories[child_category_str] = \
-                    get_category_info(child_category_str, overrides)
+                categories[child_category_str] = get_category_info(
+                    child_category_str, overrides
+                )
 
             if parent_category_str and child_category_str:
                 if categories[child_category_str]["parent"] is None:
-                    categories[child_category_str]["parent"] = \
-                        parent_category_str
-                if child_category_str not in \
-                        categories[parent_category_str]["children"]:
-                    categories[parent_category_str]["children"] \
-                        .append(child_category_str)
+                    categories[child_category_str][
+                        "parent"
+                    ] = parent_category_str
+                if (
+                    child_category_str
+                    not in categories[parent_category_str]["children"]
+                ):
+                    categories[parent_category_str]["children"].append(
+                        child_category_str
+                    )
 
             child_category_str = parent_category_str
             parent_category_str = get_parent_category_str(child_category_str)
@@ -229,27 +246,31 @@ def get_links_by_date(link_rows, reverse=True):
 def render_sitemap(root_path, categories, links_by_category, sitemap_template):
     with open(join(root_path, "sitemap.xml"), "w") as file:
         file.write(
-            minify(sitemap_template.render(
-                root_path=root_path,
-                links_by_category=links_by_category,
-                categories=categories,
-                render_date=datetime.date.today(),
-                strftime=datetime.date.strftime,
-            ))
+            minify(
+                sitemap_template.render(
+                    root_path=root_path,
+                    links_by_category=links_by_category,
+                    categories=categories,
+                    render_date=datetime.date.today(),
+                    strftime=datetime.date.strftime,
+                )
+            )
         )
+
 
 def render_feed(root_path, links_by_category):
     feed = FeedGenerator()
-    feed.id('http://internetguzeldir.com')
-    feed.title('İnternet Güzeldir')
-    feed.link( href='https://internetguzeldir.com', rel='alternate' )
-    feed.subtitle('İnternet\'in ne kadar güzel olduğunu hatırlamanızı ' \
-                'sağlayacak elle seçilmiş link arşivi.')
-    feed.link( href='http://internetguzeldir.com/feed.rss', rel='self' )
-    feed.language('tr')
-    rssfeed  = feed.rss_str(pretty=True) # Get the RSS feed as string
-    print(rssfeed)
-
+    feed.id("http://internetguzeldir.com")
+    feed.title("İnternet Güzeldir")
+    feed.link(href="https://internetguzeldir.com", rel="alternate")
+    feed.subtitle(
+        "İnternet'in ne kadar güzel olduğunu hatırlamanızı "
+        "sağlayacak elle seçilmiş link arşivi."
+    )
+    feed.link(href="http://internetguzeldir.com/feed.rss", rel="self")
+    feed.language("tr")
+    rss_feed = feed.rss_str(pretty=True)  # Get the RSS feed as string
+    print(rss_feed)
 
 
 def render_graph(root_path, categories, links_by_category, graph_template):
@@ -257,61 +278,76 @@ def render_graph(root_path, categories, links_by_category, graph_template):
     category_ids = {}
     category_relations = []
 
-    nodes = [{
-        'id': 0,
-        'label': 'Ana Sayfa',
-        'shape': 'box',
-        'color': 'yellow',
-        'shadow': {'enabled': 'true', 'color': 'rgba(255,255,255,0.25)'}
-    }]
+    nodes = [
+        {
+            "id": 0,
+            "label": "Ana Sayfa",
+            "shape": "box",
+            "color": "yellow",
+            "shadow": {"enabled": "true", "color": "rgba(255,255,255,0.25)"},
+        }
+    ]
     edges = []
 
     for idx, (category_str, category_info) in enumerate(categories.items(), 1):
         if category_str not in category_ids:
             category_ids[category_str] = idx
-            nodes.append({'id': idx, 'label': category_info['name'],
-                           'shape': 'box', 'color': 'greenyellow'})
+            nodes.append(
+                {
+                    "id": idx,
+                    "label": category_info["name"],
+                    "shape": "box",
+                    "color": "greenyellow",
+                }
+            )
 
     for category_str, category_info in categories.items():
 
-        related_category_strs = category_info['children'].copy()
-        if category_info['parent'] is not None:
-            related_category_strs += [category_info['parent']]
+        related_category_strs = category_info["children"].copy()
+        if category_info["parent"] is not None:
+            related_category_strs += [category_info["parent"]]
 
         for related_category_str in related_category_strs:
-            key = tuple(sorted([category_ids[category_str],
-                                category_ids[related_category_str]]))
+            key = tuple(
+                sorted(
+                    [
+                        category_ids[category_str],
+                        category_ids[related_category_str],
+                    ]
+                )
+            )
             if key not in category_relations:
                 category_relations.append(key)
-                edges.append({'from': key[0], 'to': key[1]})
+                edges.append({"from": key[0], "to": key[1]})
 
-
-        if category_info['parent'] is None:
+        if category_info["parent"] is None:
             category_relations.append((0, category_ids[category_str]))
-            edges.append({'from': 0, 'to': category_ids[category_str]})
-    
+            edges.append({"from": 0, "to": category_ids[category_str]})
+
     for category, links in links_by_category.items():
         for link in links:
             idx += 1
-            nodes.append({
-                'id': idx, 'label': link['title'], 'shape': 'box',
-                'font': {'color': 'white'},
-                'color': 'green', 'shapeProperties': {'title': link['desc']}
-
-            })
-            key = sorted([category_ids[link['category_str']], idx])
-            edges.append({'from': key[0], 'to': key[1]})
-
+            nodes.append(
+                {
+                    "id": idx,
+                    "label": link["title"],
+                    "shape": "box",
+                    "font": {"color": "white"},
+                    "color": "green",
+                    "shapeProperties": {"title": link["desc"]},
+                }
+            )
+            key = sorted([category_ids[link["category_str"]], idx])
+            edges.append({"from": key[0], "to": key[1]})
 
     with open(join(root_path, "graph.html"), "w") as file:
-            file.write(
-                minify(graph_template.render(
-                    nodes=nodes,
-                    edges=edges,
-                    root_path=root_path,
-                    env=ENV
-                ))
-            )    
+        file.write(
+            minify(
+                graph_template.render(
+                    nodes=nodes, edges=edges, root_path=root_path, env=ENV
+                )
+            )
+        )
 
 
 def render_categories(base_path, links_by_category, categories, template):
@@ -377,7 +413,7 @@ def render_links(base_path, links_by_category, template):
                     )
                 )
             image_path = join(base_path, image_url)
-            if True or not exists(image_path):
+            if not exists(image_path):
                 safari.get("file://" + join(base_path, file_path))
                 safari.execute_script(cleaner_js)
                 safari.save_screenshot(join(base_path, image_url))
@@ -391,7 +427,7 @@ def render_home(base_path, link_page_rows, categories, template):
         file.write(
             minify(
                 template.render(
-                    latest_links=links[:10],
+                    latest_links=links[:50],
                     root_path="./",
                     categories=categories,
                     last_update=last_update,
@@ -411,11 +447,12 @@ def makedirs(path):
         if e.errno != errno.EEXIST:
             raise
 
+
 def build_assets(root_path):
     # TODO: Make this better.
-    with open('assets/style.css', 'r') as file:
+    with open("assets/style.css", "r") as file:
         style = cssmin(file.read())
-    with open(join(root_path, 'style.css'), 'w') as file:
+    with open(join(root_path, "style.css"), "w") as file:
         file.write(style)
 
 
@@ -425,23 +462,27 @@ def render_json(root_path, categories, links_by_category):
             if isinstance(o, datetime.datetime):
                 return o.isoformat()
             return json.JSONEncoder.default(self, o)
-    with open(join(root_path, 'data.json'), 'w', encoding='utf8') as file:
+
+    with open(join(root_path, "data.json"), "w", encoding="utf8") as file:
         data = {
-            'categories': categories,
-            'links_by_category': links_by_category
+            "categories": categories,
+            "links_by_category": links_by_category,
         }
         json.dump(data, file, cls=DateTimeEncoder, ensure_ascii=False)
 
 
 def build(root_path=join(dirname(realpath(__file__)), "docs/")):
-    jinja = Environment(loader=FileSystemLoader("templates/"),
-                        autoescape=select_autoescape(["html", "xml"]))
+    jinja = Environment(
+        loader=FileSystemLoader("templates/"),
+        autoescape=select_autoescape(["html", "xml"]),
+    )
 
     with NamedTemporaryFile(suffix=".xlsx") as spreadsheet_file:
         with urllib.request.urlopen(ENV["SPREADSHEET_URL"]) as remote_file:
             spreadsheet_file.write(remote_file.read())
-            workbook = load_workbook(filename=spreadsheet_file.name,
-                                     read_only=True)
+            workbook = load_workbook(
+                filename=spreadsheet_file.name, read_only=True
+            )
 
     links_page_lines = get_lines(
         workbook[ENV.get("SPREADSHEET_LINKS_PAGE_NAME", "Links")]
@@ -463,13 +504,16 @@ def build(root_path=join(dirname(realpath(__file__)), "docs/")):
     create_category_paths(root_path, links_page_lines)
 
     render_json(root_path, categories, links_by_category)
-    render_categories(root_path, links_by_category, categories, category_template)
+    render_categories(
+        root_path, links_by_category, categories, category_template
+    )
     render_links(root_path, links_by_category, link_template)
     render_home(root_path, links_page_lines, categories, home_template)
     render_sitemap(root_path, categories, links_by_category, sitemap_template)
     render_graph(root_path, categories, links_by_category, graph_template)
     render_feed(root_path, links_by_category)
     build_assets(root_path)
+
 
 if __name__ == "__main__":
     build()
