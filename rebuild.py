@@ -1,8 +1,9 @@
 import datetime
+import errno
 import urllib.request
 from collections import defaultdict
 from os import makedirs as _makedirs # noqa
-from os.path import dirname, exists, join, realpath
+from os.path import dirname, exists, join, realpath, basename, splitext
 from os import getenv, listdir
 from tempfile import NamedTemporaryFile
 
@@ -270,7 +271,6 @@ def render_feed(root_path, links_by_category):
     feed.link(href="http://internetguzeldir.com/feed.rss", rel="self")
     feed.language("tr")
     rss_feed = feed.rss_str(pretty=True)  # Get the RSS feed as string
-    print(rss_feed)
 
 
 def render_graph(root_path, categories, links_by_category, graph_template):
@@ -350,7 +350,8 @@ def render_graph(root_path, categories, links_by_category, graph_template):
         )
 
 
-def render_categories(base_path, links_by_category, categories, template):
+def render_categories(base_path, links_by_category, categories, template,
+                      themes):
     for category_str, links in links_by_category.items():
         category = categories[category_str]
         file_path = join(base_path, category["path"], "index.html")
@@ -364,6 +365,7 @@ def render_categories(base_path, links_by_category, categories, template):
                         root_path=root_path,
                         category=category,
                         categories=categories,
+                        themes=themes,
                         env=ENV,
                     )
                 )
@@ -387,7 +389,7 @@ def render_categories(base_path, links_by_category, categories, template):
             )
 
 
-def render_links(base_path, links_by_category, template):
+def render_links(base_path, links_by_category, template, themes):
     if getenv("DISABLE_SAFARI") != "true":
         cleaner_js = """
             document.getElementsByTagName('script')[0].remove();
@@ -410,6 +412,7 @@ def render_links(base_path, links_by_category, template):
                                 root_path=get_category_root_path(category_str),
                                 image_url=image_url,
                                 env=ENV,
+                                themes=themes
                             )
                         )
                     )
@@ -420,7 +423,7 @@ def render_links(base_path, links_by_category, template):
                     safari.save_screenshot(join(base_path, image_url))
 
 
-def render_home(base_path, link_page_rows, categories, template):
+def render_home(base_path, link_page_rows, categories, template, themes):
     links = get_links_by_date(link_page_rows)
     last_update = datetime.date.today()
     file_path = join(base_path, "index.html")
@@ -434,6 +437,7 @@ def render_home(base_path, link_page_rows, categories, template):
                     last_update=last_update,
                     num_of_links=len(link_page_rows),
                     env=ENV,
+                    themes=themes
                 )
             )
         )
@@ -450,14 +454,12 @@ def make_dirs(path):
 
 
 def build_assets(root_path):
-    # TODO: Make this better.
-    assets = listdir("assets")
-    for asset in assets:
-        if asset.endswith(".css"):
-            with open("assets/" + asset, "r") as file:
-                style = cssmin(file.read())
-            with open(join(root_path, asset), "w") as file:
-                file.write(style)
+    from distutils.dir_util import copy_tree
+    copy_tree("./assets/", join(root_path, 'assets'))
+    relative_themes_path = join('assets', 'themes')
+    for theme_file_name in listdir(join(root_path, relative_themes_path)):
+        yield (join(relative_themes_path, theme_file_name),
+               splitext(theme_file_name)[0])
 
 
 def render_json(root_path, categories, links_by_category):
@@ -507,16 +509,17 @@ def build(root_path=join(dirname(realpath(__file__)), "docs/")):
 
     create_category_paths(root_path, links_page_lines)
 
+    themes = list(build_assets(root_path))
+
     render_json(root_path, categories, links_by_category)
     render_categories(
-        root_path, links_by_category, categories, category_template
+        root_path, links_by_category, categories, category_template, themes
     )
-    render_links(root_path, links_by_category, link_template)
-    render_home(root_path, links_page_lines, categories, home_template)
+    render_links(root_path, links_by_category, link_template, themes)
+    render_home(root_path, links_page_lines, categories, home_template, themes)
     render_sitemap(root_path, categories, links_by_category, sitemap_template)
     render_graph(root_path, categories, links_by_category, graph_template)
     render_feed(root_path, links_by_category)
-    build_assets(root_path)
 
 
 if __name__ == "__main__":

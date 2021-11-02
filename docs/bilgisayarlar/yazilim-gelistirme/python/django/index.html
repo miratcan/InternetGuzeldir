@@ -1,10 +1,28 @@
 <!DOCTYPE html><html lang=tr> <head><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W8DKVKD');</script><!-- End Google Tag Manager --><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=viewport content="width=device-width, initial-scale=1"><meta charset=UTF-8><style></style><link rel=stylesheet href=../../../../style.css><title>Django — İnternet Güzeldir</title><meta name=description content=None></head> <body> <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8DKVKD" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript> <!-- End Google Tag Manager (noscript) --> <h1><a href=../../../../index.html>İNTERNET GÜZELDİR</a></h1> <div id=wrapper> <div id=category-info> <h2>Django</h2> </div> <ul class="categories mt mb"> <li class=up><a href=../index.html>Üst Klasör</a></li> <li><a href=../../../../bilgisayarlar/yazilim-gelistirme/python/django/kaynak-kodlar/index.html>Kaynak Kodlar</a></li> <li><a href=../../../../bilgisayarlar/yazilim-gelistirme/python/django/kaynaklar/index.html>Kaynaklar</a></li> </ul> </div> </body> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script> <script>
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W8DKVKD');</script><!-- End Google Tag Manager --><meta name=viewport content="width=device-width, initial-scale=1"><meta charset=UTF-8><link id=stylesheet rel=stylesheet href=../../../../style.css><title>Django — İnternet Güzeldir</title><meta name=description content=None></head> <body> <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8DKVKD" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript> <!-- End Google Tag Manager (noscript) --> <h1><a href=../../../../index.html>İNTERNET GÜZELDİR</a></h1> <div style=margin:auto;position:fixed;top:0;right:0;padding:5px;background:gray;color:white;border:lightgray;> Tema: <select id=theme-selector></select> </div> <div id=wrapper> <div id=category-info> <h2>Django</h2> </div> <ul class="categories mt mb"> <li class=up><a href=../index.html>Üst Klasör</a></li> <li><a href=../../../../bilgisayarlar/yazilim-gelistirme/python/django/kaynak-kodlar/index.html>Kaynak Kodlar</a></li> <li><a href=../../../../bilgisayarlar/yazilim-gelistirme/python/django/kaynaklar/index.html>Kaynaklar</a></li> </ul> </div> </body> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script> <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-86514140-3');
+  </script> <!-- theme selector script --> <script>
+    const link = document.querySelector("#stylesheet")
+
+    const THEME_STORAGE = "THEME_STORAGE"
+    const theme = localStorage.getItem(THEME_STORAGE)
+
+    if (theme) {
+      link.setAttribute("href", `../../../../${theme}`)
+      const options = Array.from(document.querySelectorAll("#theme-selector option"));
+      options.forEach(e => e.value === theme && (e.selected = true))
+    }
+
+    const select = document.querySelector("#theme-selector");
+    select.addEventListener("change", function(e) {
+      const value = e.target.value
+      link.setAttribute("href", `../../../../${value}`)
+      localStorage.setItem(THEME_STORAGE, value)
+    })
   </script> </html>
