@@ -148,7 +148,7 @@ def create_category_paths(base_path, link_rows):
     category_str_list = get_links_by_category(link_rows).keys()
     for category_str in category_str_list:
         path = join(base_path, get_category_path(category_str))
-        makedirs(path)
+        make_dirs(path)
 
 
 def get_category_overrides(categories_page_rows):
@@ -438,7 +438,7 @@ def render_home(base_path, link_page_rows, categories, template):
         )
 
 
-def makedirs(path):
+def make_dirs(path):
     if exists(path):
         return
     try:
