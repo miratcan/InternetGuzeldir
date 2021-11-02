@@ -31,6 +31,7 @@ LINK_COLUMNS = (
 )
 CATEGORY_COLUMN_INDEX = LINK_COLUMNS.index("category_str")
 ENV = dotenv_values(join(dirname(realpath(__file__)), ".env"))
+ENV["DEFAULT_THEME"] = "assets/themes/Bestami.css"
 
 
 def get_lines(worksheet):

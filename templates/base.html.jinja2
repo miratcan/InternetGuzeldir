@@ -12,7 +12,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <link id="stylesheet" rel="stylesheet" href="{{ root_path }}style.css">
+    <link id="stylesheet" rel="stylesheet" href="{{ root_path }}{{ env.DEFAULT_THEME }}">
     <title>{% block title %}{{ env.SITE_TITLE }}{% endblock %}</title>
     <meta name="description" content="{% block description %}İnternet'in ne kadar güzel olduğunu hatırlamanızı sağlayacak link dizini{% endblock %}">
 
@@ -31,7 +31,7 @@
 
     <div style="margin:auto;position:fixed;top:0;right:0;padding:5px;background:gray;color:white;border:lightgray;">
       Tema:
-      <select id="theme-selector">{% for (path, name) in themes %}<option value="{{ path }}" selected>{{ name }}</option>{% endfor %}</select>
+      <select id="theme-selector">{% for (path, name) in themes %}<option value="{{ path }}" {% if env.DEFAULT_THEME == path %}selected{% endif %}>{{ name }}</option>{% endfor %}</select>
     </div>
 
     <div id="wrapper">
