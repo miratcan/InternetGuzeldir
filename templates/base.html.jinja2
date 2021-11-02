@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <style></style>
-    <link rel="stylesheet" href="{{ root_path }}style.css">
+    <link id="stylesheet" rel="stylesheet" href="{{ root_path }}style.css">
     <title>{% block title %}{{ env.SITE_TITLE }}{% endblock %}</title>
     <meta name="description" content="{% block description %}İnternet'in ne kadar güzel olduğunu hatırlamanızı sağlayacak link dizini{% endblock %}">
 
@@ -53,10 +53,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- theme selector script -->
   <script>
+    const link = document.querySelector("#stylesheet")
+
+    const THEME_STORAGE = "THEME_STORAGE"
+    const theme = localStorage.getItem(THEME_STORAGE)
+
+    if (theme) {
+      link.setAttribute("href", `{{ root_path }}${theme}`)
+      const options = Array.from(document.querySelectorAll("#theme-selector option"));
+      options.forEach(e => e.value === theme && (e.selected = true))
+    }
+
     const select = document.querySelector("#theme-selector");
     select.addEventListener("change", function(e) {
       const value = e.target.value
-      document.querySelector("link").setAttribute("href", `{{ root_path }}${value}`)
+      link.setAttribute("href", `{{ root_path }}${value}`)
+      localStorage.setItem(THEME_STORAGE, value)
     })
   </script>
 </html>
