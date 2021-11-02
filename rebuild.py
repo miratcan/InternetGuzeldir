@@ -3,6 +3,7 @@ import urllib.request
 from collections import defaultdict
 from os import makedirs as _makedirs # noqa
 from os.path import dirname, exists, join, realpath
+from os import getenv, listdir
 from tempfile import NamedTemporaryFile
 
 from feedgen.feed import FeedGenerator
@@ -15,7 +16,6 @@ from selenium import webdriver
 from slugify import slugify
 from rcssmin import cssmin
 import json
-
 
 LINK_COLUMNS = (
     "title",
@@ -388,35 +388,36 @@ def render_categories(base_path, links_by_category, categories, template):
 
 
 def render_links(base_path, links_by_category, template):
-    cleaner_js = """
-        document.getElementsByTagName('script')[0].remove();
-        document.getElementsByClassName('meta')[0].remove();
-        document.getElementsByClassName('socializer')[0].remove()
-        document.getElementsByTagName('p')[1].classList.remove('mb');
-    """
+    if getenv("DISABLE_SAFARI") != "true":
+        cleaner_js = """
+            document.getElementsByTagName('script')[0].remove();
+            document.getElementsByClassName('meta')[0].remove();
+            document.getElementsByClassName('socializer')[0].remove()
+            document.getElementsByTagName('p')[1].classList.remove('mb');
+        """
 
-    safari = webdriver.Safari()
-    safari.set_window_size(600, 400)
-    for category_str, links in links_by_category.items():
-        for link in links:
-            file_path = join(base_path, link["file_path"])
-            image_url = link["file_path"] + ".png"
-            with open(file_path, "w") as file:
-                file.write(
-                    minify(
-                        template.render(
-                            link=link,
-                            root_path=get_category_root_path(category_str),
-                            image_url=image_url,
-                            env=ENV,
+        safari = webdriver.Safari()
+        safari.set_window_size(600, 400)
+        for category_str, links in links_by_category.items():
+            for link in links:
+                file_path = join(base_path, link["file_path"])
+                image_url = link["file_path"] + ".png"
+                with open(file_path, "w") as file:
+                    file.write(
+                        minify(
+                            template.render(
+                                link=link,
+                                root_path=get_category_root_path(category_str),
+                                image_url=image_url,
+                                env=ENV,
+                            )
                         )
                     )
-                )
-            image_path = join(base_path, image_url)
-            if not exists(image_path):
-                safari.get("file://" + join(base_path, file_path))
-                safari.execute_script(cleaner_js)
-                safari.save_screenshot(join(base_path, image_url))
+                image_path = join(base_path, image_url)
+                if not exists(image_path):
+                    safari.get("file://" + join(base_path, file_path))
+                    safari.execute_script(cleaner_js)
+                    safari.save_screenshot(join(base_path, image_url))
 
 
 def render_home(base_path, link_page_rows, categories, template):
@@ -450,10 +451,13 @@ def make_dirs(path):
 
 def build_assets(root_path):
     # TODO: Make this better.
-    with open("assets/style.css", "r") as file:
-        style = cssmin(file.read())
-    with open(join(root_path, "style.css"), "w") as file:
-        file.write(style)
+    assets = listdir("assets")
+    for asset in assets:
+        if asset.endswith(".css"):
+            with open("assets/" + asset, "r") as file:
+                style = cssmin(file.read())
+            with open(join(root_path, asset), "w") as file:
+                file.write(style)
 
 
 def render_json(root_path, categories, links_by_category):

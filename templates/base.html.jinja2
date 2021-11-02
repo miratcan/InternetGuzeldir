@@ -30,6 +30,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     {% block before_header %}{% endblock %}
     <h1><a href="{{ root_path }}index.html">İNTERNET GÜZELDİR</a></h1>
+
+    <div style="margin: auto;width: 200px;display: flex;justify-content: center;padding: 4px;">
+      <select id="theme-selector">
+        <option value="style.css" selected>Tema 1</option>
+        <option value="style2.css">Tema 2</option>
+      </select>
+    </div>
+
     <div id="wrapper">
     {% block main %}{% endblock %}
     </div>
@@ -41,5 +49,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function gtag() {dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-86514140-3');
+  </script>
+
+  <!-- theme selector script -->
+  <script>
+    const select = document.querySelector("#theme-selector");
+    select.addEventListener("change", function(e) {
+      const value = e.target.value
+      document.querySelector("link").setAttribute("href", `{{ root_path }}${value}`)
+    })
   </script>
 </html>
