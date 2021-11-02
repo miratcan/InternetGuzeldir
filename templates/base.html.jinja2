@@ -53,10 +53,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- theme selector script -->
   <script>
+    const THEME_STORAGE = "THEME_STORAGE"
+    const theme = localStorage.getItem(THEME_STORAGE)
+
+    if (theme) {
+      document.querySelector("link").setAttribute("href", `{{ root_path }}${theme}`)
+      const options = Array.from(document.querySelectorAll("#theme-selector option"));
+      options.forEach(e => e.value === theme && (e.selected = true))
+    }
+
     const select = document.querySelector("#theme-selector");
     select.addEventListener("change", function(e) {
       const value = e.target.value
       document.querySelector("link").setAttribute("href", `{{ root_path }}${value}`)
+      localStorage.setItem(THEME_STORAGE, value)
     })
   </script>
 </html>
