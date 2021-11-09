@@ -7,3 +7,11 @@ Bu siteyi (eğer varsa) benim gibi hisseden insanlar için yaptım. İçerisinde
 Bu linkler çeşitli türlerde olabiliyor: web siteleri, makaleler, online web uygulamaları, online listeler vs gibi. Dil olarak ise Türkçe ve İngilizce içeriklere yer veriyorum.
 
 Her hafta mutlaka bir şeyler ekleniyor. Bookmarklayıp arada bir ziyaret etmenizi tavsiye ederim.
+
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+fetch .env
+python3 rebuild.py
+```
