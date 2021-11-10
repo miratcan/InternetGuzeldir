@@ -1,6 +1,54 @@
 <!DOCTYPE html>
 <html lang="tr">
   <head>
+    <style id="style-element"></style>
+    <script>
+      const CSS_CACHE_STORAGE = "CSS_CACHE_STORAGE"
+      const THEME_STORAGE = "THEME_STORAGE"
+      const STYLE_EL = document.querySelector("#style-element")
+      const THEME = localStorage.getItem(THEME_STORAGE) || "{{ env.DEFAULT_THEME }}"
+
+      const fetchTheme = async (path) => {
+        const response = await fetch(`{{ root_path }}${path}`)
+        const css = await response.text()
+        STYLE_EL.innerHTML = css
+        localStorage.setItem(CSS_CACHE_STORAGE, css)
+        localStorage.setItem(THEME_STORAGE, path)
+      }
+
+      const cssCache = localStorage.getItem(CSS_CACHE_STORAGE);
+
+      if (cssCache) {
+        STYLE_EL.innerHTML = `
+          .loader {
+            display: none;
+          }
+          ${cssCache}
+        `
+      } else {
+        STYLE_EL.innerHTML = `
+          #page {
+            display: none;
+          }
+        `
+      }
+
+      window.addEventListener("load", async () => {
+        if (!cssCache) {
+          await fetchTheme(THEME);
+        }
+
+        const page = document.querySelector("#page");
+        if (page) {
+          page.style.display = "block"
+        }
+
+        const loader = document.querySelector(".loader");
+        if (page) {
+          loader.style.display = "none"
+        }
+      })
+    </script>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -78,7 +126,6 @@
         }
       }
     </style>
-    <style id="style-element"></style>
   </head>
   <body>
 
@@ -88,7 +135,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="loader">Loading...</div>
-    <div id="page" style="display: none;">
+    <div id="page">
       {% block before_header %}{% endblock %}
       <h1><a href="{{ root_path }}index.html">İNTERNET GÜZELDİR</a></h1>
 
@@ -112,35 +159,14 @@
     gtag('config', 'UA-86514140-3');
   </script>
 
-  <!-- theme selector script -->
   <script>
-    (async () => {
-      const page = document.querySelector("#page")
-      const loader = document.querySelector(".loader")
-      const style = document.querySelector("#style-element")
-      const THEME_STORAGE = "THEME_STORAGE"
-      const theme = localStorage.getItem(THEME_STORAGE) || "{{ env.DEFAULT_THEME }}"
+    const select = document.querySelector("#theme-selector");
+    select.addEventListener("change", async function(e) {
+      const value = e.target.value
+      fetchTheme(value)
+    })
 
-      const fetchTheme = async (path) => {
-        loader.style.display = "block"
-        page.style.display = "none"
-        const response = await fetch(`{{ root_path }}${path}`)
-        const css = await response.text();
-        style.innerHTML = css
-        loader.style.display = "none"
-        page.style.display = "block"
-      }
-
-      const select = document.querySelector("#theme-selector");
-      select.addEventListener("change", async function(e) {
-        const value = e.target.value
-        await fetchTheme(value)
-        localStorage.setItem(THEME_STORAGE, value)
-      })
-
-      await fetchTheme(theme)
-      const options = Array.from(document.querySelectorAll("#theme-selector option"));
-      options.forEach(e => e.value === theme && (e.selected = true))
-    })()
+    const options = Array.from(document.querySelectorAll("#theme-selector option"));
+    options.forEach(e => e.value === THEME && (e.selected = true))
   </script>
 </html>
