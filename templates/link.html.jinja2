@@ -1,34 +1,34 @@
 {% extends "base.html.jinja2" %}
 {% block title %}{{ link.title}} — {{ env.SITE_TITLE }}{% endblock title %}
-{% block description %}{{ link.desc }}{% endblock %}
+{% block description %}{{ link.desc|e }}{% endblock %}
 {% block extra_head %}
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="{{ env.TWITTER_USERNAME }}" />
-<meta name="twitter:title" content="{{ link.title }}" />
-<meta name="twitter:description" content="{{ link.desc }}" />
-<meta name="twitter:image" content="{{ env.SITE_URL }}/{{ image_url }}" />
+<meta name='twitter:card' content='summary_large_image' />
+<meta name='twitter:site' content='{{ env.TWITTER_USERNAME }}' />
+<meta name='twitter:title' content='{{ link.title|e }}' />
+<meta name='twitter:description' content='{{ link.desc|e }}' />
+<meta name='twitter:image' content='{{ env.SITE_URL }}{{ image_url }}' />
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/css/socializer.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/css/socializer.min.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.3/css/all.css'>
 
 {% endblock %}
 {% block main %}
-  <div id="link_detail">
-    <div class="inner">
-      <h2 class="title">{{ link.title }}</h2>
-      <p class="desc">{{ link.desc }}</p>
-      <p class="url"><a class="link" target="_blank" href="{{ link.url }}">{{ link.url|truncate(50, False, '...', 0) }}</a></p>
-      <p class="meta">Bu site {% if link.sender %}<a href="https://twitter.com/{{ link.sender }}">@{{ link.sender }}</a> tarafindan gönderilmiş {% endif %} {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
+  <div id='link_detail'>
+    <div class='inner'>
+      <h2 class='title'>{{ link.title }}</h2>
+      <p class='desc'>{{ link.desc }}</p>
+      <p class='url'><a class='link' target='_blank' href='{{ link.url }}'>{{ link.url|truncate(50, False, '...', 0) }}</a></p>
+      <p class='meta'>Bu site {% if link.sender %}<a href='https://twitter.com/{{ link.sender }}'>@{{ link.sender }}</a> tarafindan gönderilmiş {% endif %} {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
     </div>
   </div>
-  <div class="socializer" data-features="32px,opacity,fluid,icon-white,pad" data-sites="facebook,twitter,whatsapp,telegram,reddit"></div>
-  <script src="https://utteranc.es/client.js"
-    repo="miratcan/internetguzeldir"
-    issue-term="pathname"
-    label="comment"
-    theme="github-light"
-    crossorigin="anonymous"
+  <div class='socializer' data-features='32px,opacity,fluid,icon-white,pad' data-sites='facebook,twitter,whatsapp,telegram,reddit'></div>
+  <script src='https://utteranc.es/client.js'
+    repo='miratcan/internetguzeldir'
+    issue-term='pathname'
+    label='comment'
+    theme='github-light'
+    crossorigin='anonymous'
     async></script>
-<script src="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/js/socializer.min.js"></script>
+<script src='https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/js/socializer.min.js'></script>
 <script>(function(){socializer( '.socializer' );}());</script>
 {% endblock %}

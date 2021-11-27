@@ -33,6 +33,15 @@ LINK_COLUMNS = (
 CATEGORY_COLUMN_INDEX = LINK_COLUMNS.index("category_str")
 ENV = dotenv_values(join(dirname(realpath(__file__)), ".env"))
 
+MINIFY_ARGS = {
+    "remove_optional_attribute_quotes": False,
+    "remove_comments": True
+}
+
+def minify(text, **args):
+    return text
+
+
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
@@ -269,7 +278,7 @@ def render_sitemap(root_path, categories, links_by_category, sitemap_template):
                     categories=categories,
                     render_date=datetime.date.today(),
                     strftime=datetime.date.strftime,
-                )
+                ), **MINIFY_ARGS
             )
         )
 
@@ -317,7 +326,7 @@ def render_categories(base_path, links_by_category, categories, template):
                         category=category,
                         categories=categories,
                         env=ENV,
-                    )
+                    ), **MINIFY_ARGS
                 )
             )
     for category_str, category in categories.items():
@@ -334,10 +343,7 @@ def render_categories(base_path, links_by_category, categories, template):
                         category=category,
                         categories=categories,
                         env=ENV,
-                    )
-                )
-            )
-
+                    ), **MINIFY_ARGS))
 
 def render_links(base_path, links_by_category, template, force=False):
     logger.info("Rendering links.")
@@ -360,8 +366,7 @@ def render_links(base_path, links_by_category, template, force=False):
                             root_path=get_category_root_path(category_str),
                             image_url=image_url,
                             env=ENV,
-                        )
-                    )
+                        ), **MINIFY_ARGS)
                 )
             image_path = join(base_path, image_url)
             if force or not exists(image_path):
@@ -388,7 +393,8 @@ def render_home(base_path, link_page_rows, categories, template):
                     last_update=last_update,
                     num_of_links=len(link_page_rows),
                     env=ENV,
-                )
+                ),
+                **MINIFY_ARGS
             )
         )
 
