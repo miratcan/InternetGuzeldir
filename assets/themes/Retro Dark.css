@@ -30,8 +30,8 @@ body {
 }
 
 #page {
-  max-width: 79ch;
-  margin: 4ch auto;
+  margin-top: 4ch;
+  margin-bottom: 4ch;
 }
 
 h1,
@@ -45,10 +45,25 @@ h5 {
   padding: 1ch 0;
 }
 
+header {
+  background: brown;
+  overflow: auto;
+}
+
+.wrapper {
+  max-width:79ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1 {
   margin: 0;
   padding: 1ch 0;
-  background: brown;
+  float: left;
+}
+
+form {
+  float: right;
 }
 
 h2 {
@@ -59,7 +74,6 @@ h2 {
 h1 a {
   display: block;
   margin: 0 auto;
-  width: 79ch;
   color: white;
 }
 
