@@ -1,0 +1,9 @@
+Jinja2==2.11.1
+python-slugify==4.0.1
+openpyxl==3.0.7
+
+selenium~=3.141.0
+python-dotenv~=0.18.0
+tweepy~=3.10.0
+htmlmin==0.1.12
+rcssmin==1.0.6

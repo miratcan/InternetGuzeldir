@@ -1,0 +1,31 @@
+{% extends "base.html.jinja2" %}
+
+{% block main %}
+<ul class="categories">
+{% for category in categories.values() %}
+  {% if category.parent == None %}
+    <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+<ul class="links">
+  {% for link in latest_links %}
+    {% include "link_as_list_item.html.jinja2" %}
+  {% endfor %}
+</ul>
+{% endblock %}
+
+{% block footer %}
+<footer>
+<ul>
+<li>Son Güncelleme: {{ last_update.strftime('%d-%m-%Y') }}</li>
+<li>Toplam Link: {{ num_of_links }}</li>
+<li><a href="/atom.xml">Atom</a></li>
+<li><a href="/rss.xml">Rss</a></li>
+<li><a href="https://twitter.com/internetguzel">Twitter</a></li>
+<li><a href="https://github.com/miratcan/internetguzeldir">Kod</a></li>
+<li><a href="https://raw.githubusercontent.com/miratcan/internetguzeldir/master/docs/data.json">Api</a></li>
+<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfowx93hakWPZaEjmeG2TtjQJnT9dvW2i1Xg7B-yXJYCMjm8Q/viewform?usp=sf_link">Ekleme</a></li>
+</ul>
+</footer>
+{% endblock %}

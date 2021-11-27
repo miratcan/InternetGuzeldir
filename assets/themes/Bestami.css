@@ -1,0 +1,199 @@
+:root {
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1152px;
+  --margin-size: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background: beige;
+  font-family: serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid gray;
+  padding: var(--margin-size);
+  background: azure;
+  border-radius: 0.25rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: var(--margin-size) 0;
+  font-size: 26px;
+  line-height: 28px;
+}
+
+h2 {
+  font-size: 22x;
+  line-height: 24px;
+}
+
+h1 a {
+  color: gray;
+}
+
+.outer {
+  padding: 0;
+  margin: 0 0 var(--margin-size) 0;
+}
+
+.pt {
+  padding-top: var(--margin-size) !important;
+}
+
+.mt {
+  margin-top: var(--margin-size) !important;
+}
+
+.mb {
+  margin-bottom: var(--margin-size) !important;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+footer a,
+footer {
+  color: lightblue;
+}
+
+footer {
+  margin: var(--margin-size) auto;
+  color: gray;
+}
+
+footer a {
+  color: gray;
+  text-decoration: underline;
+}
+
+footer ul li {
+  float: left;
+  margin-right: var(--margin-size);
+  list-style-type: none;
+}
+
+ul.categories {
+  display: grid;
+  gap: 0.25rem;
+  list-style-type: none;
+  grid-template-columns: auto auto auto;
+  padding: 0;
+  margin: 0;
+}
+
+ul.categories li {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6rem;
+  background: url(https://bafybeiamqqhgjjwxuf235ryvr6w6au5gh6qpjd4xw4xphug7cwcxlgweky.ipfs.infura-ipfs.io/)
+    left center no-repeat;
+  filter: brightness(50%);
+  background-size: 1rem;
+  padding-left: 1.4rem;
+}
+
+ul.categories li.up {
+  background-image: url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
+  filter: brightness(50%);
+}
+
+ul.links {
+  list-style-type: none;
+  margin: 0 0 var(--margin-size) 0;
+  padding: 0;
+}
+
+ul.links li {
+  margin: 0 0 1rem 0;
+  position: relative;
+  overflow: auto;
+}
+
+ul.links li:last-child {
+  margin: 0;
+}
+
+ul.links li .favicon {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  vertical-align: bottom;
+  display: block;
+  float: left;
+}
+
+ul.links li .content {
+  float: left;
+  margin-left: 10px;
+  width: calc(100% - 26px);
+  overflow: hidden;
+}
+
+ul.links li .content .desc::before {
+  content: "- ";
+}
+
+ul.links li .content .desc {
+  margin: 0.4rem 0;
+}
+
+#link_detail {
+}
+
+p.meta {
+  color: gray;
+}
+
+@media only screen and (max-width: 750px) {
+  #two_columns {
+    display: block;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  ul.categories {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  ul.categories {
+    grid-template-columns: auto;
+  }
+}

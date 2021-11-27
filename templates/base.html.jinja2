@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link id="stylesheet" rel="stylesheet" href="{{ root_path }}style.css">
+    <title>{% block title %}{{ env.SITE_TITLE }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ env.SITE_DESC }}{% endblock %}">
+    <link rel="alternate" type="application/rss+xml" title="Internet Güzeldir RSS Beslemesi" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Internet Güzeldir Atom Beslemesi" href="/atom.xml" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86514140-3"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-86514140-3');</script>
+
+    {% block extra_head %}
+    {% endblock %}
+  </head>
+  <body>
+    <h1><a href="{{ root_path }}index.html">{{ env.SITE_TITLE }}</a></h1>
+    <div id="page">
+      {% block before_header %}{% endblock %}
+      {% block main %}{% endblock %}
+      {% block footer %}{% endblock %}
+    </div>
+  </body>
+</html>
