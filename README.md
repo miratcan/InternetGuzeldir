@@ -35,6 +35,5 @@ TWITTER_USERNAME = "internetguzel"
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-fetch .env
 python3 rebuild.py
 ```
