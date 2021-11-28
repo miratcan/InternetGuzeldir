@@ -14,6 +14,21 @@ Her hafta mutlaka bir şeyler ekleniyor. Bookmarklayıp arada bir ziyaret etmeni
 
 https://docs.google.com/spreadsheets/d/1mK5BycfvwvuPcekTKIMhPKtsRa0EXe-dGeQsvok5wz4/edit?usp=sharing
 
+# Örnek .env Dosyası
+
+```
+SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXBGnECx6IhFmmeTt6QKLvy3rOvtvmUVaHq_Ubo1mPzWaJu_AfykRrJlurwrd9Ade9S5t7N4Zo2Qpa/pub?output=xlsx"
+SPREADSHEET_LINKS_PAGE_NAME = "Bağlantılar"
+SPREADSHEET_CATEGORIES_PAGE_NAME = "Kategoriler"
+SPREADSHEET_CATEGORY_SEPARATOR = ">"
+SPREADSHEET_CATEGORY_COLUMN = 3
+
+SITE_TITLE = "İnternet Güzeldir"
+SITE_URL = "https://internetguzeldir.com/"
+SITE_DESC = "İnternet'in ne kadar güzel olduğunu hatırlamanızı sağlayacak link dizini"
+TWITTER_USERNAME = "internetguzel"
+```
+
 # Kurulum
 
 ```
