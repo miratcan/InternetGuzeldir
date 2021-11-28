@@ -10,6 +10,10 @@ Bu linkler çeşitli türlerde olabiliyor: web siteleri, makaleler, online web u
 
 Her hafta mutlaka bir şeyler ekleniyor. Bookmarklayıp arada bir ziyaret etmenizi tavsiye ederim.
 
+# Sitenin Üretildiği Excell Dosyası
+
+https://docs.google.com/spreadsheets/d/1mK5BycfvwvuPcekTKIMhPKtsRa0EXe-dGeQsvok5wz4/edit?usp=sharing
+
 # Kurulum
 
 ```
