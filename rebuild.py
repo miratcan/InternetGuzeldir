@@ -348,6 +348,13 @@ def render_categories(base_path, links_by_category, categories, template):
 def render_links(base_path, links_by_category, template, force=False):
     logger.info("Rendering links.")
     cleaner_js = """
+        document.getElementsByTagName('header')[0].style.background='none';
+        document.getElementsByTagName('form')[0].remove();
+        document.getElementById('page').style.margin=0;
+        document.getElementById('link_detail').style.margin=0;
+        text = document.getElementsByTagName('h1')[0].textContent;
+        document.getElementsByTagName('h1')[0].textContent = text.toUpperCase();
+        document.getElementsByTagName('header')[0].style.background='none';
         document.getElementsByTagName('script')[0].remove();
         document.getElementsByClassName('meta')[0].remove();
         document.getElementsByClassName('socializer')[0].remove()
