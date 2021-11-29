@@ -2,3 +2,7 @@
 .idea/
 .env
 pickle.index
+.vscode/
+*.log
+geckodriver
+chromedriver
