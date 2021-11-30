@@ -345,9 +345,42 @@ def render_categories(base_path, links_by_category, categories, template):
                         env=ENV,
                     ), **MINIFY_ARGS))
 
-def render_links(base_path, links_by_category, template, force=False):
+
+def get_browser():
+    web_drivers = ("Firefox", "Chrome", "Safari")
+    drivers = ("geckodriver", "chromedriver", "safari")
+    browser = None
+
+    for web_driver, driver in zip(web_drivers, drivers):
+        try:
+            if exists(driver):
+                browser = getattr(webdriver, web_driver)(
+                    executable_path=f"./{driver}"
+                    )
+            else:
+                browser = getattr(webdriver, web_driver)()
+
+            browser.set_window_size(600, 400)
+            return browser
+        except Exception:
+            continue
+
+
+def render_links(base_path, links_by_category, template):
     logger.info("Rendering links.")
+
+    force = False
+    if ENV.get("FORCE_SCREENSHOT").lower() == "true":
+        force = True
+
     cleaner_js = """
+        document.getElementsByTagName('header')[0].style.background='none';
+        document.getElementsByTagName('form')[0].remove();
+        document.getElementById('page').style.margin=0;
+        document.getElementById('link_detail').style.margin=0;
+        text = document.getElementsByTagName('h1')[0].textContent;
+        document.getElementsByTagName('h1')[0].textContent = text.toUpperCase();
+        document.getElementsByTagName('header')[0].style.background='none';
         document.getElementsByTagName('script')[0].remove();
         document.getElementsByClassName('meta')[0].remove();
         document.getElementsByClassName('socializer')[0].remove()
@@ -371,11 +404,20 @@ def render_links(base_path, links_by_category, template, force=False):
             image_path = join(base_path, image_url)
             if force or not exists(image_path):
                 if not browser:
-                    browser = webdriver.Safari()
-                    browser.set_window_size(600, 400)
+                    browser = get_browser()
+                    if browser is None:
+                        logger.info(
+                            "Not able to run Selenium. "
+                            "Screenshots will not be generated."
+                            )
+                        return
+
                 browser.get("file://" + join(base_path, file_path))
                 browser.execute_script(cleaner_js)
                 browser.save_screenshot(join(base_path, image_url))
+    
+    if browser:
+        browser.close()
 
 
 def render_home(base_path, link_page_rows, categories, template):
