@@ -5,6 +5,7 @@ import logging
 import sys
 import urllib.request
 from collections import defaultdict
+from distutils.util import strtobool
 from os import makedirs as _makedirs  # noqa
 from os.path import dirname, exists, join, realpath
 from tempfile import NamedTemporaryFile
@@ -12,12 +13,20 @@ from urllib.parse import urljoin
 
 from dotenv import dotenv_values
 from feedgen.feed import FeedGenerator
-from htmlmin import minify
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from openpyxl import load_workbook
-from rcssmin import cssmin
 from selenium import webdriver
 from slugify import slugify
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.DEBUG)
+formatter = logging.Formatter("%(asctime)s %(levelname)s - %(message)s")
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+
 
 LINK_COLUMNS = (
     "title",
@@ -35,23 +44,33 @@ ENV = dotenv_values(join(dirname(realpath(__file__)), ".env"))
 
 MINIFY_ARGS = {
     "remove_optional_attribute_quotes": False,
-    "remove_comments": True
+    "remove_comments": True,
 }
 
-def minify(text, **args):
+
+def minimize_fallback(text, **args):
     return text
 
 
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
+htmlmin = minimize_fallback
+cssmin = minimize_fallback
 
-handler = logging.StreamHandler(sys.stdout)
-handler.setLevel(logging.DEBUG)
-formatter = logging.Formatter(
-    "%(asctime)s %(levelname)s - %(message)s"
-)
-handler.setFormatter(formatter)
-logger.addHandler(handler)
+if strtobool(ENV.get("MINIMIZE_CSS", "True")):
+    try:
+        from rcssmin import cssmin
+    except ImportError:
+        logger.warning(
+            "Could not import rcssmin. CSS files will not be compressed."
+        )
+
+
+if strtobool(ENV.get("MINIMIZE_HTML", "True")):
+    try:
+        from htmlmin import minify as htmlmin
+    except ImportError:
+        logger.warning(
+            "Could not import htmlmin. HTML files will not be compressed."
+        )
 
 
 def get_lines(worksheet):
@@ -271,14 +290,15 @@ def render_sitemap(root_path, categories, links_by_category, sitemap_template):
     logger.info("Rendering sitemap.")
     with open(join(root_path, "sitemap.xml"), "w") as file:
         file.write(
-            minify(
+            htmlmin(
                 sitemap_template.render(
                     root_path=root_path,
                     links_by_category=links_by_category,
                     categories=categories,
                     render_date=datetime.date.today(),
                     strftime=datetime.date.strftime,
-                ), **MINIFY_ARGS
+                ),
+                **MINIFY_ARGS,
             )
         )
 
@@ -318,7 +338,7 @@ def render_categories(base_path, links_by_category, categories, template):
         root_path = get_category_root_path(category_str)
         with open(file_path, "w") as file:
             file.write(
-                minify(
+                htmlmin(
                     template.render(
                         site_title=ENV["SITE_TITLE"],
                         links=links,
@@ -326,7 +346,8 @@ def render_categories(base_path, links_by_category, categories, template):
                         category=category,
                         categories=categories,
                         env=ENV,
-                    ), **MINIFY_ARGS
+                    ),
+                    **MINIFY_ARGS,
                 )
             )
     for category_str, category in categories.items():
@@ -336,14 +357,17 @@ def render_categories(base_path, links_by_category, categories, template):
         root_path = get_category_root_path(category_str)
         with open(file_path, "w") as file:
             file.write(
-                minify(
+                htmlmin(
                     template.render(
                         links=[],
                         root_path=root_path,
                         category=category,
                         categories=categories,
                         env=ENV,
-                    ), **MINIFY_ARGS))
+                    ),
+                    **MINIFY_ARGS,
+                )
+            )
 
 
 def get_browser():
@@ -356,7 +380,7 @@ def get_browser():
             if exists(driver):
                 browser = getattr(webdriver, web_driver)(
                     executable_path=f"./{driver}"
-                    )
+                )
             else:
                 browser = getattr(webdriver, web_driver)()
 
@@ -368,11 +392,7 @@ def get_browser():
 
 def render_links(base_path, links_by_category, template):
     logger.info("Rendering links.")
-
-    force = False
-    if ENV.get("FORCE_SCREENSHOT").lower() == "true":
-        force = True
-
+    force = strtobool(ENV.get('FORCE_SCREENSHOT', 'False'))
     cleaner_js = """
         document.getElementsByTagName('header')[0].style.background='none';
         document.getElementsByTagName('form')[0].remove();
@@ -393,13 +413,15 @@ def render_links(base_path, links_by_category, template):
             image_url = link["file_path"] + ".png"
             with open(file_path, "w") as file:
                 file.write(
-                    minify(
+                    htmlmin(
                         template.render(
                             link=link,
                             root_path=get_category_root_path(category_str),
                             image_url=image_url,
                             env=ENV,
-                        ), **MINIFY_ARGS)
+                        ),
+                        **MINIFY_ARGS,
+                    )
                 )
             image_path = join(base_path, image_url)
             if force or not exists(image_path):
@@ -409,13 +431,13 @@ def render_links(base_path, links_by_category, template):
                         logger.info(
                             "Not able to run Selenium. "
                             "Screenshots will not be generated."
-                            )
+                        )
                         return
 
                 browser.get("file://" + join(base_path, file_path))
                 browser.execute_script(cleaner_js)
                 browser.save_screenshot(join(base_path, image_url))
-    
+
     if browser:
         browser.close()
 
@@ -427,7 +449,7 @@ def render_home(base_path, link_page_rows, categories, template):
     file_path = join(base_path, "index.html")
     with open(file_path, "w") as file:
         file.write(
-            minify(
+            htmlmin(
                 template.render(
                     latest_links=links[:50],
                     root_path="./",
@@ -436,7 +458,7 @@ def render_home(base_path, link_page_rows, categories, template):
                     num_of_links=len(link_page_rows),
                     env=ENV,
                 ),
-                **MINIFY_ARGS
+                **MINIFY_ARGS,
             )
         )
 

@@ -14,6 +14,11 @@ Her hafta mutlaka bir şeyler ekleniyor. Bookmarklayıp arada bir ziyaret etmeni
 
 https://docs.google.com/spreadsheets/d/1mK5BycfvwvuPcekTKIMhPKtsRa0EXe-dGeQsvok5wz4/edit?usp=sharing
 
+# Bilinen Problemler:
+
+**rcssmin kütüphanesinin kurulamaması:**
+
+Windows sistemlerde var olan bir problem ancak kurulamaması uygulamanın çalışmasına engel değil. Sadece css dosyalarını minimize edemeyecek.
 
 # Kurulum
 
