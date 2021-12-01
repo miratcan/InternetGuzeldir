@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2021-11-27T21:53:00.708052+00:00</updated>
+  <updated>2021-12-01T19:29:10.074055+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -18,7 +18,7 @@
     <id>seyahat/https-www-rome2rio-com.html</id>
     <title>Rome2Rio</title>
     <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>Dünya üzerinde iki adres arasında nasıl seyehat edilebileceğini söyletebilen bir web sitesi.</content>
+    <content>Bu site sayesinde dünya üzerindeki iki nokta arasında nasıl seyehat edebileceğinizi bulabiliyorsunuz.</content>
     <link href="https://internetguzeldir.com/seyahat/https-www-rome2rio-com.html" rel="alternate" type="text/html" title="Rome2Rio"/>
   </entry>
   <entry>
@@ -1194,7 +1194,7 @@
     <id>toplum/din-ve-maneviyat/meditasyon/https-midorikocak-github-io-breathe.html</id>
     <title>Breathe</title>
     <updated>2021-05-13T00:00:00+03:00</updated>
-    <content>Nefes egzersizi yaparak meditasyon yapmanızı sağlayan online bedava uygullama.</content>
+    <content>Midori Koçak'ın geliştirdiği, nefes egzersizi yaparak meditasyon yapmanızı sağlayan online bedava uygullama.</content>
     <link href="https://internetguzeldir.com/toplum/din-ve-maneviyat/meditasyon/https-midorikocak-github-io-breathe.html" rel="alternate" type="text/html" title="Breathe"/>
   </entry>
   <entry>
@@ -1215,7 +1215,7 @@
     <id>toplum/din-ve-maneviyat/ateizm/https-www-youtube-com-c-dinvemitoloji.html</id>
     <title>Din ve Mitoloji</title>
     <updated>2021-05-13T00:00:00+03:00</updated>
-    <content>Dinlerin ve kutsal kitapların incelendiği bir Youtube kanalı.</content>
+    <content>Dinlerin ve kutsal kitapların incelendiği bir Youtube kanalı. </content>
     <link href="https://internetguzeldir.com/toplum/din-ve-maneviyat/ateizm/https-www-youtube-com-c-dinvemitoloji.html" rel="alternate" type="text/html" title="Din ve Mitoloji"/>
   </entry>
   <entry>
@@ -1394,13 +1394,6 @@
     <link href="https://internetguzeldir.com/calisma-duzeni/https-imisstheoffice-eu.html" rel="alternate" type="text/html" title="I Miss The Office"/>
   </entry>
   <entry>
-    <id>seyahat/https-bavulanekoysam-appspot-com.html</id>
-    <title>Bavula Ne Koysam?</title>
-    <updated>2021-05-15T00:00:00+03:00</updated>
-    <content>Bir yere giderken bavula koyacağınız şeyler konusunda sıkıntı çekiyorsanız tam sizlik bir araç. </content>
-    <link href="https://internetguzeldir.com/seyahat/https-bavulanekoysam-appspot-com.html" rel="alternate" type="text/html" title="Bavula Ne Koysam?"/>
-  </entry>
-  <entry>
     <id>kisisel-gelisim/https-www-animatedknots-com.html</id>
     <title>Animated Knots</title>
     <updated>2021-05-15T00:00:00+03:00</updated>
@@ -1502,7 +1495,7 @@
     <id>seyahat/ihttps-kampolog-com.html</id>
     <title>Kampolog.com</title>
     <updated>2021-06-27T00:00:00+03:00</updated>
-    <content>Kamp Alanları,Karavan Alanları ve Glampingler için arama motoru.</content>
+    <content>Tatillerinde kamp alanlarını tercih edenler için Kamp Alanları, Karavan Alanları ve Glampingler için arama motoru.</content>
     <link href="https://internetguzeldir.com/seyahat/ihttps-kampolog-com.html" rel="alternate" type="text/html" title="Kampolog.com"/>
   </entry>
   <entry>
@@ -1817,7 +1810,7 @@
     <id>yasam-tarzi/topluluklar/https-kommunity-com.html</id>
     <title>Kommunity</title>
     <updated>2021-07-16T00:00:00+03:00</updated>
-    <content>Topluluk yönetmek, fiziksel veya çevrim içi etkinlikler düzenlemek için tüm ihtiyaçları karşılamak üzere geliştirilmiş popüler web uygulaması.</content>
+    <content>Topluluk yönetmek, fiziksel veya çevrim içi etkinlikler düzenlemek için tüm ihtiyaçları karşılamak üzere geliştirilmiş yerli ve popüler web uygulaması.</content>
     <link href="https://internetguzeldir.com/yasam-tarzi/topluluklar/https-kommunity-com.html" rel="alternate" type="text/html" title="Kommunity"/>
   </entry>
   <entry>
@@ -2216,7 +2209,7 @@
     <id>yasam-tarzi/hobi/astronomi/https-www-youtube-com-watch-v-snz7jjlszvw.html</id>
     <title>Telescope Building with John Dobson</title>
     <updated>2021-10-14T00:00:00+03:00</updated>
-    <content>Ünlü amatör astronom John Dobson'ın el işçiliği ile bir teleskobu nasıl inşa ettiğini ders gibi anlatan ayrıntılı video.  Bir kez olsun teleskoptan bakmak istediyseniz mutlaka bakın.</content>
+    <content>Ünlü amatör astronom John Dobson'ın el işçiliği ile bir teleskobu nasıl inşa ettiğini ders gibi anlatan ayrıntılı video.</content>
     <link href="https://internetguzeldir.com/yasam-tarzi/hobi/astronomi/https-www-youtube-com-watch-v-snz7jjlszvw.html" rel="alternate" type="text/html" title="Telescope Building with John Dobson"/>
   </entry>
   <entry>
@@ -2356,7 +2349,7 @@
     <id>yasam-tarzi/hobi/frp/https-tabletopy-com.html</id>
     <title>Table Topy</title>
     <updated>2021-10-28T00:00:00+03:00</updated>
-    <content>FRP oynarken hayal gücünüzü zenginleştirebilecek ses fonları ve efektleri içeren web sitesi.</content>
+    <content>FRP oynarken hayal gücünüzü zenginleştirebilecek ses fonları, müzikler ve efektler içeren web sitesi.</content>
     <link href="https://internetguzeldir.com/yasam-tarzi/hobi/frp/https-tabletopy-com.html" rel="alternate" type="text/html" title="Table Topy"/>
   </entry>
   <entry>
@@ -2419,7 +2412,7 @@
     <id>ebeveyinlik/https-www-direnc-net-matatalab-kodlama-seti.html</id>
     <title>Matalab Kodlama Seti</title>
     <updated>2021-11-11T00:00:00+03:00</updated>
-    <content>Okul öncesi çocuklara kodlamayı öğretebilmek için geliştirilmiş kodlama seti. Alıp kullanan varsa lütfen yorum atsın.</content>
+    <content>Okul öncesi çocuklara kodlamayı öğretebilmek için geliştirilmiş kodlama seti.</content>
     <link href="https://internetguzeldir.com/ebeveyinlik/https-www-direnc-net-matatalab-kodlama-seti.html" rel="alternate" type="text/html" title="Matalab Kodlama Seti"/>
   </entry>
   <entry>
@@ -2447,7 +2440,7 @@
     <id>sanat/3b-sanat/http-brunoquintela-com.html</id>
     <title>Bruno Quintela</title>
     <updated>2021-11-16T00:00:00+03:00</updated>
-    <content>Kendisini hem bilgisayar grafiği sevdalısı hem de yazılım geliştirici olarak tanımlayan Bruno'nun online galeri sitesi. İçeride Cyberpunk diyebileceğimiz bir müzik eşliğinde çok etkileyici 3d portreler sergileniyor. Bazıları size bakıyor. Ürpertici ve güzel.</content>
+    <content>Kendisini hem bilgisayar grafiği sevdalısı hem de yazılım geliştirici olarak tanımlayan Bruno'nun online galeri sitesi.</content>
     <link href="https://internetguzeldir.com/sanat/3b-sanat/http-brunoquintela-com.html" rel="alternate" type="text/html" title="Bruno Quintela"/>
   </entry>
   <entry>
@@ -2461,7 +2454,7 @@
     <id>bilgisayarlar/yazilim-gelistirme/http-xn-gelitiriciyazlar-mqcd47f-com.html</id>
     <title>Geliştirici Yazıları</title>
     <updated>2021-11-27T00:00:00+03:00</updated>
-    <content>Türkçe yazılım geliştirme makalelerini toplayıp listeleyen tertemiz bir web sitesi. Linklerin çoğunun medium linki olması beni üzse de genel olarak çok iyi.</content>
+    <content>Türkçe yazılım geliştirme makalelerini toplayıp listeleyen web sitesi.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/http-xn-gelitiriciyazlar-mqcd47f-com.html" rel="alternate" type="text/html" title="Geliştirici Yazıları"/>
   </entry>
   <entry>
