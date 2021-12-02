@@ -231,6 +231,17 @@ def get_categories(links_page_rows, categories_page_rows):
     logger.info("Building category information.")
     categories = {}
     overrides = get_category_overrides(categories_page_rows)
+
+    # Warn about missing categories on categories page.
+    categories_of_links = [r[CATEGORY_COLUMN_INDEX] for r in links_page_rows]
+    categories_of_overrides = list(overrides.keys())
+    missing_categories = set(categories_of_overrides) - \
+                         set(categories_of_links)
+    for missing_category in missing_categories:
+        logger.warning(
+            'Category: "%s" appears on category overrides page '
+            'but there\'s no links associated with it', missing_category)
+
     for row in links_page_rows:
         category_str = row[CATEGORY_COLUMN_INDEX]
         if category_str in categories:
