@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Mukta
+- Font Author: Copyright (c) 2014, Girish Dalvi, Ek Type. All rights reserved.
+- Font Source: http://fonts.gstatic.com/s/mukta/v8/iJWKBXyXfDDVXYnGp32S0H3f.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

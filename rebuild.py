@@ -6,8 +6,9 @@ import sys
 import urllib.request
 from collections import defaultdict
 from distutils.util import strtobool
-from os import makedirs as _makedirs  # noqa
-from os.path import dirname, exists, join, realpath
+from os import makedirs as _makedirs, walk, sep as directory_seperator  # noqa
+from os.path import dirname, exists, join, realpath, splitext
+from shutil import copyfile
 from tempfile import NamedTemporaryFile
 from urllib.parse import urljoin
 
@@ -16,7 +17,7 @@ from feedgen.feed import FeedGenerator
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from openpyxl import load_workbook
 from selenium import webdriver
-from slugify import slugify
+from slugify import slugify  # noqa
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -42,23 +43,21 @@ LINK_COLUMNS = (
 CATEGORY_COLUMN_INDEX = LINK_COLUMNS.index("category_str")
 ENV = dotenv_values(join(dirname(realpath(__file__)), ".env"))
 
-MINIFY_ARGS = {
+HTMLMIN_KWARGS = {
     "remove_optional_attribute_quotes": False,
     "remove_comments": True,
 }
 
 
-def minimize_fallback(text, **args):
+def processor_fallback(text, **kwargs):
     return text
 
-
-htmlmin = minimize_fallback
-cssmin = minimize_fallback
 
 if strtobool(ENV.get("MINIMIZE_CSS", "True")):
     try:
         from rcssmin import cssmin
     except ImportError:
+        cssmin = processor_fallback
         logger.warning(
             "Could not import rcssmin. CSS files will not be compressed."
         )
@@ -68,6 +67,7 @@ if strtobool(ENV.get("MINIMIZE_HTML", "True")):
     try:
         from htmlmin import minify as htmlmin
     except ImportError:
+        htmlmin = processor_fallback
         logger.warning(
             "Could not import htmlmin. HTML files will not be compressed."
         )
@@ -298,7 +298,7 @@ def render_sitemap(root_path, categories, links_by_category, sitemap_template):
                     render_date=datetime.date.today(),
                     strftime=datetime.date.strftime,
                 ),
-                **MINIFY_ARGS,
+                **HTMLMIN_KWARGS,
             )
         )
 
@@ -347,7 +347,7 @@ def render_categories(base_path, links_by_category, categories, template):
                         categories=categories,
                         env=ENV,
                     ),
-                    **MINIFY_ARGS,
+                    **HTMLMIN_KWARGS,
                 )
             )
     for category_str, category in categories.items():
@@ -365,7 +365,7 @@ def render_categories(base_path, links_by_category, categories, template):
                         categories=categories,
                         env=ENV,
                     ),
-                    **MINIFY_ARGS,
+                    **HTMLMIN_KWARGS,
                 )
             )
 
@@ -373,7 +373,6 @@ def render_categories(base_path, links_by_category, categories, template):
 def get_browser():
     web_drivers = ("Firefox", "Chrome", "Safari")
     drivers = ("geckodriver", "chromedriver", "safari")
-    browser = None
 
     for web_driver, driver in zip(web_drivers, drivers):
         try:
@@ -386,13 +385,14 @@ def get_browser():
 
             browser.set_window_size(600, 400)
             return browser
-        except Exception:
+        except Exception as err:
+            logger.error(err)
             continue
 
 
 def render_links(base_path, links_by_category, template):
     logger.info("Rendering links.")
-    force = strtobool(ENV.get('FORCE_SCREENSHOT', 'False'))
+    force = strtobool(ENV.get("FORCE_SCREENSHOT", "False"))
     cleaner_js = """
         document.getElementsByTagName('header')[0].style.background='none';
         document.getElementsByTagName('form')[0].remove();
@@ -420,7 +420,7 @@ def render_links(base_path, links_by_category, template):
                             image_url=image_url,
                             env=ENV,
                         ),
-                        **MINIFY_ARGS,
+                        **HTMLMIN_KWARGS,
                     )
                 )
             image_path = join(base_path, image_url)
@@ -458,7 +458,7 @@ def render_home(base_path, link_page_rows, categories, template):
                     num_of_links=len(link_page_rows),
                     env=ENV,
                 ),
-                **MINIFY_ARGS,
+                **HTMLMIN_KWARGS,
             )
         )
 
@@ -473,14 +473,27 @@ def make_dirs(path):
             raise
 
 
-def build_assets(root_path):
+def build_assets(build_path, assets_path):
+    processors = {".css": (cssmin, {}), ".html": (htmlmin, HTMLMIN_KWARGS)}
     logger.info("Building assets.")
-    with open(
-        join("assets", "themes", ENV.get("THEME_FILE", "Retro Dark.css")), "r"
-    ) as file:
-        style = cssmin(file.read())
-    with open(join(root_path, "style.css"), "w") as file:
-        file.write(style)
+    for root, dirs, file_names in walk(assets_path):
+        target_dir = join(build_path, *root.split(directory_seperator)[2:])
+        make_dirs(target_dir)
+        for file_name in file_names:
+            source_file_path = join(root, file_name)
+            target_file_path = join(target_dir, file_name)
+            logger.debug("Processing asset: %s -> %s" % (source_file_path,
+                                                         target_file_path))
+            extension = splitext(file_name)[1]
+            processor, kwargs = processors.get(extension, (None, {}))
+            if not processor:
+                copyfile(source_file_path, target_file_path)
+                continue
+            with open(source_file_path, "r") as file:
+                content = file.read()
+            content = processor(content, **kwargs)
+            with open(target_file_path, "w") as file:
+                file.write(content)
 
 
 def render_json(root_path, categories, links_by_category):
@@ -500,7 +513,7 @@ def render_json(root_path, categories, links_by_category):
         json.dump(data, file, cls=DateTimeEncoder, ensure_ascii=False)
 
 
-def build(root_path=join(dirname(realpath(__file__)), "docs/")):
+def build(build_path=join(dirname(realpath(__file__)), "build/")):
     jinja = Environment(
         loader=FileSystemLoader("templates/"),
         autoescape=select_autoescape(["html", "xml"]),
@@ -529,17 +542,17 @@ def build(root_path=join(dirname(realpath(__file__)), "docs/")):
     links_by_category = get_links_by_category(links_page_lines)
     categories = get_categories(links_page_lines, categories_page_lines)
 
-    create_category_paths(root_path, links_page_lines)
+    create_category_paths(build_path, links_page_lines)
 
-    render_json(root_path, categories, links_by_category)
-    build_assets(root_path)
+    render_json(build_path, categories, links_by_category)
+    build_assets(build_path, "./assets/")
     render_categories(
-        root_path, links_by_category, categories, category_template
+        build_path, links_by_category, categories, category_template
     )
-    render_links(root_path, links_by_category, link_template)
-    render_home(root_path, links_page_lines, categories, home_template)
-    render_sitemap(root_path, categories, links_by_category, sitemap_template)
-    render_feed(root_path, links_page_lines)
+    render_links(build_path, links_by_category, link_template)
+    render_home(build_path, links_page_lines, categories, home_template)
+    render_sitemap(build_path, categories, links_by_category, sitemap_template)
+    render_feed(build_path, links_page_lines)
 
 
 if __name__ == "__main__":
