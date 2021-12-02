@@ -45,15 +45,22 @@ h5 {
   padding: 1ch 0;
 }
 
+.wrapper {
+  max-width:79ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 header {
   background: brown;
   overflow: auto;
 }
 
-.wrapper {
-  max-width:79ch;
-  margin-left: auto;
-  margin-right: auto;
+header .wrapper {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 h1 {
