@@ -513,7 +513,7 @@ def render_json(root_path, categories, links_by_category):
         json.dump(data, file, cls=DateTimeEncoder, ensure_ascii=False)
 
 
-def build(build_path=join(dirname(realpath(__file__)), "build/")):
+def build(build_path=join(dirname(realpath(__file__)), "docs/")):
     jinja = Environment(
         loader=FileSystemLoader("templates/"),
         autoescape=select_autoescape(["html", "xml"]),
