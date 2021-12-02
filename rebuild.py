@@ -6,10 +6,10 @@ import sys
 import urllib.request
 from collections import defaultdict
 from distutils.util import strtobool
-from os import makedirs as _makedirs, walk, sep as directory_seperator  # noqa
+from os import makedirs as _makedirs, unlink, walk, sep as directory_seperator  # noqa
 from os.path import dirname, exists, join, realpath, splitext
 from shutil import copyfile
-from tempfile import NamedTemporaryFile
+from custom_tempfile import NamedTemporaryFile
 from urllib.parse import urljoin
 
 from dotenv import dotenv_values
@@ -347,7 +347,7 @@ def render_categories(base_path, links_by_category, categories, template):
         category = categories[category_str]
         file_path = join(base_path, category["path"], "index.html")
         root_path = get_category_root_path(category_str)
-        with open(file_path, "w") as file:
+        with open(file_path, "w", encoding="utf-8") as file:
             file.write(
                 htmlmin(
                     template.render(
@@ -366,7 +366,7 @@ def render_categories(base_path, links_by_category, categories, template):
             continue
         file_path = join(base_path, category["path"], "index.html")
         root_path = get_category_root_path(category_str)
-        with open(file_path, "w") as file:
+        with open(file_path, "w", encoding="utf-8") as file:
             file.write(
                 htmlmin(
                     template.render(
@@ -422,7 +422,7 @@ def render_links(base_path, links_by_category, template):
         for link in links:
             file_path = join(base_path, link["file_path"])
             image_url = link["file_path"] + ".png"
-            with open(file_path, "w") as file:
+            with open(file_path, "w", encoding="utf-8") as file:
                 file.write(
                     htmlmin(
                         template.render(
@@ -458,7 +458,7 @@ def render_home(base_path, link_page_rows, categories, template):
     links = get_links_by_date(link_page_rows)
     last_update = datetime.date.today()
     file_path = join(base_path, "index.html")
-    with open(file_path, "w") as file:
+    with open(file_path, "w", encoding="utf-8") as file:
         file.write(
             htmlmin(
                 template.render(
@@ -530,12 +530,12 @@ def build(build_path=join(dirname(realpath(__file__)), "docs/")):
         autoescape=select_autoescape(["html", "xml"]),
     )
 
-    with NamedTemporaryFile(suffix=".xlsx") as spreadsheet_file:
-        with urllib.request.urlopen(ENV["SPREADSHEET_URL"]) as remote_file:
-            spreadsheet_file.write(remote_file.read())
-            workbook = load_workbook(
-                filename=spreadsheet_file.name, read_only=True
-            )
+    spreadsheet_file = NamedTemporaryFile(suffix=".xlsx", dir=".", delete=False)
+    with urllib.request.urlopen(ENV["SPREADSHEET_URL"]) as remote_file:
+        spreadsheet_file.write(remote_file.read())
+        workbook = load_workbook(
+            filename=spreadsheet_file.name, read_only=True
+        )
 
     links_page_lines = get_lines(
         workbook[ENV.get("SPREADSHEET_LINKS_PAGE_NAME", "Links")]
@@ -564,6 +564,14 @@ def build(build_path=join(dirname(realpath(__file__)), "docs/")):
     render_home(build_path, links_page_lines, categories, home_template)
     render_sitemap(build_path, categories, links_by_category, sitemap_template)
     render_feed(build_path, links_page_lines)
+
+    try:
+        workbook.close()
+        spreadsheet_file.close()
+        unlink(spreadsheet_file.name)
+    except Exception as err:
+        logger.error(err)
+        logger.info("Temporary file could not be deleted.")
 
 
 if __name__ == "__main__":

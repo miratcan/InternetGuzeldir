@@ -6,3 +6,5 @@ pickle.index
 *.log
 geckodriver
 chromedriver
+*.exe
+__pycache__
