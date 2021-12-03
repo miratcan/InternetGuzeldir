@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2021-12-02T15:20:44.511936+00:00</updated>
+  <updated>2021-12-03T05:41:47.369438+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -2498,5 +2498,40 @@
     <updated>2021-12-01T00:00:00+03:00</updated>
     <content>Bir bash ya da terminal komutunun nasıl çalıştığını size detaylıca anlatan web uygulaması.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/isletim-sistemleri/linux/https-explainshell-com.html" rel="alternate" type="text/html" title="Explain Shell"/>
+  </entry>
+  <entry>
+    <id>kafa-dagitma/anlamsiz-web-siteleri/https-typewritesomething-com.html</id>
+    <title>Type Something</title>
+    <updated>2021-12-03T00:00:00+03:00</updated>
+    <content>Daktilo simülatörü.</content>
+    <link href="https://internetguzeldir.com/kafa-dagitma/anlamsiz-web-siteleri/https-typewritesomething-com.html" rel="alternate" type="text/html" title="Type Something"/>
+  </entry>
+  <entry>
+    <id>diger/https-www-scanyourpdf-com.html</id>
+    <title>Scan Your PDF</title>
+    <updated>2021-12-03T00:00:00+03:00</updated>
+    <content>Bu siteye yüklediğiniz pdf'ler sanki bir tarayıcıdan taranmış gibi değiştirilerek size geri sunuluyor. </content>
+    <link href="https://internetguzeldir.com/diger/https-www-scanyourpdf-com.html" rel="alternate" type="text/html" title="Scan Your PDF"/>
+  </entry>
+  <entry>
+    <id>diger/https-supertunnel-app.html</id>
+    <title>Supertunnel App</title>
+    <updated>2021-12-03T00:00:00+03:00</updated>
+    <content>Şu anda bulunduğunuz noktadan dünyanın öbür ucuna çıkana kadar kazsa idiniz nereden çıkardınız?</content>
+    <link href="https://internetguzeldir.com/diger/https-supertunnel-app.html" rel="alternate" type="text/html" title="Supertunnel App"/>
+  </entry>
+  <entry>
+    <id>diger/https-www-howacarworks-com.html</id>
+    <title>How Car Works</title>
+    <updated>2021-12-03T00:00:00+03:00</updated>
+    <content>Kenini bir otomobilin nasıl çalıştığını bütün detaylarıyla anlatmaya adamış web sitesi. Debriyajdan elektrik aksamına kadar bütün detaylardan çeşitli grafik ve videolarla bahsedilmiş.</content>
+    <link href="https://internetguzeldir.com/diger/https-www-howacarworks-com.html" rel="alternate" type="text/html" title="How Car Works"/>
+  </entry>
+  <entry>
+    <id>diger/https-kbs-im.html</id>
+    <title>kbs.im</title>
+    <updated>2021-12-03T00:00:00+03:00</updated>
+    <content>Klavyede 10 parmak yazabilmenizi ve yazma hızınızı arttırmanızı sağlamaya yarayan online alıştırma sitesi.</content>
+    <link href="https://internetguzeldir.com/diger/https-kbs-im.html" rel="alternate" type="text/html" title="kbs.im"/>
   </entry>
 </feed>
