@@ -34,7 +34,7 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 
-LINK_COLUMNS = (
+LINK_COLUMNS: tuple[str, ...] = (
     "title",
     "url",
     "desc",
@@ -48,7 +48,7 @@ LINK_COLUMNS = (
 CATEGORY_COLUMN_INDEX = LINK_COLUMNS.index("category_str")
 ENV = dotenv_values(join(dirname(realpath(__file__)), ".env"))
 
-HTMLMIN_KWARGS = {
+HTMLMIN_KWARGS: Dict[str, bool] = {
     "remove_optional_attribute_quotes": False,
     "remove_comments": True,
 }
@@ -205,7 +205,7 @@ def create_category_paths(base_path: str, link_rows) -> None:
         make_dirs(path)
 
 
-def get_category_overrides(categories_page_rows: List[List[Union[str, None]]]):
+def get_category_overrides(categories_page_rows: List[List[Union[str, None]]]) -> Dict[str, str]:
     logger.debug("Getting category overrides.")
     overrides: Dict[str, str]= {}
     for category_page_row in categories_page_rows:
@@ -216,11 +216,10 @@ def get_category_overrides(categories_page_rows: List[List[Union[str, None]]]):
             override["desc"] = category_page_row[2]
         overrides[category_page_row[0]] = override
 
-    print(overrides["Kripto Para > Oyunlar"])
     return overrides
 
 
-def get_category_info(category_str: str, overrides):
+def get_category_info(category_str: str, overrides: Dict[str, Dict[str, str]]):
     name = get_category_parts(category_str)[-1]
     result: Dict[str, Union[str, None, List[None]]] = {
         "name": name,
@@ -234,7 +233,7 @@ def get_category_info(category_str: str, overrides):
     return result
 
 
-def get_categories(links_page_rows, categories_page_rows):
+def get_categories(links_page_rows, categories_page_rows: List[List[Union[str, None]]]):
     logger.info("Building category information.")
     categories = {}
     overrides = get_category_overrides(categories_page_rows)
@@ -258,7 +257,7 @@ def get_categories(links_page_rows, categories_page_rows):
 
     for row in links_page_rows:
 
-        child_category_str = row[CATEGORY_COLUMN_INDEX]
+        child_category_str: str = row[CATEGORY_COLUMN_INDEX]
         parent_category_str = get_parent_category_str(child_category_str)
 
         while child_category_str:
@@ -297,8 +296,8 @@ def get_categories(links_page_rows, categories_page_rows):
     return categories
 
 
-def get_links_by_date(link_rows, reverse:bool =True):
-    links: List[None] = []
+def get_links_by_date(link_rows: List[List[Union[str, None, type_date] ]], reverse:bool =True) -> List[Dict[str, Union[str, None, type_date]]]:
+    links: List[Dict[str, Union[str, None, type_date]]] = []
     for row in link_rows:
         links.append(get_link_from_row(row))
     return sorted(links, key=lambda i: i["create_time"], reverse=reverse)
@@ -431,7 +430,7 @@ def render_links(base_path: str, links_by_category: Dict[str, List[Dict[str, Uni
     for category_str, links in links_by_category.items():
         for link in links:
             file_path = join(base_path, cast(str, link["file_path"]))
-            image_url: str = link["file_path"] + ".png"
+            image_url: str = f"{link['file_path']}.png"
             with open(file_path, "w") as file:
                 file.write(
                     htmlmin(
