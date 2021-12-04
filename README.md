@@ -20,9 +20,9 @@ yerinde dövülür.
 Eğer canınız istiyorsa bu sitenin yapımında faydalı olabileceğiniz bir çok konu mevcut:
 
  - Var olan, problemli linkleri, imla hatalarını, seo dostu olmayan açıklama metinlerini link detay sayfalarındaki yorum alanını raporlayabilirsiniz. (Örnek)
- - Yukarıdaki türde olmayan herhangi bir hata ya da iyileştirme önerisi görürseniz issues sayfasından paylaşabilirsiniz.
+ - Yukarıdaki türde olmayan herhangi bir hata ya da iyileştirme önerisi görürseniz [issues sayfası](https://github.com/miratcan/internetguzeldir/issues)ndan paylaşabilirsiniz.
  - Siteden bahsedebilir, forumlarda, blogunuzda, Facebook sayfalarında paylaşabilirsiniz. 
- - HTML/CSS/Tasarım bilginiz varsa site için userspots.com adresi üzerinde çeşitli temalar hazırlayabilirsiniz. (*)
+ - HTML/CSS/Tasarım bilginiz varsa site için [userstyles.com](https://userstyles.org/) adresi üzerinde çeşitli temalar hazırlayabilirsiniz. (*)
  - Tavsiye formunu kullanarak eklenmesi gerektiğini düşündüğünüz linkleri bildirebilirsiniz.
  - HTML/CSS/Python bilginiz varsa issues bölümüne gidip yapılmayı bekleyen işeri yapıp pull request açabilirsiniz. (Projenin nasıl çalıştırılacağı aşağıda anlatılacaktır)
 
