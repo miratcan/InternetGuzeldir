@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>tr</language>
-    <lastBuildDate>Thu, 02 Dec 2021 15:20:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Dec 2021 05:41:47 +0000</lastBuildDate>
     <item>
       <title>Türkiye'deki Kamp Alanları Listesi</title>
       <link>https://internetguzeldir.com/seyahat/https-www-google-com-maps-d-u-0-viewer-mid-1oxyu1crdfylrtiyijsonakf2xy8-ll-38-624311649181756-2c35-12324238355848-z-6.html</link>
@@ -2144,6 +2144,36 @@
       <link>https://internetguzeldir.com/bilgisayarlar/isletim-sistemleri/linux/https-explainshell-com.html</link>
       <description>Bir bash ya da terminal komutunun nasıl çalıştığını size detaylıca anlatan web uygulaması.</description>
       <guid isPermaLink="false">bilgisayarlar/isletim-sistemleri/linux/https-explainshell-com.html</guid>
+    </item>
+    <item>
+      <title>Type Something</title>
+      <link>https://internetguzeldir.com/kafa-dagitma/anlamsiz-web-siteleri/https-typewritesomething-com.html</link>
+      <description>Daktilo simülatörü.</description>
+      <guid isPermaLink="false">kafa-dagitma/anlamsiz-web-siteleri/https-typewritesomething-com.html</guid>
+    </item>
+    <item>
+      <title>Scan Your PDF</title>
+      <link>https://internetguzeldir.com/diger/https-www-scanyourpdf-com.html</link>
+      <description>Bu siteye yüklediğiniz pdf'ler sanki bir tarayıcıdan taranmış gibi değiştirilerek size geri sunuluyor. </description>
+      <guid isPermaLink="false">diger/https-www-scanyourpdf-com.html</guid>
+    </item>
+    <item>
+      <title>Supertunnel App</title>
+      <link>https://internetguzeldir.com/diger/https-supertunnel-app.html</link>
+      <description>Şu anda bulunduğunuz noktadan dünyanın öbür ucuna çıkana kadar kazsa idiniz nereden çıkardınız?</description>
+      <guid isPermaLink="false">diger/https-supertunnel-app.html</guid>
+    </item>
+    <item>
+      <title>How Car Works</title>
+      <link>https://internetguzeldir.com/diger/https-www-howacarworks-com.html</link>
+      <description>Kenini bir otomobilin nasıl çalıştığını bütün detaylarıyla anlatmaya adamış web sitesi. Debriyajdan elektrik aksamına kadar bütün detaylardan çeşitli grafik ve videolarla bahsedilmiş.</description>
+      <guid isPermaLink="false">diger/https-www-howacarworks-com.html</guid>
+    </item>
+    <item>
+      <title>kbs.im</title>
+      <link>https://internetguzeldir.com/diger/https-kbs-im.html</link>
+      <description>Klavyede 10 parmak yazabilmenizi ve yazma hızınızı arttırmanızı sağlamaya yarayan online alıştırma sitesi.</description>
+      <guid isPermaLink="false">diger/https-kbs-im.html</guid>
     </item>
   </channel>
 </rss>
