@@ -1,8 +1,10 @@
 import datetime
+from datetime import datetime as type_date
 import errno
 import json
 import logging
 import sys
+from typing import Any, Dict, List, Union, cast
 import urllib.request
 from collections import defaultdict
 from distutils.util import strtobool
@@ -15,7 +17,10 @@ from urllib.parse import urljoin
 from dotenv import dotenv_values
 from feedgen.feed import FeedGenerator
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+import jinja2
+from jinja2.environment import Template
 from openpyxl import load_workbook
+from openpyxl.worksheet.worksheet import Worksheet
 from selenium import webdriver
 from slugify import slugify  # noqa
 
@@ -29,7 +34,7 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 
-LINK_COLUMNS = (
+LINK_COLUMNS: tuple[str, ...] = (
     "title",
     "url",
     "desc",
@@ -43,7 +48,7 @@ LINK_COLUMNS = (
 CATEGORY_COLUMN_INDEX = LINK_COLUMNS.index("category_str")
 ENV = dotenv_values(join(dirname(realpath(__file__)), ".env"))
 
-HTMLMIN_KWARGS = {
+HTMLMIN_KWARGS: Dict[str, bool] = {
     "remove_optional_attribute_quotes": False,
     "remove_comments": True,
 }
@@ -53,7 +58,7 @@ def processor_fallback(text, **kwargs):
     return text
 
 
-if strtobool(ENV.get("MINIMIZE_CSS", "True")):
+if strtobool(cast(str, ENV.get("MINIMIZE_CSS", "True"))):
     try:
         from rcssmin import cssmin
     except ImportError:
@@ -63,7 +68,7 @@ if strtobool(ENV.get("MINIMIZE_CSS", "True")):
         )
 
 
-if strtobool(ENV.get("MINIMIZE_HTML", "True")):
+if strtobool(cast(str, ENV.get("MINIMIZE_HTML", "True"))):
     try:
         from htmlmin import minify as htmlmin
     except ImportError:
@@ -73,14 +78,14 @@ if strtobool(ENV.get("MINIMIZE_HTML", "True")):
         )
 
 
-def get_lines(worksheet):
+def get_lines(worksheet: Worksheet) -> List[List[Union[str, None, type_date]]]:
     """Load lines from worksheet and return as list of lists.
 
     :param worksheet: Worksheet Object
     :return: list
     """
     logger.debug("Parsing lines from worksheet.")
-    result = []
+    result: List[List[Union[str, None, type_date]]]= []
     for idx, row in enumerate(worksheet.rows):
         if idx == 0:
             continue
@@ -88,14 +93,14 @@ def get_lines(worksheet):
     return result
 
 
-def get_category_parts(category_str):
+def get_category_parts(category_str: str) -> List[str]:
     """
     Separate category to list items.
 
     :param category_str: String representing a category. E.g. "a > b > c
     :return: list of elements. E.g.: ["a", "b", "c]
     """
-    separator = ENV["SPREADSHEET_CATEGORY_SEPARATOR"]
+    separator: str = cast(str, ENV["SPREADSHEET_CATEGORY_SEPARATOR"])
     return list(
         filter(
             lambda part: bool(part),
@@ -104,7 +109,7 @@ def get_category_parts(category_str):
     )
 
 
-def get_category_path(category_str):
+def get_category_path(category_str: str) -> str:
     """
     Convert category string to a path.
 
@@ -115,7 +120,7 @@ def get_category_path(category_str):
     return ("/".join(map(slugify, parts))) + "/"
 
 
-def get_category_root_path(category_str):
+def get_category_root_path(category_str: str) -> str:
     """
     Get relative root path for category.
 
@@ -125,17 +130,17 @@ def get_category_root_path(category_str):
     return "../" * (get_category_depth(category_str) + 1)
 
 
-def get_category_depth(category_str):
+def get_category_depth(category_str: str) -> int:
     """
     Get depth of a category.
 
     :param category_str: String representing a category. E.g. "a > b > c"
     :return: 2
     """
-    return category_str.count(ENV["SPREADSHEET_CATEGORY_SEPARATOR"])
+    return category_str.count(cast(str, ENV["SPREADSHEET_CATEGORY_SEPARATOR"]))
 
 
-def get_parent_category_str(category_str):
+def get_parent_category_str(category_str: str) -> str | None:
     """
     Get parent category str of category_str.
 
@@ -175,17 +180,17 @@ def get_link_from_row(link_row):
     return link
 
 
-def get_links_by_category(link_rows):
+def get_links_by_category(link_rows: List[List[Union[str, type_date, None]]]) -> Dict[str, List[Dict[str, Union[str, None, type_date]]]]:
     logger.debug("Building links by category.")
-    result = defaultdict(list)
+    result: Dict[str, List[Dict[str, Union[str, type_date, None]]]] = defaultdict(list)
     for link_row in link_rows:
-        category_str = link_row[CATEGORY_COLUMN_INDEX]
+        category_str: str = link_row[CATEGORY_COLUMN_INDEX]
         link = get_link_from_row(link_row)
         result[category_str].append(link)
     return result
 
 
-def create_category_paths(base_path, link_rows):
+def create_category_paths(base_path: str, link_rows) -> None:
     """
     Create folders of categories
 
@@ -200,9 +205,9 @@ def create_category_paths(base_path, link_rows):
         make_dirs(path)
 
 
-def get_category_overrides(categories_page_rows):
+def get_category_overrides(categories_page_rows: List[List[Union[str, None]]]) -> Dict[str, str]:
     logger.debug("Getting category overrides.")
-    overrides = {}
+    overrides: Dict[str, str]= {}
     for category_page_row in categories_page_rows:
         override = {}
         if len(category_page_row) > 1 and category_page_row[1] is not None:
@@ -210,12 +215,13 @@ def get_category_overrides(categories_page_rows):
         if len(category_page_row) > 2 and category_page_row[2] is not None:
             override["desc"] = category_page_row[2]
         overrides[category_page_row[0]] = override
+
     return overrides
 
 
-def get_category_info(category_str, overrides):
+def get_category_info(category_str: str, overrides: Dict[str, Dict[str, str]]):
     name = get_category_parts(category_str)[-1]
-    result = {
+    result: Dict[str, Union[str, None, List[None]]] = {
         "name": name,
         "title": name,
         "desc": None,
@@ -227,7 +233,7 @@ def get_category_info(category_str, overrides):
     return result
 
 
-def get_categories(links_page_rows, categories_page_rows):
+def get_categories(links_page_rows, categories_page_rows: List[List[Union[str, None]]]):
     logger.info("Building category information.")
     categories = {}
     overrides = get_category_overrides(categories_page_rows)
@@ -251,7 +257,7 @@ def get_categories(links_page_rows, categories_page_rows):
 
     for row in links_page_rows:
 
-        child_category_str = row[CATEGORY_COLUMN_INDEX]
+        child_category_str: str = row[CATEGORY_COLUMN_INDEX]
         parent_category_str = get_parent_category_str(child_category_str)
 
         while child_category_str:
@@ -290,14 +296,17 @@ def get_categories(links_page_rows, categories_page_rows):
     return categories
 
 
-def get_links_by_date(link_rows, reverse=True):
-    links = []
+def get_links_by_date(link_rows: List[List[Union[str, None, type_date] ]], reverse:bool =True) -> List[Dict[str, Union[str, None, type_date]]]:
+    links: List[Dict[str, Union[str, None, type_date]]] = []
     for row in link_rows:
         links.append(get_link_from_row(row))
     return sorted(links, key=lambda i: i["create_time"], reverse=reverse)
 
 
-def render_sitemap(root_path, categories, links_by_category, sitemap_template):
+def render_sitemap(root_path: str, categories: Dict[str, Union[str, None, List[str]]], 
+                    links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]], 
+                    sitemap_template: Template):
+
     logger.info("Rendering sitemap.")
     with open(join(root_path, "sitemap.xml"), "w") as file:
         file.write(
@@ -314,7 +323,7 @@ def render_sitemap(root_path, categories, links_by_category, sitemap_template):
         )
 
 
-def render_feed(root_path, link_page_rows):
+def render_feed(root_path: str, link_page_rows):
     logger.info("Rendering feed outputs.")
     feed = FeedGenerator()
     feed.id(ENV["SITE_URL"])
@@ -341,12 +350,12 @@ def render_feed(root_path, link_page_rows):
     feed.atom_file(join(root_path, "atom.xml"), pretty=True)
 
 
-def render_categories(base_path, links_by_category, categories, template):
+def render_categories(base_path: str, links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]], categories, template):
     logger.info("Rendering categories.")
     for category_str, links in links_by_category.items():
         category = categories[category_str]
-        file_path = join(base_path, category["path"], "index.html")
-        root_path = get_category_root_path(category_str)
+        file_path: str = join(base_path, cast(str, category["path"]), "index.html")
+        root_path: str = get_category_root_path(category_str)
         with open(file_path, "w") as file:
             file.write(
                 htmlmin(
@@ -382,8 +391,8 @@ def render_categories(base_path, links_by_category, categories, template):
 
 
 def get_browser():
-    web_drivers = ("Firefox", "Chrome", "Safari")
-    drivers = ("geckodriver", "chromedriver", "safari")
+    web_drivers: tuple[str, ...] = ("Firefox", "Chrome", "Safari")
+    drivers: tuple[str, ...] = ("geckodriver", "chromedriver", "safari")
 
     for web_driver, driver in zip(web_drivers, drivers):
         try:
@@ -401,10 +410,10 @@ def get_browser():
             continue
 
 
-def render_links(base_path, links_by_category, template):
+def render_links(base_path: str, links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]], template: Template):
     logger.info("Rendering links.")
-    force = strtobool(ENV.get("FORCE_SCREENSHOT", "False"))
-    cleaner_js = """
+    force = strtobool(cast(str, ENV.get("FORCE_SCREENSHOT", "False")))
+    cleaner_js:str = """
         document.getElementsByTagName('header')[0].style.background='none';
         document.getElementsByTagName('form')[0].remove();
         document.getElementById('page').style.margin=0;
@@ -420,8 +429,8 @@ def render_links(base_path, links_by_category, template):
     browser = None
     for category_str, links in links_by_category.items():
         for link in links:
-            file_path = join(base_path, link["file_path"])
-            image_url = link["file_path"] + ".png"
+            file_path = join(base_path, cast(str, link["file_path"]))
+            image_url: str = f"{link['file_path']}.png"
             with open(file_path, "w") as file:
                 file.write(
                     htmlmin(
@@ -453,7 +462,10 @@ def render_links(base_path, links_by_category, template):
         browser.close()
 
 
-def render_home(base_path, link_page_rows, categories, template):
+def render_home(base_path: str, link_page_rows: List[List[Union[str, None, type_date]]], 
+                categories: Dict[str, Union[str, None, List[str]]], 
+                template: jinja2.Template):
+
     logger.info("Rendering homepage.")
     links = get_links_by_date(link_page_rows)
     last_update = datetime.date.today()
@@ -474,7 +486,7 @@ def render_home(base_path, link_page_rows, categories, template):
         )
 
 
-def make_dirs(path):
+def make_dirs(path: str):
     if exists(path):
         return
     try:
@@ -484,10 +496,11 @@ def make_dirs(path):
             raise
 
 
-def build_assets(build_path, assets_path):
-    processors = {".css": (cssmin, {}), ".html": (htmlmin, HTMLMIN_KWARGS)}
+def build_assets(build_path: str, assets_path: str):
+    # Todo: Find any 
+    processors: Dict[str, Any] = {".css": (cssmin, {}), ".html": (htmlmin, HTMLMIN_KWARGS)}
     logger.info("Building assets.")
-    for root, dirs, file_names in walk(assets_path):
+    for root, _, file_names in walk(assets_path):
         target_dir = join(build_path, *root.split(directory_seperator)[2:])
         make_dirs(target_dir)
         for file_name in file_names:
@@ -507,7 +520,7 @@ def build_assets(build_path, assets_path):
                 file.write(content)
 
 
-def render_json(root_path, categories, links_by_category):
+def render_json(root_path: str, categories: Dict[str, Union[str, None, List[str]] ], links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]]):
     logger.info("Building json output.")
 
     class DateTimeEncoder(json.JSONEncoder):
@@ -524,25 +537,25 @@ def render_json(root_path, categories, links_by_category):
         json.dump(data, file, cls=DateTimeEncoder, ensure_ascii=False)
 
 
-def build(build_path=join(dirname(realpath(__file__)), "docs/")):
+def build(build_path: str =join(dirname(realpath(__file__)), "docs/")):
     jinja = Environment(
         loader=FileSystemLoader("templates/"),
         autoescape=select_autoescape(["html", "xml"]),
     )
 
     with NamedTemporaryFile(suffix=".xlsx") as spreadsheet_file:
-        with urllib.request.urlopen(ENV["SPREADSHEET_URL"]) as remote_file:
+        with urllib.request.urlopen(cast(str,ENV["SPREADSHEET_URL"])) as remote_file:
             spreadsheet_file.write(remote_file.read())
             workbook = load_workbook(
                 filename=spreadsheet_file.name, read_only=True
             )
 
     links_page_lines = get_lines(
-        workbook[ENV.get("SPREADSHEET_LINKS_PAGE_NAME", "Links")]
+        workbook[cast(str, ENV.get("SPREADSHEET_LINKS_PAGE_NAME", "Links"))]
     )
 
     categories_page_lines = get_lines(
-        workbook[ENV.get("SPREADSHEET_CATEGORIES_PAGE_NAME", "Categories")]
+        workbook[cast(str, ENV.get("SPREADSHEET_CATEGORIES_PAGE_NAME", "Categories"))]
     )
 
     category_template = jinja.get_template("category.html.jinja2")
