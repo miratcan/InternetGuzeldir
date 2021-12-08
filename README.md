@@ -1,6 +1,6 @@
 Merhaba Yolcu...
 
-Bu ulaştığın sayfa https://internetguzeldir.com'un kaynak kodudur. Basitçe Google Drive üzerinde duran bir Excell dosyasını veri kaynağı olarak kullanarak kategorize edilmiş linkler sitesi üreten bir Python betiğidir. Site geliştirilirken çeşitli prensiplere bağlı kalınmaya çalışılmaktadır:
+Bu ulaştığın sayfa [internetguzeldir](https://internetguzeldir.com)'in kaynak kodudur. Basitçe Google Drive üzerinde duran bir Excell dosyasını veri kaynağı olarak kullanarak kategorize edilmiş linkler sitesi üreten bir Python betiğidir. Site geliştirilirken çeşitli prensiplere bağlı kalınmaya çalışılmaktadır:
 
 ### Ürün Market Uyumu ya da Gelir Modeli Umursanmamaktadır ###
 
@@ -8,23 +8,22 @@ Geliştirirken keyif alınması, ve insanlara faydalı olması temennisiyle geli
 
 ### Web 2.0 umursanmamaktadır ###
 
-Kayıt süreçleri, ünlü olma çabaları, puanlamalar, eposta validasyonları gibi şeyle yoktur. Linkler siteye admin tarafından seçilerek konulmakta, kullanıcılar ise bir Google Form üzerinden sadece tavsiye verebilmektedir. Siteyi kullanan kişiler için bu kadar katılımcılık yeterlidir, daha fazlası eklenmeyecektir.
+Kayıt süreçleri, ünlü olma çabaları, puanlamalar, eposta validasyonları gibi şeyler yoktur. Linkler siteye admin tarafından seçilerek konulmakta, kullanıcılar ise bir Google Form üzerinden sadece tavsiye verebilmektedir. Siteyi kullanan kişiler için bu kadar katılımcılık yeterlidir, daha fazlası eklenmeyecektir.
 
 ###  Mümkün Olan En Basit Yazılım Teknolojileri Kullanılmaktadır ###
 
-Önyüz düz HTML ve CSS dosyalarından oluşur. Backend tarafında bir sunucu yoktur. Site sadece statik sayfaları inşa eden bir Python betiğinin çıktısıdır. "Abi Couchdb takalım buna" şeklinde açılan PR'ların sahipleri bulunup hızla ve 
-yerinde dövülür.
+Önyüz düz HTML ve CSS dosyalarından oluşur. Backend tarafında bir sunucu yoktur. Site sadece statik sayfaları inşa eden bir Python betiğinin çıktısıdır. "Abi Couchdb takalım buna" şeklinde açılan PR'ların sahipleri bulunup hızla ve yerinde dövülür.
 
 # Yardım ve Yataklık # 
 
 Eğer canınız istiyorsa bu sitenin yapımında faydalı olabileceğiniz bir çok konu mevcut:
 
- - Var olan, problemli linkleri, imla hatalarını, seo dostu olmayan açıklama metinlerini link detay sayfalarındaki yorum alanını raporlayabilirsiniz. (Örnek)
+ - Var olan, problemli linkleri, imla hatalarını, seo dostu olmayan açıklama metinlerini link detay sayfalarındaki yorum alanına raporlayabilirsiniz. (Örnek)
  - Yukarıdaki türde olmayan herhangi bir hata ya da iyileştirme önerisi görürseniz [issues sayfası](https://github.com/miratcan/internetguzeldir/issues)ndan paylaşabilirsiniz.
  - Siteden bahsedebilir, forumlarda, blogunuzda, Facebook sayfalarında paylaşabilirsiniz. 
  - HTML/CSS/Tasarım bilginiz varsa site için [userstyles.com](https://userstyles.org/) adresi üzerinde çeşitli temalar hazırlayabilirsiniz. (*)
  - Tavsiye formunu kullanarak eklenmesi gerektiğini düşündüğünüz linkleri bildirebilirsiniz.
- - HTML/CSS/Python bilginiz varsa issues bölümüne gidip yapılmayı bekleyen işeri yapıp pull request açabilirsiniz. (Projenin nasıl çalıştırılacağı aşağıda anlatılacaktır)
+ - HTML/CSS/Python bilginiz varsa issues bölümüne gidip yapılmayı bekleyen işleri yapıp pull request açabilirsiniz. (Projenin nasıl çalıştırılacağı aşağıda anlatılacaktır)
 
 \*: Kimileri açık renkler istiyor, kimisi daha modern bir tasarım istiyor, kimisi daha büyük fontlar istiyor. Herkesi memnun edebildiğim bir formül çıkamadı. Userspots üzerinde hazırlanacak temalar bu işi çözer diye düşünüyorum.
 
@@ -40,7 +39,7 @@ Proje aslında rebuild.py'nin çalıştırılmasından ibarettir. Bu dosya Pytho
 
 > Eğer virtual environment nedir bilmiyorsanız ağlayarak günlüğünüze yazabilir, musluğu açıp suya anlatabilir ya da [kısa bir araştırma yaparak](https://letmegooglethat.com/?q=python+virtual+environment+nedir) konuyu öğrenebilirsiniz)
 
-> Eğer Windows kullanıcısı iseniz rcssmin kütüphanesinin kurulamadığını görmeniz muhtemel. Bu kütüphane CSS dosyalarının minify edilmesi için kullanılmakta ve aslında opsiyonel bir kütüphane. Kurulamamış olması bir sorun olacağı anlamına gelmiyor.
+> Eğer Windows kullanıcısı iseniz rcssmin kütüphanesinin kurulamadığını görmeniz muhtemel. Bu kütüphane CSS dosyalarının minify edilmesi için kullanılmakta ve aslında opsiyonel bir kütüphanedir. Kurulamamış olması bir sorun olacağı anlamına gelmiyor.
 
 ## Ayarlar Dosyasinin Yazılması ## 
 
@@ -52,7 +51,7 @@ Proje aslında rebuild.py'nin çalıştırılmasından ibarettir. Bu dosya Pytho
 
 Yukarıdaki işlemleri başarıyla uygulayabildi iseniz aşağıdaki komutu çalıştırabilmeniz gerekli:
 
-    $ python3 rebuild.py
+    $ python rebuild.py
 
 Bu betik çıktı olarak aşağıdaki gibi bir sonuç gösterecek, ve docs klasörü altına siteyi inşa edecektir:
 
