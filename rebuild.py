@@ -2,14 +2,17 @@ import datetime
 import errno
 import json
 import logging
+import os
 import sys
+import tempfile
 import urllib.request
 from collections import defaultdict
 from distutils.util import strtobool
-from os import makedirs as _makedirs, unlink, walk, sep as directory_seperator  # noqa
+from os import makedirs as _makedirs  # noqa
+from os import sep as directory_seperator
+from os import unlink, walk
 from os.path import dirname, exists, join, realpath, splitext
 from shutil import copyfile
-from custom_tempfile import NamedTemporaryFile
 from urllib.parse import urljoin
 
 from dotenv import dotenv_values
@@ -47,6 +50,37 @@ HTMLMIN_KWARGS = {
     "remove_optional_attribute_quotes": False,
     "remove_comments": True,
 }
+
+# NamedTemporaryFile not works perfectly on Windows platform
+# https://docs.python.org/3.9/library/tempfile.html#tempfile.NamedTemporaryFile
+class TemporaryFile:
+    def __init__(self, name, io, delete):
+        self.name = name
+        self.__io = io
+        self.__delete = delete
+
+    def __getattr__(self, k):
+        return getattr(self.__io, k)
+
+    def __del__(self):
+        if self.__delete:
+            try:
+                os.unlink(self.name)
+            except FileNotFoundError:
+                pass
+
+
+def NamedTemporaryFile(mode='w+b', bufsize=-1, suffix='', prefix='tmp', dir=None, delete=True):
+    if not dir:
+        dir = tempfile.gettempdir()
+    name = os.path.join(dir, prefix + os.urandom(8).hex() + suffix)
+    if mode is None:
+        return TemporaryFile(name, None, delete)
+    fh = open(name, "w+b", bufsize)
+    if mode != "w+b":
+        fh.close()
+        fh = open(name, mode)
+    return TemporaryFile(name, fh, delete)
 
 
 def processor_fallback(text, **kwargs):
