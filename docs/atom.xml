@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2021-12-03T05:41:47.369438+00:00</updated>
+  <updated>2021-12-24T21:24:02.533179+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -2533,5 +2533,54 @@
     <updated>2021-12-03T00:00:00+03:00</updated>
     <content>Klavyede 10 parmak yazabilmenizi ve yazma hızınızı arttırmanızı sağlamaya yarayan online alıştırma sitesi.</content>
     <link href="https://internetguzeldir.com/diger/https-kbs-im.html" rel="alternate" type="text/html" title="kbs.im"/>
+  </entry>
+  <entry>
+    <id>sanat/3b-sanat/https-cineshader-com.html</id>
+    <title>Cine Shader</title>
+    <updated>2021-12-15T00:00:00+03:00</updated>
+    <content>Çeşitli 3B shader algoritmalarını bir sergi atmosferinde inceleyebileceğiniz oldukça ilham verici bir web sitesi. Kaynak olarak shadertoy.com'u kullanıyor. </content>
+    <link href="https://internetguzeldir.com/sanat/3b-sanat/https-cineshader-com.html" rel="alternate" type="text/html" title="Cine Shader"/>
+  </entry>
+  <entry>
+    <id>pazarlama/https-raumet-com-marketing.html</id>
+    <title>Marketing is Scary for a Solo Developer</title>
+    <updated>2021-12-15T00:00:00+03:00</updated>
+    <content>Rauno Metsa adlı yazılım geliştiricisi sahip olduğu projeyi pazarlama alanında çektiği zorlukları anlatıyor.</content>
+    <link href="https://internetguzeldir.com/pazarlama/https-raumet-com-marketing.html" rel="alternate" type="text/html" title="Marketing is Scary for a Solo Developer"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/kaynaklar/https-web-dev-patterns-layout.html</id>
+    <title>Layout Patterns</title>
+    <updated>2021-12-15T00:00:00+03:00</updated>
+    <content>Bir önyüz geliştirmesi yaparken en çok kullanılan CSS patternlerinin listelendiği, mutlaka sıkıştıkça başvurulması gereken bir kaynak.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/kaynaklar/https-web-dev-patterns-layout.html" rel="alternate" type="text/html" title="Layout Patterns"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/surum-kontrol/https-ohshitgit-com-tr.html</id>
+    <title>Hasktir, Git!?!</title>
+    <updated>2021-12-15T00:00:00+03:00</updated>
+    <content>Git sürüm kontrol sistemini kullanırken bir şeyleri sıçıp batırdıysanız, nasıl düzelteceğinizi bu siteden bulmanız garanti.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/surum-kontrol/https-ohshitgit-com-tr.html" rel="alternate" type="text/html" title="Hasktir, Git!?!"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyunlar/browser-oyunlari/https-zty-pe.html</id>
+    <title>Z Type</title>
+    <updated>2021-12-15T00:00:00+03:00</updated>
+    <content>Gördüğüm en iyi hızlı yazma oyunu.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyunlar/browser-oyunlari/https-zty-pe.html" rel="alternate" type="text/html" title="Z Type"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/blokzincir/https-invisibleup-com-articles-38.html</id>
+    <title>Web3 is not Decentralization</title>
+    <updated>2021-12-15T00:00:00+03:00</updated>
+    <content>Web3 furyasının merkeziyetsizleşme ile pek de alakası olmadığını iddia eden ilginç bir makale.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/blokzincir/https-invisibleup-com-articles-38.html" rel="alternate" type="text/html" title="Web3 is not Decentralization"/>
+  </entry>
+  <entry>
+    <id>yasam-tarzi/yeme-icme/veganlik/https-www-veganoluyorum-com.html</id>
+    <title>Vegan Oluyorum</title>
+    <updated>2021-12-16T00:00:00+03:00</updated>
+    <content>Vegan olmaya karar vermiş kişiler  için rehber niteliğinde web sitesi.</content>
+    <link href="https://internetguzeldir.com/yasam-tarzi/yeme-icme/veganlik/https-www-veganoluyorum-com.html" rel="alternate" type="text/html" title="Vegan Oluyorum"/>
   </entry>
 </feed>

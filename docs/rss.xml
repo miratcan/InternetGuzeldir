@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>tr</language>
-    <lastBuildDate>Fri, 03 Dec 2021 05:41:47 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Dec 2021 21:24:02 +0000</lastBuildDate>
     <item>
       <title>Türkiye'deki Kamp Alanları Listesi</title>
       <link>https://internetguzeldir.com/seyahat/https-www-google-com-maps-d-u-0-viewer-mid-1oxyu1crdfylrtiyijsonakf2xy8-ll-38-624311649181756-2c35-12324238355848-z-6.html</link>
@@ -2174,6 +2174,48 @@
       <link>https://internetguzeldir.com/diger/https-kbs-im.html</link>
       <description>Klavyede 10 parmak yazabilmenizi ve yazma hızınızı arttırmanızı sağlamaya yarayan online alıştırma sitesi.</description>
       <guid isPermaLink="false">diger/https-kbs-im.html</guid>
+    </item>
+    <item>
+      <title>Cine Shader</title>
+      <link>https://internetguzeldir.com/sanat/3b-sanat/https-cineshader-com.html</link>
+      <description>Çeşitli 3B shader algoritmalarını bir sergi atmosferinde inceleyebileceğiniz oldukça ilham verici bir web sitesi. Kaynak olarak shadertoy.com'u kullanıyor. </description>
+      <guid isPermaLink="false">sanat/3b-sanat/https-cineshader-com.html</guid>
+    </item>
+    <item>
+      <title>Marketing is Scary for a Solo Developer</title>
+      <link>https://internetguzeldir.com/pazarlama/https-raumet-com-marketing.html</link>
+      <description>Rauno Metsa adlı yazılım geliştiricisi sahip olduğu projeyi pazarlama alanında çektiği zorlukları anlatıyor.</description>
+      <guid isPermaLink="false">pazarlama/https-raumet-com-marketing.html</guid>
+    </item>
+    <item>
+      <title>Layout Patterns</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/kaynaklar/https-web-dev-patterns-layout.html</link>
+      <description>Bir önyüz geliştirmesi yaparken en çok kullanılan CSS patternlerinin listelendiği, mutlaka sıkıştıkça başvurulması gereken bir kaynak.</description>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/kaynaklar/https-web-dev-patterns-layout.html</guid>
+    </item>
+    <item>
+      <title>Hasktir, Git!?!</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/surum-kontrol/https-ohshitgit-com-tr.html</link>
+      <description>Git sürüm kontrol sistemini kullanırken bir şeyleri sıçıp batırdıysanız, nasıl düzelteceğinizi bu siteden bulmanız garanti.</description>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/surum-kontrol/https-ohshitgit-com-tr.html</guid>
+    </item>
+    <item>
+      <title>Z Type</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/oyunlar/browser-oyunlari/https-zty-pe.html</link>
+      <description>Gördüğüm en iyi hızlı yazma oyunu.</description>
+      <guid isPermaLink="false">bilgisayarlar/oyunlar/browser-oyunlari/https-zty-pe.html</guid>
+    </item>
+    <item>
+      <title>Web3 is not Decentralization</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/blokzincir/https-invisibleup-com-articles-38.html</link>
+      <description>Web3 furyasının merkeziyetsizleşme ile pek de alakası olmadığını iddia eden ilginç bir makale.</description>
+      <guid isPermaLink="false">bilgisayarlar/blokzincir/https-invisibleup-com-articles-38.html</guid>
+    </item>
+    <item>
+      <title>Vegan Oluyorum</title>
+      <link>https://internetguzeldir.com/yasam-tarzi/yeme-icme/veganlik/https-www-veganoluyorum-com.html</link>
+      <description>Vegan olmaya karar vermiş kişiler  için rehber niteliğinde web sitesi.</description>
+      <guid isPermaLink="false">yasam-tarzi/yeme-icme/veganlik/https-www-veganoluyorum-com.html</guid>
     </item>
   </channel>
 </rss>
