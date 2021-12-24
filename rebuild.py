@@ -10,32 +10,31 @@ Typical usage example:
 from __future__ import annotations
 
 import datetime
-from datetime import datetime as type_date
 import errno
 import json
 import logging
 import sys
-from typing import Any, Dict, List, Union, cast
 import urllib.request
 from collections import defaultdict
+from datetime import datetime as type_date
 from distutils.util import strtobool
 from os import makedirs as _makedirs, walk, sep as directory_seperator  # noqa
 from os.path import dirname, exists, join, realpath, splitext
 from shutil import copyfile
 from tempfile import NamedTemporaryFile
+from typing import List, Any, Callable, Tuple, Dict
+from typing import Union, cast
 from urllib.parse import urljoin
 
+import jinja2
 from dotenv import dotenv_values
 from feedgen.feed import FeedGenerator
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-import jinja2
 from jinja2.environment import Template
 from openpyxl import load_workbook
 from openpyxl.worksheet.worksheet import Worksheet
-from openpyxl.workbook import Workbook
 from selenium import webdriver
 from slugify import slugify  # noqa
-from typing import List, Any, Callable, Tuple, Dict
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
