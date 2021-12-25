@@ -75,7 +75,7 @@ class Link:
     file_path: str
 
     def __repr__(self):
-        return f"Link(\'{self.url}\')"
+        return f"Link('{self.url}')"
 
 
 ENV: Dict = dotenv_values(join(dirname(realpath(__file__)), ".env"))
@@ -88,6 +88,8 @@ HTMLMIN_KWARGS: Dict[str, bool] = {
 LinkRow = Tuple[int, str, str, str, str, str, str, str, str, type_date]
 CategoryRow = Tuple[int, str, str, str]
 CategoryOverrides = Dict[str, Dict[str, str]]
+LinksByCategory = Dict[str, List[Link]]
+
 
 def processor_fallback(text: str, **kwargs: List[Any]) -> str:  # noqa
     """This is a fallback function for any kind of text processors like \
@@ -242,9 +244,11 @@ def get_link_from_row(row: LinkRow) -> Link:
     >>> get_link_from_row(link_row_0)
     Link('https://google.com')
     """
-    if row[get_column_index('create_time')] is None:
-        raise ValueError("Line %s has missing create_time value." %
-                         row[get_column_index('row_number')])
+    if row[get_column_index("create_time")] is None:
+        raise ValueError(
+            "Line %s has missing create_time value."
+            % row[get_column_index("row_number")]
+        )
     link = Link(
         row[get_column_index("line_number")],
         row[get_column_index("title")],
@@ -260,14 +264,13 @@ def get_link_from_row(row: LinkRow) -> Link:
                 datetime.timedelta(hours=int(ENV.get("TIMEZONE_HOURS", "3")))
             )
         ),
-        get_category_path(
-            row[get_column_index('category_str')]
-        ) + slugify(row[get_column_index("url")] + ".html")
+        get_category_path(row[get_column_index("category_str")])
+        + slugify(row[get_column_index("url")] + ".html"),
     )
     return link
 
 
-def get_links_by_category(link_rows: List[LinkRow]) -> Dict[str, List[Link]]:
+def get_links_by_category(link_rows: List[LinkRow]) -> LinksByCategory:
     """
     Get links by grouping them by their category string.
 
@@ -322,7 +325,7 @@ def get_links_by_category(link_rows: List[LinkRow]) -> Dict[str, List[Link]]:
     logger.debug("Building links by category.")
     result: Dict[str, List[Link]] = defaultdict(list)
     for link_row in link_rows:
-        category_str: str = link_row[get_column_index('category_str')]
+        category_str: str = link_row[get_column_index("category_str")]
         link = get_link_from_row(link_row)
         result[category_str].append(link)
     return result
@@ -380,10 +383,7 @@ def get_category_overrides(categories_page_rows) -> CategoryOverrides:
     return overrides
 
 
-def get_category_info(
-        category_str: str,
-        overrides: CategoryOverrides
-    ) -> Dict:
+def get_category_info(category_str: str, overrides: CategoryOverrides) -> Dict:
     """
     Get information of single category.
 
@@ -414,14 +414,14 @@ overrided by this.', 'parent': None, 'path': 'b/', 'children': []}
 
 
 def get_categories(
-        links_page_rows: List[LinkRow],
-        categories_page_rows: List[LinkRow]
-    ) -> Dict:
+    links_page_rows: List[LinkRow], categories_page_rows: List[LinkRow]
+) -> Dict:
     logger.info("Building category information.")
     categories = {}
     overrides = get_category_overrides(categories_page_rows)
     categories_of_links = [
-        r[get_column_index('category_str')] for r in links_page_rows]
+        r[get_column_index("category_str")] for r in links_page_rows
+    ]
     categories_of_overrides = list(overrides.keys())
     missing_categories = set(categories_of_overrides) - \
         set(categories_of_links)
@@ -433,7 +433,7 @@ def get_categories(
         )
 
     for row in links_page_rows:
-        category_str = row[get_column_index('category_str')]
+        category_str = row[get_column_index("category_str")]
         if category_str in categories:
             continue
         category = get_category_info(category_str, overrides)
@@ -441,7 +441,7 @@ def get_categories(
 
     for row in links_page_rows:
 
-        child_category_str: str = row[get_column_index('category_str')]
+        child_category_str: str = row[get_column_index("category_str")]
         parent_category_str = get_parent_category_str(child_category_str)
 
         while child_category_str:
@@ -520,10 +520,12 @@ def get_links_by_date(link_rows, reverse=True):
     return sorted(links, key=lambda i: i.create_time, reverse=reverse)
 
 
-def render_sitemap(root_path: str,
-                   categories: Dict[str, Union[str, None, List[str]]],
-                   links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]],
-                   sitemap_template: Template):
+def render_sitemap(
+    root_path: str,
+    categories: Dict[str, Union[str, None, List[str]]],
+    links_by_category: LinksByCategory,
+    sitemap_template: Template,
+):
 
     logger.info("Rendering sitemap.")
     with open(join(root_path, "sitemap.xml"), "w") as file:
@@ -568,12 +570,18 @@ def render_feed(root_path: str, link_page_rows: List[LinkRow]):
     feed.atom_file(join(root_path, "atom.xml"), pretty=True)
 
 
-def render_categories(base_path: str, links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]], categories, template):
+def render_categories(
+    base_path: str,
+    links_by_category: LinksByCategory,
+    categories,
+    template,
+):
     logger.info("Rendering categories.")
     for category_str, links in links_by_category.items():
         category = categories[category_str]
-        file_path: str = join(base_path, cast(str, category["path"]),
-                              "index.html")
+        file_path: str = join(
+            base_path, cast(str, category["path"]), "index.html"
+        )
         root_path: str = get_category_root_path(category_str)
         with open(file_path, "w") as file:
             file.write(
@@ -629,16 +637,20 @@ def get_browser():
             continue
 
 
-def render_links(base_path: str, links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]], template: Template):
+def render_links(
+    base_path: str,
+    links_by_category: LinksByCategory,
+    template: Template,
+):
     logger.info("Rendering links.")
     force = strtobool(cast(str, ENV.get("FORCE_SCREENSHOT", "False")))
-    cleaner_js:str = """
+    cleaner_js: str = """
         document.getElementsByTagName('header')[0].style.background='none';
         document.getElementsByTagName('form')[0].remove();
         document.getElementById('page').style.margin=0;
         document.getElementById('link_detail').style.margin=0;
         text = document.getElementsByTagName('h1')[0].textContent;
-        document.getElementsByTagName('h1')[0].textContent = text.toUpperCase();
+        document.getElementsByTagName('h1')[0].textContent=text.toUpperCase();
         document.getElementsByTagName('header')[0].style.background='none';
         document.getElementsByTagName('script')[0].remove();
         document.getElementsByClassName('meta')[0].remove();
@@ -681,12 +693,15 @@ def render_links(base_path: str, links_by_category: Dict[str, List[Dict[str, Uni
         browser.close()
 
 
-def render_home(base_path: str, link_page_rows: List[List[Union[str, None, type_date]]],
-                categories: Dict[str, Union[str, None, List[str]]],
-                template: jinja2.Template):
+def render_home(
+    base_path: str,
+    link_rows: List[LinkRow],
+    categories: Dict[str, Union[str, None, List[str]]],
+    template: Template,
+):
 
     logger.info("Rendering homepage.")
-    links = get_links_by_date(link_page_rows)
+    links = get_links_by_date(link_rows)
     last_update = datetime.date.today()
     file_path = join(base_path, "index.html")
     with open(file_path, "w") as file:
@@ -697,7 +712,7 @@ def render_home(base_path: str, link_page_rows: List[List[Union[str, None, type_
                     root_path="./",
                     categories=categories,
                     last_update=last_update,
-                    num_of_links=len(link_page_rows),
+                    num_of_links=len(link_rows),
                     env=ENV,
                 ),
                 **HTMLMIN_KWARGS,
@@ -716,8 +731,10 @@ def make_dirs(path: str):
 
 
 def build_assets(build_path: str, assets_path: str):
-    # Todo: Find any 
-    processors: Dict[str, Any] = {".css": (cssmin, {}), ".html": (htmlmin, HTMLMIN_KWARGS)}
+    processors: Dict[str, Tuple[Callable, Dict]] = {
+        ".css": (cssmin, {}),
+        ".html": (htmlmin, HTMLMIN_KWARGS),
+    }
     logger.info("Building assets.")
     for root, _, file_names in walk(assets_path):
         target_dir = join(build_path, *root.split(directory_seperator)[2:])
@@ -741,7 +758,11 @@ def build_assets(build_path: str, assets_path: str):
                 file.write(content)
 
 
-def render_json(root_path: str, categories: Dict[str, Union[str, None, List[str]] ], links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]]):
+def render_json(
+    root_path: str,
+    categories: Dict[str, Union[str, None, List[str]]],
+    links_by_category: LinksByCategory
+):
     logger.info("Building json output.")
 
     class DateTimeEncoder(json.JSONEncoder):
@@ -749,8 +770,11 @@ def render_json(root_path: str, categories: Dict[str, Union[str, None, List[str]
             if isinstance(o, datetime.datetime):
                 return o.isoformat()
             if isinstance(o, Link):
-                return {k: v for k, v in Link.__dict__.items()
-                        if not k.startswith('_')}
+                return {
+                    k: v
+                    for k, v in Link.__dict__.items()
+                    if not k.startswith("_")
+                }
             return json.JSONEncoder.default(self, o)
 
     with open(join(root_path, "data.json"), "w", encoding="utf8") as file:
@@ -761,14 +785,16 @@ def render_json(root_path: str, categories: Dict[str, Union[str, None, List[str]
         json.dump(data, file, cls=DateTimeEncoder, ensure_ascii=False)
 
 
-def build(build_path: str =join(dirname(realpath(__file__)), "docs/")):
+def build(build_path: str = join(dirname(realpath(__file__)), "docs/")):
     jinja = Environment(
         loader=FileSystemLoader("templates/"),
         autoescape=select_autoescape(["html", "xml"]),
     )
 
     with NamedTemporaryFile(suffix=".xlsx") as spreadsheet_file:
-        with urllib.request.urlopen(cast(str,ENV["SPREADSHEET_URL"])) as remote_file:
+        with urllib.request.urlopen(
+            cast(str, ENV["SPREADSHEET_URL"])
+        ) as remote_file:
             spreadsheet_file.write(remote_file.read())
             workbook = load_workbook(
                 filename=spreadsheet_file.name, read_only=True
@@ -779,7 +805,10 @@ def build(build_path: str =join(dirname(realpath(__file__)), "docs/")):
     )
 
     categories_page_lines = get_rows(
-        workbook[cast(str, ENV.get("SPREADSHEET_CATEGORIES_PAGE_NAME", "Categories"))]
+        workbook[
+            cast(str, ENV.get("SPREADSHEET_CATEGORIES_PAGE_NAME",
+                              "Categories"))
+        ]
     )
 
     category_template = jinja.get_template("category.html.jinja2")
@@ -790,7 +819,9 @@ def build(build_path: str =join(dirname(realpath(__file__)), "docs/")):
     links_by_category = get_links_by_category(links_page_lines)
     categories = get_categories(links_page_lines, categories_page_lines)
 
-    category_str_list = [r[get_column_index('category_str')] for r in links_page_lines]
+    category_str_list = [
+        r[get_column_index("category_str")] for r in links_page_lines
+    ]
     create_category_paths(build_path, category_str_list)
 
     render_json(build_path, categories, links_by_category)
