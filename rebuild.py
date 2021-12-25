@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""This cli tool is used for rebuilding link site from Excell sheet that is 
+"""This cli tool is used for rebuilding link site from Excel sheet that is
 mentioned from it's settings file.
 
 Typical usage example:
@@ -15,10 +15,11 @@ import json
 import logging
 import sys
 import urllib.request
-from collections import defaultdict, namedtuple
+from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime as type_date
 from distutils.util import strtobool
+from functools import lru_cache
 from os import makedirs as _makedirs, walk, sep as directory_seperator  # noqa
 from os.path import dirname, exists, join, realpath, splitext
 from shutil import copyfile
@@ -27,11 +28,9 @@ from typing import List, Any, Callable, Tuple, Dict
 from typing import Union, cast
 from urllib.parse import urljoin
 
-import jinja2
 from dotenv import dotenv_values
 from feedgen.feed import FeedGenerator
-from jinja2 import Environment, FileSystemLoader, select_autoescape
-from jinja2.environment import Template
+from jinja2 import Environment, FileSystemLoader, select_autoescape, Template
 from openpyxl import load_workbook
 from openpyxl.worksheet.worksheet import Worksheet
 from selenium import webdriver
@@ -48,6 +47,7 @@ logger.addHandler(handler)
 
 
 LINK_COLUMNS: tuple[str, ...] = (
+    "line_number",
     "title",
     "url",
     "desc",
@@ -62,6 +62,7 @@ LINK_COLUMNS: tuple[str, ...] = (
 
 @dataclass
 class Link:
+    row_number: int
     title: str
     url: str
     desc: str
@@ -71,9 +72,12 @@ class Link:
     sender: str
     source: str
     create_time: type_date
+    file_path: str
+
+    def __repr__(self):
+        return f"Link(\'{self.url}\')"
 
 
-CATEGORY_COLUMN_INDEX: int = LINK_COLUMNS.index("category_str")
 ENV: Dict = dotenv_values(join(dirname(realpath(__file__)), ".env"))
 
 HTMLMIN_KWARGS: Dict[str, bool] = {
@@ -81,9 +85,11 @@ HTMLMIN_KWARGS: Dict[str, bool] = {
     "remove_comments": True,
 }
 
-Line = Tuple[Any, ...]
+LinkRow = Tuple[int, str, str, str, str, str, str, str, str, type_date]
+CategoryRow = Tuple[int, str, str, str]
+CategoryOverrides = Dict[str, Dict[str, str]]
 
-def processor_fallback(text: str, **kwargs: List[Any]) -> str:
+def processor_fallback(text: str, **kwargs: List[Any]) -> str:  # noqa
     """This is a fallback function for any kind of text processors like \
     cssmin or htmlmin. Only thing that it does is returning the text back.
 
@@ -113,18 +119,23 @@ if strtobool(cast(str, ENV.get("MINIMIZE_HTML", "True"))):
         )
 
 
-def get_lines(worksheet: Worksheet) -> List[Line]:
+@lru_cache(maxsize=len(LINK_COLUMNS))
+def get_column_index(key: str) -> int:
+    return LINK_COLUMNS.index(key)
+
+
+def get_rows(worksheet: Worksheet) -> List[LinkRow]:
     """Load lines from worksheet and return as list of lists.
 
     :param worksheet: Worksheet Object
     :return: list
     """
     logger.debug("Parsing lines from worksheet.")
-    result: List[Line] = []
+    result: List[LinkRow] = []
     for idx, row in enumerate(worksheet.rows):
         if idx == 0:
             continue
-        result.append(tuple(map(lambda cell: cell.value, row)))
+        result.append((idx,) + tuple(map(lambda cell: cell.value, row)))
     return result
 
 
@@ -137,11 +148,9 @@ def get_category_parts(category_str: str) -> List[str]:
     Returns:
         List of strings that contains every part of given category.
 
-    >>> category_str = 'a > b > c'
-    >>> get_category_parts(category_str)
+    >>> get_category_parts('a > b > c')
     ['a', 'b', 'c']
-
-  """
+    """
     separator = ENV["SPREADSHEET_CATEGORY_SEPARATOR"]
     return list(
         filter(
@@ -158,8 +167,7 @@ def get_category_path(category_str: str) -> str:
     :param category_str: String representing a category.
     :return: path string.
 
-    >>> category_str = 'a > b > c'
-    >>> get_category_path(category_str)
+    >>> get_category_path('a > b > c')
     'a/b/c/'
     """
     parts = get_category_parts(category_str)
@@ -173,8 +181,7 @@ def get_category_root_path(category_str: str) -> str:
     :param category_str: String representing a category.
     :return: Relative path that points to root directory.
 
-    >>> category_str = 'a > b > c'
-    >>> get_category_root_path(category_str)
+    >>> get_category_root_path('a > b > c')
     '../../../'
     """
     return "../" * (get_category_depth(category_str) + 1)
@@ -187,8 +194,7 @@ def get_category_depth(category_str: str) -> int:
     :param category_str: String representing a category.
     :return: Integer that describes depth of the category.
 
-    >>> category_str = 'a > b > c'
-    >>> get_category_depth(category_str)
+    >>> get_category_depth('a > b > c')
     2
     """
     return category_str.count(cast(str, ENV["SPREADSHEET_CATEGORY_SEPARATOR"]))
@@ -201,8 +207,7 @@ def get_parent_category_str(category_str: str) -> str | None:
     :param category_str: String representing a category.
     :return: String representing parent category.
 
-    >>> category_str = 'a > b > c'
-    >>> get_parent_category_str(category_str)
+    >>> get_parent_category_str('a > b > c')
     'a > b'
     """
     if category_str is None:
@@ -215,14 +220,15 @@ def get_parent_category_str(category_str: str) -> str | None:
     )
 
 
-def get_link_from_row(link_row):
+def get_link_from_row(row: LinkRow) -> Link:
     """
-    Get link information from a line in worksheet.
+    Get link information from a row in worksheet.
 
-    :param link_row: List of items that represents a row in links page.
+    :param row: List of items that represents a row in links page.
     :return: Dictionary that contaıns lınk informatıon
 
-    >>> link_row = (
+    >>> link_row_0 = (
+    ...     0,
     ...     "Google",
     ...     "https://google.com",
     ...     "Most popular search engine",
@@ -233,39 +239,43 @@ def get_link_from_row(link_row):
     ...     "reddit",
     ...     datetime.datetime(1984, 7, 10),
     ... )
-    >>> get_link_from_row(link_row)
-    {'title': 'Google', 'url': 'https://google.com', \
-'desc': 'Most popular search engine', \
-'category_str': 'internet > search engines', 'kind': 'website', \
-'lang': 'English', 'sender': 'mirat', 'source': 'reddit', \
-'create_time': datetime.datetime(1984, 7, 10, 0, 0, \
-tzinfo=datetime.timezone(datetime.timedelta(seconds=10800))), \
-'file_path': 'internet/search-engines/https-google-com.html'}
+    >>> get_link_from_row(link_row_0)
+    Link('https://google.com')
     """
-    link = Link(link_row[index] for index, column in enumerate(LINK_COLUMNS))
-    if link.create_time is None:
-        raise ValueError("Line %s has missing create_time value." % line)
-    link.create_time = link["create_time"].replace(
-        tzinfo=datetime.timezone(
-            datetime.timedelta(hours=int(ENV.get("TIMEZONE_HOURS", "3")))
-        )
-    )
-    link["file_path"] = (
-        get_category_path(link_row[CATEGORY_COLUMN_INDEX])
-        + slugify(link["url"])
-        + ".html"
+    if row[get_column_index('create_time')] is None:
+        raise ValueError("Line %s has missing create_time value." %
+                         row[get_column_index('row_number')])
+    link = Link(
+        row[get_column_index("line_number")],
+        row[get_column_index("title")],
+        row[get_column_index("url")],
+        row[get_column_index("desc")],
+        row[get_column_index("category_str")],
+        row[get_column_index("kind")],
+        row[get_column_index("lang")],
+        row[get_column_index("sender")],
+        row[get_column_index("source")],
+        row[get_column_index("create_time")].replace(
+            tzinfo=datetime.timezone(
+                datetime.timedelta(hours=int(ENV.get("TIMEZONE_HOURS", "3")))
+            )
+        ),
+        get_category_path(
+            row[get_column_index('category_str')]
+        ) + slugify(row[get_column_index("url")] + ".html")
     )
     return link
 
 
-def get_links_by_category(link_rows: List[List[Union[str, type_date, None]]]) -> Dict[str, List[Dict[str, Union[str, None, type_date]]]]:
+def get_links_by_category(link_rows: List[LinkRow]) -> Dict[str, List[Link]]:
     """
     Get links by grouping them by their category string.
 
     :param link_rows: List of lists that represents rows in links page.
-    :return: Dictionary that contaıns grouped links.
+    :return: Dictionary that contains grouped links.
 
-    >>> link_row_1 = (
+    >>> link_row_0 = (
+    ...     0,
     ...     "Google",
     ...     "https://google.com",
     ...     "Most popular search engine",
@@ -277,7 +287,8 @@ def get_links_by_category(link_rows: List[List[Union[str, type_date, None]]]) ->
     ...     datetime.datetime(1984, 7, 10),
     ... )
 
-    >>> link_row_2 = (
+    >>> link_row_1 = (
+    ...     1,
     ...     "Gmail",
     ...     "https://gmail.com",
     ...     "Most popular email service",
@@ -289,15 +300,14 @@ def get_links_by_category(link_rows: List[List[Union[str, type_date, None]]]) ->
     ...     datetime.datetime(1984, 7, 10),
     ... )
 
-    >>> links_by_category = get_links_by_category([link_row_1, link_row_2])
-
+    >>> links_by_category = get_links_by_category([link_row_0, link_row_1])
     >>> "internet > email providers" in links_by_category
     True
 
     >>> len(links_by_category["internet > email providers"]) == 1
     True
 
-    >>> links_by_category["internet > email providers"][0]['title'] == 'Gmail'
+    >>> links_by_category["internet > email providers"][0].title == 'Gmail'
     True
 
     >>> "internet > search engines" in links_by_category
@@ -306,85 +316,87 @@ def get_links_by_category(link_rows: List[List[Union[str, type_date, None]]]) ->
     >>> len(links_by_category["internet > search engines"]) == 1
     True
 
-    >>> links_by_category["internet > search engines"][0]['title'] == 'Google'
+    >>> links_by_category["internet > search engines"][0].title == 'Google'
     True
     """
     logger.debug("Building links by category.")
-    result: Dict[str, List[Dict[str, Union[str, type_date, None]]]] = defaultdict(list)
+    result: Dict[str, List[Link]] = defaultdict(list)
     for link_row in link_rows:
-        category_str: str = link_row[CATEGORY_COLUMN_INDEX]
+        category_str: str = link_row[get_column_index('category_str')]
         link = get_link_from_row(link_row)
         result[category_str].append(link)
     return result
 
 
-def create_category_paths(base_path, category_str_list, dry=False):
+def create_category_paths(base_path, categories: List[str], dry=False):
     """
     Create directories of categories
 
     :param base_path: String that represents path of building directory.
-    :param category_str_list: String that represents path of building directory.
+    :param categories: String that represents path of building directory.
+    :param dry: Don't really create paths.
 
     :return: List of strings that represents paths of created directories.
 
-    >>> base_path = '/tmp/'
     >>> category_str_list = ['a > b', 'a > c', 'b > c']
 
-    >>> create_category_paths(base_path, category_str_list)
+    >>> create_category_paths('/tmp/', category_str_list)
     ['/tmp/a/b/', '/tmp/a/c/', '/tmp/b/c/']
     """
     logger.debug("Creating category paths.")
     created_dirs = []
-    for category_str in category_str_list:
-        path = join(base_path, get_category_path(category_str))
+    for category in categories:
+        path = join(base_path, get_category_path(category))
         if not dry:
             make_dirs(path)
         created_dirs.append(path)
     return created_dirs
 
-def get_category_overrides(categories_page_rows):
+
+def get_category_overrides(categories_page_rows) -> CategoryOverrides:
     """
-    Get optional title and description information of categories from categories page in spreadsheet.
+    Get optional title and description information of categories from
+    categories page in spreadsheet.
 
     :param categories_page_rows: List of lists that represent lines on
     categories page.
     :return: Dictionary that contains title and descriptions of categories.
 
-    >>> category_line_1 = ['a', 'Title of Category A', 'Desc of Category A']
-
-    >>> category_line_2 = ['b', 'Title of Category B', 'Desc of Category B']
-
-    >>> get_category_overrides([category_line_1, category_line_2])
+    >>> category_line_0 = [0, 'a', 'Title Category A', 'Desc Category A']
+    >>> category_line_1 = [1, 'b', 'Title Category B', 'Desc Category B']
+    >>> get_category_overrides([category_line_0, category_line_1])
     {'a': {'title': 'Title of Category A', 'desc': 'Desc of Category A'}, \
 'b': {'title': 'Title of Category B', 'desc': 'Desc of Category B'}}
     """
     logger.debug("Getting category overrides.")
-    overrides: Dict[str, str]= {}
+    overrides = {}
     for category_page_row in categories_page_rows:
         override = {}
-        if len(category_page_row) > 1 and category_page_row[1] is not None:
-            override["title"] = category_page_row[1]
         if len(category_page_row) > 2 and category_page_row[2] is not None:
-            override["desc"] = category_page_row[2]
-        overrides[category_page_row[0]] = override
-
+            override["title"] = category_page_row[2]
+        if len(category_page_row) > 3 and category_page_row[3] is not None:
+            override["desc"] = category_page_row[3]
+        overrides[category_page_row[1]] = override
     return overrides
 
 
-def get_category_info(category_str: str, overrides: Dict[str, Dict[str, str]]):
+def get_category_info(
+        category_str: str,
+        overrides: CategoryOverrides
+    ) -> Dict:
     """
     Get information of single category.
 
-    >>> overrides = {\
-    'a': {'title': 'Title of category "a" overrided by this.'},\
-    'b': {'desc': 'Description of Category "b" overrided by this.'}\
+    >>> _overrides = {
+    'a': {'title': 'Title of category "a" overridden by this.'},\
+    'b': {'desc': 'Description of Category "b" overridden by this.'}\
     }
 
-    >>> get_category_info('a', overrides)
+    >>> get_category_info('a', _overrides)
     {'name': 'a', 'title': 'Title of category "a" overrided by this.', \
 'desc': None, 'parent': None, 'path': 'a/', 'children': []}
 
-    >>> get_category_info('b', overrides)
+    >>> get_category_info('b', _overrides)
     {'name': 'b', 'title': 'b', 'desc': 'Description of Category "b" \
 overrided by this.', 'parent': None, 'path': 'b/', 'children': []}
     """
@@ -401,16 +413,18 @@ overrided by this.', 'parent': None, 'path': 'b/', 'children': []}
     return result
 
 
-def get_categories(links_page_rows, categories_page_rows: List[List[Union[str, None]]]):
+def get_categories(
+        links_page_rows: List[LinkRow],
+        categories_page_rows: List[LinkRow]
+    ) -> Dict:
     logger.info("Building category information.")
     categories = {}
     overrides = get_category_overrides(categories_page_rows)
-
-    # Warn about missing categories on categories page.
-
-    categories_of_links = [r[CATEGORY_COLUMN_INDEX] for r in links_page_rows]
+    categories_of_links = [
+        r[get_column_index('category_str')] for r in links_page_rows]
     categories_of_overrides = list(overrides.keys())
-    missing_categories = set(categories_of_overrides) - set(categories_of_links)
+    missing_categories = set(categories_of_overrides) - \
+        set(categories_of_links)
     for missing_category in missing_categories:
         logger.warning(
             'Category: "%s" appears on category overrides page '
@@ -419,7 +433,7 @@ def get_categories(links_page_rows, categories_page_rows: List[List[Union[str, N
         )
 
     for row in links_page_rows:
-        category_str = row[CATEGORY_COLUMN_INDEX]
+        category_str = row[get_column_index('category_str')]
         if category_str in categories:
             continue
         category = get_category_info(category_str, overrides)
@@ -427,7 +441,7 @@ def get_categories(links_page_rows, categories_page_rows: List[List[Union[str, N
 
     for row in links_page_rows:
 
-        child_category_str: str = row[CATEGORY_COLUMN_INDEX]
+        child_category_str: str = row[get_column_index('category_str')]
         parent_category_str = get_parent_category_str(child_category_str)
 
         while child_category_str:
@@ -472,6 +486,7 @@ def get_links_by_date(link_rows, reverse=True):
     create time.
 
     >>> link_row_1 = (
+    ...     0,
     ...     "Google",
     ...     "https://google.com",
     ...     "Most popular search engine",
@@ -484,6 +499,7 @@ def get_links_by_date(link_rows, reverse=True):
     ... )
 
     >>> link_row_2 = (
+    ...     1,
     ...     "Gmail",
     ...     "https://gmail.com",
     ...     "Most popular email service",
@@ -496,17 +512,18 @@ def get_links_by_date(link_rows, reverse=True):
     ... )
 
     >>> get_links_by_date([link_row_1, link_row_2])
-    {}
+    [Link('https://google.com'), Link('https://gmail.com')]
     """
     links = []
     for row in link_rows:
         links.append(get_link_from_row(row))
-    return sorted(links, key=lambda i: i["create_time"], reverse=reverse)
+    return sorted(links, key=lambda i: i.create_time, reverse=reverse)
 
 
-def render_sitemap(root_path: str, categories: Dict[str, Union[str, None, List[str]]],
-                    links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]],
-                    sitemap_template: Template):
+def render_sitemap(root_path: str,
+                   categories: Dict[str, Union[str, None, List[str]]],
+                   links_by_category: Dict[str, List[Dict[str, Union[str, None, type_date]]]],
+                   sitemap_template: Template):
 
     logger.info("Rendering sitemap.")
     with open(join(root_path, "sitemap.xml"), "w") as file:
@@ -524,7 +541,7 @@ def render_sitemap(root_path: str, categories: Dict[str, Union[str, None, List[s
         )
 
 
-def render_feed(root_path: str, link_page_rows):
+def render_feed(root_path: str, link_page_rows: List[LinkRow]):
     logger.info("Rendering feed outputs.")
     feed = FeedGenerator()
     feed.id(ENV["SITE_URL"])
@@ -537,16 +554,16 @@ def render_feed(root_path: str, link_page_rows):
     links = get_links_by_date(link_page_rows)
     for link in links:
         entry = feed.add_entry()
-        entry.id(link["file_path"])
-        entry.title(link["title"])
-        entry.description(link["desc"])
+        entry.id(link.file_path)
+        entry.title(link.title)
+        entry.description(link.desc)
         entry.link(
-            title=link["title"],
+            title=link.title,
             rel="alternate",
             type="text/html",
-            href=urljoin(ENV["SITE_URL"], link["file_path"]),
+            href=urljoin(ENV["SITE_URL"], link.file_path),
         )
-        entry.updated(link["create_time"])
+        entry.updated(link.create_time)
     feed.rss_file(join(root_path, "rss.xml"), pretty=True)
     feed.atom_file(join(root_path, "atom.xml"), pretty=True)
 
@@ -555,7 +572,8 @@ def render_categories(base_path: str, links_by_category: Dict[str, List[Dict[str
     logger.info("Rendering categories.")
     for category_str, links in links_by_category.items():
         category = categories[category_str]
-        file_path: str = join(base_path, cast(str, category["path"]), "index.html")
+        file_path: str = join(base_path, cast(str, category["path"]),
+                              "index.html")
         root_path: str = get_category_root_path(category_str)
         with open(file_path, "w") as file:
             file.write(
@@ -630,8 +648,8 @@ def render_links(base_path: str, links_by_category: Dict[str, List[Dict[str, Uni
     browser = None
     for category_str, links in links_by_category.items():
         for link in links:
-            file_path = join(base_path, cast(str, link["file_path"]))
-            image_url: str = f"{link['file_path']}.png"
+            file_path = join(base_path, cast(str, link.file_path))
+            image_url: str = f"{link.file_path}.png"
             with open(file_path, "w") as file:
                 file.write(
                     htmlmin(
@@ -730,6 +748,9 @@ def render_json(root_path: str, categories: Dict[str, Union[str, None, List[str]
         def default(self, o):
             if isinstance(o, datetime.datetime):
                 return o.isoformat()
+            if isinstance(o, Link):
+                return {k: v for k, v in Link.__dict__.items()
+                        if not k.startswith('_')}
             return json.JSONEncoder.default(self, o)
 
     with open(join(root_path, "data.json"), "w", encoding="utf8") as file:
@@ -753,11 +774,11 @@ def build(build_path: str =join(dirname(realpath(__file__)), "docs/")):
                 filename=spreadsheet_file.name, read_only=True
             )
 
-    links_page_lines = get_lines(
+    links_page_lines = get_rows(
         workbook[cast(str, ENV.get("SPREADSHEET_LINKS_PAGE_NAME", "Links"))]
     )
 
-    categories_page_lines = get_lines(
+    categories_page_lines = get_rows(
         workbook[cast(str, ENV.get("SPREADSHEET_CATEGORIES_PAGE_NAME", "Categories"))]
     )
 
@@ -769,7 +790,7 @@ def build(build_path: str =join(dirname(realpath(__file__)), "docs/")):
     links_by_category = get_links_by_category(links_page_lines)
     categories = get_categories(links_page_lines, categories_page_lines)
 
-    category_str_list = [r[CATEGORY_COLUMN_INDEX] for r in links_page_lines]
+    category_str_list = [r[get_column_index('category_str')] for r in links_page_lines]
     create_category_paths(build_path, category_str_list)
 
     render_json(build_path, categories, links_by_category)

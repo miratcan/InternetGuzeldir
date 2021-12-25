@@ -1,5 +1,5 @@
 from dotenv import dotenv_values
-from rebuild import get_lines, get_links_by_date
+from rebuild import get_rows, get_links_by_date
 import pickle
 import tweepy
 from urllib.parse import urljoin
@@ -58,7 +58,7 @@ class Tweeter:
                 workbook = load_workbook(filename=spreadsheet_file.name,
                                          read_only=True)
         self.links_sheet = get_links_by_date(
-            get_lines(workbook[ENV['SPREADSHEET_LINKS_PAGE_NAME']]), reverse=False
+            get_rows(workbook[ENV['SPREADSHEET_LINKS_PAGE_NAME']]), reverse=False
         )
 
     def create_index(self):
