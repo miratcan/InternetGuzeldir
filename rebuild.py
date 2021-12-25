@@ -15,7 +15,8 @@ import json
 import logging
 import sys
 import urllib.request
-from collections import defaultdict
+from collections import defaultdict, namedtuple
+from dataclasses import dataclass
 from datetime import datetime as type_date
 from distutils.util import strtobool
 from os import makedirs as _makedirs, walk, sep as directory_seperator  # noqa
@@ -58,6 +59,20 @@ LINK_COLUMNS: tuple[str, ...] = (
     "create_time",
 )
 
+
+@dataclass
+class Link:
+    title: str
+    url: str
+    desc: str
+    category_str: str
+    kind: str
+    lang: str
+    sender: str
+    source: str
+    create_time: type_date
+
+
 CATEGORY_COLUMN_INDEX: int = LINK_COLUMNS.index("category_str")
 ENV: Dict = dotenv_values(join(dirname(realpath(__file__)), ".env"))
 
@@ -66,8 +81,7 @@ HTMLMIN_KWARGS: Dict[str, bool] = {
     "remove_comments": True,
 }
 
-Line = Tuple[Any]
-
+Line = Tuple[Any, ...]
 
 def processor_fallback(text: str, **kwargs: List[Any]) -> str:
     """This is a fallback function for any kind of text processors like \
@@ -99,14 +113,14 @@ if strtobool(cast(str, ENV.get("MINIMIZE_HTML", "True"))):
         )
 
 
-def get_lines(worksheet: Worksheet) -> List[List[Union[str, None, type_date]]]:
+def get_lines(worksheet: Worksheet) -> List[Line]:
     """Load lines from worksheet and return as list of lists.
 
     :param worksheet: Worksheet Object
     :return: list
     """
     logger.debug("Parsing lines from worksheet.")
-    result: List[List[Union[str, None, type_date]]] = []
+    result: List[Line] = []
     for idx, row in enumerate(worksheet.rows):
         if idx == 0:
             continue
@@ -228,12 +242,10 @@ def get_link_from_row(link_row):
 tzinfo=datetime.timezone(datetime.timedelta(seconds=10800))), \
 'file_path': 'internet/search-engines/https-google-com.html'}
     """
-    link = {
-        column: link_row[index] for index, column in enumerate(LINK_COLUMNS)
-    }
-    if link["create_time"] is None:
+    link = Link(link_row[index] for index, column in enumerate(LINK_COLUMNS))
+    if link.create_time is None:
         raise ValueError("Line %s has missing create_time value." % line)
-    link["create_time"] = link["create_time"].replace(
+    link.create_time = link["create_time"].replace(
         tzinfo=datetime.timezone(
             datetime.timedelta(hours=int(ENV.get("TIMEZONE_HOURS", "3")))
         )
