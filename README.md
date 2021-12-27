@@ -49,7 +49,6 @@ mevcut:
 - HTML/CSS/Python bilginiz varsa issues bölümüne gidip yapılmayı bekleyen
   işleri yapıp pull request açabilirsiniz. (Projenin nasıl çalıştırılacağı
   aşağıda anlatılacaktır)
-  =======
 - Var olan, problemli linkleri, imla hatalarını, seo dostu olmayan açıklama
   metinlerini link detay sayfalarındaki yorum alanını raporlayabilirsiniz. (
   Örnek)
