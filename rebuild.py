@@ -265,7 +265,7 @@ def get_link_from_row(row: LinkRow) -> Link:
             )
         ),
         get_category_path(row[get_column_index("category_str")])
-        + slugify(row[get_column_index("url")] + ".html"),
+        + slugify(row[get_column_index("url")]) + ".html"
     )
     return link
 
@@ -657,7 +657,12 @@ def render_links(
         document.getElementsByClassName('socializer')[0].remove()
         document.getElementsByTagName('p')[1].classList.remove('mb');
     """
-    browser = None
+    browser = get_browser()
+    if browser is None:
+        logger.info(
+            "Not able to run Selenium. "
+            "Screenshots will not be generated."
+        )
     for category_str, links in links_by_category.items():
         for link in links:
             file_path = join(base_path, cast(str, link.file_path))
@@ -674,21 +679,12 @@ def render_links(
                         **HTMLMIN_KWARGS,
                     )
                 )
+            logger.debug(f'{file_path} written.')
             image_path = join(base_path, image_url)
-            if force or not exists(image_path):
-                if not browser:
-                    browser = get_browser()
-                    if browser is None:
-                        logger.info(
-                            "Not able to run Selenium. "
-                            "Screenshots will not be generated."
-                        )
-                        return
-
+            if force or not exists(image_path) and browser:
                 browser.get("file://" + join(base_path, file_path))
                 browser.execute_script(cleaner_js)
                 browser.save_screenshot(join(base_path, image_url))
-
     if browser:
         browser.close()
 
