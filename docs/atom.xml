@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2022-01-04T08:42:12.307901+00:00</updated>
+  <updated>2022-01-08T08:59:19.229451+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -365,20 +365,6 @@
     <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-ditherit-com.html" rel="alternate" type="text/html" title="Dither It"/>
   </entry>
   <entry>
-    <id>grafik-tasarim/araclar/https-spritestack-io.html</id>
-    <title>SpriteStack</title>
-    <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>3Boyutlu pixel art yapmak ve paylaşmak için web uygulaması.</content>
-    <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-spritestack-io.html" rel="alternate" type="text/html" title="SpriteStack"/>
-  </entry>
-  <entry>
-    <id>grafik-tasarim/araclar/https-www-piskelapp-com.html</id>
-    <title>PiskelApp</title>
-    <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>Oyun geliştiriciler ve pixel art sevenler için sprite editör.</content>
-    <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-www-piskelapp-com.html" rel="alternate" type="text/html" title="PiskelApp"/>
-  </entry>
-  <entry>
     <id>grafik-tasarim/araclar/https-vectr-com.html</id>
     <title>Vectr</title>
     <updated>2020-01-01T00:00:00+03:00</updated>
@@ -573,41 +559,6 @@
     <updated>2020-01-01T00:00:00+03:00</updated>
     <content>Modern web deneyimleri için uyarlanabilir arayüz sistemi.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/catilar/https-www-fast-design.html" rel="alternate" type="text/html" title="Fast"/>
-  </entry>
-  <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/kaynaklar/https-demoman-net-a-trig-for-games.html</id>
-    <title>Trigonometry for Games</title>
-    <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>Oyun geliştiricileri için trigonometri dersi veren online uygulama.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/kaynaklar/https-demoman-net-a-trig-for-games.html" rel="alternate" type="text/html" title="Trigonometry for Games"/>
-  </entry>
-  <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/araclar/https-probabletrain-itch-io-dungeon-scrawl.html</id>
-    <title>Dungeon Scrawl</title>
-    <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>Oyun geliştiriciler için harita yapma uygulaması.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/araclar/https-probabletrain-itch-io-dungeon-scrawl.html" rel="alternate" type="text/html" title="Dungeon Scrawl"/>
-  </entry>
-  <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/araclar/https-github-com-cstoquer-pixelbox.html</id>
-    <title>PixelboxJS</title>
-    <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>İçerisinde dahili olarak sprite, harita, ses efekti ve müzik editörlerini barındıran 2 boyutlu oyun geliştirme kütüphanesi.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/araclar/https-github-com-cstoquer-pixelbox.html" rel="alternate" type="text/html" title="PixelboxJS"/>
-  </entry>
-  <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/https-makegames-tumblr-com-post-1136623767-finishing-a-game.html</id>
-    <title>Finishing a Game</title>
-    <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>Oyun geliştirmeye başlamak isteyen geliştiriciler için öğütler.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/https-makegames-tumblr-com-post-1136623767-finishing-a-game.html" rel="alternate" type="text/html" title="Finishing a Game"/>
-  </entry>
-  <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/https-cs50-harvard-edu-games-2018.html</id>
-    <title>CS50’s Introduction to Game Development</title>
-    <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/https-cs50-harvard-edu-games-2018.html" rel="alternate" type="text/html" title="CS50’s Introduction to Game Development"/>
   </entry>
   <entry>
     <id>bilgisayarlar/yazilim-gelistirme/makine-ogrenmesi/https-github-com-dennybritz-reinforcement-learning.html</id>
@@ -874,6 +825,55 @@
     <updated>2020-01-01T00:00:00+03:00</updated>
     <content>Vim'de yetenek geliştirmek için çeşitli bulmacalar.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/oyunlar/browser-oyunlari/https-www-vimgolf-com.html" rel="alternate" type="text/html" title="VimGolf"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/kaynaklar/https-demoman-net-a-trig-for-games.html</id>
+    <title>Trigonometry for Games</title>
+    <updated>2020-01-01T00:00:00+03:00</updated>
+    <content>Oyun geliştiricileri için trigonometri dersi veren online uygulama.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/kaynaklar/https-demoman-net-a-trig-for-games.html" rel="alternate" type="text/html" title="Trigonometry for Games"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/araclar/https-probabletrain-itch-io-dungeon-scrawl.html</id>
+    <title>Dungeon Scrawl</title>
+    <updated>2020-01-01T00:00:00+03:00</updated>
+    <content>Oyun geliştiriciler için harita yapma uygulaması.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/araclar/https-probabletrain-itch-io-dungeon-scrawl.html" rel="alternate" type="text/html" title="Dungeon Scrawl"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/araclar/https-github-com-cstoquer-pixelbox.html</id>
+    <title>PixelboxJS</title>
+    <updated>2020-01-01T00:00:00+03:00</updated>
+    <content>İçerisinde dahili olarak sprite, harita, ses efekti ve müzik editörlerini barındıran 2 boyutlu oyun geliştirme kütüphanesi.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/araclar/https-github-com-cstoquer-pixelbox.html" rel="alternate" type="text/html" title="PixelboxJS"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/3d-grafik-duzenleyiciler/https-spritestack-io.html</id>
+    <title>SpriteStack</title>
+    <updated>2020-01-01T00:00:00+03:00</updated>
+    <content>3Boyutlu pixel art yapmak ve paylaşmak için web uygulaması.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/3d-grafik-duzenleyiciler/https-spritestack-io.html" rel="alternate" type="text/html" title="SpriteStack"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/2d-grafik-duzenleyiciler/https-www-piskelapp-com.html</id>
+    <title>PiskelApp</title>
+    <updated>2020-01-01T00:00:00+03:00</updated>
+    <content>Oyun geliştiriciler ve pixel art sevenler için sprite editör.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/2d-grafik-duzenleyiciler/https-www-piskelapp-com.html" rel="alternate" type="text/html" title="PiskelApp"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/https-makegames-tumblr-com-post-1136623767-finishing-a-game.html</id>
+    <title>Finishing a Game</title>
+    <updated>2020-01-01T00:00:00+03:00</updated>
+    <content>Oyun geliştirmeye başlamak isteyen geliştiriciler için öğütler.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/https-makegames-tumblr-com-post-1136623767-finishing-a-game.html" rel="alternate" type="text/html" title="Finishing a Game"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/https-cs50-harvard-edu-games-2018.html</id>
+    <title>CS50’s Introduction to Game Development</title>
+    <updated>2020-01-01T00:00:00+03:00</updated>
+    <content>Her ayrı derste farklı mekaniklere sahip oyunların Lua ve Unity üzerinden anlatıldığı Harvard Üniversitesi tarafından hazırlanan oyun geliştirmeye giriş dersi.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/https-cs50-harvard-edu-games-2018.html" rel="alternate" type="text/html" title="CS50’s Introduction to Game Development"/>
   </entry>
   <entry>
     <id>bilgisayarlar/blokzincir/https-www-stateofthedapps-com.html</id>
@@ -1464,13 +1464,6 @@
     <link href="https://internetguzeldir.com/diger/https-wormhole-app.html" rel="alternate" type="text/html" title="WormHole"/>
   </entry>
   <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/araclar/https-www-inklestudios-com-ink.html</id>
-    <title>Inkle</title>
-    <updated>2021-06-26T00:00:00+03:00</updated>
-    <content>İnteraktif hikayeler yazmak için geliştirilmiş betik dili ve editörü.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/araclar/https-www-inklestudios-com-ink.html" rel="alternate" type="text/html" title="Inkle"/>
-  </entry>
-  <entry>
     <id>bilgisayarlar/yazilim-gelistirme/javascript/kutuphaneler/https-github-com-vadimdemedes-ink.html</id>
     <title>Ink</title>
     <updated>2021-06-26T00:00:00+03:00</updated>
@@ -1490,6 +1483,13 @@
     <updated>2021-06-26T00:00:00+03:00</updated>
     <content>Kendi betik dilinizi nasıl oluşturabileceğinizi anlatan bir online kitap.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/https-craftinginterpreters-com.html" rel="alternate" type="text/html" title="Crafting Interpreters"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/araclar/https-www-inklestudios-com-ink.html</id>
+    <title>Inkle</title>
+    <updated>2021-06-26T00:00:00+03:00</updated>
+    <content>İnteraktif hikayeler yazmak için geliştirilmiş betik dili ve editörü.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/araclar/https-www-inklestudios-com-ink.html" rel="alternate" type="text/html" title="Inkle"/>
   </entry>
   <entry>
     <id>seyahat/ihttps-kampolog-com.html</id>
@@ -1800,11 +1800,11 @@
     <link href="https://internetguzeldir.com/yasam-tarzi/dekorasyon/https-stickker-net.html" rel="alternate" type="text/html" title="Stickker"/>
   </entry>
   <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/araclar/https-www-rpgmakerweb-com.html</id>
+    <id>bilgisayarlar/oyun-gelistirme/araclar/https-www-rpgmakerweb-com.html</id>
     <title>RPG Maker</title>
     <updated>2021-07-15T00:00:00+03:00</updated>
     <content>Rpg oyun yapmak için oyun motoru.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/araclar/https-www-rpgmakerweb-com.html" rel="alternate" type="text/html" title="RPG Maker"/>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/araclar/https-www-rpgmakerweb-com.html" rel="alternate" type="text/html" title="RPG Maker"/>
   </entry>
   <entry>
     <id>yasam-tarzi/topluluklar/https-kommunity-com.html</id>
@@ -2311,18 +2311,18 @@
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-github-com-sepandhaghighi-samila.html" rel="alternate" type="text/html" title="Samila"/>
   </entry>
   <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/https-github-com-jaysmito101-terragen3d.html</id>
-    <title>TerraGen3D</title>
-    <updated>2021-10-26T00:00:00+03:00</updated>
-    <content>Oyun geliştiriciler için arazi üretme aracı.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/oyun-gelistirme/https-github-com-jaysmito101-terragen3d.html" rel="alternate" type="text/html" title="TerraGen3D"/>
-  </entry>
-  <entry>
     <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-sitepoint-com-solidity-pitfalls-random-number-generation-for-ethereum-text-solidity-20is-20not-20capable-20of-more-20basic-20solutions-20are-20used.html</id>
     <title>Solidity Pitfalls: Random Number Generation for Ethereum</title>
     <updated>2021-10-26T00:00:00+03:00</updated>
     <content>Eğer ilgili iseniz Solidity dilini kullanırken rastgele sayı üretmenin ne kadar zor olduğunu bilirsiniz. Bu makale rastgele sayı üretebilmek için çeşitli yöntemleri incelemiş.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-sitepoint-com-solidity-pitfalls-random-number-generation-for-ethereum-text-solidity-20is-20not-20capable-20of-more-20basic-20solutions-20are-20used.html" rel="alternate" type="text/html" title="Solidity Pitfalls: Random Number Generation for Ethereum"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/https-github-com-jaysmito101-terragen3d.html</id>
+    <title>TerraGen3D</title>
+    <updated>2021-10-26T00:00:00+03:00</updated>
+    <content>Oyun geliştiriciler için arazi üretme aracı.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/https-github-com-jaysmito101-terragen3d.html" rel="alternate" type="text/html" title="TerraGen3D"/>
   </entry>
   <entry>
     <id>bilgisayarlar/blokzincir/https-dergipark-org-tr-tr-download-article-file-788029.html</id>
@@ -2374,13 +2374,6 @@
     <link href="https://internetguzeldir.com/muzik/https-twitter-com-konsertadinda.html" rel="alternate" type="text/html" title="8D Müzik"/>
   </entry>
   <entry>
-    <id>grafik-tasarim/kaynaklar/http-velvetyne-fr.html</id>
-    <title>VTF</title>
-    <updated>2021-11-09T00:00:00+03:00</updated>
-    <content>Açık kaynaklı fontlar üreten bir tasarım topluluğuna ait web sitesi. İçerisinde yüzlerce açık kaynaklı font var.</content>
-    <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/http-velvetyne-fr.html" rel="alternate" type="text/html" title="VTF"/>
-  </entry>
-  <entry>
     <id>sanat/resim/https-artvee-com.html</id>
     <title>Artvee</title>
     <updated>2021-11-09T00:00:00+03:00</updated>
@@ -2388,32 +2381,11 @@
     <link href="https://internetguzeldir.com/sanat/resim/https-artvee-com.html" rel="alternate" type="text/html" title="Artvee"/>
   </entry>
   <entry>
-    <id>kafa-dagitma/https-bestwatch-app-country-us.html</id>
-    <title>Bestwatch.App</title>
-    <updated>2021-11-11T00:00:00+03:00</updated>
-    <content>Bu site Netflix'deki filmleri IMDB puanlarına göre sıralamanıza ve fıltrelemenizi sağlayarak karar vermenizi kolaylaştırıyor.</content>
-    <link href="https://internetguzeldir.com/kafa-dagitma/https-bestwatch-app-country-us.html" rel="alternate" type="text/html" title="Bestwatch.App"/>
-  </entry>
-  <entry>
-    <id>kafa-dagitma/anlamsiz-web-siteleri/https-128milyardolar-net.html</id>
-    <title>128 Milyar Dolar Nerede?</title>
-    <updated>2021-11-11T00:00:00+03:00</updated>
-    <content>128 milyar dolar harcama simülatörü. Harca harca bitmiyor. </content>
-    <link href="https://internetguzeldir.com/kafa-dagitma/anlamsiz-web-siteleri/https-128milyardolar-net.html" rel="alternate" type="text/html" title="128 Milyar Dolar Nerede?"/>
-  </entry>
-  <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/https-www-codepng-app.html</id>
-    <title>Code PNG</title>
-    <updated>2021-11-11T00:00:00+03:00</updated>
-    <content>Kod parçacığınızdan çok güzel gözüken, sosyal medyada paylaşılabilir bir görsel yaratmaya yarayan online araç.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/https-www-codepng-app.html" rel="alternate" type="text/html" title="Code PNG"/>
-  </entry>
-  <entry>
-    <id>ebeveyinlik/https-www-direnc-net-matatalab-kodlama-seti.html</id>
-    <title>Matalab Kodlama Seti</title>
-    <updated>2021-11-11T00:00:00+03:00</updated>
-    <content>Okul öncesi çocuklara kodlamayı öğretebilmek için geliştirilmiş kodlama seti.</content>
-    <link href="https://internetguzeldir.com/ebeveyinlik/https-www-direnc-net-matatalab-kodlama-seti.html" rel="alternate" type="text/html" title="Matalab Kodlama Seti"/>
+    <id>grafik-tasarim/kaynaklar/http-velvetyne-fr.html</id>
+    <title>VTF</title>
+    <updated>2021-11-09T00:00:00+03:00</updated>
+    <content>Açık kaynaklı fontlar üreten bir tasarım topluluğuna ait web sitesi. İçerisinde yüzlerce açık kaynaklı font var.</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/http-velvetyne-fr.html" rel="alternate" type="text/html" title="VTF"/>
   </entry>
   <entry>
     <id>sanat/resim/http-www-hurikiris-com.html</id>
@@ -2430,6 +2402,34 @@
     <link href="https://internetguzeldir.com/sanat/resim/https-www-pauljackson-com.html" rel="alternate" type="text/html" title="Paul Jackson"/>
   </entry>
   <entry>
+    <id>kafa-dagitma/anlamsiz-web-siteleri/https-128milyardolar-net.html</id>
+    <title>128 Milyar Dolar Nerede?</title>
+    <updated>2021-11-11T00:00:00+03:00</updated>
+    <content>128 milyar dolar harcama simülatörü. Harca harca bitmiyor. </content>
+    <link href="https://internetguzeldir.com/kafa-dagitma/anlamsiz-web-siteleri/https-128milyardolar-net.html" rel="alternate" type="text/html" title="128 Milyar Dolar Nerede?"/>
+  </entry>
+  <entry>
+    <id>kafa-dagitma/https-bestwatch-app-country-us.html</id>
+    <title>Bestwatch.App</title>
+    <updated>2021-11-11T00:00:00+03:00</updated>
+    <content>Bu site Netflix'deki filmleri IMDB puanlarına göre sıralamanıza ve fıltrelemenizi sağlayarak karar vermenizi kolaylaştırıyor.</content>
+    <link href="https://internetguzeldir.com/kafa-dagitma/https-bestwatch-app-country-us.html" rel="alternate" type="text/html" title="Bestwatch.App"/>
+  </entry>
+  <entry>
+    <id>ebeveyinlik/https-www-direnc-net-matatalab-kodlama-seti.html</id>
+    <title>Matalab Kodlama Seti</title>
+    <updated>2021-11-11T00:00:00+03:00</updated>
+    <content>Okul öncesi çocuklara kodlamayı öğretebilmek için geliştirilmiş kodlama seti.</content>
+    <link href="https://internetguzeldir.com/ebeveyinlik/https-www-direnc-net-matatalab-kodlama-seti.html" rel="alternate" type="text/html" title="Matalab Kodlama Seti"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/https-www-codepng-app.html</id>
+    <title>Code PNG</title>
+    <updated>2021-11-11T00:00:00+03:00</updated>
+    <content>Kod parçacığınızdan çok güzel gözüken, sosyal medyada paylaşılabilir bir görsel yaratmaya yarayan online araç.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/https-www-codepng-app.html" rel="alternate" type="text/html" title="Code PNG"/>
+  </entry>
+  <entry>
     <id>bilgisayarlar/yazilim-gelistirme/http-developerexcuses-com.html</id>
     <title>Developer Excuses</title>
     <updated>2021-11-15T00:00:00+03:00</updated>
@@ -2444,20 +2444,6 @@
     <link href="https://internetguzeldir.com/sanat/3b-sanat/http-brunoquintela-com.html" rel="alternate" type="text/html" title="Bruno Quintela"/>
   </entry>
   <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/retro-sistemler/https-github-com-id-software-doom.html</id>
-    <title>Doom Source Code</title>
-    <updated>2021-11-27T00:00:00+03:00</updated>
-    <content>ID software'in efsanevi oyunu olan DOOM'un kaynak kodu.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/retro-sistemler/https-github-com-id-software-doom.html" rel="alternate" type="text/html" title="Doom Source Code"/>
-  </entry>
-  <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/http-xn-gelitiriciyazlar-mqcd47f-com.html</id>
-    <title>Geliştirici Yazıları</title>
-    <updated>2021-11-27T00:00:00+03:00</updated>
-    <content>Türkçe yazılım geliştirme makalelerini toplayıp listeleyen web sitesi.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/http-xn-gelitiriciyazlar-mqcd47f-com.html" rel="alternate" type="text/html" title="Geliştirici Yazıları"/>
-  </entry>
-  <entry>
     <id>grafik-tasarim/araclar/https-subchristsoftware-itch-io-charpad-pro.html</id>
     <title>CharPad Pro</title>
     <updated>2021-11-27T00:00:00+03:00</updated>
@@ -2465,11 +2451,25 @@
     <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-subchristsoftware-itch-io-charpad-pro.html" rel="alternate" type="text/html" title="CharPad Pro"/>
   </entry>
   <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/retro-sistemler/https-github-com-id-software-doom.html</id>
+    <title>Doom Source Code</title>
+    <updated>2021-11-27T00:00:00+03:00</updated>
+    <content>ID software'in efsanevi oyunu olan DOOM'un kaynak kodu.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/retro-sistemler/https-github-com-id-software-doom.html" rel="alternate" type="text/html" title="Doom Source Code"/>
+  </entry>
+  <entry>
     <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-devtwins-com-blog-understanding-mapping-vs-array-in-solidity.html</id>
     <title>Understanding Mapping vs Array in Solidity</title>
     <updated>2021-11-27T00:00:00+03:00</updated>
     <content>Solidity dilinde map ve listelerin kullanımının detaylı incelendiği makale.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-devtwins-com-blog-understanding-mapping-vs-array-in-solidity.html" rel="alternate" type="text/html" title="Understanding Mapping vs Array in Solidity"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/http-xn-gelitiriciyazlar-mqcd47f-com.html</id>
+    <title>Geliştirici Yazıları</title>
+    <updated>2021-11-27T00:00:00+03:00</updated>
+    <content>Türkçe yazılım geliştirme makalelerini toplayıp listeleyen web sitesi.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/http-xn-gelitiriciyazlar-mqcd47f-com.html" rel="alternate" type="text/html" title="Geliştirici Yazıları"/>
   </entry>
   <entry>
     <id>bilgisayarlar/yazilim-gelistirme/https-keepachangelog-com-en-1-0-0.html</id>
@@ -2549,18 +2549,18 @@
     <link href="https://internetguzeldir.com/pazarlama/https-raumet-com-marketing.html" rel="alternate" type="text/html" title="Marketing is Scary for a Solo Developer"/>
   </entry>
   <entry>
-    <id>bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/kaynaklar/https-web-dev-patterns-layout.html</id>
-    <title>Layout Patterns</title>
-    <updated>2021-12-15T00:00:00+03:00</updated>
-    <content>Bir önyüz geliştirmesi yaparken en çok kullanılan CSS patternlerinin listelendiği, mutlaka sıkıştıkça başvurulması gereken bir kaynak.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/kaynaklar/https-web-dev-patterns-layout.html" rel="alternate" type="text/html" title="Layout Patterns"/>
-  </entry>
-  <entry>
     <id>bilgisayarlar/yazilim-gelistirme/surum-kontrol/https-ohshitgit-com-tr.html</id>
     <title>Hasktir, Git!?!</title>
     <updated>2021-12-15T00:00:00+03:00</updated>
     <content>Git sürüm kontrol sistemini kullanırken bir şeyleri sıçıp batırdıysanız, nasıl düzelteceğinizi bu siteden bulmanız garanti.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/surum-kontrol/https-ohshitgit-com-tr.html" rel="alternate" type="text/html" title="Hasktir, Git!?!"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/kaynaklar/https-web-dev-patterns-layout.html</id>
+    <title>Layout Patterns</title>
+    <updated>2021-12-15T00:00:00+03:00</updated>
+    <content>Bir önyüz geliştirmesi yaparken en çok kullanılan CSS patternlerinin listelendiği, mutlaka sıkıştıkça başvurulması gereken bir kaynak.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/onyuz-gelistirme/kaynaklar/https-web-dev-patterns-layout.html" rel="alternate" type="text/html" title="Layout Patterns"/>
   </entry>
   <entry>
     <id>bilgisayarlar/oyunlar/browser-oyunlari/https-zty-pe.html</id>
@@ -2582,5 +2582,75 @@
     <updated>2021-12-16T00:00:00+03:00</updated>
     <content>Vegan olmaya karar vermiş kişiler  için rehber niteliğinde web sitesi.</content>
     <link href="https://internetguzeldir.com/yasam-tarzi/yeme-icme/veganlik/https-www-veganoluyorum-com.html" rel="alternate" type="text/html" title="Vegan Oluyorum"/>
+  </entry>
+  <entry>
+    <id>is-isci-bulma/https-jobspresso-co.html</id>
+    <title>Jobspresso</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>Uzaktan çalışılmaya müsait işler için iş işçi bulma platformu.</content>
+    <link href="https://internetguzeldir.com/is-isci-bulma/https-jobspresso-co.html" rel="alternate" type="text/html" title="Jobspresso"/>
+  </entry>
+  <entry>
+    <id>is-isci-bulma/https-justremote-co.html</id>
+    <title>Just Remote</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>Dünyanın dört bir yanından Uzak İşleri keşfedin. İşe gidip gelmekten vazgeçin, uzaktan çalışın ve sevdiğiniz şeyi her gün, her yerden yapın.</content>
+    <link href="https://internetguzeldir.com/is-isci-bulma/https-justremote-co.html" rel="alternate" type="text/html" title="Just Remote"/>
+  </entry>
+  <entry>
+    <id>is-isci-bulma/https-www-flexjobs-com.html</id>
+    <title>Flex Jobs</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>2007'den beri elle taranan esnek ve uzaktan çalışabilen işler için iş arama sitesi. Ayrıca özgeçmiş, koçluk ve kariyer yardımı da veriyorlarmış.</content>
+    <link href="https://internetguzeldir.com/is-isci-bulma/https-www-flexjobs-com.html" rel="alternate" type="text/html" title="Flex Jobs"/>
+  </entry>
+  <entry>
+    <id>is-isci-bulma/https-weworkremotely-com.html</id>
+    <title>We Work Remotely</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>Dünyadaki en büyük uzaktan çalışma topluluğu olduğunu iddia eden iş ve işçi bulma platformu.</content>
+    <link href="https://internetguzeldir.com/is-isci-bulma/https-weworkremotely-com.html" rel="alternate" type="text/html" title="We Work Remotely"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/javascript/https-dmitripavlutin-com-gentle-explanation-of-this-in-javascript.html</id>
+    <title>Gentle Explanation of "this" in JavaScript</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>Javascript'deki this kavramını nazikçe anlatan makale.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/javascript/https-dmitripavlutin-com-gentle-explanation-of-this-in-javascript.html" rel="alternate" type="text/html" title="Gentle Explanation of &quot;this&quot; in JavaScript"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyunlar/browser-oyunlari/https-princejs-com.html</id>
+    <title>PrinceJs</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>Efsanevi Prince of Persia oyunun browser içerisinde çalışabilen hali.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyunlar/browser-oyunlari/https-princejs-com.html" rel="alternate" type="text/html" title="PrinceJs"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/hayali-konsollar/https-www-lexaloffle-com-pico-8-php.html</id>
+    <title>Pico8</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>Oyun geliştiriciler için hayali sanal 8 bit oyun konsolu. İçerisinde kod, sprite, ses ve müzik düzenleyiciler mevcut.  </content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/hayali-konsollar/https-www-lexaloffle-com-pico-8-php.html" rel="alternate" type="text/html" title="Pico8"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/hayali-konsollar/https-tic80-com.html</id>
+    <title>TIC-80</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>Oyun geliştiriciler için hayali sanal 8 bit oyun konsolu. İçerisinde kod, sprite, ses ve müzik düzenleyiciler mevcut.  Göreceli olarak Pico-8'den daha yetenekli olduğunu söyleyebilirim ancak Pico-8 kadar güçlü bir topluluğa sahip değil.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/hayali-konsollar/https-tic80-com.html" rel="alternate" type="text/html" title="TIC-80"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/kaynaklar/http-students-cs-ucl-ac-uk-schoolslab-projects-ht5-index-html.html</id>
+    <title>Making a Lunar Lander in JavaScript</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>London Global University'nin öğrencileri için hazırladığı, aya inme oyunu geliştirmeyi anlatan bunu yaparken de Newton'un Philosophiae Naturalis Principia Mathematica eserinde bahsettiği doğadaki hareket kanunlarını öğreten makale.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/kaynaklar/http-students-cs-ucl-ac-uk-schoolslab-projects-ht5-index-html.html" rel="alternate" type="text/html" title="Making a Lunar Lander in JavaScript"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyun-gelistirme/karo-duzenleyiciler/https-rxi-itch-io-tilekit.html</id>
+    <title>Tilekit</title>
+    <updated>2022-01-08T00:00:00+03:00</updated>
+    <content>Oldukça becerikli ve akıllı bir karo düzenleyici. 20$ fiyatı var.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/karo-duzenleyiciler/https-rxi-itch-io-tilekit.html" rel="alternate" type="text/html" title="Tilekit"/>
   </entry>
 </feed>
