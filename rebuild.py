@@ -123,7 +123,10 @@ if strtobool(cast(str, ENV.get("MINIMIZE_HTML", "True"))):
 
 @lru_cache(maxsize=len(LINK_COLUMNS))
 def get_column_index(key: str) -> int:
-    return LINK_COLUMNS.index(key)
+    try:
+        return LINK_COLUMNS.index(key)
+    except ValueError:
+        raise ValueError(f"Invalid column name: {key}")
 
 
 def get_rows(worksheet: Worksheet) -> List[LinkRow]:
@@ -247,7 +250,7 @@ def get_link_from_row(row: LinkRow) -> Link:
     if row[get_column_index("create_time")] is None:
         raise ValueError(
             "Line %s has missing create_time value."
-            % row[get_column_index("row_number")]
+            % row
         )
     link = Link(
         row[get_column_index("line_number")],

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2022-01-08T08:59:19.229451+00:00</updated>
+  <updated>2022-02-05T09:12:57.357703+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -2216,7 +2216,6 @@
     <id>yasam-tarzi/hobi/amigurumi/https-www-leithygurumi-com.html</id>
     <title>Leithygurumi</title>
     <updated>2021-10-14T00:00:00+03:00</updated>
-    <content>Çok çeşitli amigurumi oyuncakların ücretsiz tariflerini içeren web sitesi.</content>
     <link href="https://internetguzeldir.com/yasam-tarzi/hobi/amigurumi/https-www-leithygurumi-com.html" rel="alternate" type="text/html" title="Leithygurumi"/>
   </entry>
   <entry>
@@ -2652,5 +2651,33 @@
     <updated>2022-01-08T00:00:00+03:00</updated>
     <content>Oldukça becerikli ve akıllı bir karo düzenleyici. 20$ fiyatı var.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/karo-duzenleyiciler/https-rxi-itch-io-tilekit.html" rel="alternate" type="text/html" title="Tilekit"/>
+  </entry>
+  <entry>
+    <id>saglik/http-engindusun-com.html</id>
+    <title>Engin Düşün</title>
+    <updated>2022-02-05T00:00:00+03:00</updated>
+    <content>Toplumu uyuşturucu/uyarıcı maddeler, madde kullanımı, bağımlılık, ve pozitif psikoloji alanlarında bilgilendirmek için psikolojik, tıbbi ve yasal bağlamlarda paylaşımlar yapan, kar amacı gütmeyen bir eğitim ve araştırma platformudur.</content>
+    <link href="https://internetguzeldir.com/saglik/http-engindusun-com.html" rel="alternate" type="text/html" title="Engin Düşün"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/https-medium-com-mgundogdu-how-do-i-keep-my-focus-as-developer-with-adhd-attention-deficit-hyperactivity-disorder-526ba045321b.html</id>
+    <title>How Do I Keep My Focus as Developer With ADHD</title>
+    <updated>2022-02-05T00:00:00+03:00</updated>
+    <content>Dikkat dağınıklığı problemiyle mücadele eden yazılımcılar için Mahmut Gündoğdu'nun yazdığı rehber niteliğinde makale.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/https-medium-com-mgundogdu-how-do-i-keep-my-focus-as-developer-with-adhd-attention-deficit-hyperactivity-disorder-526ba045321b.html" rel="alternate" type="text/html" title="How Do I Keep My Focus as Developer With ADHD"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/lua/https-devhints-io-lua.html</id>
+    <title>Lua Cheatsheet</title>
+    <updated>2022-02-05T00:00:00+03:00</updated>
+    <content>Lua programlama dilini kullanarak bir şeyler yapmaya çalışıyor ancak sık sık Google'a başvurmak durumunda kalıyorsanız, bir çok konuda hatırlatma niteliğinde bir çok nota sahip bu kopya kağıdını kullanmak isteyebilirsiniz.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/lua/https-devhints-io-lua.html" rel="alternate" type="text/html" title="Lua Cheatsheet"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/kaynaklar/https-eczaneleri-net-nobetci-eczane-api.html</id>
+    <title>Nöbetçi Eczane API</title>
+    <updated>2022-02-05T00:00:00+03:00</updated>
+    <content>Güzel projeler yapılabilecek nöbetçi eczane API servisi. Faydalı olabilir.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/kaynaklar/https-eczaneleri-net-nobetci-eczane-api.html" rel="alternate" type="text/html" title="Nöbetçi Eczane API"/>
   </entry>
 </feed>
