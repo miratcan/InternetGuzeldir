@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2022-02-06T02:21:38.636867+00:00</updated>
+  <updated>2022-02-17T08:08:54.603746+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -2679,5 +2679,12 @@
     <updated>2022-02-05T00:00:00+03:00</updated>
     <content>Güzel projeler yapılabilecek nöbetçi eczane API servisi. Faydalı olabilir.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/kaynaklar/https-eczaneleri-net-nobetci-eczane-api.html" rel="alternate" type="text/html" title="Nöbetçi Eczane API"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-suayip-medium-com-python-ile-metaprogramlamaya-bir-bak-c4-b1-c5-9f-d7771d468558.html</id>
+    <title>Python ile metaprogramlamaya bir bakış</title>
+    <updated>2022-02-17T00:00:00+03:00</updated>
+    <content>Şuayip Üzülmez'in yazdığı Python ile Metaprogramlama konusunda yazılmış gördüğüm en iyi Türkçe makale.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-suayip-medium-com-python-ile-metaprogramlamaya-bir-bak-c4-b1-c5-9f-d7771d468558.html" rel="alternate" type="text/html" title="Python ile metaprogramlamaya bir bakış"/>
   </entry>
 </feed>
