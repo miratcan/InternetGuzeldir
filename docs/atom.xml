@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2022-02-17T08:08:54.603746+00:00</updated>
+  <updated>2022-04-14T09:12:30.560617+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -690,7 +690,7 @@
     <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-docs-ethers-io-v5.html</id>
     <title>Ethers</title>
     <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>Ethers.js kitaplığı, Ethereum Blockchain ve ekosistemi ile etkileşim için eksiksiz ve kompakt bir kütüphane olmayı amaçlayan proje. </content>
+    <content>Ethers.js kitaplığı, Ethereum blokzincir ve ekosistemi ile etkileşim için eksiksiz ve kompakt bir kütüphane olmayı amaçlayan proje. </content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-docs-ethers-io-v5.html" rel="alternate" type="text/html" title="Ethers"/>
   </entry>
   <entry>
@@ -2686,5 +2686,50 @@
     <updated>2022-02-17T00:00:00+03:00</updated>
     <content>Şuayip Üzülmez'in yazdığı Python ile Metaprogramlama konusunda yazılmış gördüğüm en iyi Türkçe makale.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-suayip-medium-com-python-ile-metaprogramlamaya-bir-bak-c4-b1-c5-9f-d7771d468558.html" rel="alternate" type="text/html" title="Python ile metaprogramlamaya bir bakış"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/https-www-reddit-com-r-entrepreneur-comments-tnmn4m-how-onlyfans-canva-snapchat-pinterest-and-others.html</id>
+    <title>How OnlyFans, Canva, Snapchat, Pinterest, and others got their first users.</title>
+    <updated>2022-04-07T00:00:00+03:00</updated>
+    <content>Bahsi geçen sitelerin ilk açıldıklarında kullanımda kalmak için yaptıkları şeyleri anlatan oldukça ilginç bir reddit gönderisi.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/https-www-reddit-com-r-entrepreneur-comments-tnmn4m-how-onlyfans-canva-snapchat-pinterest-and-others.html" rel="alternate" type="text/html" title="How OnlyFans, Canva, Snapchat, Pinterest, and others got their first users."/>
+  </entry>
+  <entry>
+    <id>girisimcilik/https-girisimler-net-yatirimci-gorusmesinden-dersler.html</id>
+    <title>32 Yatırımcı Görüşmesi Bana Ne Öğretti?</title>
+    <updated>2022-04-07T00:00:00+03:00</updated>
+    <content>Şahin Seçil'in yazdığı, görüştüğü yatırımcılardan edindiği deneyimleri anlattığı makale.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/https-girisimler-net-yatirimci-gorusmesinden-dersler.html" rel="alternate" type="text/html" title="32 Yatırımcı Görüşmesi Bana Ne Öğretti?"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/python/https-pythonspeed-com-articles-json-memory-streaming.html</id>
+    <title>Json Memory Streaming</title>
+    <updated>2022-04-07T00:00:00+03:00</updated>
+    <content>Python'da bir JSON dosyası üzerinde işlem yaparken, dosyanın tamamını ayrıştırıp hafızada yer tutması yerine veriyi parça parça ayrıştırmayı ve bu şekilde oluşacak parmak izini küçültmeyi anlatan makale</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/https-pythonspeed-com-articles-json-memory-streaming.html" rel="alternate" type="text/html" title="Json Memory Streaming"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-blog-valist-io-how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a.html</id>
+    <title>How to Connect Web3.js to MetaMask in 2022
+</title>
+    <updated>2022-04-07T00:00:00+03:00</updated>
+    <content>2020'nin ilk çeyreği itibarıyla MetaMask, Web3.js'yi enjekte etmeyi resmen durdurdu ve mevcut sağlayıcıya erişme şeklini değiştirdi. Bu makale DApp'inizin bozulmadığından nasıl emin olacağınız ve onu ekosistemin geri kalanıyla nasıl daha uyumlu hale getireceğinizi açıklıyor.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-blog-valist-io-how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a.html" rel="alternate" type="text/html" title="How to Connect Web3.js to MetaMask in 2022&#10;"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-udemy-com-course-ethereum-and-solidity-the-complete-developers-guide.html</id>
+    <title>Use Ethereum, Solidity, and Smart Contracts to build production-ready apps based on the blockchain.
+</title>
+    <updated>2022-04-07T00:00:00+03:00</updated>
+    <content>Udemy'deki en başarılı Solidity kurslarından biri.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-udemy-com-course-ethereum-and-solidity-the-complete-developers-guide.html" rel="alternate" type="text/html" title="Use Ethereum, Solidity, and Smart Contracts to build production-ready apps based on the blockchain.&#10;"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-udemy-com-course-build-your-blockchain-az.html</id>
+    <title>Blockchain A-Z™: Learn How To Build Your First Blockchain
+</title>
+    <updated>2022-04-07T00:00:00+03:00</updated>
+    <content>Blockchain geliştiriciliğini A'dan Z'ye anlatma iddasındaö Udemy'de çok satan ve çok olumlu yorum almış kurslardan biri. </content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-udemy-com-course-build-your-blockchain-az.html" rel="alternate" type="text/html" title="Blockchain A-Z™: Learn How To Build Your First Blockchain&#10;"/>
   </entry>
 </feed>
