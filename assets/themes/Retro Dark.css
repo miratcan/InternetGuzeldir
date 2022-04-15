@@ -129,9 +129,10 @@ ul.links {
 }
 
 ul.links li {
-  margin: 0 0 4ch 0;
-  padding: 0;
-  position: relative;
+  background: #333;
+  padding: 20px;
+  margin: 0 0 20px 0;
+  border: 1px dashed darkgray;
   overflow: auto;
 }
 
@@ -156,7 +157,7 @@ ul.links li .content {
 }
 
 ul.links li .content .desc {
-  margin: 1ch 0;
+  margin: 0;
 }
 
 a {

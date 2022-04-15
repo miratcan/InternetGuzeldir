@@ -9,11 +9,9 @@
 {% endfor %}
 </ul>
 <ul class="links">
-  {% with include_category=true %}
-    {% for link in latest_links %}
-      {% include "link_as_list_item.html.jinja2" %}
-    {% endfor %}
-  {% endwith %}
+  {% for link in latest_links %}
+    {% include "link_as_list_item.html.jinja2" %}
+  {% endfor %}
 </ul>
 {% endblock %}
 
