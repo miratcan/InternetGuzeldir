@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2022-04-15T07:55:00.810278+00:00</updated>
+  <updated>2022-05-28T16:21:34.555405+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -2731,5 +2731,61 @@
     <updated>2022-04-07T00:00:00+03:00</updated>
     <content>Blockchain geliştiriciliğini A'dan Z'ye anlatma iddasındaö Udemy'de çok satan ve çok olumlu yorum almış kurslardan biri. </content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-udemy-com-course-build-your-blockchain-az.html" rel="alternate" type="text/html" title="Blockchain A-Z™: Learn How To Build Your First Blockchain&#10;"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/blokzincir/https-dapplist-cointelegraph-com.html</id>
+    <title>Coin Telegraph Dapp List</title>
+    <updated>2022-05-28T00:00:00+03:00</updated>
+    <content>Cointelegraph'ın oluşturduğu merkeziyetsiz web uygulamaları listesi.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/blokzincir/https-dapplist-cointelegraph-com.html" rel="alternate" type="text/html" title="Coin Telegraph Dapp List"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/blokzincir/https-thedapplist-com.html</id>
+    <title>The Dapp List</title>
+    <updated>2022-05-28T00:00:00+03:00</updated>
+    <content>Merkeziyetsiz uygulamaları listeleyen web sitesi.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/blokzincir/https-thedapplist-com.html" rel="alternate" type="text/html" title="The Dapp List"/>
+  </entry>
+  <entry>
+    <id>diger/https-www-emojibatch-com.html</id>
+    <title>Emojı Batch</title>
+    <updated>2022-05-28T00:00:00+03:00</updated>
+    <content>İhtiyacınız olan bir emojiyi son derece hızlı şekilde bulmanızı sağlayan web sitesi.</content>
+    <link href="https://internetguzeldir.com/diger/https-www-emojibatch-com.html" rel="alternate" type="text/html" title="Emojı Batch"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-docs-soliditylang-org-en-v0-8-14-natspec-format-html.html</id>
+    <title>Natspec Format</title>
+    <updated>2022-05-28T00:00:00+03:00</updated>
+    <content>Solidiy ile yazdığınız akıllı kontratları nasıl dokümante etmeniz gerektiğini anlatan makale.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-docs-soliditylang-org-en-v0-8-14-natspec-format-html.html" rel="alternate" type="text/html" title="Natspec Format"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/blokzincir/https-tokenlists-org.html</id>
+    <title>Token Lists</title>
+    <updated>2022-05-28T00:00:00+03:00</updated>
+    <content>Ethereum ağındaki çeşitli projelere ait ERC20 kontrat adreslerini listeleyen web sitesi.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/blokzincir/https-tokenlists-org.html" rel="alternate" type="text/html" title="Token Lists"/>
+  </entry>
+  <entry>
+    <id>kafa-dagitma/https-killedbymicrosoft-info.html</id>
+    <title>Killed By Microsoft</title>
+    <updated>2022-05-28T00:00:00+03:00</updated>
+    <content>Microsoft tarafından çöpe atılmış projelerin listelendiği web sitesi.</content>
+    <link href="https://internetguzeldir.com/kafa-dagitma/https-killedbymicrosoft-info.html" rel="alternate" type="text/html" title="Killed By Microsoft"/>
+  </entry>
+  <entry>
+    <id>kafa-dagitma/https-www-paramkimde-com.html</id>
+    <title>Param Kimde?</title>
+    <updated>2022-05-28T00:00:00+03:00</updated>
+    <content>Elinizdeki kağıt parayı online olarak işaretlemenizi ve takip etmenizi sağlayan ilginç bir proje.</content>
+    <link href="https://internetguzeldir.com/kafa-dagitma/https-www-paramkimde-com.html" rel="alternate" type="text/html" title="Param Kimde?"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-consensys-ethereum-developer-tools-list.html</id>
+    <title>Ethereum Developer Tools List</title>
+    <updated>2022-05-28T00:00:00+03:00</updated>
+    <content>Ethereum (Solidity) geliştiricileri için araç kitlerinin listelendiği Github reposu.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-consensys-ethereum-developer-tools-list.html" rel="alternate" type="text/html" title="Ethereum Developer Tools List"/>
   </entry>
 </feed>

@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>tr</language>
-    <lastBuildDate>Fri, 15 Apr 2022 07:55:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 May 2022 16:21:34 +0000</lastBuildDate>
     <item>
       <title>Türkiye'deki Kamp Alanları Listesi</title>
       <link>https://internetguzeldir.com/seyahat/https-www-google-com-maps-d-u-0-viewer-mid-1oxyu1crdfylrtiyijsonakf2xy8-ll-38-624311649181756-2c35-12324238355848-z-6.html</link>
@@ -2344,6 +2344,54 @@
       <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-udemy-com-course-build-your-blockchain-az.html</link>
       <description>Blockchain geliştiriciliğini A'dan Z'ye anlatma iddasındaö Udemy'de çok satan ve çok olumlu yorum almış kurslardan biri. </description>
       <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-udemy-com-course-build-your-blockchain-az.html</guid>
+    </item>
+    <item>
+      <title>Coin Telegraph Dapp List</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/blokzincir/https-dapplist-cointelegraph-com.html</link>
+      <description>Cointelegraph'ın oluşturduğu merkeziyetsiz web uygulamaları listesi.</description>
+      <guid isPermaLink="false">bilgisayarlar/blokzincir/https-dapplist-cointelegraph-com.html</guid>
+    </item>
+    <item>
+      <title>The Dapp List</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/blokzincir/https-thedapplist-com.html</link>
+      <description>Merkeziyetsiz uygulamaları listeleyen web sitesi.</description>
+      <guid isPermaLink="false">bilgisayarlar/blokzincir/https-thedapplist-com.html</guid>
+    </item>
+    <item>
+      <title>Emojı Batch</title>
+      <link>https://internetguzeldir.com/diger/https-www-emojibatch-com.html</link>
+      <description>İhtiyacınız olan bir emojiyi son derece hızlı şekilde bulmanızı sağlayan web sitesi.</description>
+      <guid isPermaLink="false">diger/https-www-emojibatch-com.html</guid>
+    </item>
+    <item>
+      <title>Natspec Format</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-docs-soliditylang-org-en-v0-8-14-natspec-format-html.html</link>
+      <description>Solidiy ile yazdığınız akıllı kontratları nasıl dokümante etmeniz gerektiğini anlatan makale.</description>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/blokzincir/https-docs-soliditylang-org-en-v0-8-14-natspec-format-html.html</guid>
+    </item>
+    <item>
+      <title>Token Lists</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/blokzincir/https-tokenlists-org.html</link>
+      <description>Ethereum ağındaki çeşitli projelere ait ERC20 kontrat adreslerini listeleyen web sitesi.</description>
+      <guid isPermaLink="false">bilgisayarlar/blokzincir/https-tokenlists-org.html</guid>
+    </item>
+    <item>
+      <title>Killed By Microsoft</title>
+      <link>https://internetguzeldir.com/kafa-dagitma/https-killedbymicrosoft-info.html</link>
+      <description>Microsoft tarafından çöpe atılmış projelerin listelendiği web sitesi.</description>
+      <guid isPermaLink="false">kafa-dagitma/https-killedbymicrosoft-info.html</guid>
+    </item>
+    <item>
+      <title>Param Kimde?</title>
+      <link>https://internetguzeldir.com/kafa-dagitma/https-www-paramkimde-com.html</link>
+      <description>Elinizdeki kağıt parayı online olarak işaretlemenizi ve takip etmenizi sağlayan ilginç bir proje.</description>
+      <guid isPermaLink="false">kafa-dagitma/https-www-paramkimde-com.html</guid>
+    </item>
+    <item>
+      <title>Ethereum Developer Tools List</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-consensys-ethereum-developer-tools-list.html</link>
+      <description>Ethereum (Solidity) geliştiricileri için araç kitlerinin listelendiği Github reposu.</description>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-consensys-ethereum-developer-tools-list.html</guid>
     </item>
   </channel>
 </rss>
