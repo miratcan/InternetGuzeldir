@@ -249,8 +249,11 @@ def get_link_from_row(row: LinkRow) -> Link:
     """
     if row[get_column_index("create_time")] is None:
         raise ValueError(
-            "Line %s has missing create_time value."
-            % row
+            "Line %s - Title: %s - has missing create_time value."
+            % (
+                row[get_column_index("line_number")] + 1,
+                row[get_column_index("title")],
+            )
         )
     link = Link(
         row[get_column_index("line_number")],
