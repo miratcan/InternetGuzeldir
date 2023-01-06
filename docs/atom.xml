@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2022-05-28T16:21:34.555405+00:00</updated>
+  <updated>2023-01-06T14:27:33.082053+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -876,11 +876,11 @@
     <link href="https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/https-cs50-harvard-edu-games-2018.html" rel="alternate" type="text/html" title="CS50’s Introduction to Game Development"/>
   </entry>
   <entry>
-    <id>bilgisayarlar/blokzincir/https-www-stateofthedapps-com.html</id>
+    <id>bilgisayarlar/blokzincir/blokzincir-web-dizinleri/https-www-stateofthedapps-com.html</id>
     <title>State of the DApps</title>
     <updated>2021-01-08T00:00:00+03:00</updated>
     <content>Tek tek elle seçilmiş merkeziyetsiz blockchain uygulamaları listesi.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/blokzincir/https-www-stateofthedapps-com.html" rel="alternate" type="text/html" title="State of the DApps"/>
+    <link href="https://internetguzeldir.com/bilgisayarlar/blokzincir/blokzincir-web-dizinleri/https-www-stateofthedapps-com.html" rel="alternate" type="text/html" title="State of the DApps"/>
   </entry>
   <entry>
     <id>calisma-duzeni/https-pomodoro-tracker-com.html</id>
@@ -2216,6 +2216,7 @@
     <id>yasam-tarzi/hobi/amigurumi/https-www-leithygurumi-com.html</id>
     <title>Leithygurumi</title>
     <updated>2021-10-14T00:00:00+03:00</updated>
+    <content>Çeşitli örgü tarifleri.</content>
     <link href="https://internetguzeldir.com/yasam-tarzi/hobi/amigurumi/https-www-leithygurumi-com.html" rel="alternate" type="text/html" title="Leithygurumi"/>
   </entry>
   <entry>
@@ -2710,11 +2711,10 @@
   </entry>
   <entry>
     <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-blog-valist-io-how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a.html</id>
-    <title>How to Connect Web3.js to MetaMask in 2022
-</title>
+    <title>How to Connect Web3.js to MetaMask in 2022</title>
     <updated>2022-04-07T00:00:00+03:00</updated>
     <content>2020'nin ilk çeyreği itibarıyla MetaMask, Web3.js'yi enjekte etmeyi resmen durdurdu ve mevcut sağlayıcıya erişme şeklini değiştirdi. Bu makale DApp'inizin bozulmadığından nasıl emin olacağınız ve onu ekosistemin geri kalanıyla nasıl daha uyumlu hale getireceğinizi açıklıyor.</content>
-    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-blog-valist-io-how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a.html" rel="alternate" type="text/html" title="How to Connect Web3.js to MetaMask in 2022&#10;"/>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-blog-valist-io-how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a.html" rel="alternate" type="text/html" title="How to Connect Web3.js to MetaMask in 2022"/>
   </entry>
   <entry>
     <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-www-udemy-com-course-ethereum-and-solidity-the-complete-developers-guide.html</id>
@@ -2787,5 +2787,27 @@
     <updated>2022-05-28T00:00:00+03:00</updated>
     <content>Ethereum (Solidity) geliştiricileri için araç kitlerinin listelendiği Github reposu.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-consensys-ethereum-developer-tools-list.html" rel="alternate" type="text/html" title="Ethereum Developer Tools List"/>
+  </entry>
+  <entry>
+    <id>grafik-tasarim/kaynaklar/https-iconscout-com.html</id>
+    <title>IconScout</title>
+    <updated>2022-07-16T00:00:00+03:00</updated>
+    <content>Dosyaları PNG ve EPS formatlarında çevirebiliyor. Platforma kayıt olmadan sadece beş görsel indirebiliyorsunuz.</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-iconscout-com.html" rel="alternate" type="text/html" title="IconScout"/>
+  </entry>
+  <entry>
+    <id>grafik-tasarim/kaynaklar/https-icons8-com-illustrations.html</id>
+    <title>Ouch</title>
+    <updated>2022-07-16T00:00:00+03:00</updated>
+    <content>Icon8 firmasına ait olan Ouch, daha iyi tasarlanmış bir web sitesi veya uygulama oluşturmak için modern, şık ve vektörel çizimler bulabileceğiniz illüstrasyon sitesi.
+</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-icons8-com-illustrations.html" rel="alternate" type="text/html" title="Ouch"/>
+  </entry>
+  <entry>
+    <id>grafik-tasarim/kaynaklar/https-www-glazestock-com.html</id>
+    <title>Glaze</title>
+    <updated>2022-07-16T00:00:00+03:00</updated>
+    <content>Glaze, farklı tasarımcıların illüstrasyonlarından oluşan bir görsel kütüphane. Birçok kütüphaneden çok daha geniş koleksiyonları bulunuyor</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-www-glazestock-com.html" rel="alternate" type="text/html" title="Glaze"/>
   </entry>
 </feed>

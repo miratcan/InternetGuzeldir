@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>tr</language>
-    <lastBuildDate>Sat, 28 May 2022 16:21:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Jan 2023 14:27:33 +0000</lastBuildDate>
     <item>
       <title>Türkiye'deki Kamp Alanları Listesi</title>
       <link>https://internetguzeldir.com/seyahat/https-www-google-com-maps-d-u-0-viewer-mid-1oxyu1crdfylrtiyijsonakf2xy8-ll-38-624311649181756-2c35-12324238355848-z-6.html</link>
@@ -755,9 +755,9 @@
     </item>
     <item>
       <title>State of the DApps</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/blokzincir/https-www-stateofthedapps-com.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/blokzincir/blokzincir-web-dizinleri/https-www-stateofthedapps-com.html</link>
       <description>Tek tek elle seçilmiş merkeziyetsiz blockchain uygulamaları listesi.</description>
-      <guid isPermaLink="false">bilgisayarlar/blokzincir/https-www-stateofthedapps-com.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/blokzincir/blokzincir-web-dizinleri/https-www-stateofthedapps-com.html</guid>
     </item>
     <item>
       <title>Pomodoro Tracker</title>
@@ -1902,6 +1902,7 @@
     <item>
       <title>Leithygurumi</title>
       <link>https://internetguzeldir.com/yasam-tarzi/hobi/amigurumi/https-www-leithygurumi-com.html</link>
+      <description>Çeşitli örgü tarifleri.</description>
       <guid isPermaLink="false">yasam-tarzi/hobi/amigurumi/https-www-leithygurumi-com.html</guid>
     </item>
     <item>
@@ -2325,8 +2326,7 @@
       <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/https-pythonspeed-com-articles-json-memory-streaming.html</guid>
     </item>
     <item>
-      <title>How to Connect Web3.js to MetaMask in 2022
-</title>
+      <title>How to Connect Web3.js to MetaMask in 2022</title>
       <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-blog-valist-io-how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a.html</link>
       <description>2020'nin ilk çeyreği itibarıyla MetaMask, Web3.js'yi enjekte etmeyi resmen durdurdu ve mevcut sağlayıcıya erişme şeklini değiştirdi. Bu makale DApp'inizin bozulmadığından nasıl emin olacağınız ve onu ekosistemin geri kalanıyla nasıl daha uyumlu hale getireceğinizi açıklıyor.</description>
       <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/blokzincir/https-blog-valist-io-how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a.html</guid>
@@ -2392,6 +2392,25 @@
       <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-consensys-ethereum-developer-tools-list.html</link>
       <description>Ethereum (Solidity) geliştiricileri için araç kitlerinin listelendiği Github reposu.</description>
       <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-consensys-ethereum-developer-tools-list.html</guid>
+    </item>
+    <item>
+      <title>IconScout</title>
+      <link>https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-iconscout-com.html</link>
+      <description>Dosyaları PNG ve EPS formatlarında çevirebiliyor. Platforma kayıt olmadan sadece beş görsel indirebiliyorsunuz.</description>
+      <guid isPermaLink="false">grafik-tasarim/kaynaklar/https-iconscout-com.html</guid>
+    </item>
+    <item>
+      <title>Ouch</title>
+      <link>https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-icons8-com-illustrations.html</link>
+      <description>Icon8 firmasına ait olan Ouch, daha iyi tasarlanmış bir web sitesi veya uygulama oluşturmak için modern, şık ve vektörel çizimler bulabileceğiniz illüstrasyon sitesi.
+</description>
+      <guid isPermaLink="false">grafik-tasarim/kaynaklar/https-icons8-com-illustrations.html</guid>
+    </item>
+    <item>
+      <title>Glaze</title>
+      <link>https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-www-glazestock-com.html</link>
+      <description>Glaze, farklı tasarımcıların illüstrasyonlarından oluşan bir görsel kütüphane. Birçok kütüphaneden çok daha geniş koleksiyonları bulunuyor</description>
+      <guid isPermaLink="false">grafik-tasarim/kaynaklar/https-www-glazestock-com.html</guid>
     </item>
   </channel>
 </rss>

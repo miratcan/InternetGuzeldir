@@ -8,3 +8,4 @@ tweepy~=3.10.0
 htmlmin==0.1.12
 rcssmin==1.0.6
 feedgen==0.9.0
+markupsafe==2.0.1

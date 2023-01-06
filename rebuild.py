@@ -247,6 +247,7 @@ def get_link_from_row(row: LinkRow) -> Link:
     >>> get_link_from_row(link_row_0)
     Link('https://google.com')
     """
+    print(row)
     if row[get_column_index("create_time")] is None:
         raise ValueError(
             "Line %s - Title: %s - has missing create_time value."
