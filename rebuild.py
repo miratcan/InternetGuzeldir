@@ -17,6 +17,7 @@ import sys
 import urllib.request
 from collections import defaultdict
 from dataclasses import dataclass
+from dataclasses import asdict as dataclass_as_dict
 from datetime import datetime as type_date
 from distutils.util import strtobool
 from functools import lru_cache
@@ -247,7 +248,6 @@ def get_link_from_row(row: LinkRow) -> Link:
     >>> get_link_from_row(link_row_0)
     Link('https://google.com')
     """
-    print(row)
     if row[get_column_index("create_time")] is None:
         raise ValueError(
             "Line %s - Title: %s - has missing create_time value."
@@ -773,11 +773,7 @@ def render_json(
             if isinstance(o, datetime.datetime):
                 return o.isoformat()
             if isinstance(o, Link):
-                return {
-                    k: v
-                    for k, v in Link.__dict__.items()
-                    if not k.startswith("_")
-                }
+                return dataclass_as_dict(o)
             return json.JSONEncoder.default(self, o)
 
     with open(join(root_path, "data.json"), "w", encoding="utf8") as file:
@@ -827,6 +823,7 @@ def build(build_path: str = join(dirname(realpath(__file__)), "docs/")):
     ]
     create_category_paths(build_path, category_str_list)
 
+    print(links_by_category)
     render_json(build_path, categories, links_by_category)
     build_assets(build_path, "./assets/")
     render_categories(
