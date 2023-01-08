@@ -18,8 +18,8 @@
       <h2 class='title'>{{ link.title }}</h2>
       <p class='desc'>{{ link.desc }}</p>
       <p class='url'><a class='link' target='_blank' href='{{ link.url }}'>{{ link.url|truncate(50, False, '...', 0) }}</a></p>
-      <p class='meta'>Bu site {% if link.sender %}<a href='https://twitter.com/{{ link.sender }}'>@{{ link.sender }}</a> tarafindan gönderilmiş {% endif %} {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
     </div>
+    <p class='meta'>Bu bağlantı {% if link.sender %}<a href='https://twitter.com/{{ link.sender }}'>@{{ link.sender }}</a> tarafindan gönderilmiş {% endif %} {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
   </div>
   <div class='socializer' data-features='32px,opacity,fluid,icon-white,pad' data-sites='facebook,twitter,whatsapp,telegram,reddit'></div>
   <script src='https://utteranc.es/client.js'
