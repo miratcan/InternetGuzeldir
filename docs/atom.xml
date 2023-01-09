@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2023-01-09T00:23:17.304206+00:00</updated>
+  <updated>2023-01-09T00:39:58.510294+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -2794,6 +2794,41 @@
     <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-iconscout-com.html" rel="alternate" type="text/html" title="IconScout"/>
   </entry>
   <entry>
+    <id>grafik-tasarim/araclar/https-www-canva-com.html</id>
+    <title>Canva</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Hemen hemen her türlü görsel şeyin tasarımı için kullanabileceğiniz online editör.</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-www-canva-com.html" rel="alternate" type="text/html" title="Canva"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/nocode/https-carrd-co.html</id>
+    <title>Carrd</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Basit, tek sayfalık, kartvizit gibi web siteleri oluşturma aracı.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/nocode/https-carrd-co.html" rel="alternate" type="text/html" title="Carrd"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/nocode/https-pory-io.html</id>
+    <title>Pory</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Airtable ile oluşturduğunuz tablolardan ya da Notion'daki dokümanlarınızdan web sitesi oluşturma aracı.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/nocode/https-pory-io.html" rel="alternate" type="text/html" title="Pory"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/nocode/https-webflow-com.html</id>
+    <title>Webflow</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Kodlama yapmadan görsel olarak çarpıcı web siteleri tasarlamak, ve yayına almak için online araç.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/nocode/https-webflow-com.html" rel="alternate" type="text/html" title="Webflow"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/nocode/https-www-glideapps-com.html</id>
+    <title>Glide</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Google Sheets, Airtable, Excel, BigQuery gibi kaynaklardaki verilerinizi mobil uygulamaya dönüştüren bir ürün.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/nocode/https-www-glideapps-com.html" rel="alternate" type="text/html" title="Glide"/>
+  </entry>
+  <entry>
     <id>girisimcilik/nocode/https-www-parsehub-com.html</id>
     <title>Parse Hub</title>
     <updated>2023-01-09T00:00:00+03:00</updated>
@@ -2806,6 +2841,13 @@
     <updated>2023-01-09T00:00:00+03:00</updated>
     <content>Google SpreadSheet'leri kullanarak çeşitli formatlarda web siteleri ve mobil uygulamalar geliştirmenize olanak sağlayan web servisi.</content>
     <link href="https://internetguzeldir.com/girisimcilik/nocode/https-awesome-table-com.html" rel="alternate" type="text/html" title="Awesome Table"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/https-gumroad-com.html</id>
+    <title>Gumroad</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Dijital ürünler, üyelikler ve daha fazlasını satarak çevrimiçi olarak para kazanmanızı sağlayan oluşum.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/https-gumroad-com.html" rel="alternate" type="text/html" title="Gumroad"/>
   </entry>
   <entry>
     <id>bilgisayarlar/yazilim-gelistirme/servisler/veri/https-baserow-io.html</id>

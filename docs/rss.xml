@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>tr</language>
-    <lastBuildDate>Mon, 09 Jan 2023 00:23:17 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jan 2023 00:39:58 +0000</lastBuildDate>
     <item>
       <title>Türkiye'deki Kamp Alanları Listesi</title>
       <link>https://internetguzeldir.com/seyahat/https-www-google-com-maps-d-u-0-viewer-mid-1oxyu1crdfylrtiyijsonakf2xy8-ll-38-624311649181756-2c35-12324238355848-z-6.html</link>
@@ -2398,6 +2398,36 @@
       <guid isPermaLink="false">grafik-tasarim/kaynaklar/https-iconscout-com.html</guid>
     </item>
     <item>
+      <title>Canva</title>
+      <link>https://internetguzeldir.com/grafik-tasarim/araclar/https-www-canva-com.html</link>
+      <description>Hemen hemen her türlü görsel şeyin tasarımı için kullanabileceğiniz online editör.</description>
+      <guid isPermaLink="false">grafik-tasarim/araclar/https-www-canva-com.html</guid>
+    </item>
+    <item>
+      <title>Carrd</title>
+      <link>https://internetguzeldir.com/girisimcilik/nocode/https-carrd-co.html</link>
+      <description>Basit, tek sayfalık, kartvizit gibi web siteleri oluşturma aracı.</description>
+      <guid isPermaLink="false">girisimcilik/nocode/https-carrd-co.html</guid>
+    </item>
+    <item>
+      <title>Pory</title>
+      <link>https://internetguzeldir.com/girisimcilik/nocode/https-pory-io.html</link>
+      <description>Airtable ile oluşturduğunuz tablolardan ya da Notion'daki dokümanlarınızdan web sitesi oluşturma aracı.</description>
+      <guid isPermaLink="false">girisimcilik/nocode/https-pory-io.html</guid>
+    </item>
+    <item>
+      <title>Webflow</title>
+      <link>https://internetguzeldir.com/girisimcilik/nocode/https-webflow-com.html</link>
+      <description>Kodlama yapmadan görsel olarak çarpıcı web siteleri tasarlamak, ve yayına almak için online araç.</description>
+      <guid isPermaLink="false">girisimcilik/nocode/https-webflow-com.html</guid>
+    </item>
+    <item>
+      <title>Glide</title>
+      <link>https://internetguzeldir.com/girisimcilik/nocode/https-www-glideapps-com.html</link>
+      <description>Google Sheets, Airtable, Excel, BigQuery gibi kaynaklardaki verilerinizi mobil uygulamaya dönüştüren bir ürün.</description>
+      <guid isPermaLink="false">girisimcilik/nocode/https-www-glideapps-com.html</guid>
+    </item>
+    <item>
       <title>Parse Hub</title>
       <link>https://internetguzeldir.com/girisimcilik/nocode/https-www-parsehub-com.html</link>
       <description>Bu servis web sitelerinden hiç kod yazmadan veri toplayabilmenize olanak sağlıyor.</description>
@@ -2408,6 +2438,12 @@
       <link>https://internetguzeldir.com/girisimcilik/nocode/https-awesome-table-com.html</link>
       <description>Google SpreadSheet'leri kullanarak çeşitli formatlarda web siteleri ve mobil uygulamalar geliştirmenize olanak sağlayan web servisi.</description>
       <guid isPermaLink="false">girisimcilik/nocode/https-awesome-table-com.html</guid>
+    </item>
+    <item>
+      <title>Gumroad</title>
+      <link>https://internetguzeldir.com/girisimcilik/https-gumroad-com.html</link>
+      <description>Dijital ürünler, üyelikler ve daha fazlasını satarak çevrimiçi olarak para kazanmanızı sağlayan oluşum.</description>
+      <guid isPermaLink="false">girisimcilik/https-gumroad-com.html</guid>
     </item>
     <item>
       <title>Baserow</title>
