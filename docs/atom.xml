@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2023-01-09T07:47:05.112412+00:00</updated>
+  <updated>2023-01-09T10:51:46.129898+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -253,13 +253,6 @@
     <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-colorleap-app.html" rel="alternate" type="text/html" title="ColorLeap"/>
   </entry>
   <entry>
-    <id>grafik-tasarim/kaynaklar/https-squoosh-app.html</id>
-    <title>Squash</title>
-    <updated>2020-01-01T00:00:00+03:00</updated>
-    <content>Seçtiğiniz imajların kalitesini düşürme programı, eski ve yen hali arasıında karşılaştrma yapmanızı da sağlıyor.</content>
-    <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-squoosh-app.html" rel="alternate" type="text/html" title="Squash"/>
-  </entry>
-  <entry>
     <id>grafik-tasarim/kaynaklar/http-skuawk-com.html</id>
     <title>Skuawk</title>
     <updated>2020-01-01T00:00:00+03:00</updated>
@@ -307,6 +300,13 @@
     <updated>2020-01-01T00:00:00+03:00</updated>
     <content>1250'den fazla ikon.</content>
     <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-tabler-icons-io.html" rel="alternate" type="text/html" title="Tabler Icons"/>
+  </entry>
+  <entry>
+    <id>grafik-tasarim/araclar/https-squoosh-app.html</id>
+    <title>Squash</title>
+    <updated>2020-01-01T00:00:00+03:00</updated>
+    <content>Seçtiğiniz imajların kalitesini düşürme programı, eski ve yen hali arasıında karşılaştrma yapmanızı da sağlıyor.</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-squoosh-app.html" rel="alternate" type="text/html" title="Squash"/>
   </entry>
   <entry>
     <id>grafik-tasarim/araclar/https-www-autodraw-com.html</id>
@@ -2083,7 +2083,7 @@
     <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-eth-brownie-brownie.html</id>
     <title>Eth-Browie</title>
     <updated>2021-09-24T00:00:00+03:00</updated>
-    <content>Python tabanlı, akıllı kontratlarla çalışırken build, test ve deploy işlemlerini kolaylaştırma amacı güden çatı. Eğer solidity ile bir şey yapacaksam bunu kullanıyorum.</content>
+    <content>Python tabanlı, akıllı kontratlarla çalışırken build, test ve deploy işlemlerini kolaylaştırma amacı güden çatı. Truffle'a göre testleri çok daha hızlı çalıştırıyor.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-eth-brownie-brownie.html" rel="alternate" type="text/html" title="Eth-Browie"/>
   </entry>
   <entry>
@@ -2794,11 +2794,34 @@
     <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-iconscout-com.html" rel="alternate" type="text/html" title="IconScout"/>
   </entry>
   <entry>
+    <id>grafik-tasarim/kaynaklar/https-www-istockphoto-com.html</id>
+    <title>iStock</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Çok çeşitli konularda ücretli stok fotoğraflar bulabileceğiniz pazar yeri.
+</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-www-istockphoto-com.html" rel="alternate" type="text/html" title="iStock"/>
+  </entry>
+  <entry>
     <id>grafik-tasarim/araclar/https-www-canva-com.html</id>
     <title>Canva</title>
     <updated>2023-01-09T00:00:00+03:00</updated>
     <content>Hemen hemen her türlü görsel şeyin tasarımı için kullanabileceğiniz online editör.</content>
     <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-www-canva-com.html" rel="alternate" type="text/html" title="Canva"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/pazar-yerleri/https-etsy-com.html</id>
+    <title>Etsy</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Özellikle el işi üretimlerinizi satabileceğiniz bir site. Takı yapıyor olabilirsiniz, örgü yapıyor olabilirsiniz. Yine elinizden çıkan her işin bir alıcısı oluyor. Mesela, ülkemizden ek iş olarak boyadığı taşları ABD'ye satanlar bulunuyor.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/pazar-yerleri/https-etsy-com.html" rel="alternate" type="text/html" title="Etsy"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/pazar-yerleri/https-fiverr-com.html</id>
+    <title>Fiverr</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Bizdeki bionluk'un orijinali. Yeteneğinize göre burada verebileceğiniz hizmetin sınırı yok. Resim, tasarım, video da yapıp satabilirsiniz, çeviri de yapabilirsiniz, müziğinizi de satabilirsiniz. Ücretsiz yazılımları kullanarak yine hizmet verebilirsiniz.
+</content>
+    <link href="https://internetguzeldir.com/girisimcilik/pazar-yerleri/https-fiverr-com.html" rel="alternate" type="text/html" title="Fiverr"/>
   </entry>
   <entry>
     <id>girisimcilik/nocode/https-carrd-co.html</id>

@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>tr</language>
-    <lastBuildDate>Mon, 09 Jan 2023 07:47:05 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jan 2023 10:51:46 +0000</lastBuildDate>
     <item>
       <title>Türkiye'deki Kamp Alanları Listesi</title>
       <link>https://internetguzeldir.com/seyahat/https-www-google-com-maps-d-u-0-viewer-mid-1oxyu1crdfylrtiyijsonakf2xy8-ll-38-624311649181756-2c35-12324238355848-z-6.html</link>
@@ -220,12 +220,6 @@
       <guid isPermaLink="false">grafik-tasarim/kaynaklar/https-colorleap-app.html</guid>
     </item>
     <item>
-      <title>Squash</title>
-      <link>https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-squoosh-app.html</link>
-      <description>Seçtiğiniz imajların kalitesini düşürme programı, eski ve yen hali arasıında karşılaştrma yapmanızı da sağlıyor.</description>
-      <guid isPermaLink="false">grafik-tasarim/kaynaklar/https-squoosh-app.html</guid>
-    </item>
-    <item>
       <title>Skuawk</title>
       <link>https://internetguzeldir.com/grafik-tasarim/kaynaklar/http-skuawk-com.html</link>
       <description>Küratörler tarafındana seçilmiş kamu kullanımına açık fotoğraflar paylaşan web sitesi.</description>
@@ -266,6 +260,12 @@
       <link>https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-tabler-icons-io.html</link>
       <description>1250'den fazla ikon.</description>
       <guid isPermaLink="false">grafik-tasarim/kaynaklar/https-tabler-icons-io.html</guid>
+    </item>
+    <item>
+      <title>Squash</title>
+      <link>https://internetguzeldir.com/grafik-tasarim/araclar/https-squoosh-app.html</link>
+      <description>Seçtiğiniz imajların kalitesini düşürme programı, eski ve yen hali arasıında karşılaştrma yapmanızı da sağlıyor.</description>
+      <guid isPermaLink="false">grafik-tasarim/araclar/https-squoosh-app.html</guid>
     </item>
     <item>
       <title>Autodraw</title>
@@ -1788,7 +1788,7 @@
     <item>
       <title>Eth-Browie</title>
       <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-eth-brownie-brownie.html</link>
-      <description>Python tabanlı, akıllı kontratlarla çalışırken build, test ve deploy işlemlerini kolaylaştırma amacı güden çatı. Eğer solidity ile bir şey yapacaksam bunu kullanıyorum.</description>
+      <description>Python tabanlı, akıllı kontratlarla çalışırken build, test ve deploy işlemlerini kolaylaştırma amacı güden çatı. Truffle'a göre testleri çok daha hızlı çalıştırıyor.</description>
       <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/blokzincir/https-github-com-eth-brownie-brownie.html</guid>
     </item>
     <item>
@@ -2398,10 +2398,30 @@
       <guid isPermaLink="false">grafik-tasarim/kaynaklar/https-iconscout-com.html</guid>
     </item>
     <item>
+      <title>iStock</title>
+      <link>https://internetguzeldir.com/grafik-tasarim/kaynaklar/https-www-istockphoto-com.html</link>
+      <description>Çok çeşitli konularda ücretli stok fotoğraflar bulabileceğiniz pazar yeri.
+</description>
+      <guid isPermaLink="false">grafik-tasarim/kaynaklar/https-www-istockphoto-com.html</guid>
+    </item>
+    <item>
       <title>Canva</title>
       <link>https://internetguzeldir.com/grafik-tasarim/araclar/https-www-canva-com.html</link>
       <description>Hemen hemen her türlü görsel şeyin tasarımı için kullanabileceğiniz online editör.</description>
       <guid isPermaLink="false">grafik-tasarim/araclar/https-www-canva-com.html</guid>
+    </item>
+    <item>
+      <title>Etsy</title>
+      <link>https://internetguzeldir.com/girisimcilik/pazar-yerleri/https-etsy-com.html</link>
+      <description>Özellikle el işi üretimlerinizi satabileceğiniz bir site. Takı yapıyor olabilirsiniz, örgü yapıyor olabilirsiniz. Yine elinizden çıkan her işin bir alıcısı oluyor. Mesela, ülkemizden ek iş olarak boyadığı taşları ABD'ye satanlar bulunuyor.</description>
+      <guid isPermaLink="false">girisimcilik/pazar-yerleri/https-etsy-com.html</guid>
+    </item>
+    <item>
+      <title>Fiverr</title>
+      <link>https://internetguzeldir.com/girisimcilik/pazar-yerleri/https-fiverr-com.html</link>
+      <description>Bizdeki bionluk'un orijinali. Yeteneğinize göre burada verebileceğiniz hizmetin sınırı yok. Resim, tasarım, video da yapıp satabilirsiniz, çeviri de yapabilirsiniz, müziğinizi de satabilirsiniz. Ücretsiz yazılımları kullanarak yine hizmet verebilirsiniz.
+</description>
+      <guid isPermaLink="false">girisimcilik/pazar-yerleri/https-fiverr-com.html</guid>
     </item>
     <item>
       <title>Carrd</title>
