@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2023-01-09T00:39:58.510294+00:00</updated>
+  <updated>2023-01-09T00:56:25.157539+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -1856,11 +1856,11 @@
     <link href="https://internetguzeldir.com/bilgisayarlar/internet/sosyal-medya/http-foxql-com.html" rel="alternate" type="text/html" title="Foxql"/>
   </entry>
   <entry>
-    <id>girisimcilik/https-getform-io.html</id>
+    <id>girisimcilik/nocode/https-getform-io.html</id>
     <title>GetForm</title>
     <updated>2021-08-11T00:00:00+03:00</updated>
     <content>Projelerinize kolayca formlar eklemenizi sağlayan web uygulaması. Gönderilen formu spreadsheet'e aktarmak, slack'e notification olarak atmak vs gibi özellikleri var.</content>
-    <link href="https://internetguzeldir.com/girisimcilik/https-getform-io.html" rel="alternate" type="text/html" title="GetForm"/>
+    <link href="https://internetguzeldir.com/girisimcilik/nocode/https-getform-io.html" rel="alternate" type="text/html" title="GetForm"/>
   </entry>
   <entry>
     <id>bilgisayarlar/internet/sosyal-medya/https-mokum-place.html</id>
@@ -2869,5 +2869,19 @@
     <updated>2023-01-09T00:00:00+03:00</updated>
     <content>Bloomberg, PlayStation, and Raspberry Pi gibi firmalarda çalışmış bir C programcısının keşke daha önceden bilseydim diye kaleme aldığı C programlama ipuçları.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/c/https-tmewett-com-c-tips.html" rel="alternate" type="text/html" title="Everything I wish I knew when learning C"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/internet/sosyal-medya/sosyal-medya-yonetim-araclari/https-buffer-com.html</id>
+    <title>Buffer</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>Twitter, Facebook, Instagram, Instagram Stories, Pinterest ve LinkedIn'deki gönderilerin planlaması ve sonuçlarını analiz etmesi için araçlar sağlayarak sosyal ağlardaki hesapları yönetmek için tasarlanmış, web ve mobil için bir yazılım uygulaması.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/internet/sosyal-medya/sosyal-medya-yonetim-araclari/https-buffer-com.html" rel="alternate" type="text/html" title="Buffer"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/internet/sosyal-medya/sosyal-medya-yonetim-araclari/https-copy-ai.html</id>
+    <title>Copy AI</title>
+    <updated>2023-01-09T00:00:00+03:00</updated>
+    <content>1 milyondan fazla kişinin saniyeler içinde sosyal medya gönderileri, web sitesi içeriği ve blog gönderileri yazmalarına yardımcı olan metin yazarı yapay zeka uygulaması.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/internet/sosyal-medya/sosyal-medya-yonetim-araclari/https-copy-ai.html" rel="alternate" type="text/html" title="Copy AI"/>
   </entry>
 </feed>
