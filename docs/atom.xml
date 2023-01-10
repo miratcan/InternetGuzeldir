@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2023-01-10T09:32:39.824869+00:00</updated>
+  <updated>2023-01-10T10:34:12.429703+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -2906,5 +2906,21 @@
     <updated>2023-01-09T00:00:00+03:00</updated>
     <content>1 milyondan fazla kişinin saniyeler içinde sosyal medya gönderileri, web sitesi içeriği ve blog gönderileri yazmalarına yardımcı olan metin yazarı yapay zeka uygulaması.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/internet/sosyal-medya/sosyal-medya-yonetim-araclari/https-copy-ai.html" rel="alternate" type="text/html" title="Copy AI"/>
+  </entry>
+  <entry>
+    <id>yasam-tarzi/yeme-icme/glutensiz-yasam/restoranlar/sehirler/izmir/https-www-instagram-com-kazanindibiizmir.html</id>
+    <title>Kazanın Dibi</title>
+    <updated>2023-01-10T00:00:00+03:00</updated>
+    <content>İzmir'de oldukça olumlu yorumlar alan glutensiz ürünler yapan bir tatlıcı.</content>
+    <link href="https://internetguzeldir.com/yasam-tarzi/yeme-icme/glutensiz-yasam/restoranlar/sehirler/izmir/https-www-instagram-com-kazanindibiizmir.html" rel="alternate" type="text/html" title="Kazanın Dibi"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/internet/https-sorucevap-com.html</id>
+    <title>Soru Cevap</title>
+    <updated>2023-01-10T00:00:00+03:00</updated>
+    <content>Türkiye'nin Soru Cevap ve Bilgilendirme sitesi, Her konuda soru sorabilir, sorulan sorulara cevap verebilirsiniz. Nedir, nasıl yapılır, kimdir, aile, toplum, kızlar, erkekler, öğrenciler, sınavlar, testler ve daha bir çok kategoride içerikler yer almaktadır.
+
+</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/internet/https-sorucevap-com.html" rel="alternate" type="text/html" title="Soru Cevap"/>
   </entry>
 </feed>
