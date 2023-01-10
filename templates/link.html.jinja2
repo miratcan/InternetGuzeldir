@@ -16,7 +16,7 @@
   <div id='link_detail'>
     <div class='inner'>
       <h2 class='title'>{{ link.title }}</h2>
-      <p class='url'><a class='link' target='_blank' href='{{ link.url }}'>{{ link.url|truncate(50, False, '...', 0) }}</a></p>
+      <p class='url'><a class='link' href='{{ link.url }}'>{{ link.url|truncate(50, False, '...', 0) }}</a></p>
       <p class='desc'>{{ link.desc }}</p>
     </div>
     <p class='meta'>Bu bağlantı {% if link.sender %}<a href='https://twitter.com/{{ link.sender }}'>@{{ link.sender }}</a> tarafindan gönderilmiş {% endif %} {{ link.lang }} dilinde bir {{ link.kind }} olup, {{ link.create_time.strftime('%d-%m-%Y') }} tarihinde eklenmiştir.</p>
