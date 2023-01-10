@@ -1,8 +1,6 @@
 {% extends "base.html.jinja2" %}
-
 {% block title %}{{ category.title}} — {{ env.SITE_TITLE }}{% endblock title %}
 {% block description %}{{ category.desc }}{% endblock %}
-{% block extra_head %}<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3821665691664234" crossorigin="anonymous"></script>{% endblock %}
 {% block main %}
 <div id="category-info">
     <h2>{{ category.title }}</h2>
@@ -17,8 +15,6 @@
       {% endif %}
     </ul>
 </div>
-
-
 {% if links %}
 <ul class="links">
   {% for link in links|sort(attribute='create_time') %}
