@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>tr</language>
-    <lastBuildDate>Tue, 10 Jan 2023 14:21:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Jan 2023 01:58:18 +0000</lastBuildDate>
     <item>
       <title>Türkiye'deki Kamp Alanları Listesi</title>
       <link>https://internetguzeldir.com/seyahat/https-www-google-com-maps-d-u-0-viewer-mid-1oxyu1crdfylrtiyijsonakf2xy8-ll-38-624311649181756-2c35-12324238355848-z-6.html</link>
@@ -1872,7 +1872,7 @@
     <item>
       <title>Temp Mail</title>
       <link>https://internetguzeldir.com/bilgisayarlar/internet/https-temp-mail-to.html</link>
-      <description>Üyelik formlarıyla falan uğraşmadan anında e-posta adresi oluşturup kullanmanızı sağlayan web servisi. İstediğiniz zaman da yok ediyorsunuz. Spam yapacağından şüphelendiğiniz bir servise üye oluyorsanız mutlaka kullanın.</description>
+      <description>Üyelik formlarıyla falan uğraşmadan anında e-posta adresi oluşturup kullanmanızı sağlayan web servisi.</description>
       <guid isPermaLink="false">bilgisayarlar/internet/https-temp-mail-to.html</guid>
     </item>
     <item>
@@ -2364,7 +2364,7 @@
     <item>
       <title>The Dapp List</title>
       <link>https://internetguzeldir.com/bilgisayarlar/blokzincir/https-thedapplist-com.html</link>
-      <description>Merkeziyetsiz uygulamaları listeleyen web sitesi.</description>
+      <description>Çeşitli blokzincirler üzerinde çalışan merkeziyetsiz uygulamaları listeleyen web sitesi.</description>
       <guid isPermaLink="false">bilgisayarlar/blokzincir/https-thedapplist-com.html</guid>
     </item>
     <item>
@@ -2376,7 +2376,7 @@
     <item>
       <title>Coin Telegraph Dapp List</title>
       <link>https://internetguzeldir.com/bilgisayarlar/blokzincir/https-dapplist-cointelegraph-com.html</link>
-      <description>Cointelegraph'ın oluşturduğu merkeziyetsiz web uygulamaları listesi.</description>
+      <description>Cointelegraph'ın oluşturduğu blokzincir üzerinde çalışan merkeziyetsiz web uygulamaları listesi.</description>
       <guid isPermaLink="false">bilgisayarlar/blokzincir/https-dapplist-cointelegraph-com.html</guid>
     </item>
     <item>

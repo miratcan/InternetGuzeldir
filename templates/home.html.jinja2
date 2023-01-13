@@ -1,7 +1,7 @@
 {% extends "base.html.jinja2" %}
 
 {% block main %}
-<ul class="categories">
+<ul class="categories wrapper">
 {% for category in categories.values() %}
   {% if category.parent == None %}
     <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
@@ -19,7 +19,7 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<ul class="links">
+<ul class="links wrapper">
   {% for link in latest_links %}
     {% include "link_as_list_item.html.jinja2" %}
   {% endfor %}

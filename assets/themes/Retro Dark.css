@@ -21,7 +21,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background: #261917;
   color: #B2A497;
-  font-family: var(--font-family-monospace);
+  font-family: arial;
 }
 
 body {
@@ -41,8 +41,8 @@ h4,
 h5 {
   color: #DAD1C9;
   font-size: inherit;
-  margin: 1ch 0;
-  padding: 1ch 0;
+  margin: 0 0 1ch 0;
+  padding: 0;
 }
 
 .wrapper {
@@ -52,11 +52,14 @@ h5 {
 }
 
 header {
-  background: #9B2821;
   overflow: auto;
 }
+header #bar {
+  /* background: #9B2821; */
+	background: linear-gradient(359deg, #6e1313, #9B2821);
+}
 
-header .wrapper {
+header #bar .wrapper {
   height: fit-content;
   display: flex;
   align-items: center;
@@ -94,7 +97,6 @@ ul.categories {
   list-style-type: none;
   grid-template-columns: auto auto auto auto;
   padding: 0;
-  margin: 0;
 }
 
 ul.categories li {
@@ -107,8 +109,6 @@ ul.categories li {
 }
 
 ul.categories li:hover {
-  font-weight: bold;
-  background-color: gray;
 }
 
 ul.categories li:hover a {
@@ -121,10 +121,30 @@ ul.categories li a {
 ul.categories li.up {
   background-image: url(https://bafybeihgrl3qquibkskkb33qfumrfs6hhc5m7mijc2alpojd4je3pi6hba.ipfs.infura-ipfs.io/);
 }
+/* Style the list */
+#breadcrumbs {
+	background: #333;
+}
+#breadcrumbs ul {
+  list-style: none;
+	padding: 1ch 0;
+	margin: 0 auto;
+}
+
+/* Display list items side by side */
+#breadcrumbs ul li {
+  display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+#breadcrumbs ul li+li:before {
+  padding: 8px;
+  content: ">";
+}
 
 ul.links {
   list-style-type: none;
-  margin: 4ch 0;
+  margin: 4ch auto;
   padding: 0;
 }
 
@@ -182,8 +202,8 @@ a.title {
   margin-bottom: 1ch;
 }
 
-#category-info {
-  margin: 2ch 0;
+#category-info .header {
+	margin: 6ch 0 7ch 0;
 }
 
 p.meta {

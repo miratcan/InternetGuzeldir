@@ -26,12 +26,23 @@
   </head>
   <body>
     <header>
-      <div class="wrapper">
-        <h1><a href="{{ root_path }}index.html">{{ env.SITE_TITLE }}</a></h1>
-        <form id="search" autocomplete="off"autocomplete="off" onsubmit="event.preventDefault(); redirectToSearchPage()">
-          <input name="q" type="text" /><input value="Ara" type="submit"/>
-        </form>
-      </div>
+			<div id="bar">
+				<div class="wrapper">
+					<h1><a href="{{ root_path }}index.html">{{ env.SITE_TITLE }}</a></h1>
+					<form id="search" autocomplete="off"autocomplete="off" onsubmit="event.preventDefault(); redirectToSearchPage()">
+						<input name="q" type="text" /><input value="Ara" type="submit"/>
+					</form>
+				</div>
+			</div>
+			{% if breadcrumbs %}
+			<div id="breadcrumbs">
+				<ul class="wrapper">
+					{% for breadcrumb in breadcrumbs %}
+						<li><a href="{{ root_path }}{{ breadcrumb.path }}index.html">{{ breadcrumb.name }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
     </header>
   <div id="page" class="wrapper">
       {% block before_header %}{% endblock %}

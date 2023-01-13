@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2023-01-10T14:21:49.036277+00:00</updated>
+  <updated>2023-01-13T01:58:18.870372+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -2181,7 +2181,7 @@
     <id>bilgisayarlar/internet/https-temp-mail-to.html</id>
     <title>Temp Mail</title>
     <updated>2021-10-07T00:00:00+03:00</updated>
-    <content>Üyelik formlarıyla falan uğraşmadan anında e-posta adresi oluşturup kullanmanızı sağlayan web servisi. İstediğiniz zaman da yok ediyorsunuz. Spam yapacağından şüphelendiğiniz bir servise üye oluyorsanız mutlaka kullanın.</content>
+    <content>Üyelik formlarıyla falan uğraşmadan anında e-posta adresi oluşturup kullanmanızı sağlayan web servisi.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/internet/https-temp-mail-to.html" rel="alternate" type="text/html" title="Temp Mail"/>
   </entry>
   <entry>
@@ -2755,7 +2755,7 @@
     <id>bilgisayarlar/blokzincir/https-thedapplist-com.html</id>
     <title>The Dapp List</title>
     <updated>2022-05-28T00:00:00+03:00</updated>
-    <content>Merkeziyetsiz uygulamaları listeleyen web sitesi.</content>
+    <content>Çeşitli blokzincirler üzerinde çalışan merkeziyetsiz uygulamaları listeleyen web sitesi.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/blokzincir/https-thedapplist-com.html" rel="alternate" type="text/html" title="The Dapp List"/>
   </entry>
   <entry>
@@ -2769,7 +2769,7 @@
     <id>bilgisayarlar/blokzincir/https-dapplist-cointelegraph-com.html</id>
     <title>Coin Telegraph Dapp List</title>
     <updated>2022-05-28T00:00:00+03:00</updated>
-    <content>Cointelegraph'ın oluşturduğu merkeziyetsiz web uygulamaları listesi.</content>
+    <content>Cointelegraph'ın oluşturduğu blokzincir üzerinde çalışan merkeziyetsiz web uygulamaları listesi.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/blokzincir/https-dapplist-cointelegraph-com.html" rel="alternate" type="text/html" title="Coin Telegraph Dapp List"/>
   </entry>
   <entry>

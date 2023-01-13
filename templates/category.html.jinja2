@@ -3,17 +3,19 @@
 {% block description %}{{ category.desc }}{% endblock %}
 {% block main %}
 <div id="category-info">
-    <h2>{{ category.title }}</h2>
-    {% if category.desc %}<p class="desc">{{ category.desc }}</p>{% endif %}
-    <ul class="categories">
-      <li class="up"><a href="../index.html">Üst Klasör</a></li>
-      {% if category.children %}
-        {% for sub_category_id in category.children %}
-          {% set category = categories[sub_category_id] %}
-          <li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
-        {% endfor %}
-      {% endif %}
-    </ul>
+	<div class="header">
+		<h2>{{ category.title }}</h2>
+		{% if category.desc %}<p class="desc">{{ category.desc }}</p>{% endif %}
+	</div>
+<ul class="categories">
+	<li class="up"><a href="../index.html">Üst Klasör</a></li>
+	{% if category.children %}
+		{% for sub_category_id in category.children %}
+			{% set category = categories[sub_category_id] %}
+			<li><a href="{{ root_path }}{{ category['path'] }}index.html">{{ category['name'] }}</a></li>
+		{% endfor %}
+	{% endif %}
+	</ul>
 </div>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3821665691664234"
      crossorigin="anonymous"></script>
