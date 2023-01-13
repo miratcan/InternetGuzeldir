@@ -73,7 +73,8 @@ h1 {
 }
 
 form {
-  float: right;
+  float: left;
+	margin-right: 4px;
 }
 
 h2 {
