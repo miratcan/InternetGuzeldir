@@ -46,7 +46,7 @@ h5 {
 }
 
 .wrapper {
-  max-width:79ch;
+  max-width:800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -123,11 +123,13 @@ ul.categories li.up {
 }
 /* Style the list */
 #breadcrumbs {
-	background: #333;
+	border-bottom: 1px solid #333;
+	font-size: 14px;
+	line-height: 16px;
 }
 #breadcrumbs ul {
   list-style: none;
-	padding: 1ch 0;
+	padding: 2ch 0;
 	margin: 0 auto;
 }
 
@@ -138,7 +140,7 @@ ul.categories li.up {
 
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumbs ul li+li:before {
-  padding: 8px;
+  padding: 0 8px;
   content: ">";
 }
 
@@ -204,11 +206,12 @@ a.title {
 
 #category-info .header {
 	margin: 6ch 0 7ch 0;
+	text-align: center;
 }
 
 p.meta {
   color: gray;
-  margin: 0 0 2ch 0;
+  margin: 0 0 3ch 0;
   padding: 0;
   font-size: 12px;
 }
