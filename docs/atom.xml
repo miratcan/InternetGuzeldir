@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2023-01-14T09:31:23.217951+00:00</updated>
+  <updated>2023-01-14T09:42:46.057455+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
