@@ -145,13 +145,12 @@ ul.categories li.up {
   content: ">";
 }
 
-ul.links {
-  list-style-type: none;
+div.links {
   margin: 4ch auto;
   padding: 0;
 }
 
-ul.links li, #link_detail .inner {
+div.links article, #link_detail .inner {
   background: #333;
   padding: 2ch;
   margin: 0 0 2ch;
@@ -159,11 +158,11 @@ ul.links li, #link_detail .inner {
   overflow: auto;
 }
 
-ul.links li:last-child {
+div.links article:last-child {
   margin: 0;
 }
 
-ul.links li .favicon {
+div.links article .favicon {
   width: 16px;
   height: 16px;
   margin: 0;
@@ -172,15 +171,16 @@ ul.links li .favicon {
   float: left;
 }
 
-ul.links li .content {
-  float: left;
-  margin-left: 10px;
+div.links article h3, div.links article p {
+  margin-left: 26px;
   width: calc(100% - 26px);
   overflow: hidden;
 }
-
-ul.links li .content .desc {
-  margin: 0;
+div.links article h3 {
+	font-weight: normal;
+}
+div.links article p {
+  margin-bottom: 0;
 }
 
 #link_detail .title {

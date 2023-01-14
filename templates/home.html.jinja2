@@ -19,11 +19,11 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<ul class="links wrapper">
+<div class="links">
   {% for link in latest_links %}
     {% include "link_as_list_item.html.jinja2" %}
   {% endfor %}
-</ul>
+</div>
 {% endblock %}
 
 {% block footer %}

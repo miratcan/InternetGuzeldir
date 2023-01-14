@@ -18,10 +18,10 @@
 	</ul>
 </div>
 {% if links %}
-<ul class="links">
+<div class="links">
   {% for link in links|sort(attribute='create_time') %}
     {% include "link_as_list_item.html.jinja2" %}
   {% endfor %}
-</ul>
+</div>
 {% endif %}
 {% endblock %}
