@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>tr</language>
-    <lastBuildDate>Fri, 13 Jan 2023 02:42:24 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Jan 2023 21:30:31 +0000</lastBuildDate>
     <item>
       <title>Türkiye'deki Kamp Alanları Listesi</title>
       <link>https://internetguzeldir.com/seyahat/https-www-google-com-maps-d-u-0-viewer-mid-1oxyu1crdfylrtiyijsonakf2xy8-ll-38-624311649181756-2c35-12324238355848-z-6.html</link>
@@ -383,15 +383,15 @@
     </item>
     <item>
       <title>Audiomass</title>
-      <link>https://internetguzeldir.com/diger/https-audiomass-co.html</link>
+      <link>https://internetguzeldir.com/ses/https-audiomass-co.html</link>
       <description>Online bedava ses editörü.</description>
-      <guid isPermaLink="false">diger/https-audiomass-co.html</guid>
+      <guid isPermaLink="false">ses/https-audiomass-co.html</guid>
     </item>
     <item>
       <title>OneTimeSecret</title>
-      <link>https://internetguzeldir.com/diger/https-onetimesecret-com.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/guvenlik/https-onetimesecret-com.html</link>
       <description>Okunduktan sonra tamamen silinen notlar paylaşmanızı sağlayan uygulama Şifre vs gibi önemli şeyleri paylaşmak için.</description>
-      <guid isPermaLink="false">diger/https-onetimesecret-com.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/guvenlik/https-onetimesecret-com.html</guid>
     </item>
     <item>
       <title>Floor Plan Lab</title>
@@ -431,21 +431,21 @@
     </item>
     <item>
       <title>Python Goose</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kutuphaneler/https-github-com-grangier-python-goose.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kutuphaneler/https-github-com-grangier-python-goose.html</link>
       <description>Verilen linkten makale metni sökmeye yarayan Python kütüphanesi.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/kutuphaneler/https-github-com-grangier-python-goose.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kutuphaneler/https-github-com-grangier-python-goose.html</guid>
     </item>
     <item>
       <title>Template Tags and Filters</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/django/kaynaklar/https-www-djangotemplatetagsandfilters-com.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/catilar/django/kaynaklar/https-www-djangotemplatetagsandfilters-com.html</link>
       <description>Django'nun template tag ve filtrelerinin düzenli olarak listelendiği bir sayfa.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/django/kaynaklar/https-www-djangotemplatetagsandfilters-com.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/catilar/django/kaynaklar/https-www-djangotemplatetagsandfilters-com.html</guid>
     </item>
     <item>
       <title>Calm Code</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/https-calmcode-io.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/https-calmcode-io.html</link>
       <description>Pyhon dilini öğrenmeyi stressiz hale getirmeye çalışan bir web sitesi İçinde kısa videolar halinde bir çok konuda anlatımlar barındırıyor.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/https-calmcode-io.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/https-calmcode-io.html</guid>
     </item>
     <item>
       <title>Awesome Web Effect</title>
@@ -719,15 +719,15 @@
     </item>
     <item>
       <title>Dungeon Scrawl</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/araclar/https-probabletrain-itch-io-dungeon-scrawl.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-probabletrain-itch-io-dungeon-scrawl.html</link>
       <description>Oyun geliştiriciler için harita yapma uygulaması.</description>
-      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/araclar/https-probabletrain-itch-io-dungeon-scrawl.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-probabletrain-itch-io-dungeon-scrawl.html</guid>
     </item>
     <item>
       <title>PixelboxJS</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/araclar/https-github-com-cstoquer-pixelbox.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-github-com-cstoquer-pixelbox.html</link>
       <description>İçerisinde dahili olarak sprite, harita, ses efekti ve müzik editörlerini barındıran 2 boyutlu oyun geliştirme kütüphanesi.</description>
-      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/araclar/https-github-com-cstoquer-pixelbox.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-github-com-cstoquer-pixelbox.html</guid>
     </item>
     <item>
       <title>SpriteStack</title>
@@ -851,9 +851,9 @@
     </item>
     <item>
       <title>Django Logging, The Right Way</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/django/kaynaklar/https-lincolnloop-com-blog-django-logging-right-way.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/catilar/django/kaynaklar/https-lincolnloop-com-blog-django-logging-right-way.html</link>
       <description>Django ile çalışırken loglama işini nasıl elinize yüzünüze bulaştırmadan halledebileceğinizi anlatan oldukça kapsamlı bir makale.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/django/kaynaklar/https-lincolnloop-com-blog-django-logging-right-way.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/catilar/django/kaynaklar/https-lincolnloop-com-blog-django-logging-right-way.html</guid>
     </item>
     <item>
       <title>Sizzy Browser</title>
@@ -869,15 +869,15 @@
     </item>
     <item>
       <title>PyBtcTurk</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kutuphaneler/https-github-com-erhan-pybtcturk.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kutuphaneler/https-github-com-erhan-pybtcturk.html</link>
       <description>Erhan Büte'nin hazırladığı BTCTurk.com için Python istemcisi.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/kutuphaneler/https-github-com-erhan-pybtcturk.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kutuphaneler/https-github-com-erhan-pybtcturk.html</guid>
     </item>
     <item>
       <title>Eleman</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-github-com-miratcan-eleman.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kaynaklar/https-github-com-miratcan-eleman.html</link>
       <description>Python, Flask ve Airtable üçlüsü ile hazırlanmış bir iki konfigürasyon düzenleyerek kolayca yayına alabileceğiniz iş ilanı sitesi.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-github-com-miratcan-eleman.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kaynaklar/https-github-com-miratcan-eleman.html</guid>
     </item>
     <item>
       <title>React Native Instagram</title>
@@ -1097,9 +1097,9 @@
     </item>
     <item>
       <title>Lighthouse Map</title>
-      <link>https://internetguzeldir.com/diger/https-geodienst-github-io-lighthousemap.html</link>
+      <link>https://internetguzeldir.com/kafa-dagitma/https-geodienst-github-io-lighthousemap.html</link>
       <description>Dünya üzerindeki deniz fenerlerini harita üzerinde listeleyen web sitesi.</description>
-      <guid isPermaLink="false">diger/https-geodienst-github-io-lighthousemap.html</guid>
+      <guid isPermaLink="false">kafa-dagitma/https-geodienst-github-io-lighthousemap.html</guid>
     </item>
     <item>
       <title>Sosyal Medya Hesabı</title>
@@ -1169,15 +1169,15 @@
     </item>
     <item>
       <title>Light Pollution Map</title>
-      <link>https://internetguzeldir.com/diger/https-www-lightpollutionmap-info.html</link>
+      <link>https://internetguzeldir.com/kafa-dagitma/https-www-lightpollutionmap-info.html</link>
       <description>Dünyadaki herhangi bir konumdaki ışık kirliliğini gösteren web uygulaması.</description>
-      <guid isPermaLink="false">diger/https-www-lightpollutionmap-info.html</guid>
+      <guid isPermaLink="false">kafa-dagitma/https-www-lightpollutionmap-info.html</guid>
     </item>
     <item>
       <title>Skyline Webcams</title>
-      <link>https://internetguzeldir.com/diger/https-www-skylinewebcams-com.html</link>
+      <link>https://internetguzeldir.com/kafa-dagitma/https-www-skylinewebcams-com.html</link>
       <description>Bu siteden dünyanın bir sürü yerindeki şehir kamerasını izleyebilirsiniz.</description>
-      <guid isPermaLink="false">diger/https-www-skylinewebcams-com.html</guid>
+      <guid isPermaLink="false">kafa-dagitma/https-www-skylinewebcams-com.html</guid>
     </item>
     <item>
       <title>I Miss The Office</title>
@@ -1247,15 +1247,15 @@
     </item>
     <item>
       <title>Ink</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/javascript/kutuphaneler/https-github-com-vadimdemedes-ink.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/kutuphaneler/https-github-com-vadimdemedes-ink.html</link>
       <description>React ile komut satırı uygulamaları yapmanızı sağlayan kütüphane.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/javascript/kutuphaneler/https-github-com-vadimdemedes-ink.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/kutuphaneler/https-github-com-vadimdemedes-ink.html</guid>
     </item>
     <item>
       <title>Martin Kleppe: 1024+ Seconds of JS Wizardry -- JSConf EU 2013</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/javascript/https-www-youtube-com-watch-v-rtxtilp1c8y.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/https-www-youtube-com-watch-v-rtxtilp1c8y.html</link>
       <description>Javascript hakkında çok eğlenceli bir sunum.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/javascript/https-www-youtube-com-watch-v-rtxtilp1c8y.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/https-www-youtube-com-watch-v-rtxtilp1c8y.html</guid>
     </item>
     <item>
       <title>Crafting Interpreters</title>
@@ -1265,9 +1265,9 @@
     </item>
     <item>
       <title>Inkle</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/araclar/https-www-inklestudios-com-ink.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-www-inklestudios-com-ink.html</link>
       <description>İnteraktif hikayeler yazmak için geliştirilmiş betik dili ve editörü.</description>
-      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/araclar/https-www-inklestudios-com-ink.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-www-inklestudios-com-ink.html</guid>
     </item>
     <item>
       <title>Kampolog.com</title>
@@ -1307,21 +1307,21 @@
     </item>
     <item>
       <title>Bandit</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kutuphaneler/https-pypi-org-project-bandit.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kutuphaneler/https-pypi-org-project-bandit.html</link>
       <description>Python kodunuzu güvenlik taramasından geçirmek için kullanabileceğiniz Python kütüphanesi.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/kutuphaneler/https-pypi-org-project-bandit.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kutuphaneler/https-pypi-org-project-bandit.html</guid>
     </item>
     <item>
       <title>Deploying Django Sites Using the 12-Factor Pattern: Flexibility, Portability, and Maintainability</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/django/kaynaklar/https-wellfire-co-learn-easier-12-factor-django.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/catilar/django/kaynaklar/https-wellfire-co-learn-easier-12-factor-django.html</link>
       <description>Bir Django projesini deploy ederken dikkat etmeniz gereken şeyleri listeleyen makale.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/django/kaynaklar/https-wellfire-co-learn-easier-12-factor-django.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/catilar/django/kaynaklar/https-wellfire-co-learn-easier-12-factor-django.html</guid>
     </item>
     <item>
       <title>Avoid use IF on our JS scripts</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/javascript/https-dev-to-damxipo-avoid-use-if-on-our-js-scripts-1b95.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/https-dev-to-damxipo-avoid-use-if-on-our-js-scripts-1b95.html</link>
       <description>Javascript yazarken IF kullanımınızı azaltmak için 6 farklı yöntem öneren makale.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/javascript/https-dev-to-damxipo-avoid-use-if-on-our-js-scripts-1b95.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/https-dev-to-damxipo-avoid-use-if-on-our-js-scripts-1b95.html</guid>
     </item>
     <item>
       <title>Awesome Linux Software</title>
@@ -1427,9 +1427,9 @@
     </item>
     <item>
       <title>Lib.rs</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/rust/kaynaklar/https-lib-rs.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/rust/kaynaklar/https-lib-rs.html</link>
       <description>Rust dili ile yazılmış kütüphane ve cli uygulamaları listesi.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/rust/kaynaklar/https-lib-rs.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/rust/kaynaklar/https-lib-rs.html</guid>
     </item>
     <item>
       <title>MinWiz</title>
@@ -1535,9 +1535,9 @@
     </item>
     <item>
       <title>RPG Maker</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/araclar/https-www-rpgmakerweb-com.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-www-rpgmakerweb-com.html</link>
       <description>Rpg oyun yapmak için oyun motoru.</description>
-      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/araclar/https-www-rpgmakerweb-com.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-www-rpgmakerweb-com.html</guid>
     </item>
     <item>
       <title>Kommunity</title>
@@ -1553,9 +1553,9 @@
     </item>
     <item>
       <title>Limbul</title>
-      <link>https://internetguzeldir.com/diger/https-www-limbul-com.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/internet/https-www-limbul-com.html</link>
       <description>Arama motoru, soru cevap sitesi, sözlük sitesi karışımı ilginç bir web servisi. Türkiye'nin İlk ve Tek Ansiklopedisi olmak hedefiyle yola çıkmış.</description>
-      <guid isPermaLink="false">diger/https-www-limbul-com.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/internet/https-www-limbul-com.html</guid>
     </item>
     <item>
       <title>Astro Build</title>
@@ -1715,9 +1715,9 @@
     </item>
     <item>
       <title>URLCat</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/javascript/kutuphaneler/https-urlcat-dev.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/kutuphaneler/https-urlcat-dev.html</link>
       <description>Çok başarılı bir URL ayrıştırma kütüphanesi.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/javascript/kutuphaneler/https-urlcat-dev.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/kutuphaneler/https-urlcat-dev.html</guid>
     </item>
     <item>
       <title>Octopus.do</title>
@@ -1805,9 +1805,9 @@
     </item>
     <item>
       <title>Saleor.io</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/django/kaynak-kodlar/https-saleor-io.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/catilar/django/kaynak-kodlar/https-saleor-io.html</link>
       <description>Python, GraphQL, Django, ve React ile geliştirilmiş modüler, yüksek performanslı, markasız e-ticaret platformu.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/django/kaynak-kodlar/https-saleor-io.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/catilar/django/kaynak-kodlar/https-saleor-io.html</guid>
     </item>
     <item>
       <title>Misty Cafe Cazz Radio</title>
@@ -1829,9 +1829,9 @@
     </item>
     <item>
       <title>Python Notlarım</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/https-python-yemreak-com.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/https-python-yemreak-com.html</link>
       <description>Yunus Emre Ak tarafından yazılmış Python notları.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/https-python-yemreak-com.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/https-python-yemreak-com.html</guid>
     </item>
     <item>
       <title>Ramp</title>
@@ -1961,15 +1961,15 @@
     </item>
     <item>
       <title>Futurecoder</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-futurecoder-io.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kaynaklar/https-futurecoder-io.html</link>
       <description>Python öğrenmenizi sağlayan interaktif web uygulaması.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-futurecoder-io.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kaynaklar/https-futurecoder-io.html</guid>
     </item>
     <item>
       <title>Samila</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-github-com-sepandhaghighi-samila.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kaynaklar/https-github-com-sepandhaghighi-samila.html</link>
       <description>Python ile yazılmış üretimsel sanat kütüphanesi.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-github-com-sepandhaghighi-samila.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kaynaklar/https-github-com-sepandhaghighi-samila.html</guid>
     </item>
     <item>
       <title>Solidity Pitfalls: Random Number Generation for Ethereum</title>
@@ -1979,9 +1979,9 @@
     </item>
     <item>
       <title>TerraGen3D</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/https-github-com-jaysmito101-terragen3d.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-github-com-jaysmito101-terragen3d.html</link>
       <description>Oyun geliştiriciler için arazi üretme aracı.</description>
-      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/https-github-com-jaysmito101-terragen3d.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-github-com-jaysmito101-terragen3d.html</guid>
     </item>
     <item>
       <title>Tarımsal Gıda Tedarik Zincirinde Blokzincir Tasarımı: Türkiye’de Hal Yasası Örneği</title>
@@ -2093,9 +2093,9 @@
     </item>
     <item>
       <title>Doom Source Code</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/retro-sistemler/https-github-com-id-software-doom.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/c/https-github-com-id-software-doom.html</link>
       <description>ID software'in efsanevi oyunu olan DOOM'un kaynak kodu.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/retro-sistemler/https-github-com-id-software-doom.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/c/https-github-com-id-software-doom.html</guid>
     </item>
     <item>
       <title>Understanding Mapping vs Array in Solidity</title>
@@ -2141,9 +2141,9 @@
     </item>
     <item>
       <title>Supertunnel App</title>
-      <link>https://internetguzeldir.com/diger/https-supertunnel-app.html</link>
+      <link>https://internetguzeldir.com/kafa-dagitma/https-supertunnel-app.html</link>
       <description>Şu anda bulunduğunuz noktadan dünyanın öbür ucuna çıkana kadar kazsa idiniz nereden çıkardınız?</description>
-      <guid isPermaLink="false">diger/https-supertunnel-app.html</guid>
+      <guid isPermaLink="false">kafa-dagitma/https-supertunnel-app.html</guid>
     </item>
     <item>
       <title>kbs.im</title>
@@ -2231,9 +2231,9 @@
     </item>
     <item>
       <title>Gentle Explanation of "this" in JavaScript</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/javascript/https-dmitripavlutin-com-gentle-explanation-of-this-in-javascript.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/https-dmitripavlutin-com-gentle-explanation-of-this-in-javascript.html</link>
       <description>Javascript'deki this kavramını incitmeden anlatan makale.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/javascript/https-dmitripavlutin-com-gentle-explanation-of-this-in-javascript.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/javascript/https-dmitripavlutin-com-gentle-explanation-of-this-in-javascript.html</guid>
     </item>
     <item>
       <title>PrinceJs</title>
@@ -2273,9 +2273,9 @@
     </item>
     <item>
       <title>Lua Cheatsheet</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/lua/https-devhints-io-lua.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/lua/https-devhints-io-lua.html</link>
       <description>Lua programlama dilini kullanarak bir şeyler yapmaya çalışıyor ancak sık sık Google'a başvurmak durumunda kalıyorsanız, bir çok konuda hatırlatma niteliğinde bir çok nota sahip bu kopya kağıdını kullanmak isteyebilirsiniz.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/lua/https-devhints-io-lua.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/lua/https-devhints-io-lua.html</guid>
     </item>
     <item>
       <title>Nöbetçi Eczane API</title>
@@ -2291,9 +2291,9 @@
     </item>
     <item>
       <title>Python ile metaprogramlamaya bir bakış</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-suayip-medium-com-python-ile-metaprogramlamaya-bir-bak-c4-b1-c5-9f-d7771d468558.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kaynaklar/https-suayip-medium-com-python-ile-metaprogramlamaya-bir-bak-c4-b1-c5-9f-d7771d468558.html</link>
       <description>Şuayip Üzülmez'in yazdığı Python ile Metaprogramlama konusunda yazılmış gördüğüm en iyi Türkçe makale.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/kaynaklar/https-suayip-medium-com-python-ile-metaprogramlamaya-bir-bak-c4-b1-c5-9f-d7771d468558.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/kaynaklar/https-suayip-medium-com-python-ile-metaprogramlamaya-bir-bak-c4-b1-c5-9f-d7771d468558.html</guid>
     </item>
     <item>
       <title>32 Yatırımcı Görüşmesi Bana Ne Öğretti?</title>
@@ -2309,9 +2309,9 @@
     </item>
     <item>
       <title>Json Memory Streaming</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/python/https-pythonspeed-com-articles-json-memory-streaming.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/https-pythonspeed-com-articles-json-memory-streaming.html</link>
       <description>Python'da bir JSON dosyası üzerinde işlem yaparken, dosyanın tamamını ayrıştırıp hafızada yer tutması yerine veriyi parça parça ayrıştırmayı ve bu şekilde oluşacak parmak izini küçültmeyi anlatan makale</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/python/https-pythonspeed-com-articles-json-memory-streaming.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/python/https-pythonspeed-com-articles-json-memory-streaming.html</guid>
     </item>
     <item>
       <title>Use Ethereum, Solidity, and Smart Contracts to build production-ready apps based on the blockchain.</title>
@@ -2467,21 +2467,21 @@
     </item>
     <item>
       <title>Baserow</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/servisler/veri/https-baserow-io.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/servisler/veri-servisleri/https-baserow-io.html</link>
       <description>Airtable alternatifi, herhangi bir kod ya da veritabanı bilgisine sahip olmadan, semantik veri modelleyebildiğiniz, depolayabildiğiniz ve güncelleyebildiğiniz servis.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/servisler/veri/https-baserow-io.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/servisler/veri-servisleri/https-baserow-io.html</guid>
     </item>
     <item>
       <title>Airtable</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/servisler/veri/https-airtable-com.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/servisler/veri-servisleri/https-airtable-com.html</link>
       <description>Herhangi bir kod ya da veritabanı bilgisine sahip olmadan, semantik veri modelleyebildiğiniz, depolayabildiğiniz ve güncelleyebildiğiniz servis. API erişiminde çeşitli limitler koysa da yazılım geliştirme süreçlerini çok büyük yüklerden kurtaradığı söylenebilir.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/servisler/veri/https-airtable-com.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/servisler/veri-servisleri/https-airtable-com.html</guid>
     </item>
     <item>
       <title>Everything I wish I knew when learning C</title>
-      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/c/https-tmewett-com-c-tips.html</link>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/programlama-dilleri/c/https-tmewett-com-c-tips.html</link>
       <description>Bloomberg, PlayStation, and Raspberry Pi gibi firmalarda çalışmış bir C programcısının keşke daha önceden bilseydim diye kaleme aldığı C programlama ipuçları.</description>
-      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/c/https-tmewett-com-c-tips.html</guid>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/programlama-dilleri/c/https-tmewett-com-c-tips.html</guid>
     </item>
     <item>
       <title>Buffer</title>
