@@ -19,7 +19,6 @@ from collections import defaultdict
 from dataclasses import dataclass
 from dataclasses import asdict as dataclass_as_dict
 from datetime import datetime as type_date
-from functools import lru_cache
 from os import makedirs as _makedirs, walk, sep as directory_seperator  # noqa
 from os.path import dirname, exists, join, realpath, splitext
 from shutil import copyfile
@@ -101,6 +100,7 @@ class Link:
     def __repr__(self):
         return f"Link('{self.url}')"
 
+#TODO: Convert category to dataclass.
 
 ENV: Dict = dotenv_values(join(dirname(realpath(__file__)), ".env"))
 
@@ -137,18 +137,22 @@ if strtobool(cast(str, ENV.get("MINIMIZE_CSS", "True"))):
         from rcssmin import cssmin
     except ImportError:
         cssmin: Callable = processor_fallback
-        logger.warning("Could not import rcssmin. CSS files will not be compressed.")
+        logger.warning(
+            "Could not import rcssmin. CSS files will not be compressed."
+        )
 
 
 if strtobool(cast(str, ENV.get("MINIMIZE_HTML", "True"))):
+    # TODO: Doctests.
     try:
         from htmlmin import minify as htmlmin
     except ImportError:
         htmlmin: Callable = processor_fallback
-        logger.warning("Could not import htmlmin. HTML files will not be compressed.")
+        logger.warning(
+            "Could not import htmlmin. HTML files will not be compressed."
+        )
 
 
-@lru_cache(maxsize=len(LINK_COLUMNS))
 def get_column_index(key: str) -> int:
     try:
         return LINK_COLUMNS.index(key)
@@ -157,12 +161,12 @@ def get_column_index(key: str) -> int:
 
 
 def get_rows(worksheet: Worksheet) -> List[LinkRow]:
-    """Load lines from worksheet and return as list of lists.
+    """Load rows from worksheet and return as list of lists.
 
     :param worksheet: Worksheet Object
     :return: list
     """
-    logger.debug("Parsing lines from worksheet.")
+    logger.debug("Parsing rows from worksheet.")
     result: List[LinkRow] = []
     for idx, row in enumerate(worksheet.rows):
         if idx == 0:
@@ -357,7 +361,7 @@ def get_links_by_category(link_rows: List[LinkRow]) -> LinksByCategory:
     return result
 
 
-def create_category_paths(base_path, categories: List[str], dry=False):
+def create_category_paths(base_path, category_ids: List[str], dry=False):
     """
     Create directories of categories
 
@@ -374,8 +378,8 @@ def create_category_paths(base_path, categories: List[str], dry=False):
     """
     logger.debug("Creating category paths.")
     created_dirs = []
-    for category in categories:
-        path = join(base_path, get_category_path(category))
+    for category_id in category_ids:
+        path = join(base_path, get_category_path(category_id))
         if not dry:
             make_dirs(path)
         created_dirs.append(path)
@@ -396,12 +400,12 @@ def get_category_overrides(categories_page_rows) -> CategoryOverrides:
     Get optional title and description information of categories from
     categories page in spreadsheet.
 
-    :param categories_page_rows: List of lists that represent lines on
+    :param categories_page_rows: List of lists that represent rows on
     categories page.
     :return: Dictionary that contains title and descriptions of categories.
 
-    >>> category_line_0 = [0, 'a', 'Title Category A', 'Desc Category A']
-    >>> category_line_1 = [1, 'b', 'Title Category B', 'Desc Category B']
+    >>> category_line_0 = [0, 'a', 'Title of Category A', 'Desc of Category A']
+    >>> category_line_1 = [1, 'b', 'Title of Category B', 'Desc of Category B']
     >>> get_category_overrides([category_line_0, category_line_1])
     {'a': {'title': 'Title of Category A', 'desc': 'Desc of Category A'}, \
 'b': {'title': 'Title of Category B', 'desc': 'Desc of Category B'}}
@@ -424,8 +428,7 @@ def get_category_info(category_id: str, overrides: CategoryOverrides) -> Dict:
 
     >>> _overrides = {
     'a': {'title': 'Title of category "a" overridden by this.'},\
-    'b': {'desc': 'Description of Category "b" overridden by this.'}\
-    }
+    'b': {'desc': 'Description of Category "b" overridden by this.'}}
 
     >>> get_category_info('a', _overrides)
     {'name': 'a', 'title': 'Title of category "a" overrided by this.', \
@@ -455,9 +458,13 @@ def get_categories(
     logger.info("Building category information.")
     categories = {}
     overrides = get_category_overrides(categories_page_rows)
-    categories_of_links = [r[get_column_index("category_id")] for r in links_page_rows]
+    categories_of_links = [
+        r[get_column_index("category_id")] for r in links_page_rows
+    ]
     categories_of_overrides = list(overrides.keys())
-    missing_categories = set(categories_of_overrides) - set(categories_of_links)
+    missing_categories = set(categories_of_overrides) - set(
+        categories_of_links
+    )
     for missing_category in missing_categories:
         logger.warning(
             'Category: "%s" appears on category overrides page '
@@ -496,7 +503,9 @@ def get_categories(
 
             if parent_category_id and child_category_id:
                 if categories[child_category_id]["parent"] is None:
-                    categories[child_category_id]["parent"] = parent_category_id
+                    categories[child_category_id][
+                        "parent"
+                    ] = parent_category_id
                 if (
                     child_category_id
                     not in categories[parent_category_id]["children"]
@@ -604,13 +613,15 @@ def render_feed(root_path: str, link_page_rows: List[LinkRow]):
 def render_categories(
     base_path: str,
     links_by_category: LinksByCategory,
-    categories,
+    categories: List[Dict],
     template,
 ):
     logger.info("Rendering categories.")
     for category_id, links in links_by_category.items():
         category = categories[category_id]
-        file_path: str = join(base_path, cast(str, category["path"]), "index.html")
+        file_path: str = join(
+            base_path, cast(str, category["path"]), "index.html"
+        )
         root_path: str = get_category_root_path(category_id)
         breadcrumbs: list = get_category_breadcrumbs(category_id, categories)
         with open(file_path, "w") as file:
@@ -657,21 +668,22 @@ def get_browser():
     for web_driver, driver in zip(web_drivers, drivers):
         try:
             if exists(driver):
-                browser = getattr(webdriver, web_driver)(executable_path=f"./{driver}")
+                browser = getattr(webdriver, web_driver)(
+                    executable_path=f"./{driver}"
+                )
             else:
                 browser = getattr(webdriver, web_driver)()
 
             browser.set_window_size(600, 400)
             return browser
-        except Exception as err:
-            logger.error(err)
+        except Exception:
             continue
 
 
 def render_links(
     base_path: str,
     links_by_category: LinksByCategory,
-    categories: Categories,
+    categories,
     template: Template,
 ):
     logger.info("Rendering links.")
@@ -691,12 +703,16 @@ def render_links(
     """
     browser = get_browser()
     if browser is None:
-        logger.info("Not able to run Selenium. " "Screenshots will not be generated.")
+        logger.info(
+            "Not able to run Selenium. " "Screenshots will not be generated."
+        )
     for category_id, links in links_by_category.items():
         for link in links:
             file_path = join(base_path, cast(str, link.file_path))
             image_url: str = f"{link.file_path}.png"
-            breadcrumbs: list = get_category_breadcrumbs(category_id, categories)
+            breadcrumbs: list = get_category_breadcrumbs(
+                category_id, categories
+            )
             with open(file_path, "w") as file:
                 file.write(
                     htmlmin(
@@ -726,7 +742,6 @@ def render_home(
     categories: Dict[str, Union[str, None, List[str]]],
     template: Template,
 ):
-
     logger.info("Rendering homepage.")
     links = get_links_by_date(link_rows)
     last_update = datetime.date.today()
@@ -770,7 +785,8 @@ def build_assets(build_path: str, assets_path: str):
             source_file_path = join(root, file_name)
             target_file_path = join(target_dir, file_name)
             logger.debug(
-                "Processing asset: %s -> %s" % (source_file_path, target_file_path)
+                "Processing asset: %s -> %s"
+                % (source_file_path, target_file_path)
             )
             extension = splitext(file_name)[1]
             processor, kwargs = processors.get(extension, (None, {}))
@@ -814,10 +830,14 @@ def build(build_path: str = join(dirname(realpath(__file__)), "docs/")):
     )
 
     with NamedTemporaryFile(suffix=".xlsx") as spreadsheet_file:
-        with urllib.request.urlopen(cast(str, ENV["SPREADSHEET_URL"])) as remote_file:
+        with urllib.request.urlopen(
+            cast(str, ENV["SPREADSHEET_URL"])
+        ) as remote_file:
             spreadsheet_file.write(remote_file.read())
-            workbook = load_workbook(filename=spreadsheet_file.name, read_only=True)
-    links_page_lines = get_rows(
+            workbook = load_workbook(
+                filename=spreadsheet_file.name, read_only=True
+            )
+    links_page_rows = get_rows(
         workbook[cast(str, ENV.get("SPREADSHEET_LINKS_PAGE_NAME", "Links"))]
     )
 
@@ -826,7 +846,7 @@ def build(build_path: str = join(dirname(realpath(__file__)), "docs/")):
         get_column_index(required_column): required_column
         for required_column in REQUIRED_COLUMNS
     }
-    for row in links_page_lines:
+    for row in links_page_rows:
         for index, column in enumerate(row):
             if index == 0:
                 continue
@@ -834,14 +854,22 @@ def build(build_path: str = join(dirname(realpath(__file__)), "docs/")):
                 print(row)
                 raise ValueError(
                     "Line %s - has missing value on column %s."
-                    % (row[0] + 1, required_column_indexes[index]))
-            if type(column) is str and (column.startswith(" ") or column.endswith(" ")):
+                    % (row[0] + 1, required_column_indexes[index])
+                )
+            if type(column) is str and (
+                column.startswith(" ") or column.endswith(" ")
+            ):
                 raise ValueError(
                     "Line %s - has a value that must be trimmed on column %s."
-                    % (row[0] + 1, required_column_indexes[index]))
+                    % (row[0] + 1, required_column_indexes[index])
+                )
 
-    categories_page_lines = get_rows(
-        workbook[cast(str, ENV.get("SPREADSHEET_CATEGORIES_PAGE_NAME", "Categories"))]
+    categories_page_rows = get_rows(
+        workbook[
+            cast(
+                str, ENV.get("SPREADSHEET_CATEGORIES_PAGE_NAME", "Categories")
+            )
+        ]
     )
 
     category_template = jinja.get_template("category.html.jinja2")
@@ -849,18 +877,22 @@ def build(build_path: str = join(dirname(realpath(__file__)), "docs/")):
     home_template = jinja.get_template("home.html.jinja2")
     sitemap_template = jinja.get_template("sitemap.xml.jinja2")
 
-    links_by_category = get_links_by_category(links_page_lines)
-    categories = get_categories(links_page_lines, categories_page_lines)
+    links_by_category = get_links_by_category(links_page_rows)
+    categories = get_categories(links_page_rows, categories_page_rows)
 
-    category_ids = [r[get_column_index("category_id")] for r in links_page_lines]
+    category_ids = [
+        r[get_column_index("category_id")] for r in links_page_rows
+    ]
     create_category_paths(build_path, category_ids)
     render_json(build_path, categories, links_by_category)
     build_assets(build_path, "./assets/")
-    render_categories(build_path, links_by_category, categories, category_template)
+    render_categories(
+        build_path, links_by_category, categories, category_template
+    )
     render_links(build_path, links_by_category, categories, link_template)
-    render_home(build_path, links_page_lines, categories, home_template)
+    render_home(build_path, links_page_rows, categories, home_template)
     render_sitemap(build_path, categories, links_by_category, sitemap_template)
-    render_feed(build_path, links_page_lines)
+    render_feed(build_path, links_page_rows)
 
 
 if __name__ == "__main__":
