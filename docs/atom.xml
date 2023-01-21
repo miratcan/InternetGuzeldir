@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2023-01-15T11:01:01.115162+00:00</updated>
+  <updated>2023-01-21T11:03:39.014826+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -1779,13 +1779,6 @@
     <link href="https://internetguzeldir.com/yasam-tarzi/spor/futbol/https-www-sporekrani-com.html" rel="alternate" type="text/html" title="Spor Ekranı"/>
   </entry>
   <entry>
-    <id>yasam-tarzi/dekorasyon/https-stickker-net.html</id>
-    <title>Stickker</title>
-    <updated>2021-07-15T00:00:00+03:00</updated>
-    <content>Aklınıza gelebilecek hemen her konuda özel tasarım sticker'lar spariş edebileceğiniz online mağaza.</content>
-    <link href="https://internetguzeldir.com/yasam-tarzi/dekorasyon/https-stickker-net.html" rel="alternate" type="text/html" title="Stickker"/>
-  </entry>
-  <entry>
     <id>bilgisayarlar/oyun-gelistirme/oyun-gelistirme-araclari/https-www-rpgmakerweb-com.html</id>
     <title>RPG Maker</title>
     <updated>2021-07-15T00:00:00+03:00</updated>
@@ -2922,5 +2915,89 @@
 
 </content>
     <link href="https://internetguzeldir.com/bilgisayarlar/internet/https-sorucevap-com.html" rel="alternate" type="text/html" title="Soru Cevap"/>
+  </entry>
+  <entry>
+    <id>yasam-tarzi/yeme-icme/glutensiz-yasam/https-www-glutensiznokta-com-tr.html</id>
+    <title>Glutensiz Nokta</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Glutensiz ürünler bulup spariş verebileceğiniz çevirimiçi pazaryeri.</content>
+    <link href="https://internetguzeldir.com/yasam-tarzi/yeme-icme/glutensiz-yasam/https-www-glutensiznokta-com-tr.html" rel="alternate" type="text/html" title="Glutensiz Nokta"/>
+  </entry>
+  <entry>
+    <id>metin-yazimi/https-app-yaara-ai-paraphraser.html</id>
+    <title>Pharaphrasing Tool</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Var olan ingilizce bir makaleyi başka cümleler kurararak tekrar yazmaya yarayan yapay zeka uygulaması.</content>
+    <link href="https://internetguzeldir.com/metin-yazimi/https-app-yaara-ai-paraphraser.html" rel="alternate" type="text/html" title="Pharaphrasing Tool"/>
+  </entry>
+  <entry>
+    <id>metin-yazimi/https-myess-ai.html</id>
+    <title>myEssai</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>İngilizce yazdığınız makaleyi iyileştirmek için yorum ve önerilerde bulunan  yapay zeka uygulaması.</content>
+    <link href="https://internetguzeldir.com/metin-yazimi/https-myess-ai.html" rel="alternate" type="text/html" title="myEssai"/>
+  </entry>
+  <entry>
+    <id>is-isci-bulma/https-resumestudio-careers.html</id>
+    <title>Resume Studio</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Yapay zeka kullanarak CV hazırlamanızı kolaylaştıran uygulama.</content>
+    <link href="https://internetguzeldir.com/is-isci-bulma/https-resumestudio-careers.html" rel="alternate" type="text/html" title="Resume Studio"/>
+  </entry>
+  <entry>
+    <id>finans/https-stradr-com.html</id>
+    <title>Stradr</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Borsa ile ilgilenip para koymayı göze alamayanlar için sahte para ile gerçek borsalarda alım satım yapmayı sağlayan, böylelikle bir tüccar olarak paranızı riske atmadan başarınızı ölçmenizi sağlayan web uygulaması.</content>
+    <link href="https://internetguzeldir.com/finans/https-stradr-com.html" rel="alternate" type="text/html" title="Stradr"/>
+  </entry>
+  <entry>
+    <id>kafa-dagitma/https-pooppoop-lol.html</id>
+    <title>PoopPoop</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Kakalar hakkinda çeşitli bilgiler ve anektodlar içeren saçma sapan bir web sitesi.</content>
+    <link href="https://internetguzeldir.com/kafa-dagitma/https-pooppoop-lol.html" rel="alternate" type="text/html" title="PoopPoop"/>
+  </entry>
+  <entry>
+    <id>ses/https-summarize-ad-auris-com.html</id>
+    <title>Summarize</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Verdiğiniz makale linkine gidip, okuyup, özet çıkarıp size konuşarak anlatan yapay zeka uygulaması.</content>
+    <link href="https://internetguzeldir.com/ses/https-summarize-ad-auris-com.html" rel="alternate" type="text/html" title="Summarize"/>
+  </entry>
+  <entry>
+    <id>ses/https-freesubtitles-ai.html</id>
+    <title>Free Subtitles</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Video dosyasını veriyorsunuz, yapay zeka kullanarak video için altyazı oluşturup size geri veriyor. Türkçe desteği de mevcut.</content>
+    <link href="https://internetguzeldir.com/ses/https-freesubtitles-ai.html" rel="alternate" type="text/html" title="Free Subtitles"/>
+  </entry>
+  <entry>
+    <id>calisma-duzeni/https-zetup-me.html</id>
+    <title>Zetup Me</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>İnsanların evde kurdukları çalışma ortamlarının fotoğraflarını paylaştığı, kullandıkları ürünleri etiketlediği ilham almalık web sitesi.</content>
+    <link href="https://internetguzeldir.com/calisma-duzeni/https-zetup-me.html" rel="alternate" type="text/html" title="Zetup Me"/>
+  </entry>
+  <entry>
+    <id>calisma-duzeni/https-soundofcolleagues-com.html</id>
+    <title>Sound of Colleagues</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Ofiste çalışmayı özleyenler için ofisteymiş gibi sesler gürültüler çıkaran web uygulaması.</content>
+    <link href="https://internetguzeldir.com/calisma-duzeni/https-soundofcolleagues-com.html" rel="alternate" type="text/html" title="Sound of Colleagues"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/oyunlar/browser-oyunlari/https-langoguessr-com.html</id>
+    <title>LangoGuesser</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Bu site size YouTube'dan rasgele bir video açıyor siz de videodaki konuşmaların ya da şarkının hangi dilde olduğunu tahmin etmeye çalışıyorsunuz.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/oyunlar/browser-oyunlari/https-langoguessr-com.html" rel="alternate" type="text/html" title="LangoGuesser"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/internet/https-www-faketweetmaker-com-fake-tweet-generator.html</id>
+    <title>Fake Tweet Generator</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Parodi tweetler oluşturabileceğiniz web uygulaması.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/internet/https-www-faketweetmaker-com-fake-tweet-generator.html" rel="alternate" type="text/html" title="Fake Tweet Generator"/>
   </entry>
 </feed>
