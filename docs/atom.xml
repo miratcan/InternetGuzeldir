@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="tr">
   <id>https://internetguzeldir.com/</id>
   <title>İnternet Güzeldir</title>
-  <updated>2023-01-21T11:03:39.014826+00:00</updated>
+  <updated>2023-02-04T11:06:32.003105+00:00</updated>
   <link href="https://internetguzeldir.com/" rel="alternate"/>
   <link href="https://internetguzeldir.com/feed.rss" rel="self"/>
   <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
@@ -2917,6 +2917,13 @@
     <link href="https://internetguzeldir.com/bilgisayarlar/internet/https-sorucevap-com.html" rel="alternate" type="text/html" title="Soru Cevap"/>
   </entry>
   <entry>
+    <id>yasam-tarzi/evcil-hayvanlar/kopekler/https-allmannerofhounds-com.html</id>
+    <title>The Names of All Manner of Hounds</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Köpeğinize, 15 yüzyıl avrupasında kullanılan köpek isimlerinden birini koymanız için önerilerde bulunan web uygulaması.</content>
+    <link href="https://internetguzeldir.com/yasam-tarzi/evcil-hayvanlar/kopekler/https-allmannerofhounds-com.html" rel="alternate" type="text/html" title="The Names of All Manner of Hounds"/>
+  </entry>
+  <entry>
     <id>yasam-tarzi/yeme-icme/glutensiz-yasam/https-www-glutensiznokta-com-tr.html</id>
     <title>Glutensiz Nokta</title>
     <updated>2023-01-21T00:00:00+03:00</updated>
@@ -2936,6 +2943,13 @@
     <updated>2023-01-21T00:00:00+03:00</updated>
     <content>İngilizce yazdığınız makaleyi iyileştirmek için yorum ve önerilerde bulunan  yapay zeka uygulaması.</content>
     <link href="https://internetguzeldir.com/metin-yazimi/https-myess-ai.html" rel="alternate" type="text/html" title="myEssai"/>
+  </entry>
+  <entry>
+    <id>kripto-para/https-kriptoexpert-com.html</id>
+    <title>Kripto Expert</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Kripto paralar hakkında haberler, spekülasyonlar ve makaleler içeren web sitesi.</content>
+    <link href="https://internetguzeldir.com/kripto-para/https-kriptoexpert-com.html" rel="alternate" type="text/html" title="Kripto Expert"/>
   </entry>
   <entry>
     <id>is-isci-bulma/https-resumestudio-careers.html</id>
@@ -2987,6 +3001,13 @@
     <link href="https://internetguzeldir.com/calisma-duzeni/https-soundofcolleagues-com.html" rel="alternate" type="text/html" title="Sound of Colleagues"/>
   </entry>
   <entry>
+    <id>bilgisayarlar/yazilim-gelistirme/blokzincir/https-degatchi-com-articles-low-level-guide-to-soliditys-storage-management.html</id>
+    <title>A Low-Level Guide To Solidity's Storage Management</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>EVM'lerde storage kavramın nasıl çalıştığının detaylarına inen, Solidity ile assembly yazarak storage üzerinde işlemler yapmayı anlatan makale.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-degatchi-com-articles-low-level-guide-to-soliditys-storage-management.html" rel="alternate" type="text/html" title="A Low-Level Guide To Solidity's Storage Management"/>
+  </entry>
+  <entry>
     <id>bilgisayarlar/oyunlar/browser-oyunlari/https-langoguessr-com.html</id>
     <title>LangoGuesser</title>
     <updated>2023-01-21T00:00:00+03:00</updated>
@@ -2994,10 +3015,108 @@
     <link href="https://internetguzeldir.com/bilgisayarlar/oyunlar/browser-oyunlari/https-langoguessr-com.html" rel="alternate" type="text/html" title="LangoGuesser"/>
   </entry>
   <entry>
+    <id>bilgisayarlar/isletim-sistemleri/linux/https-github-com-red-data-tools-youplot.html</id>
+    <title>YouPlot</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Terminal üzerinde nümerik çıktı veren program çıktılarından grafikler oluşturmanızı sağlayan harika bir terminal uygulaması.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/isletim-sistemleri/linux/https-github-com-red-data-tools-youplot.html" rel="alternate" type="text/html" title="YouPlot"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/isletim-sistemleri/linux/https-asciinema-org.html</id>
+    <title>Asciinema</title>
+    <updated>2023-01-21T00:00:00+03:00</updated>
+    <content>Terminal oturumlarınızın kaydını alan, metin tabanlı video kaydedici  ve oynatıcısı.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/isletim-sistemleri/linux/https-asciinema-org.html" rel="alternate" type="text/html" title="Asciinema"/>
+  </entry>
+  <entry>
     <id>bilgisayarlar/internet/https-www-faketweetmaker-com-fake-tweet-generator.html</id>
     <title>Fake Tweet Generator</title>
     <updated>2023-01-21T00:00:00+03:00</updated>
     <content>Parodi tweetler oluşturabileceğiniz web uygulaması.</content>
     <link href="https://internetguzeldir.com/bilgisayarlar/internet/https-www-faketweetmaker-com-fake-tweet-generator.html" rel="alternate" type="text/html" title="Fake Tweet Generator"/>
+  </entry>
+  <entry>
+    <id>ses/https-podcastle-ai.html</id>
+    <title>Podcastle</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Stüdyo kalitesinde ses kaydı almanızı sağlayan, aldığınız ses kayıtlarını yapay zeka kullanarak temizleyen ve  kaydettiğiniz sesleri düzenlemenize olanak sağlayan online web uygulaması.</content>
+    <link href="https://internetguzeldir.com/ses/https-podcastle-ai.html" rel="alternate" type="text/html" title="Podcastle"/>
+  </entry>
+  <entry>
+    <id>ses/https-cleanvoice-ai.html</id>
+    <title>Clean Voice</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Podcast ya da konuşma ses kayıtlarındaki ağız şapırtısı, arka plan gürültüsü gibi şeyleri temizleyen yapay zeka uygulamasıç</content>
+    <link href="https://internetguzeldir.com/ses/https-cleanvoice-ai.html" rel="alternate" type="text/html" title="Clean Voice"/>
+  </entry>
+  <entry>
+    <id>pazarlama/https-www-ocoya-com.html</id>
+    <title>Ocoya</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Sosyal medya içeriklerini yapay zeka yardımıyla daha hızlı hazırlamaya, otomatikleştirmeye ve planlamaya yarayan web uygulaması.</content>
+    <link href="https://internetguzeldir.com/pazarlama/https-www-ocoya-com.html" rel="alternate" type="text/html" title="Ocoya"/>
+  </entry>
+  <entry>
+    <id>muzik/https-soundraw-io.html</id>
+    <title>Soundraw</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Benzersiz telifsiz müzik oluşturmanızı sağlayan yapay zeka uygulaması.</content>
+    <link href="https://internetguzeldir.com/muzik/https-soundraw-io.html" rel="alternate" type="text/html" title="Soundraw"/>
+  </entry>
+  <entry>
+    <id>muzik/https-www-beatoven-ai.html</id>
+    <title>Beatoven</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Benzersiz telifsiz müzik oluşturmanızı sağlayan yapay zeka uygulaması.</content>
+    <link href="https://internetguzeldir.com/muzik/https-www-beatoven-ai.html" rel="alternate" type="text/html" title="Beatoven"/>
+  </entry>
+  <entry>
+    <id>grafik-tasarim/araclar/https-www-patterned-ai.html</id>
+    <title>Patterned AI</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Sizin için desen oluşturan ve  bu desenin çeşitli ürünler üzerinde nasıl duracağını size gösterebilen yapay zeka uygulamasıç</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-www-patterned-ai.html" rel="alternate" type="text/html" title="Patterned AI"/>
+  </entry>
+  <entry>
+    <id>grafik-tasarim/araclar/https-stockimg-ai.html</id>
+    <title>Stock Img</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Verdiğiniz cümleden kitap kapağı, stok fotoğraf, logo, ilistrasyon logo vb gibi grafikler üretebilen yapay zeka uygulaması.</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-stockimg-ai.html" rel="alternate" type="text/html" title="Stock Img"/>
+  </entry>
+  <entry>
+    <id>grafik-tasarim/araclar/https-illustroke-com.html</id>
+    <title>Illustroke</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Bir cümle yazıyorsunuz, yapay zeka o cümleden svg formatında bir ilistrasyon oluşturuyor.</content>
+    <link href="https://internetguzeldir.com/grafik-tasarim/araclar/https-illustroke-com.html" rel="alternate" type="text/html" title="Illustroke"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/https-flair-ai.html</id>
+    <title>Flair</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Bir logonuz varsa bu logonun çeşitli ürünler üzerinde nasıl duracağını gösterebilen yapay zeka uygulaması.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/https-flair-ai.html" rel="alternate" type="text/html" title="Flair"/>
+  </entry>
+  <entry>
+    <id>girisimcilik/https-copymonkey-ai.html</id>
+    <title>Copy Monkey</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Amazonda sattığınız ürünler için başlık ve açıklama girmenizi kolaylaştıran yapay zeka uygulaması.</content>
+    <link href="https://internetguzeldir.com/girisimcilik/https-copymonkey-ai.html" rel="alternate" type="text/html" title="Copy Monkey"/>
+  </entry>
+  <entry>
+    <id>diger/https-vidyo-ai.html</id>
+    <title>Vidyo</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Uzun videoları kısaltmaya yarayan yapay zeka uygulaması. Youtube, Instagram, Tiktok, Linkedin gibi bir çok servisi destekliyor.</content>
+    <link href="https://internetguzeldir.com/diger/https-vidyo-ai.html" rel="alternate" type="text/html" title="Vidyo"/>
+  </entry>
+  <entry>
+    <id>bilgisayarlar/isletim-sistemleri/linux/https-github-com-slackadays-clipboard.html</id>
+    <title>ClipBoard</title>
+    <updated>2023-02-04T00:00:00+03:00</updated>
+    <content>Terminal üzerinde çalışan gelişmiş pano uygulaması. Grafik arayüzlerdeki gibi imajlar dosyaları vs panoya kopyalabilmenizi de sağlıyor.</content>
+    <link href="https://internetguzeldir.com/bilgisayarlar/isletim-sistemleri/linux/https-github-com-slackadays-clipboard.html" rel="alternate" type="text/html" title="ClipBoard"/>
   </entry>
 </feed>

@@ -8,7 +8,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>tr</language>
-    <lastBuildDate>Sat, 21 Jan 2023 11:03:39 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Feb 2023 11:06:32 +0000</lastBuildDate>
     <item>
       <title>Türkiye'deki Kamp Alanları Listesi</title>
       <link>https://internetguzeldir.com/seyahat/https-www-google-com-maps-d-u-0-viewer-mid-1oxyu1crdfylrtiyijsonakf2xy8-ll-38-624311649181756-2c35-12324238355848-z-6.html</link>
@@ -2504,6 +2504,12 @@
       <guid isPermaLink="false">bilgisayarlar/internet/https-sorucevap-com.html</guid>
     </item>
     <item>
+      <title>The Names of All Manner of Hounds</title>
+      <link>https://internetguzeldir.com/yasam-tarzi/evcil-hayvanlar/kopekler/https-allmannerofhounds-com.html</link>
+      <description>Köpeğinize, 15 yüzyıl avrupasında kullanılan köpek isimlerinden birini koymanız için önerilerde bulunan web uygulaması.</description>
+      <guid isPermaLink="false">yasam-tarzi/evcil-hayvanlar/kopekler/https-allmannerofhounds-com.html</guid>
+    </item>
+    <item>
       <title>Glutensiz Nokta</title>
       <link>https://internetguzeldir.com/yasam-tarzi/yeme-icme/glutensiz-yasam/https-www-glutensiznokta-com-tr.html</link>
       <description>Glutensiz ürünler bulup spariş verebileceğiniz çevirimiçi pazaryeri.</description>
@@ -2520,6 +2526,12 @@
       <link>https://internetguzeldir.com/metin-yazimi/https-myess-ai.html</link>
       <description>İngilizce yazdığınız makaleyi iyileştirmek için yorum ve önerilerde bulunan  yapay zeka uygulaması.</description>
       <guid isPermaLink="false">metin-yazimi/https-myess-ai.html</guid>
+    </item>
+    <item>
+      <title>Kripto Expert</title>
+      <link>https://internetguzeldir.com/kripto-para/https-kriptoexpert-com.html</link>
+      <description>Kripto paralar hakkında haberler, spekülasyonlar ve makaleler içeren web sitesi.</description>
+      <guid isPermaLink="false">kripto-para/https-kriptoexpert-com.html</guid>
     </item>
     <item>
       <title>Resume Studio</title>
@@ -2564,16 +2576,106 @@
       <guid isPermaLink="false">calisma-duzeni/https-soundofcolleagues-com.html</guid>
     </item>
     <item>
+      <title>A Low-Level Guide To Solidity's Storage Management</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/yazilim-gelistirme/blokzincir/https-degatchi-com-articles-low-level-guide-to-soliditys-storage-management.html</link>
+      <description>EVM'lerde storage kavramın nasıl çalıştığının detaylarına inen, Solidity ile assembly yazarak storage üzerinde işlemler yapmayı anlatan makale.</description>
+      <guid isPermaLink="false">bilgisayarlar/yazilim-gelistirme/blokzincir/https-degatchi-com-articles-low-level-guide-to-soliditys-storage-management.html</guid>
+    </item>
+    <item>
       <title>LangoGuesser</title>
       <link>https://internetguzeldir.com/bilgisayarlar/oyunlar/browser-oyunlari/https-langoguessr-com.html</link>
       <description>Bu site size YouTube'dan rasgele bir video açıyor siz de videodaki konuşmaların ya da şarkının hangi dilde olduğunu tahmin etmeye çalışıyorsunuz.</description>
       <guid isPermaLink="false">bilgisayarlar/oyunlar/browser-oyunlari/https-langoguessr-com.html</guid>
     </item>
     <item>
+      <title>YouPlot</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/isletim-sistemleri/linux/https-github-com-red-data-tools-youplot.html</link>
+      <description>Terminal üzerinde nümerik çıktı veren program çıktılarından grafikler oluşturmanızı sağlayan harika bir terminal uygulaması.</description>
+      <guid isPermaLink="false">bilgisayarlar/isletim-sistemleri/linux/https-github-com-red-data-tools-youplot.html</guid>
+    </item>
+    <item>
+      <title>Asciinema</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/isletim-sistemleri/linux/https-asciinema-org.html</link>
+      <description>Terminal oturumlarınızın kaydını alan, metin tabanlı video kaydedici  ve oynatıcısı.</description>
+      <guid isPermaLink="false">bilgisayarlar/isletim-sistemleri/linux/https-asciinema-org.html</guid>
+    </item>
+    <item>
       <title>Fake Tweet Generator</title>
       <link>https://internetguzeldir.com/bilgisayarlar/internet/https-www-faketweetmaker-com-fake-tweet-generator.html</link>
       <description>Parodi tweetler oluşturabileceğiniz web uygulaması.</description>
       <guid isPermaLink="false">bilgisayarlar/internet/https-www-faketweetmaker-com-fake-tweet-generator.html</guid>
+    </item>
+    <item>
+      <title>Podcastle</title>
+      <link>https://internetguzeldir.com/ses/https-podcastle-ai.html</link>
+      <description>Stüdyo kalitesinde ses kaydı almanızı sağlayan, aldığınız ses kayıtlarını yapay zeka kullanarak temizleyen ve  kaydettiğiniz sesleri düzenlemenize olanak sağlayan online web uygulaması.</description>
+      <guid isPermaLink="false">ses/https-podcastle-ai.html</guid>
+    </item>
+    <item>
+      <title>Clean Voice</title>
+      <link>https://internetguzeldir.com/ses/https-cleanvoice-ai.html</link>
+      <description>Podcast ya da konuşma ses kayıtlarındaki ağız şapırtısı, arka plan gürültüsü gibi şeyleri temizleyen yapay zeka uygulamasıç</description>
+      <guid isPermaLink="false">ses/https-cleanvoice-ai.html</guid>
+    </item>
+    <item>
+      <title>Ocoya</title>
+      <link>https://internetguzeldir.com/pazarlama/https-www-ocoya-com.html</link>
+      <description>Sosyal medya içeriklerini yapay zeka yardımıyla daha hızlı hazırlamaya, otomatikleştirmeye ve planlamaya yarayan web uygulaması.</description>
+      <guid isPermaLink="false">pazarlama/https-www-ocoya-com.html</guid>
+    </item>
+    <item>
+      <title>Soundraw</title>
+      <link>https://internetguzeldir.com/muzik/https-soundraw-io.html</link>
+      <description>Benzersiz telifsiz müzik oluşturmanızı sağlayan yapay zeka uygulaması.</description>
+      <guid isPermaLink="false">muzik/https-soundraw-io.html</guid>
+    </item>
+    <item>
+      <title>Beatoven</title>
+      <link>https://internetguzeldir.com/muzik/https-www-beatoven-ai.html</link>
+      <description>Benzersiz telifsiz müzik oluşturmanızı sağlayan yapay zeka uygulaması.</description>
+      <guid isPermaLink="false">muzik/https-www-beatoven-ai.html</guid>
+    </item>
+    <item>
+      <title>Patterned AI</title>
+      <link>https://internetguzeldir.com/grafik-tasarim/araclar/https-www-patterned-ai.html</link>
+      <description>Sizin için desen oluşturan ve  bu desenin çeşitli ürünler üzerinde nasıl duracağını size gösterebilen yapay zeka uygulamasıç</description>
+      <guid isPermaLink="false">grafik-tasarim/araclar/https-www-patterned-ai.html</guid>
+    </item>
+    <item>
+      <title>Stock Img</title>
+      <link>https://internetguzeldir.com/grafik-tasarim/araclar/https-stockimg-ai.html</link>
+      <description>Verdiğiniz cümleden kitap kapağı, stok fotoğraf, logo, ilistrasyon logo vb gibi grafikler üretebilen yapay zeka uygulaması.</description>
+      <guid isPermaLink="false">grafik-tasarim/araclar/https-stockimg-ai.html</guid>
+    </item>
+    <item>
+      <title>Illustroke</title>
+      <link>https://internetguzeldir.com/grafik-tasarim/araclar/https-illustroke-com.html</link>
+      <description>Bir cümle yazıyorsunuz, yapay zeka o cümleden svg formatında bir ilistrasyon oluşturuyor.</description>
+      <guid isPermaLink="false">grafik-tasarim/araclar/https-illustroke-com.html</guid>
+    </item>
+    <item>
+      <title>Flair</title>
+      <link>https://internetguzeldir.com/girisimcilik/https-flair-ai.html</link>
+      <description>Bir logonuz varsa bu logonun çeşitli ürünler üzerinde nasıl duracağını gösterebilen yapay zeka uygulaması.</description>
+      <guid isPermaLink="false">girisimcilik/https-flair-ai.html</guid>
+    </item>
+    <item>
+      <title>Copy Monkey</title>
+      <link>https://internetguzeldir.com/girisimcilik/https-copymonkey-ai.html</link>
+      <description>Amazonda sattığınız ürünler için başlık ve açıklama girmenizi kolaylaştıran yapay zeka uygulaması.</description>
+      <guid isPermaLink="false">girisimcilik/https-copymonkey-ai.html</guid>
+    </item>
+    <item>
+      <title>Vidyo</title>
+      <link>https://internetguzeldir.com/diger/https-vidyo-ai.html</link>
+      <description>Uzun videoları kısaltmaya yarayan yapay zeka uygulaması. Youtube, Instagram, Tiktok, Linkedin gibi bir çok servisi destekliyor.</description>
+      <guid isPermaLink="false">diger/https-vidyo-ai.html</guid>
+    </item>
+    <item>
+      <title>ClipBoard</title>
+      <link>https://internetguzeldir.com/bilgisayarlar/isletim-sistemleri/linux/https-github-com-slackadays-clipboard.html</link>
+      <description>Terminal üzerinde çalışan gelişmiş pano uygulaması. Grafik arayüzlerdeki gibi imajlar dosyaları vs panoya kopyalabilmenizi de sağlıyor.</description>
+      <guid isPermaLink="false">bilgisayarlar/isletim-sistemleri/linux/https-github-com-slackadays-clipboard.html</guid>
     </item>
   </channel>
 </rss>
