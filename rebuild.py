@@ -25,14 +25,11 @@ from shutil import copyfile
 from tempfile import NamedTemporaryFile
 from typing import List, Any, Callable, Tuple, Dict
 from typing import Union, cast
-from urllib.parse import urljoin
 
 from dotenv import dotenv_values
-from feedgen.feed import FeedGenerator
 from jinja2 import Environment, FileSystemLoader, select_autoescape, Template
 from openpyxl import load_workbook
 from openpyxl.worksheet.worksheet import Worksheet
-from selenium import webdriver
 from slugify import slugify  # noqa
 
 logger = logging.getLogger()
@@ -583,32 +580,6 @@ def render_sitemap(
         )
 
 
-def render_feed(root_path: str, link_page_rows: List[LinkRow]):
-    logger.info("Rendering feed outputs.")
-    feed = FeedGenerator()
-    feed.id(ENV["SITE_URL"])
-    feed.title(ENV["SITE_TITLE"])
-    feed.link(href=ENV["SITE_URL"], rel="alternate")
-    feed.subtitle(ENV["SITE_DESC"])
-    feed.link(href=urljoin(ENV["SITE_URL"], "feed.rss"), rel="self")
-    feed.language("tr")
-
-    links = get_links_by_date(link_page_rows)
-    for link in links:
-        entry = feed.add_entry()
-        entry.id(link.file_path)
-        entry.title(link.title)
-        entry.description(link.desc)
-        entry.link(
-            title=link.title,
-            rel="alternate",
-            type="text/html",
-            href=urljoin(ENV["SITE_URL"], link.file_path),
-        )
-        entry.updated(link.create_time)
-    feed.rss_file(join(root_path, "rss.xml"), pretty=True)
-    feed.atom_file(join(root_path, "atom.xml"), pretty=True)
-
 
 def render_categories(
     base_path: str,
@@ -661,25 +632,6 @@ def render_categories(
             )
 
 
-def get_browser():
-    web_drivers: tuple[str, ...] = ("Firefox", "Chrome", "Safari")
-    drivers: tuple[str, ...] = ("geckodriver", "chromedriver", "safari")
-
-    for web_driver, driver in zip(web_drivers, drivers):
-        try:
-            if exists(driver):
-                browser = getattr(webdriver, web_driver)(
-                    executable_path=f"./{driver}"
-                )
-            else:
-                browser = getattr(webdriver, web_driver)()
-
-            browser.set_window_size(600, 400)
-            return browser
-        except Exception:
-            continue
-
-
 def render_links(
     base_path: str,
     links_by_category: LinksByCategory,
@@ -687,29 +639,9 @@ def render_links(
     template: Template,
 ):
     logger.info("Rendering links.")
-    force = strtobool(cast(str, ENV.get("FORCE_SCREENSHOT", "False")))
-    cleaner_js: str = """
-        document.getElementsByTagName('header')[0].style.background='none';
-        document.getElementsByTagName('form')[0].remove();
-        document.getElementById('page').style.margin=0;
-        document.getElementById('link_detail').style.margin=0;
-        text = document.getElementsByTagName('h1')[0].textContent;
-        document.getElementsByTagName('h1')[0].textContent=text.toUpperCase();
-        document.getElementsByTagName('header')[0].style.background='none';
-        document.getElementsByTagName('script')[0].remove();
-        document.getElementsByClassName('meta')[0].remove();
-        document.getElementsByClassName('socializer')[0].remove()
-        document.getElementsByTagName('p')[1].classList.remove('mb');
-    """
-    browser = get_browser()
-    if browser is None:
-        logger.info(
-            "Not able to run Selenium. " "Screenshots will not be generated."
-        )
     for category_id, links in links_by_category.items():
         for link in links:
             file_path = join(base_path, cast(str, link.file_path))
-            image_url: str = f"{link.file_path}.png"
             breadcrumbs: list = get_category_breadcrumbs(
                 category_id, categories
             )
@@ -720,20 +652,12 @@ def render_links(
                             link=link,
                             root_path=get_category_root_path(category_id),
                             breadcrumbs=breadcrumbs,
-                            image_url=image_url,
                             env=ENV,
                         ),
                         **HTMLMIN_KWARGS,
                     )
                 )
             logger.debug(f"{file_path} written.")
-            image_path = join(base_path, image_url)
-            if force or not exists(image_path) and browser:
-                browser.get("file://" + join(base_path, file_path))
-                browser.execute_script(cleaner_js)
-                browser.save_screenshot(join(base_path, image_url))
-    if browser:
-        browser.close()
 
 
 def render_home(
@@ -892,7 +816,6 @@ def build(build_path: str = join(dirname(realpath(__file__)), "docs/")):
     render_links(build_path, links_by_category, categories, link_template)
     render_home(build_path, links_page_rows, categories, home_template)
     render_sitemap(build_path, categories, links_by_category, sitemap_template)
-    render_feed(build_path, links_page_rows)
 
 
 if __name__ == "__main__":

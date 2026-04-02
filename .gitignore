@@ -1,8 +1,9 @@
 .venv/
 .idea/
 .env
-pickle.index
 .vscode/
 *.log
-geckodriver
-chromedriver
+docs/
+__pycache__/
+*.pyc
+.DS_Store

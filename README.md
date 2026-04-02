@@ -1,147 +1,94 @@
-Merhaba Yolcu...
+# Excel'den Web Dizini Oluşturucu
 
-Bu ulaştığın sayfa [internetguzeldir](https://internetguzeldir.com)'in kaynak
-kodudur. Basitçe Google Drive üzerinde duran bir Excell dosyasını veri kaynağı
-olarak kullanarak kategorize edilmiş linkler sitesi üreten bir Python
-betiğidir. Site geliştirilirken çeşitli prensiplere bağlı kalınmaya
-çalışılmaktadır:
+Google Sheets üzerindeki bir Excel dosyasını veri kaynağı olarak kullanarak
+kategorize edilmiş, statik bir link dizini sitesi üreten Python betiği.
 
-### Ürün Market Uyumu ya da Gelir Modeli Umursanmamaktadır ###
+## Ne Yapar?
 
-Geliştirirken keyif alınması, ve insanlara faydalı olması temennisiyle
-geliştirilen bir projedir. Motivasyonu DM'den atılan teşekkür, "oha ne güzel
-siteymiş lan" diye atılan tivit ya da "şurayı da ben düzelteyim" diye açılmış
-Pull Requestlerdir.
+1. Google Sheets'ten Excel dosyasını indirir
+2. Linkleri ve kategorileri okur
+3. Hiyerarşik kategori yapısı oluşturur
+4. Her kategori ve link için statik HTML sayfaları üretir
+5. Sitemap ve JSON API çıktısı oluşturur
 
-### Web 2.0 umursanmamaktadır ###
+Çıktı olarak `docs/` klasörüne tamamen statik bir site üretir. Herhangi bir
+sunucuya, veritabanına veya backend'e ihtiyaç duymaz. GitHub Pages, Netlify
+veya herhangi bir statik hosting servisiyle çalışır.
 
-Kayıt süreçleri, ünlü olma çabaları, puanlamalar, eposta validasyonları gibi
-şeyler yoktur. Linkler siteye admin tarafından seçilerek konulmakta,
-kullanıcılar ise bir Google Form üzerinden sadece tavsiye verebilmektedir.
-Siteyi kullanan kişiler için bu kadar katılımcılık yeterlidir, daha fazlası
-eklenmeyecektir.
+## Hızlı Başlangıç
 
-### Mümkün Olan En Basit Yazılım Teknolojileri Kullanılmaktadır ###
+```bash
+# 1. Bağımlılıkları kur
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 
-Önyüz düz HTML ve CSS dosyalarından oluşur. Backend tarafında bir sunucu
-yoktur. Site sadece statik sayfaları inşa eden bir Python betiğinin
-çıktısıdır. "Abi Couchdb takalım buna" şeklinde açılan PR'ların sahipleri
-bulunup hızla ve yerinde dövülür.
+# 2. Ayarları yapılandır
+cp .env.example .env
+# .env dosyasını kendi spreadsheet URL'inle düzenle
 
-# Yardım ve Yataklık # 
+# 3. Siteyi oluştur
+python rebuild.py
+```
 
-Eğer canınız istiyorsa bu sitenin yapımında faydalı olabileceğiniz bir çok konu
-mevcut:
+Çıktı `docs/` klasörüne yazılır. `docs/index.html` dosyasını tarayıcınızla
+açarak sonucu görebilirsiniz.
 
-- Var olan, problemli linkleri, imla hatalarını, seo dostu olmayan açıklama
-  metinlerini link detay sayfalarındaki yorum alanına raporlayabilirsiniz. (
-  Örnek)
-- Yukarıdaki türde olmayan herhangi bir hata ya da iyileştirme önerisi
-  görürseniz [issues sayfası](https://github.com/miratcan/internetguzeldir/issues)ndan
-  paylaşabilirsiniz.
-- Siteden bahsedebilir, forumlarda, blogunuzda, Facebook sayfalarında
-  paylaşabilirsiniz.
-- HTML/CSS/Tasarım bilginiz varsa site
-  için [userstyles.com](https://userstyles.org/) adresi üzerinde çeşitli
-  temalar hazırlayabilirsiniz. (*)
-- Tavsiye formunu kullanarak eklenmesi gerektiğini düşündüğünüz linkleri
-  bildirebilirsiniz.
-- HTML/CSS/Python bilginiz varsa issues bölümüne gidip yapılmayı bekleyen
-  işleri yapıp pull request açabilirsiniz. (Projenin nasıl çalıştırılacağı
-  aşağıda anlatılacaktır)
-- Var olan, problemli linkleri, imla hatalarını, seo dostu olmayan açıklama
-  metinlerini link detay sayfalarındaki yorum alanını raporlayabilirsiniz. (
-  Örnek)
-- Yukarıdaki türde olmayan herhangi bir hata ya da iyileştirme önerisi
-  görürseniz issues sayfasından paylaşabilirsiniz.
-- Siteden bahsedebilir, forumlarda, blogunuzda, Facebook sayfalarında
-  paylaşabilirsiniz.
-- HTML/CSS/Tasarım bilginiz varsa site için userspots.com adresi üzerinde
-  çeşitli temalar hazırlayabilirsiniz. (*)
-- Tavsiye formunu kullanarak eklenmesi gerektiğini düşündüğünüz linkleri
-  bildirebilirsiniz.
-- HTML/CSS/Python bilginiz varsa issues bölümüne gidip yapılmayı bekleyen işeri
-  yapıp pull request açabilirsiniz. (Projenin nasıl çalıştırılacağı aşağıda
-  anlatılacaktır)
+## Spreadsheet Formatı
 
-\*: Kimileri açık renkler istiyor, kimisi daha modern bir tasarım istiyor,
-kimisi daha büyük fontlar istiyor. Herkesi memnun edebildiğim bir formül
-çıkamadı. Userspots üzerinde hazırlanacak temalar bu işi çözer diye
-düşünüyorum.
+Google Sheets dosyanızda iki sayfa olmalı:
 
-# Projenin Çalıştırılması #
+### Links Sayfası
 
-## Bağımlılıkların Kurulması ##
+| Başlık | URL | Açıklama | Kategori | Tür | Dil | Gönderen | Kaynak | Tarih |
+|--------|-----|----------|----------|-----|-----|----------|--------|-------|
+| Google | https://google.com | Arama motoru | İnternet > Arama Motorları | website | Türkçe | ali | reddit | 2024-01-01 |
 
-Proje aslında rebuild.py'nin çalıştırılmasından ibarettir. Bu dosya Python 3.9
-ile çalışabilmekte ve çeşitli harici kütüphanelere ihtiyaç duymaktadır. Proje
-dizinine gidip venv adında bir virtual environment oluşturup requirements.txt
-dosyası içerisindeki bağımlılıkları yükleyebilirsiniz.
+- **Kategori** alanında `>` işareti ile hiyerarşi belirtilir (ör: `Teknoloji > Yazılım > Python`)
+- **Tür**: website, makale, uygulama, liste vb.
+- **Dil**: İçeriğin dili
 
-    $ python3 -m venv venv
-    $ source venv/bin/activate
-    $ pip install -r requirements.txt
+### Categories Sayfası (opsiyonel)
 
-> Eğer virtual environment nedir bilmiyorsanız ağlayarak günlüğünüze yazabilir, musluğu açıp suya anlatabilir ya da [kısa bir araştırma yaparak](https://letmegooglethat.com/?q=python+virtual+environment+nedir) konuyu öğrenebilirsiniz)
+| Kategori ID | Özel Başlık | Açıklama |
+|-------------|-------------|----------|
+| Teknoloji > Yazılım | Yazılım Dünyası | Yazılım geliştirme kaynakları |
 
-> Eğer Windows kullanıcısı iseniz rcssmin kütüphanesinin kurulamadığını görmeniz muhtemel. Bu kütüphane CSS dosyalarının minify edilmesi için kullanılmakta ve aslında opsiyonel bir kütüphanedir. Kurulamamış olması bir sorun olacağı anlamına gelmiyor.
+Bu sayfa ile kategori başlıklarını ve açıklamalarını özelleştirebilirsiniz.
 
-## Ayarlar Dosyasinin Yazılması ## 
+## Yapılandırma
 
-İnşa edici betiğin çalıştırılabilmesi için proje klasörü içerisinde bir .env
-dosyasının bulunması gerekmekte. Bu dosyayı aşağıdaki komutu uygulayarak elde
-edebilirsiniz:
+`.env` dosyasındaki ayarlar:
 
-    $ cp .env.example .env
+| Ayar | Açıklama |
+|------|----------|
+| `SPREADSHEET_URL` | Google Sheets Excel export URL'i |
+| `SPREADSHEET_LINKS_PAGE_NAME` | Linkler sayfasının adı |
+| `SPREADSHEET_CATEGORIES_PAGE_NAME` | Kategoriler sayfasının adı |
+| `SPREADSHEET_CATEGORY_SEPARATOR` | Kategori ayırıcı karakter (varsayılan: `>`) |
+| `SITE_TITLE` | Site başlığı |
+| `SITE_URL` | Site adresi |
+| `SITE_DESC` | Site açıklaması |
+| `TIMEZONE_HOURS` | Saat dilimi farkı (UTC'den) |
+| `MINIMIZE_CSS` | CSS sıkıştırma (True/False) |
+| `MINIMIZE_HTML` | HTML sıkıştırma (True/False) |
 
-## İnşa Edici Betiğin Çalıştırılması ## 
+## Temalar
 
-Yukarıdaki işlemleri başarıyla uygulayabildi iseniz aşağıdaki komutu
-çalıştırabilmeniz gerekli:
+`assets/themes/` klasöründe hazır CSS temaları bulunur. Varsayılan tema
+"Retro Dark"tır. Kendi temanızı oluşturup aynı klasöre ekleyebilirsiniz.
 
-    $ python rebuild.py
+## Çıktılar
 
-Bu betik çıktı olarak aşağıdaki gibi bir sonuç gösterecek, ve docs klasörü
-altına siteyi inşa edecektir:
+- `docs/index.html` - Ana sayfa (son eklenen 50 link)
+- `docs/<kategori>/index.html` - Kategori sayfaları
+- `docs/<kategori>/<link>.html` - Link detay sayfaları
+- `docs/sitemap.xml` - XML sitemap
+- `docs/data.json` - Tüm veriyi içeren JSON API
 
-    $ python rebuild.py
-    2021-12-04 19:08:00,197 INFO - Building category information.
-    2021-12-04 19:08:00,213 INFO - Building json output.
-    2021-12-04 19:08:00,218 INFO - Building assets.
-    2021-12-04 19:08:00,226 INFO - Rendering categories.
-    2021-12-04 19:08:00,310 INFO - Rendering links.
-    2021-12-04 19:08:00,560 INFO - Rendering homepage.
-    2021-12-04 19:08:00,572 INFO - Rendering sitemap.
-    2021-12-04 19:08:00,595 INFO - Rendering feed outputs.
+## Tasarım Felsefesi
 
-docs klasörü altındaki index.html dosyasını internet tarayıcınız ile
-açtığınızda çıktı olarak internetgüzelir.com'un bir kopyasını görüyor
-olacaksınız.
-
-## Ortaya Çıkış Hikayesi ## 
-
-Aşağıda siteyi internet ortamlarına fırlattığım ilk gün yazdığım gereksiz
-duygusal tonda bir yazı var. Direkt okubeni dosyasında olması gereken bir şey
-değil fakat yine de hikayeyi aşağı yukarı anlatıyor:
-
-----
-
-Bana son yıllarda İnternet kocaman bir AVM içerisinde gezmek gibi geliyor.
-Büyük, parlak, dev gibi resimlerle, yuvarlak köşelerle, bootstrap denen
-zımbırtının ürettiği birbirinin aynısı iskeletler üzerine yükselen bir yapı.
-
-Görüntüsü güzel, ancak içeriği karın doyurmuyor. Algoritmaların sadece o adres
-üzerinde daha çok zaman geçirmemiz için seçtiği bomboş içerikler denizi içinde
-yüzüyoruz. Her gün kendimi dalgın gözlerle instagram ana sayfasını dakikalarca
-aşağıya kaydırırken buluyorum.
-
-Bu siteyi (eğer varsa) benim gibi hisseden insanlar için yaptım. İçerisinde
-sadece kendi seçtiğim kategorize edilmiş bağlantıklar var. Çakma DMOZ yapmışsın
-deseniz alınmam.
-
-Bu linkler çeşitli türlerde olabiliyor: web siteleri, makaleler, online web
-uygulamaları, online listeler vs gibi. Dil olarak ise Türkçe ve İngilizce
-içeriklere yer veriyorum.
-
-Her hafta mutlaka bir şeyler ekleniyor. Bookmarklayıp arada bir ziyaret
-etmenizi tavsiye ederim.
+- **Basitlik**: Tek bir Python betiği, veritabanı yok, sunucu yok
+- **Statik**: Çıktı tamamen statik HTML/CSS, her yerde host edilebilir
+- **Veri kaynağı olarak spreadsheet**: Herkes Google Sheets kullanabilir
+- **Özelleştirilebilir**: Jinja2 template'leri ve CSS temaları ile
